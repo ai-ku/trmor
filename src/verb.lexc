@@ -1,24 +1,28 @@
 Multichar_Symbols
-	+A1pl +A1sg +A2pl +A2sg +A3pl +A3sg +Abl +Able +Acc +ActOf +Adamantly +Adj +Adverb +AfterDoingSo +Agt +Aor +AsIf +AsLongAs +Become +ByDoingSo +Caus +Cond +Cop +Dat +Desr +Equ +EverSince +FeelLike +FitFor +Fut +FutPart +Gen +Hastily +Imp +Inf1 +Inf2 +Inf3 +Ins +JustLike +Loc +Ly +Narr +Neces +Neg +Ness +Nom +NotAbleState +NotState +Noun +Opt +P1pl +P1sg +P2pl +P2sg +P3pl +P3sg +Pass +Past +PastPart +Pnon +Pos +Pres +PresPart +Prog1 +Prog2 +Pron +Prop +Recip +Reflex +Rel +Related +Repeat +Since +SinceDoingSo +Stay +Verb +When +While +With +Without +WithoutBeingAbleToHaveDoneSo +WithoutHavingDoneSo +Zero ^DB
++A1pl +A1sg +A2pl +A2sg +A3pl +A3sg +Abl +Able +Acc +ActOf +Adamantly
++Adj +Adverb +AfterDoingSo +Agt +Aor +AsIf +AsLongAs +Become
++ByDoingSo +Caus +Cond +Cop +Dat +Desr +Equ +EverSince +FeelLike
++FitFor +Fut +FutPart +Gen +Hastily +Imp +Inf1 +Inf2 +Inf3 +Ins
++JustLike +Loc +Ly +Narr +Neces +Neg +Ness +Nom +NotAbleState
++NotState +Noun +Opt +P1pl +P1sg +P2pl +P2sg +P3pl +P3sg +Pass +Past
++PastPart +Pnon +Pos +Pres +PresPart +Prog1 +Prog2 +Pron +Prop +Recip
++Reflex +Rel +Related +Repeat +Since +SinceDoingSo +Stay +Verb +When
++While +With +Without +WithoutBeingAbleToHaveDoneSo
++WithoutHavingDoneSo +Zero ^DB
 
 LEXICON Root
 +Verb:gel	759;
 
 LEXICON 759
-+Cond+A3sg:+ysA	#;
-+Cond:+ysA	452;
-+Narr+A3sg:+ymHS	#;
-+Neg+Aor:+mA	91;
-+Neg+Imp+A2sg:+mA	#;
-+Neg+Imp:+mA	453;
+!degil +Cond+A3sg:+ysA	#;
+!degil +Cond:+ysA	452;
+!degil +Narr+A3sg:+ymHS	#;
 +Neg:+mA	409;
-+Past+A3sg:+ydH	#;
-+Past:+ydH	380;
-+Pos+Imp+A2sg:0	#;
-+Pos+Imp:0	193;
+!degil +Past+A3sg:+ydH	#;
+!degil +Past:+ydH	380;
 +Pos:0	185;
-+Pres+A3sg:0	#;
-+Pres:0	224;
+!degil +Pres+A3sg:0	#;
+!degil +Pres:0	224;
 ^DB+Verb+Able+Neg+Aor:+yAmA	758;
 ^DB+Verb+Able+Neg+Imp+A2sg:+yAmA	#;
 ^DB+Verb+Able+Neg+Imp:+yAmA	222;
@@ -2198,13 +2202,14 @@ LEXICON 454
 +A1sg:+m	#;
 
 LEXICON 453
++A2sg:0		#;
 +A2pl:+yHn	#;
 +A2pl:+yHnHz	#;
 +A3pl:+sHnlAr	#;
 +A3sg:+sHn	#;
 
-LEXICON 452
-+A2pl:+nHz	#;
+!degil LEXICON 452
+!degil +A2pl:+nHz	#;
 
 LEXICON 451
 +Aor+A3sg:+Hr	#;
@@ -2539,10 +2544,12 @@ LEXICON 410
 +A3sg:+sHn	#;
 
 LEXICON 409
++Aor:0		91;
 +Desr+A3sg:+sA	#;
 +Desr:+sA	407;
 +Fut+A3sg:+yAcAk	#;
 +Fut:+yAcAk	398;
++Imp:0		453;
 +Narr+A3sg:+mHS	#;
 +Narr:+mHS	388;
 +Narr^DB+Adj+Zero:+mHS	#;
@@ -2749,8 +2756,8 @@ LEXICON 382
 LEXICON 381
 +A1pl:+k	#;
 
-LEXICON 380
-+A1pl:+k	#;
+!degil LEXICON 380
+!degil +A1pl:+k	#;
 
 LEXICON 379
 +A2pl:+yHn	#;
@@ -3834,13 +3841,13 @@ LEXICON 225
 +A1pl:+yHz	#;
 +Cop+A3sg:+dHr	#;
 
-LEXICON 224
-+A1pl:+yHz	#;
-+A1sg:+yHm	#;
-+A2pl:+sHnHz	#;
-+A2sg:+sHn	#;
-+A3pl:+lAr	223;
-+Cop+A3sg:+dHr	#;
+!degil LEXICON 224
+!degil +A1pl:+yHz	#;
+!degil +A1sg:+yHm	#;
+!degil +A2pl:+sHnHz	#;
+!degil +A2sg:+sHn	#;
+!degil +A3pl:+lAr	223;
+!degil +Cop+A3sg:+dHr	#;
 
 LEXICON 223
 +Cop:+dHr	#;
@@ -4035,6 +4042,7 @@ LEXICON 194
 +Cop+A3sg:+dHr	#;
 
 LEXICON 193
++A2sg:0		#;
 +A2pl:+yHn	#;
 +A2pl:+yHnHz	#;
 +A3pl:+sHnlAr	#;
@@ -4101,6 +4109,7 @@ LEXICON 185
 +Desr:+sA	155;
 +Fut+A3sg:+yAcAk	#;
 +Fut:+yAcAk	96;
++Imp:0		193;
 +Imp:+sA	103;
 +Narr+A3sg:+mHS	126;
 +Narr:+mHS	142;
