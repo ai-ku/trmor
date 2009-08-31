@@ -21,15 +21,20 @@ LEXICON Root
 
 LEXICON Voice
 			Polarity;
-^DB+Verb+Caus:+Ar	Caus;
-^DB+Verb+Recip:+Hş	Caus;
+^DB+Verb+Caus:+Ar	Caus2;
+^DB+Verb+Recip:+Hş	Caus2;
 ^DB+Verb+Pass:+Hl	Polarity;
 ^DB+Verb+Reflex:+Hn	Polarity;
 
-LEXICON Caus
-			Polarity;
+LEXICON Caus2
+^DB+Verb+Caus:+Ar	Caus3;
 ^DB+Verb+Pass:+Hl	Polarity;
-^DB+Verb+Caus:+Ar	Caus;
+			Polarity;
+
+LEXICON Caus3
+^DB+Verb+Caus:+Ar	Polarity;
+^DB+Verb+Pass:+Hl	Polarity;
+			Polarity;
 
 LEXICON Polarity
 +Pos		Compound;
