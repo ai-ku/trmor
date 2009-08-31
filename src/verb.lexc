@@ -14,7 +14,7 @@ Multichar_Symbols
 	+Quant +Ques +Recip +Reflex +Rel +Related +Repeat +Since
 	+SinceDoingSo +Start +Stay +Verb +When +While +With +Without
 	+WithoutBeingAbleToHaveDoneSo +WithoutHavingDoneSo +Zero ^DB
-
+	@P.P.1@ @D.P@ @R.P@
 
 LEXICON Root
 +Verb	Voice;
@@ -82,20 +82,34 @@ LEXICON Deriv
 ^DB+Noun+PastPart:+dHk	#;
 
 LEXICON Tense
-+Aor		A3pl;
-+Desr		A3pl;
-+Fut		A3pl;
++Aor		TenseP;
++Desr		TenseP;
++Fut		TenseP;
 +Imp		ImpP;
-+Narr		A3pl;
-+Neces		A3pl;
-+Opt		A3pl;
++Narr		TenseP;
++Neces		TenseP;
++Opt		TenseP;
 +Past		PastP;
-+Prog1		A3pl;
-+Prog2		A3pl;
++Prog1		TenseP;
++Prog2		TenseP;
 
-LEXICON A3pl
+LEXICON ImpP
+@D.P@@P.P.1@	ImpP1;
+
+LEXICON ImpP1
++A1sg	#;
++A2sg	#;
++A3sg	#;
++A1pl	#;
++A2pl	#;
++A3pl	#;
+
+LEXICON TenseP
+@D.P@@P.P.1@	TenseP1;
+		Narr;
+
+LEXICON TenseP1
 +A3pl	Narr;
-	Narr;
 
 LEXICON Narr
 +Narr	While;
@@ -109,37 +123,11 @@ LEXICON Past
 +Past	PastP;
 	Cond;
 
-LEXICON Cond
-+Cond	Person;
-	Person;
-
-LEXICON AsIf
-^DB+Adverb+AsIf:+cAsHnA	#;
-	Cop;
-
-LEXICON Cop
-+Cop	#;
-	#;
-
-LEXICON Person
-	AsIf;
-+A1sg	AsIf;
-+A2sg	AsIf;
-+A3sg	AsIf;
-+A1pl	AsIf;
-+A2pl	AsIf;
-+A3pl	AsIf;
-
-LEXICON ImpP
-+A1sg	#;
-+A2sg	#;
-+A3sg	#;
-+A1pl	#;
-+A2pl	#;
-+A3pl	#;
-
 LEXICON PastP
-	Cond;
+@D.P@@P.P.1@	PastP1;
+		Cond;
+
+LEXICON PastP1
 +A1sg	Cond;
 +A2sg	Cond;
 +A3sg	Cond;
@@ -147,14 +135,37 @@ LEXICON PastP
 +A2pl	Cond;
 +A3pl	Cond;
 
+LEXICON Cond
++Cond	Person;
+	Person;
+
+LEXICON Person
+@D.P@@P.P.1@	Person1;
+@R.P@	Cop;
+
+LEXICON Person1
++A1sg	Cop;
++A2sg	Cop;
++A3sg	Cop;
++A1pl	Cop;
++A2pl	Cop;
++A3pl	Cop;
+
+LEXICON Cop
++Cop	#;
+^DB+Adverb+AsIf:+cAsHnA	#;
+	#;
+
 END
 
 ;;; General description
 
-To a first approximation verb morphology consists of four sections:
-derivation, negation, tense, person.
+To a first approximation verb morphology consists of five sections:
+voice, polarity, compounding, tense, person.  Voice and compounding
+are optional.  There may also be a derivational suffix changing part
+of speech following polarity, compounding, tense or person.
 
-Derivation: +Caus +Pass +Recip +Reflex
+Voice: +Caus +Pass +Recip +Reflex
 Ordering: +Pass | +Reflex | (+Caus|+Recip)(+Caus)*(+Pass)?
 
 Tense: +Aor +Desr +Fut +Imp +Narr +Neces +Opt +Past +Prog1 +Prog2
