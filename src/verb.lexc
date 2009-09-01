@@ -1,4 +1,4 @@
-! Turkish Verb Morphotactics: please see end of file for documentation
+! Turkish Verb Morphotactics: please see the end of the file for documentation
 
 Multichar_Symbols
 	+Abl +Able +Acc +Acquire +ActOf +Adamantly +Adj +Adverb
@@ -94,41 +94,34 @@ LEXICON Tense
 
 LEXICON Person1
 		Tense2;
-+A1sg:+yHm	Cop;
-+A2sg:+sHn	Cop;
-+A3sg:0		Cop;
-+A1pl:+yHz	Cop;
-+A2pl:+sHnHz	Cop;
-+A3pl:+lAr	A3pl;
++A1sg:+yHm	Tense2;
++A2sg:+sHn	Tense2;
++A3sg:0		Tense2;
++A1pl:+yHz	Tense2;
++A2pl:+sHnHz	Tense2;
++A3pl:+lAr	Tense2;
 
 LEXICON Tense2
-		While;
-+Narr:+mHş	While;
+		Deriv2;
++Narr:+mHş	Deriv2;
 +Narr:+mHş	Person2;
 +Past:+dH	Person2;
 +Cond:+sA	Person2;
 
-LEXICON While
+LEXICON Person2
+		Deriv2;
++A1sg:+yHm	Deriv2;
++A2sg:+sHn	Deriv2;
++A3sg:0		Deriv2;
++A1pl:+yHz	Deriv2;
++A2pl:+sHnHz	Deriv2;
++A3pl:+lAr	Deriv2;
+
+LEXICON Deriv2
+			#;
 ^DB+Adverb+While:+yken	#;
 ^DB+Adverb+AsIf:+cAsHnA	#;
-
-LEXICON Cop
-		#;
-+Cop:+dHr	#;
-
-LEXICON A3pl
-		#;
-+Narr:+mHş	#;
-+Past:+dH	#;
-+Cond:+sA	#;
-+Cop:+dHr	#;
-
-LEXICON Person2
-+A1sg:+yHm	#;
-+A2sg:+sHn	#;
-+A3sg:0		#;
-+A1pl:+yHz	#;
-+A2pl:+sHnHz	#;
++Cop:+dHr		#;
 
 END
 
@@ -139,7 +132,7 @@ END
 To a first approximation verb morphology consists of five sections:
 voice, polarity, compounding, tense, person.  Voice and compounding
 are optional.  There may also be a derivational suffix changing part
-of speech following polarity, compounding, tense or person.
+of speech following any of the above ???
 
 Voice: +Caus +Pass +Recip +Reflex
 Ordering: +Pass | +Reflex | (+Caus|+Recip)(+Caus)*(+Pass)?
@@ -288,4 +281,20 @@ LEXICON Person000
 +A1pl:+yHz	Cop;
 +A2pl:+sHnHz	Cop;
 +A3pl:+lAr	Cop;
+
+LEXICON Person1x
+		Tense2;
++A1sg:+yHm	Cop;
++A2sg:+sHn	Cop;
++A3sg:0		Cop;
++A1pl:+yHz	Cop;
++A2pl:+sHnHz	Cop;
++A3pl:+lAr	A3pl;
+
+LEXICON A3pl
+		#;
++Narr:+mHş	#;
++Past:+dH	#;
++Cond:+sA	#;
++Cop:+dHr	#;
 
