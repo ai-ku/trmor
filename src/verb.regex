@@ -1,0 +1,7 @@
+\["+A1pl"|"+A1sg"|"+A2pl"|"+A2sg"|"+A3pl"|"+A3sg"]*
+ [ 
+  ["+A1pl"|"+A1sg"|"+A2pl"|"+A2sg"|"+A3pl"|"+A3sg"]
+  |
+  ["^DB" ["+Noun"|"+Adj"|"+Adverb"]] 
+  ]
+ \["+A1pl"|"+A1sg"|"+A2pl"|"+A2sg"|"+A3pl"|"+A3sg"]* ;
