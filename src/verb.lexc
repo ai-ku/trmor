@@ -21,7 +21,7 @@ LEXICON Root
 
 LEXICON Voice
 			Polarity;
-^DB+Verb+Caus:+Ar	Voice2;
+^DB+Verb+Caus:+t	Voice2;
 ^DB+Verb+Recip:+Hş	Voice2;
 ^DB+Verb+Pass:+Hl	Polarity;
 ^DB+Verb+Reflex:+Hn	Polarity;
@@ -29,22 +29,22 @@ LEXICON Voice
 LEXICON Voice2
 			Polarity;
 ^DB+Verb+Pass:+Hl	Polarity;
-^DB+Verb+Caus:+Ar	Voice3;
+^DB+Verb+Caus:+t	Voice3;
 
 LEXICON Voice3
 			Polarity;
-^DB+Verb+Caus:+Ar	Polarity;
+^DB+Verb+Caus:+t	Polarity;
 ^DB+Verb+Pass:+Hl	Polarity;
 
 LEXICON Polarity
 +Pos:0			Compound;
 +Neg:+mA		Compound;
-^DB+Verb+Able+Neg:yAmA	Compound;
+^DB+Verb+Able+Neg:+yAmA	Compound;
 
 LEXICON Compound
 				Deriv;
 ^DB+Verb+Able:+yAbil		Deriv;
-^DB+Verb+Almost+yAyaz		Deriv;
+^DB+Verb+Almost:+yAyaz		Deriv;
 ^DB+Verb+EverSince:+yAgel	Deriv;
 ^DB+Verb+Hastily:+yHver		Deriv;
 ^DB+Verb+Repeat:+yAdur		Deriv;
@@ -82,79 +82,78 @@ LEXICON Deriv
 ^DB+Noun+PastPart:+dHk	#;
 
 LEXICON Tense
-+Aor		TenseP;
-+Desr		TenseP;
-+Fut		TenseP;
-+Imp		ImpP;
-+Narr		TenseP;
-+Neces		TenseP;
-+Opt		TenseP;
-+Past		PastP;
-+Prog1		TenseP;
-+Prog2		TenseP;
++Aor:+Ar	TenseP;
++Desr:+sA	TenseP;
++Fut:+yAcAk	TenseP;
++Imp:0		ImpP;
++Narr:+mHş	TenseP;
++Neces:+mAlH	TenseP;
++Opt:+yA	TenseP;
++Past:+dH	PastP;
++Prog1:+Hyor	TenseP;
++Prog2:+mAktA	TenseP;
 
 LEXICON ImpP
 @D.P@@P.P.1@	ImpP1;
 
 LEXICON ImpP1
-+A1sg	#;
-+A2sg	#;
-+A3sg	#;
-+A1pl	#;
-+A2pl	#;
-+A3pl	#;
++A2sg:0		#;
++A3sg:+sHn	#;
++A2pl:+yHn	#;
++A2pl:+yHnHz	#;
++A3pl:+sHnlAr	#;
 
 LEXICON TenseP
 @D.P@@P.P.1@	TenseP1;
 		Narr;
 
 LEXICON TenseP1
-+A3pl	Narr;
++A3pl:+lAr	Narr;
 
 LEXICON Narr
-+Narr	While;
-	While;
++Narr:+mHş	While;
+		While;
 
 LEXICON While
 ^DB+Adverb+While:+yken	#;
-	Past;
+			Past;
 
 LEXICON Past
-+Past	PastP;
-	Cond;
++Past:+dH	PastP;
+		Cond;
 
 LEXICON PastP
 @D.P@@P.P.1@	PastP1;
 		Cond;
 
 LEXICON PastP1
-+A1sg	Cond;
-+A2sg	Cond;
-+A3sg	Cond;
-+A1pl	Cond;
-+A2pl	Cond;
-+A3pl	Cond;
++A1sg:+m	Cond;
++A2sg:+n	Cond;
++A3sg:0		Cond;
++A1pl:+k	Cond;
++A2pl:+nHz	Cond;
++A3pl:+lAr	Cond;
 
 LEXICON Cond
-+Cond	Person;
-	Person;
++Cond:+ysA	Person;
+		Person;
 
 LEXICON Person
 @D.P@@P.P.1@	Person1;
-@R.P@	Cop;
+@R.P@		Cop;
 
 LEXICON Person1
-+A1sg	Cop;
-+A2sg	Cop;
-+A3sg	Cop;
-+A1pl	Cop;
-+A2pl	Cop;
-+A3pl	Cop;
++A1sg:+yHm	Cop;
++A2sg:+sHn	Cop;
++A3sg:0		Cop;
++A1pl:+yHz	Cop;
++A2pl:+sHnHz	Cop;
++A3pl:+lAr	Cop;
 
 LEXICON Cop
-+Cop	#;
++Cop:+dHr		#;
 ^DB+Adverb+AsIf:+cAsHnA	#;
-	#;
+			#;
 
 END
 
