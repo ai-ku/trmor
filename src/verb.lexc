@@ -81,69 +81,59 @@ LEXICON Deriv
 ^DB+Noun+PastPart:+dHk	#;
 
 LEXICON Tense
-+Aor:+Ar	TenseP;
-+Desr:+sA	TenseP;
-+Fut:+yAcAk	TenseP;
-+Imp:0		ImpP;
-+Narr:+mHş	TenseP;
-+Neces:+mAlH	TenseP;
-+Opt:+yA	TenseP;
-+Past:+dH	PastP;
-+Prog1:+Hyor	TenseP;
-+Prog2:+mAktA	TenseP;
++Aor:+Ar	Person1;
++Desr:+sA	Person1;
++Fut:+yAcAk	Person1;
++Imp:0		Person1;
++Narr:+mHş	Person1;
++Neces:+mAlH	Person1;
++Opt:+yA	Person1;
++Past:+dH	Person1;
++Prog1:+Hyor	Person1;
++Prog2:+mAktA	Person1;
 
-LEXICON ImpP
-+A2sg:0		#;
-+A3sg:+sHn	#;
-+A2pl:+yHn	#;
-+A2pl:+yHnHz	#;
-+A3pl:+sHnlAr	#;
-
-LEXICON TenseP
-		Narr;
-+A3pl:+lAr	Narr;
-
-LEXICON Narr
-		While;
-+Narr:+mHş	While;
-
-LEXICON While
-			Past;
-^DB+Adverb+While:+yken	#;
-
-LEXICON Past
-		Cond;
-+Past:+dH	PastP;
-
-LEXICON PastP
-		Cond;
-+A1sg:+m	Cond;
-+A2sg:+n	Cond;
-+A3sg:0		Cond;
-+A1pl:+k	Cond;
-+A2pl:+nHz	Cond;
-+A3pl:+lAr	Cond;
-
-LEXICON Cond
-		Person;
-+Cond:+ysA	Person;
-
-LEXICON Person
-		Cop;
+LEXICON Person1
+		Tense2;
 +A1sg:+yHm	Cop;
 +A2sg:+sHn	Cop;
 +A3sg:0		Cop;
 +A1pl:+yHz	Cop;
 +A2pl:+sHnHz	Cop;
-+A3pl:+lAr	Cop;
++A3pl:+lAr	A3pl;
+
+LEXICON Tense2
+		While;
++Narr:+mHş	While;
++Narr:+mHş	Person2;
++Past:+dH	Person2;
++Cond:+sA	Person2;
+
+LEXICON While
+^DB+Adverb+While:+yken	#;
+^DB+Adverb+AsIf:+cAsHnA	#;
 
 LEXICON Cop
-			#;
-+Cop:+dHr		#;
-^DB+Adverb+AsIf:+cAsHnA	#;
+		#;
++Cop:+dHr	#;
+
+LEXICON A3pl
+		#;
++Narr:+mHş	#;
++Past:+dH	#;
++Cond:+sA	#;
++Cop:+dHr	#;
+
+LEXICON Person2
++A1sg:+yHm	#;
++A2sg:+sHn	#;
++A3sg:0		#;
++A1pl:+yHz	#;
++A2pl:+sHnHz	#;
 
 END
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; General description
 
 To a first approximation verb morphology consists of five sections:
@@ -241,3 +231,61 @@ Past: +dH +ydH
 +sA: Cond Desr Imp
 +sHn: A2sg A3sg
 +z: A3sg A3pl
+
+
+=== JUNK ===
+LEXICON PersonDesr
+		Tense2;
++A1sg:+m	#;
++A2sg:+n	#;
++A3sg:0		#;
++A1pl:+k	#;
++A2pl:+nHz	#;
++A3pl:+lAr	Tense2;
+
+LEXICON PersonImp
++A2sg:0		#;
++A3sg:+sHn	#;
++A2pl:+yHn	#;
++A2pl:+yHnHz	#;
++A3pl:+sHnlAr	#;
+
+LEXICON TenseP
+		Narr;
++A3pl:+lAr	Narr;
+
+LEXICON Narr
+		While;
++Narr:+mHş	While;
+
+LEXICON While
+			Past;
+^DB+Adverb+While:+yken	#;
+^DB+Adverb+AsIf:+cAsHnA	#;
+
+LEXICON Past
+		Cond;
++Past:+dH	PastP;
+
+LEXICON PastP
+		Cond;
++A1sg:+m	Cond;
++A2sg:+n	Cond;
++A3sg:0		Cond;
++A1pl:+k	Cond;
++A2pl:+nHz	Cond;
++A3pl:+lAr	Cond;
+
+LEXICON Cond
+		Person;
++Cond:+ysA	Person;
+
+LEXICON Person000
+		Cop;
++A1sg:+yHm	Cop;
++A2sg:+sHn	Cop;
++A3sg:0		Cop;
++A1pl:+yHz	Cop;
++A2pl:+sHnHz	Cop;
++A3pl:+lAr	Cop;
+
