@@ -16,7 +16,8 @@ Multichar_Symbols
 	+WithoutBeingAbleToHaveDoneSo +WithoutHavingDoneSo +Zero ^DB
 
 LEXICON Root
-+Verb:0	Voice;
++Verb:git	Voice;
++Verb:ara	Voice;
 
 LEXICON Voice
 			Polarity;
@@ -53,16 +54,16 @@ LEXICON Compound
 LEXICON Deriv
 			Tense;
 ^DB+Adj+Agt:+yHcH	#;
-^DB+Adj+AorPart:+Ar	#;
+^DB+Adj+AorPart:+Hr	#;
 ^DB+Adj+FeelLike:+yAsH	#;
 ^DB+Adj+FutPart:+yAcAk	#;
 ^DB+Adj+NarrPart:+mHş	#;
-^DB+Adj+PastPart:+dHk	#;
+^DB+Adj+PastPart:+DHk	#;
 ^DB+Adj+PresPart:+yAn	#;
 ^DB+Adj+Zero:+z		#;
 ^DB+Adverb+Adamantly:+yAsHyA	#;
 ^DB+Adverb+AfterDoingSo:+yHp	#;
-^DB+Adverb+AsLongAs:+dHkCA	#;
+^DB+Adverb+AsLongAs:+DHkCA	#;
 ^DB+Adverb+ByDoingSo:+yArAk	#;
 ^DB+Adverb+SinceDoingSo:+yAlH	#;
 ^DB+Adverb+When:+yHncA	#;
@@ -75,20 +76,21 @@ LEXICON Deriv
 ^DB+Noun+FutPart:+yAcAk	#;
 ^DB+Noun+Inf1:+mAk	#;
 ^DB+Noun+Inf2:+mA	#;
-^DB+Noun+Inf3:+yHS	#;
+^DB+Noun+Inf3:+yHş	#;
 ^DB+Noun+NotAbleState:+yAmAzlHk	#;
 ^DB+Noun+NotState:+mAzlHk	#;
-^DB+Noun+PastPart:+dHk	#;
+^DB+Noun+PastPart:+DHk	#;
 
 LEXICON Tense
-+Aor:+Ar	Person1;
-+Desr:+sA	Person1;
++Aor:+Hr	Person1;
++Desr:+sA	Person1Past;
 +Fut:+yAcAk	Person1;
-+Imp:0		Person1;
++Imp:0		Person1Imp;
++Imp:+sA	Person1ImpSA;
 +Narr:+mHş	Person1;
 +Neces:+mAlH	Person1;
 +Opt:+yA	Person1;
-+Past:+dH	Person1;
++Past:+DH	Person1Past;
 +Prog1:+Hyor	Person1;
 +Prog2:+mAktA	Person1;
 
@@ -101,12 +103,32 @@ LEXICON Person1
 +A2pl:+sHnHz	Tense2;
 +A3pl:+lAr	Tense2;
 
+LEXICON Person1Past
+		Tense2;
++A1sg:+m  	Tense2;
++A2sg:+n  	Tense2;
++A3sg:0	  	Tense2;
++A1pl:+k  	Tense2;
++A2pl:+nHz	Tense2;
++A3pl:+lAr	Tense2;
+
+LEXICON Person1Imp
++A2sg:0		#;
++A3sg:+sHn	#;
++A2pl:+yHn	#;
++A2pl:+yHnHz	#;
++A3pl:+sHnlAr	#;
+
+LEXICON Person1ImpSA
++A2sg:+nA	#;
++A2pl:+nHzA	#;
+
 LEXICON Tense2
 		Deriv2;
-+Narr:+mHş	Deriv2;
-+Narr:+mHş	Person2;
-+Past:+dH	Person2;
-+Cond:+sA	Person2;
++Narr:+ymHş	Deriv2;
++Narr:+ymHş	Person2;
++Past:+yDH	Person2Past;
++Cond:+ysA	Person2Past;
 
 LEXICON Person2
 		Deriv2;
@@ -117,11 +139,20 @@ LEXICON Person2
 +A2pl:+sHnHz	Deriv2;
 +A3pl:+lAr	Deriv2;
 
+LEXICON Person2Past
+		#;
++A1sg:+m  	#;
++A2sg:+n  	#;
++A3sg:0	  	#;
++A1pl:+k  	#;
++A2pl:+nHz	#;
++A3pl:+lAr	#;
+
 LEXICON Deriv2
 			#;
 ^DB+Adverb+While:+yken	#;
 ^DB+Adverb+AsIf:+cAsHnA	#;
-+Cop:+dHr		#;
++Cop:+DHr		#;
 
 END
 
@@ -157,10 +188,10 @@ Ordering:
 (+Opt)
 
 
-;;; Issues
+;;;; Issues
 
-;; Issue 1: will change the handling of degil:
-;; +verb+neg+pres only seen with degil.
+;;; Issue 1: will change the handling of degil:
+;;; +verb+neg+pres only seen with degil.
 
 değil	değil+Verb+Neg+Pres+A3sg
 Değil	değil+Verb+Neg+Pres+A3sg
@@ -186,7 +217,7 @@ değilsin	değil+Verb+Neg+Pres+A2sg
 değilsiniz	değil+Verb+Neg+Pres+A2pl
 
 
-;; Issue 2: Will change the handling of ise etc.
+;;; Issue 2: Will change the handling of ise etc.
 
 idi	i	+Verb+Pos+Past+A3sg
 idiler	i	+Verb+Pos+Past+A3pl
@@ -204,97 +235,150 @@ isen	i	+Verb+Pos+Cond+A2sg
 İsen	i	+Verb+Pos+Cond+A2sg
 
 
-;; Issue 3: upper ambiguities
+;;; Issue 3: upper ambiguities: most common suffixes listed first.
+;;; We will deal with this with a regexp layer.
 
-Aor: +Ar +Hr +r
-Cond: +sA +ysA
-Caus: +Ar +dHr +Hr +Ht +t
+Aor: +Hr +Ar +r -- See below
+Cond: +ysA +sA -- +sA form only used for "ise"
+Caus: +dHr +Ar +Hr +Ht +t
 Pass: +Hl +Hn +HnHl
-Imp: +sA, 0
-Narr: +ymHS +mHS
-Past: +dH +ydH
+Imp:  0, +sA -- +sA form for istesenize, baksana vs.
+Narr: +mHS +ymHS -- +ymHS form only as Tense2 or derived verb
+Past: +dH +ydH -- +ydH form only as Tense2 or derived verb
 
-;; Issue 4: lower ambiguities
+;; Caus: Parens show type/token frequency.
++Ar (3/1455): çık, çök, kop  -- çöker does not sound right?
++Hr (18/2222): art, aş, bat, bit, doğ, doy, düş, duy, geç, iç, kaç, piş, şiş, taş, uç, vazgeç, yat, yit
++Ht (4/134): ak, çarp, kork, ürk
++t (170/7992): multi-syllable, ends in vowel or [rl].
++dHr (442/17974): all the rest.
+
+;; Pass:
++HnHl (20/718): Allow for double passives?  istenilmek etc.
++Hn (340/16573): ends in vowel, or L.
++Hl (542/29198): the rest.
+
+;; Cond, Narr, Past: the +y form used in Tense2 or derived position
+only.  Compare "acisa, acimis, acidi" vs. "aciysa, aciymis, aciydi".
+In fact these should have a different name Cond2, Narr2, Past2 etc.
+
+;; Imp, Opt, Desr: Similarly (+sA)+Imp should have a different name.
+We should carefully compare Opt, Desr, and two forms of Imp.
+
+(+yA)+Opt(+yHm)+A1sg
+(+yA)+Opt(+sHn)+A2sg
+(+yA)+Opt+A3sg
+(+yA)+Opt(+lHm)+A1pl
+(+yA)+Opt(+sHnHz)+A2pl
+(+yA)+Opt(+lAr)+A3pl
+
+(+yA)+Opt(+lAr)+A3pl(+ydH)+Past
+(+yA)+Opt(+ydH)+Past+A3sg
+(+yA)+Opt(+ydH)+Past(+n)+A2sg
+
++Imp+A2sg
++Imp(+sHn)+A3sg
++Imp(+yHn)+A2pl
++Imp(+yHnHz)+A2pl
++Imp(+sHnlAr)+A3pl
+
+(+sA)+Imp(+nA)+A2sg
+(+sA)+Imp(+nHzA)+A2pl
+
+(+sA)+Desr(+m)+A1sg
+(+sA)+Desr(+n)+A2sg
+(+sA)+Desr+A3sg
+(+sA)+Desr(+k)+A1pl
+(+sA)+Desr(+nHz)+A2pl
+(+sA)+Desr(+lAr)+A3pl
+
+(+sA)+Desr(+lAr)+A3pl(+ydH)+Past
+(+sA)+Desr(+ydH)+Past+A3sg
+(+sA)+Desr(+ydH)+Past(+k)+A1pl
+(+sA)+Desr(+ydH)+Past(+lAr)+A3pl
+(+sA)+Desr(+ydH)+Past(+m)+A1sg
+(+sA)+Desr(+ydH)+Past(+n)+A2sg
+(+sA)+Desr(+ydH)+Past(+nHz)+A2pl
+(+sA)+Desr(+ymHS)+Narr+A3sg
+
+;; Aor: 3 forms roughly equal in frequency.  +r after vowels.  +Ar
+seems to only follow single syllable words and compound verbs that end
+with "et".  Everything else takes -Hr (unfortunately some single
+syllable words and non-compound "et" endings are in this list).  Here
+are the lists from the training file:
+
+; +Ar (141): affet ak aktet an art as aş at ay az bahset bak bas bat biç
+bin bit boğ boz böl coş çak çal çarp çek çık çırp çiz çöz değ dik dil
+din doğ dol don dök dön döv duy düş eğ ek em emret er es et ez farket
+fethet geç gez gir git giy göç gül hallet hapset hisset iç in it kaç
+kalk kan kap kar kat katet katlet kay kaybet kes keşfet kıl kır kırp
+kıy kız kon kop kork koş kov koy kur kus ov ölç öp ör ört öv reddet
+saç sar sark sars sat say seç sev seyret sez sığ sil sok sor sök sön
+söv sözet sun sür sürt süz şaş tak taş terket tut uç um uy üz yağ yak
+yan yap yar yat yaz yen yet yık yor yut yüz zannet
+
+; +Hr (177): 18 exceptions marked with parens:
+abart ağar aktar (al) aldan alın alış anlaş anlat araştır aydınlat
+ayır ay$ır azal bağır bakın başar başvur bayıl beğen bırak (bil)
+birleş (bul) bulun buluş buyrul buyur buy$ur büyüt çalış çevir çev$ir
+çıkış çırpın çoğal çözün dağıl dağıt daral darıl davran dayan değin
+değiş deyiver didin dikil dinlen diren diril dokun dolaş dönüş (dur)
+duyur düşün düzel edin eğit eğlen eleştir eriş evlen (gel) geliş gerek
+gereksin getir gezin gider giriş gönder (gör) görün görüş göster götür
+(gözet) gücen güven hapşır hastalan havalan hesaplaş hoşgör hoşlan
+ısın ısır içer içlen (ilet) ilgilen inan incin irkil kabullen kaçın
+kahrol (kal) kaldır kalkış kapış karar karış karşılaş katlan kavuş
+kaybol kaydol kazan kınan kıskan kıvran kızış konuş kullan kurtar
+kurtul kuşat malol mırıldan (ol) oluş otur öğren (öğret) (öl) öner
+öngör övün özen paylaş (san) savaş savun seslen sevin seviş sıkıl
+soruştur sömür söyleş şaşır takıl tanış tartış tırman tokalaş (tüket)
+uğraş ulaş unut utan uyan uyar uzlaş üstlen (var) (ver) (vur) vurul
+yakın yakış yaklaş yapış yaraş yarat yarış yeral yerleş yıprat yoğur
+yoğ$ur yönel (yönet) yüksel
+
+;;; Issue 4: lower ambiguities
 
 +Ar: Aor Caus
 +dHr: Cop Caus
 +Hn: A2sg Pass Reflex
-+Hr: Aor Caus
++Hr: (Aor) Caus
 +mA: Neg Inf2
 +sA: Cond Desr Imp
 +sHn: A2sg A3sg
 +z: A3sg A3pl
 
+;;; Issue 5: different person suffixes 
+;;; (= means default, - means not applicable)
 
-=== JUNK ===
-LEXICON PersonDesr
-		Tense2;
-+A1sg:+m	#;
-+A2sg:+n	#;
-+A3sg:0		#;
-+A1pl:+k	#;
-+A2pl:+nHz	#;
-+A3pl:+lAr	Tense2;
+Default:	Aor/Narr:mHS	NegAor:		Desr/Past:
++A1sg:+yHm	+A1sg:+Hm	+A1sg:+m     	+A1sg:+m  
++A2sg:+sHn	+A2sg:=		+A2sg:+zsHn  	+A2sg:+n  
++A3sg:0		+A3sg:=		+A3sg:+z     	+A3sg:=	  
++A1pl:+yHz	+A1pl:+Hz	+A1pl:+yHz   	+A1pl:+k  
++A2pl:+sHnHz	+A2pl:=		+A2pl:+zsHnHz	+A2pl:+nHz
++A3pl:+lAr	+A3pl:=		+A3pl:+zlAr  	+A3pl:+lAr
 
-LEXICON PersonImp
-+A2sg:0		#;
-+A3sg:+sHn	#;
-+A2pl:+yHn	#;
-+A2pl:+yHnHz	#;
-+A3pl:+sHnlAr	#;
+Imp:		Imp:sA		Opt:	  
++A1sg:-		+A1sg:-		+A1sg:+yHm
++A2sg:0	      	+A2sg:+nA	+A2sg:=	  
++A3sg:+sHn	+A3sg:-		+A3sg:=	  
++A1pl:-	      	+A1pl:-		+A1pl:+lHm
++A2pl:+yHn(Hz)	+A2pl:+nHzA	+A2pl:=	  
++A3pl:+sHnlAr 	+A3pl:-		+A3pl:=   
 
-LEXICON TenseP
-		Narr;
-+A3pl:+lAr	Narr;
+Other tenses take default suffixes.  Exceptions:
+- Narr:mHS+A2sg can also be +Hn (otherwise same as Aor)
+- Narr:ymHS+A1pl can also be +Hz (otherwise default)
+- Aor/Narr can probably be handled by regex.
+- NegAor should use the z suffix, then A1 fixed by regex.
 
-LEXICON Narr
-		While;
-+Narr:+mHş	While;
+;;; Issue 6: different sets of Tense2 allowed.  By default all Tenses
+take Narr, Past, Cond, Cop as second Tense.  Exceptions:
 
-LEXICON While
-			Past;
-^DB+Adverb+While:+yken	#;
-^DB+Adverb+AsIf:+cAsHnA	#;
-
-LEXICON Past
-		Cond;
-+Past:+dH	PastP;
-
-LEXICON PastP
-		Cond;
-+A1sg:+m	Cond;
-+A2sg:+n	Cond;
-+A3sg:0		Cond;
-+A1pl:+k	Cond;
-+A2pl:+nHz	Cond;
-+A3pl:+lAr	Cond;
-
-LEXICON Cond
-		Person;
-+Cond:+ysA	Person;
-
-LEXICON Person000
-		Cop;
-+A1sg:+yHm	Cop;
-+A2sg:+sHn	Cop;
-+A3sg:0		Cop;
-+A1pl:+yHz	Cop;
-+A2pl:+sHnHz	Cop;
-+A3pl:+lAr	Cop;
-
-LEXICON Person1x
-		Tense2;
-+A1sg:+yHm	Cop;
-+A2sg:+sHn	Cop;
-+A3sg:0		Cop;
-+A1pl:+yHz	Cop;
-+A2pl:+sHnHz	Cop;
-+A3pl:+lAr	A3pl;
-
-LEXICON A3pl
-		#;
-+Narr:+mHş	#;
-+Past:+dH	#;
-+Cond:+sA	#;
-+Cop:+dHr	#;
++Aor:+Hr	Cop cannot immediately follow.
++Desr:+sA	Cond/Cop cannot follow.
++Imp:0		Nothing can follow.
++Narr:+mHş	Second Narr rare but observed.
++Opt:+yA	Only Past observed.
++Past:+dH	No Cop/Narr.  Second Past rare.
 
