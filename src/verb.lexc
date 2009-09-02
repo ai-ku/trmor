@@ -16,24 +16,27 @@ Multichar_Symbols
 	+WithoutBeingAbleToHaveDoneSo +WithoutHavingDoneSo +Zero ^DB
 
 LEXICON Root
-+Verb:git	Voice;
-+Verb:ara	Voice;
++Verb:0	Voice;
 
 LEXICON Voice
 			Polarity;
-^DB+Verb+Caus:+t	Voice2;
-^DB+Verb+Recip:+Hş	Voice2;
 ^DB+Verb+Pass:+Hl	Polarity;
-^DB+Verb+Reflex:+Hn	Polarity;
+^DB+Verb+Caus:+t	Voice3;
+^DB+Verb+Recip:+Hş	Voice2;
+^DB+Verb+Reflex:+Hn	Voice2;
+
+LEXICON Voice3
+			Polarity;
+^DB+Verb+Pass:+Hl	Polarity;
+^DB+Verb+Caus:+t	Voice2;
 
 LEXICON Voice2
 			Polarity;
 ^DB+Verb+Pass:+Hl	Polarity;
-^DB+Verb+Caus:+t	Voice3;
+^DB+Verb+Caus:+t	Voice1;
 
-LEXICON Voice3
+LEXICON Voice1
 			Polarity;
-^DB+Verb+Caus:+t	Polarity;
 ^DB+Verb+Pass:+Hl	Polarity;
 
 LEXICON Polarity
@@ -45,6 +48,7 @@ LEXICON Compound
 				Deriv;
 ^DB+Verb+Able:+yAbil		Deriv;
 ^DB+Verb+Almost:+yAyaz		Deriv;
+^DB+Verb+Continue:+yAgit	Deriv;
 ^DB+Verb+EverSince:+yAgel	Deriv;
 ^DB+Verb+Hastily:+yHver		Deriv;
 ^DB+Verb+Repeat:+yAdur		Deriv;
@@ -255,6 +259,7 @@ Past: +dH +ydH -- +ydH form only as Tense2 or derived verb
 
 ;; Pass:
 +HnHl (20/718): Allow for double passives?  istenilmek etc.
+	These are better represented as reflex+passives.
 +Hn (340/16573): ends in vowel, or L.
 +Hl (542/29198): the rest.
 
@@ -382,3 +387,21 @@ take Narr, Past, Cond, Cop as second Tense.  Exceptions:
 +Opt:+yA	Only Past observed.
 +Past:+dH	No Cop/Narr.  Second Past rare.
 
+;;;; Test 090902-09:44: 
+
+The following 21 sequences following Pos/Neg from Milliyet are not
+covered by this grammar:
+
++Aor+Past+A3pl+Cond: 
+	çıkardılarsa - this is the wrong interpretation, correct one
+	is +Verb^DB+Verb+Caus+Pos+Past+A3pl+Cond 
+
+^DB+Verb+Continue^DB+Adj+PresPart:
+	süregiden	sür	+Verb+Pos^DB+Verb+Continue^DB+Adj+PresPart
+	Added to the Compound grammar.
+
+The following are only seen after degil+Verb+Neg:
+^DB+Adverb+While +A3pl+Tense2 +Pres+Person
+
+The following are seen after degil+Verb+Neg or i+Verb+Pos:
++Cond+Person
