@@ -58,12 +58,12 @@ LEXICON Compound
 
 LEXICON Deriv
 			Tense;
-^DB+Adj+Agt:+yHcH	#;   ! don't need both noun and adj
+^DB+Adj+Agt:+yHcH	#;
 ^DB+Adj+AorPart:+Hr	#;
-^DB+Adj+FeelLike:+yAsH	#;   ! don't need both noun and adj
-^DB+Adj+FutPart:+yAcAk	#;   ! don't need both noun and adj
+^DB+Adj+FeelLike:+yAsH	#;
+^DB+Adj+FutPart:+yAcAk	#;
 ^DB+Adj+NarrPart:+mHş	#;
-^DB+Adj+PastPart:+DHk	#;   ! don't need both noun and adj
+^DB+Adj+PastPart:+DHk	#;
 ^DB+Adj+PresPart:+yAn	#;
 !^DB+Adj+Zero:+z		#;  ! what is this?
 ^DB+Adverb+Adamantly:+yAsHyA	#;
@@ -76,69 +76,78 @@ LEXICON Deriv
 ^DB+Adverb+WithoutHavingDoneSo:+mAdAn	#;
 ^DB+Adverb+WithoutHavingDoneSo:+mAksHzHn	#;
 ^DB+Noun+ActOf:+mAcA	#;
-^DB+Noun+Agt:+yHcH	#;   ! don't need both noun and adj
-^DB+Noun+FeelLike:+yAsH	#;   ! don't need both noun and adj
-^DB+Noun+FutPart:+yAcAk	#;   ! don't need both noun and adj
+^DB+Noun+Agt:+yHcH	#;
+^DB+Noun+FeelLike:+yAsH	#;
+^DB+Noun+FutPart:+yAcAk	#;
 ^DB+Noun+Inf1:+mAk	#;
 ^DB+Noun+Inf2:+mA	#;
 ^DB+Noun+Inf3:+yHş	#;
 ^DB+Noun+NotAbleState:+yAmAzlHk	#;
 ^DB+Noun+NotState:+mAzlHk	#;
-^DB+Noun+PastPart:+DHk	#;   ! don't need both noun and adj
+^DB+Noun+PastPart:+DHk	#;
 
 LEXICON Tense
-+Aor:+Hr	AfterAor;
-+Desr:+sA	AfterDesr;
-+Fut:+yAcAk	AfterTense;
-+Imp:0		AfterImp;
-+Imp:+sA	AfterImpSA;
-+Narr:+mHş	AfterTense;
-+Narr+A3sg:+mHş	AsIf;
-+Narr+A3pl:+mHş+lAr	AsIf;
-+Neces:+mAlH	AfterTense;
-+Opt:+yA	AfterOpt;
-+Past:+DH	AfterPast;
-+Prog1:+Hyor	AfterTense;
-+Prog2:+mAktA	AfterTense;
++Aor:+Hr	CNP|Person;
++Aor:+Hr	AorAdv;
++Desr:+sA	NP|Person2;
++Fut:+yAcAk	CNP|Person+Cop;
++Imp:0		PersonImp;
++Imp:+sA	PersonImpSA;
++Narr:+mHş	CNP|Person+Cop;
++Narr:+mHş	NarrAdv1;
++Neces:+mAlH	CNP|Person+Cop;
++Opt:+yA	NP|Person1;
++Past:+DH	CP|Person;
++Prog1:+Hyor	CNP|Person+Cop;
++Prog2:+mAktA	CNP|Person+Cop;
 
-LEXICON AfterImp
-+A2sg:0		#;
-+A3sg:+sHn	#;
-+A2pl:+yHn	#;
-+A2pl:+yHnHz	#;
-+A3pl:+sHnlAr	#;
+LEXICON CNP|Person+Cop
+		CNP+Person;
+		Person1+Cop?;
 
-LEXICON AfterImpSA
-+A2sg:+nA	#;
-+A2pl:+nHzA	#;
+LEXICON CNP|Person
+		CNP+Person;
+		Person1;
 
-LEXICON AfterOpt
-+A1sg:+yHm	#;
-+A2sg:+sHn	#;
-+A3sg:0		#;
-+A1pl:+lHm	#;
-+A2pl:+sHnHz	#;
-		NP;
+LEXICON CP|Person
+		C+Person;
+		Person2+CP?;
 
-LEXICON AfterDesr
-+A1sg:+m  	#;
-+A2sg:+n  	#;
-+A3sg:0	  	#;
-+A1pl:+k  	#;
-+A2pl:+nHz	#;
-		NP;
+LEXICON NP|Person1
+		NP+Person;
+		Person3;    !!! Only difference with Person1 is A1pl
+
+LEXICON NP|Person2
+		NP+Person;
+		Person2;
+
+LEXICON CNP+Person
++A3pl:+lAr	CNP;
++Cond:+ysA	Person2;
++Past:+yDH	Person2;
++Narr:+ymHş	Person1+Cop?;
++Narr:+ymHş	NarrAdv2;
+		While;
+
+LEXICON CNP
++Cond:+ysA	#;
++Narr:+ymHş	#;
++Past:+yDH	#;
+		While;
+
+LEXICON NP+Person
++A3pl:+lAr	NP;
++Narr:+ymHş	Person1;
++Past:+yDH	Person2;
 
 LEXICON NP
-+A3pl:+lAr	FinalNP;
-+Narr:+ymHş	FinalP1;
-+Past:+yDH	FinalP2;
-
-LEXICON FinalNP
-		#;
 +Narr:+ymHş	#;
 +Past:+yDH	#;
 
-LEXICON FinalP1
+LEXICON C+Person
++Cond:+ysA	Person2;
+
+LEXICON Person1
 +A1sg:+yHm	#;
 +A2sg:+sHn	#;
 +A3sg:0		#;
@@ -146,7 +155,15 @@ LEXICON FinalP1
 +A2pl:+sHnHz	#;
 +A3pl:+lAr	#;
 
-LEXICON FinalP2
+LEXICON Person1+Cop?
++A1sg:+yHm	Cop?;
++A2sg:+sHn	Cop?;
++A3sg:0		Cop?;
++A1pl:+yHz	Cop?;
++A2pl:+sHnHz	Cop?;
++A3pl:+lAr	Cop?;
+
+LEXICON Person2
 +A1sg:+m  	#;
 +A2sg:+n  	#;
 +A3sg:0	  	#;
@@ -154,52 +171,43 @@ LEXICON FinalP2
 +A2pl:+nHz	#;
 +A3pl:+lAr	#;
 
-LEXICON AfterPast
-+A1sg:+m  	FinalCP;
-+A2sg:+n  	FinalCP;
-+A3sg:0	  	FinalCP;
-+A1pl:+k  	FinalCP;
-+A2pl:+nHz	FinalCP;
-+A3pl:+lAr	FinalCP;
-+Cond:+ysA	FinalP2;
+LEXICON Person2+CP?
++A1sg:+m  	CP?;
++A2sg:+n  	CP?;
++A3sg:0	  	CP?;
++A1pl:+k  	CP?;
++A2pl:+nHz	CP?;
++A3pl:+lAr	CP?;
 
-LEXICON FinalCP
-		#;
-+Cond:+ysA	#;
-+Past:+yDH	#;
+LEXICON Person3
++A1sg:+yHm	#;
++A2sg:+sHn	#;
++A3sg:0		#;
++A1pl:+lHm	#;
++A2pl:+sHnHz	#;
++A3pl:+lAr	#;
 
-LEXICON AfterAor
-	FinalP1;
-	Tense2;
-+A3sg:0	AsIf;
+LEXICON PersonImp
++A2sg:0		#;
++A3sg:+sHn	#;
++A2pl:+yHn	#;
++A2pl:+yHnHz	#;
++A3pl:+sHnlAr	#;
+
+LEXICON PersonImpSA
++A2sg:+nA	#;
++A2pl:+nHzA	#;
+
+LEXICON NarrAdv1
++A3sg:0		AsIf;
++A3pl:+lAr	AsIf;
+
+LEXICON NarrAdv2
++A3sg:0		AsIf;
 +A3pl:+lAr	While;
 
-LEXICON AfterTense
-	Person;
-	Tense2;
-
-LEXICON Tense2
-		While;
-+A3pl:+lAr	FinalCNP;
-+Cond:+ysA	FinalP2;
-+Narr:+ymHş	Person;
-+Narr+A3sg:+ymHş	AsIf;
-+Past:+yDH	FinalP2;
-
-LEXICON FinalCNP
-		#;
-+Cond:+ysA	#;
-+Narr:+ymHş	#;
-+Past:+yDH	#;
-
-LEXICON Person
-+A1sg:+yHm	Cop?;
-+A2sg:+sHn	Cop?;
-+A3sg:0		Cop?;
-+A1pl:+yHz	Cop?;
-+A2pl:+sHnHz	Cop?;
-+A3pl:+lAr	Cop?;
-+A3pl:+lAr	While;
+LEXICON AorAdv
++A3sg:0		AsIf;
 
 LEXICON While
 ^DB+Adverb+While:+yken	#;
@@ -211,6 +219,10 @@ LEXICON Cop?
 +Cop:+DHr	#;
 		#;
 
+LEXICON CP?
++Cond:+ysA	#;
++Past:+yDH	#;
+		#;
 
 END
 
@@ -440,6 +452,19 @@ take Narr, Past, Cond, Cop as second Tense.  Exceptions:
 +Narr:+mHş	Second Narr rare but observed.
 +Opt:+yA	Only Past observed.
 +Past:+dH	No Cop/Narr.  Second Past rare.
+
+;;; Issue 7: needless proliferation of ambiguity should be handled by
+systematic noun adjective conversion:
+
+^DB+Adj+Agt:+yHcH	#;   ! don't need both noun and adj
+^DB+Adj+FeelLike:+yAsH	#;   ! don't need both noun and adj
+^DB+Adj+FutPart:+yAcAk	#;   ! don't need both noun and adj
+^DB+Adj+PastPart:+DHk	#;   ! don't need both noun and adj
+^DB+Noun+Agt:+yHcH	#;   ! don't need both noun and adj
+^DB+Noun+FeelLike:+yAsH	#;   ! don't need both noun and adj
+^DB+Noun+FutPart:+yAcAk	#;   ! don't need both noun and adj
+^DB+Noun+PastPart:+DHk	#;   ! don't need both noun and adj
+
 
 ;;;; Test 090902-09:44: 
 
