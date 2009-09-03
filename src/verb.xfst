@@ -7,13 +7,14 @@ source turk.xfst
 # Aor: +Hr +Ar +r
 #      manual list for +Ar; do not need +r
 define AorAr [{affet}|{ak}|{aktet}|{an}|{art}|{as}|{aş}|{at}|{ay}|{az}|{bahset}|{bak}|{bas}|{bat}|{biç}|{bin}|{bit}|{boğ}|{boz}|{böl}|{coş}|{çak}|{çal}|{çarp}|{çek}|{çık}|{çırp}|{çiz}|{çöz}|{değ}|{dik}|{dil}|{din}|{doğ}|{dol}|{don}|{dök}|{dön}|{döv}|{duy}|{düş}|{eğ}|{ek}|{em}|{emret}|{er}|{es}|{et}|{ez}|{farket}|{fethet}|{geç}|{gez}|{gir}|{git}|{giy}|{göç}|{gül}|{hallet}|{hapset}|{hisset}|{iç}|{in}|{it}|{kaç}|{kalk}|{kan}|{kap}|{kar}|{kat}|{katet}|{katlet}|{kay}|{kaybet}|{kes}|{keşfet}|{kıl}|{kır}|{kırp}|{kıy}|{kız}|{kon}|{kop}|{kork}|{koş}|{kov}|{koy}|{kur}|{kus}|{ov}|{ölç}|{öp}|{ör}|{ört}|{öv}|{reddet}|{saç}|{sar}|{sark}|{sars}|{sat}|{say}|{seç}|{sev}|{seyret}|{sez}|{sığ}|{sil}|{sok}|{sor}|{sök}|{sön}|{söv}|{sözet}|{sun}|{sür}|{sürt}|{süz}|{şaş}|{tak}|{taş}|{terket}|{tut}|{uç}|{um}|{uy}|{üz}|{yağ}|{yak}|{yan}|{yap}|{yar}|{yat}|{yaz}|{yen}|{yet}|{yık}|{yor}|{yut}|{yüz}|{zannet}];
-read regex [ {Hr} -> {Ar} || AorAr %+ _ ];
+read regex [ {Hr} -> {Ar} || .#. AorAr %+ _ ];
 compose net
 
 # NegAor:
-read regex [ {Hr} -> z || {+mA} %+ _ ];
-read regex [ {Hr} -> 0   || {+mA} %+ _ {+yHz} ];
-read regex [ {Hr+yHm} -> m   || {+mA} %+ _ ];
+define Neg [ {+mA} | {+yAmA} ];
+read regex [ {Hr} -> z || Neg %+ _ ];
+read regex [ {Hr} -> 0   || Neg %+ _ {+yHz} ];
+read regex [ {Hr+yHm} -> m   || Neg %+ _ ];
 
 # Caus: +Ar +Hr +Ht +t +dHr
 define CausAr [{çık}|{çök}|{kop}];
