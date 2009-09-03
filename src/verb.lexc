@@ -16,7 +16,7 @@ Multichar_Symbols
 	+WithoutBeingAbleToHaveDoneSo +WithoutHavingDoneSo +Zero ^DB
 
 LEXICON Root
-+Verb:kurtar		Polarity;
++Verb:kurtar		Voice;
 
 LEXICON Voice
 			Polarity;
@@ -40,25 +40,38 @@ LEXICON Voice1
 ^DB+Verb+Pass:+Hl	Polarity;
 
 LEXICON Polarity
-+Pos:0			Compound;
-+Neg:+mA		Compound;
-^DB+Verb+Able+Neg:+yAmA	Compound;
++Pos:0			Agt;
++Pos:0			Compound3;
++Neg:+mA		Compound2;
+^DB+Verb+Able+Neg:+yAmA	Compound1;
 
-LEXICON Compound
-				Deriv;
+LEXICON Compound3
+^DB+Verb+Start:+yAkoy		Deriv;
+^DB+Verb+Stay:+yAkal		Deriv;
+^DB+Verb+Almost:+yAyaz		Deriv;
+^DB+Verb+EverSince:+yAgel	Deriv;
+				Compound2;
+
+LEXICON Compound2
+!^DB+Verb+Continue:+yAgit	Deriv;  !! BUG: Uncomment when t-d conversion is fixed
+^DB+Verb+Hastily:+yHver		HastilyNeg;
+^DB+Verb+Repeat:+yAdur		Deriv;
+				Compound1;
+
+LEXICON Compound1
 ^DB+Verb+Able:+yAbil		Deriv;
-!^DB+Verb+Almost:+yAyaz		Deriv;
-!!! BUG: do not forget to uncomment
-!^DB+Verb+Continue:+yAgit	Deriv;
-!^DB+Verb+EverSince:+yAgel	Deriv;
-!^DB+Verb+Hastily:+yHver		Deriv;
-!^DB+Verb+Repeat:+yAdur		Deriv;
-!^DB+Verb+Start:+yAkoy		Deriv;
-!^DB+Verb+Stay:+yAkal		Deriv;
+				Deriv;
+
+LEXICON HastilyNeg
++Neg:+mA	Deriv;
+		Deriv;	
+
+LEXICON Agt
+^DB+Adj+Agt:+yHcH	#;
+^DB+Noun+Agt:+yHcH	#;
 
 LEXICON Deriv
 			Tense;
-^DB+Adj+Agt:+yHcH	#;
 ^DB+Adj+AorPart:+Hr	#;
 ^DB+Adj+FeelLike:+yAsH	#;
 ^DB+Adj+FutPart:+yAcAk	#;
@@ -76,7 +89,6 @@ LEXICON Deriv
 ^DB+Adverb+WithoutHavingDoneSo:+mAdAn	#;
 ^DB+Adverb+WithoutHavingDoneSo:+mAksHzHn	#;
 ^DB+Noun+ActOf:+mAcA	#;
-^DB+Noun+Agt:+yHcH	#;
 ^DB+Noun+FeelLike:+yAsH	#;
 ^DB+Noun+FutPart:+yAcAk	#;
 ^DB+Noun+Inf1:+mAk	#;
@@ -174,7 +186,8 @@ LEXICON Person2
 LEXICON Person2+CP?
 +A1sg:+m  	CP?;
 +A2sg:+n  	CP?;
-+A3sg:0	  	CP?;
+!+A3sg:0	  	CP?;
++A3sg:0	  	C?;  ! I think this is oflazer's bug
 +A1pl:+k  	CP?;
 +A2pl:+nHz	CP?;
 +A3pl:+lAr	CP?;
@@ -214,6 +227,10 @@ LEXICON Cop?
 LEXICON CP?
 +Cond:+ysA	#;
 +Past:+yDH	#;
+		#;
+
+LEXICON C?
++Cond:+ysA	#;
 		#;
 
 END
@@ -486,11 +503,11 @@ The following are seen after degil+Verb+Neg or i+Verb+Pos:
 
 The following do not need to be covered (cikar is the root):
 
-+Verb+Pos+Aor+Narr^DB+Adverb+While
-çıkarmışken	çık	+Verb+Pos+Aor+Narr^DB+Adverb+While
-
 +Verb+Pos+Aor+Past+A3pl+Cond
 çıkardılarsa	çık	+Verb+Pos+Aor+Past+A3pl+Cond
+
++Verb+Pos+Aor+Narr^DB+Adverb+While
+çıkarmışken	çık	+Verb+Pos+Aor+Narr^DB+Adverb+While
 
 All other postneg entries from test (except ^DB entries) are covered.
 
