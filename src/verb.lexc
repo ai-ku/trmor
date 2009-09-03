@@ -16,8 +16,7 @@ Multichar_Symbols
 	+WithoutBeingAbleToHaveDoneSo +WithoutHavingDoneSo +Zero ^DB
 
 LEXICON Root
-!+Verb:0	Voice;
-+Verb+Pos:yap	Tense;
++Verb:kurtar		Polarity;
 
 LEXICON Voice
 			Polarity;
@@ -48,13 +47,14 @@ LEXICON Polarity
 LEXICON Compound
 				Deriv;
 ^DB+Verb+Able:+yAbil		Deriv;
-^DB+Verb+Almost:+yAyaz		Deriv;
-^DB+Verb+Continue:+yAgit	Deriv;
-^DB+Verb+EverSince:+yAgel	Deriv;
-^DB+Verb+Hastily:+yHver		Deriv;
-^DB+Verb+Repeat:+yAdur		Deriv;
-^DB+Verb+Start:+yAkoy		Deriv;
-^DB+Verb+Stay:+yAkal		Deriv;
+!^DB+Verb+Almost:+yAyaz		Deriv;
+!!! BUG: do not forget to uncomment
+!^DB+Verb+Continue:+yAgit	Deriv;
+!^DB+Verb+EverSince:+yAgel	Deriv;
+!^DB+Verb+Hastily:+yHver		Deriv;
+!^DB+Verb+Repeat:+yAdur		Deriv;
+!^DB+Verb+Start:+yAkoy		Deriv;
+!^DB+Verb+Stay:+yAkal		Deriv;
 
 LEXICON Deriv
 			Tense;
@@ -68,7 +68,7 @@ LEXICON Deriv
 !^DB+Adj+Zero:+z		#;  ! what is this?
 ^DB+Adverb+Adamantly:+yAsHyA	#;
 ^DB+Adverb+AfterDoingSo:+yHp	#;
-^DB+Adverb+AsLongAs:+DHkCA	#;
+^DB+Adverb+AsLongAs:+DHkçA	#;
 ^DB+Adverb+ByDoingSo:+yArAk	#;
 ^DB+Adverb+SinceDoingSo:+yAlH	#;
 ^DB+Adverb+When:+yHncA	#;
@@ -115,7 +115,7 @@ LEXICON CP|Person
 
 LEXICON NP|Person1
 		NP+Person;
-		Person3;    !!! Only difference with Person1 is A1pl
+		Person1;
 
 LEXICON NP|Person2
 		NP+Person;
@@ -151,7 +151,7 @@ LEXICON Person1
 +A1sg:+yHm	#;
 +A2sg:+sHn	#;
 +A3sg:0		#;
-+A1pl:+yHz	#;
++A1pl:+yHz	#;	! Should be +lHm following +Opt
 +A2pl:+sHnHz	#;
 +A3pl:+lAr	#;
 
@@ -178,14 +178,6 @@ LEXICON Person2+CP?
 +A1pl:+k  	CP?;
 +A2pl:+nHz	CP?;
 +A3pl:+lAr	CP?;
-
-LEXICON Person3
-+A1sg:+yHm	#;
-+A2sg:+sHn	#;
-+A3sg:0		#;
-+A1pl:+lHm	#;
-+A2pl:+sHnHz	#;
-+A3pl:+lAr	#;
 
 LEXICON PersonImp
 +A2sg:0		#;
@@ -508,3 +500,9 @@ Milliyet.postneg has 531 paths.
 extra = [vupper - test] has 93 paths.
 All but "yapaydi" is recognized by tfeaturesulx.
 
+
+;;;; Test 090903-15:35
+
+Testing with verb "kurtar"
+tfeaturesulx is much more restricted with kurtarayaz endings
+fixed error with dikca suffix
