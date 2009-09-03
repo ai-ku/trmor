@@ -16,14 +16,14 @@ Multichar_Symbols
 	+WithoutBeingAbleToHaveDoneSo +WithoutHavingDoneSo +Zero ^DB
 
 LEXICON Root
-+Verb:kurtar		Voice;
++Verb:temizle		Voice;
 
 LEXICON Voice
 			Polarity;
 ^DB+Verb+Pass:+Hl	Polarity;
 ^DB+Verb+Caus:+t	Voice3;
 ^DB+Verb+Recip:+Hş	Voice2;
-^DB+Verb+Reflex:+Hn	Voice2;
+^DB+Verb+Reflex:+Hn	Voice2;		!! See Issue 8.
 
 LEXICON Voice3
 			Polarity;
@@ -54,16 +54,16 @@ LEXICON Compound3
 
 LEXICON Compound2
 !^DB+Verb+Continue:+yAgit	Deriv;  !! BUG: Uncomment when t-d conversion is fixed
-^DB+Verb+Hastily:+yHver		HastilyNeg;
 ^DB+Verb+Repeat:+yAdur		Deriv;
+^DB+Verb+Hastily:+yHver		HastilyNeg;
 				Compound1;
 
 LEXICON Compound1
 ^DB+Verb+Able:+yAbil		Deriv;
 				Deriv;
 
-LEXICON HastilyNeg
-+Neg:+mA	Deriv;
+LEXICON HastilyNeg		
++Neg+Aor:+mA+Hr	CNP|Person;		!! BUG: This is Oflazer's hack
 		Deriv;	
 
 LEXICON Agt
@@ -78,7 +78,6 @@ LEXICON Deriv
 ^DB+Adj+NarrPart:+mHş	#;
 ^DB+Adj+PastPart:+DHk	#;
 ^DB+Adj+PresPart:+yAn	#;
-!^DB+Adj+Zero:+z		#;  ! what is this?
 ^DB+Adverb+Adamantly:+yAsHyA	#;
 ^DB+Adverb+AfterDoingSo:+yHp	#;
 ^DB+Adverb+AsLongAs:+DHkçA	#;
@@ -163,7 +162,7 @@ LEXICON Person1
 +A1sg:+yHm	#;
 +A2sg:+sHn	#;
 +A3sg:0		#;
-+A1pl:+yHz	#;	! Should be +lHm following +Opt
++A1pl:+yHz	#;	!! Should be +lHm following +Opt - fixed with regex
 +A2pl:+sHnHz	#;
 +A3pl:+lAr	#;
 
@@ -186,8 +185,8 @@ LEXICON Person2
 LEXICON Person2+CP?
 +A1sg:+m  	CP?;
 +A2sg:+n  	CP?;
-!+A3sg:0	  	CP?;
-+A3sg:0	  	C?;  ! I think this is oflazer's bug
+!+A3sg:0	CP?;
++A3sg:0	  	C?;  !! BUG: I think this is oflazer's bug should be CP?
 +A1pl:+k  	CP?;
 +A2pl:+nHz	CP?;
 +A3pl:+lAr	CP?;
@@ -474,6 +473,16 @@ systematic noun adjective conversion:
 ^DB+Noun+FutPart:+yAcAk	#;   ! don't need both noun and adj
 ^DB+Noun+PastPart:+DHk	#;   ! don't need both noun and adj
 
+
+;;; Issue 8: very few words have +Reflex
+boya giy gizle hazırla kaşı kurula süsle tara temizle yıka yuvarla
+No longer sure about handling +HnHl with Reflex+Pass.
+
+;;; Issue 9: different suffixes sharing a name:
+Imp, Narr, Past, ^DB+Adverb+WithoutHavingDoneSo
+
+maybe we should make this only a lex file, and handle suffixes 
+in a regex file.  could even represent some person switching?
 
 ;;;; Test 090902-09:44: 
 
