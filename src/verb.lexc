@@ -16,14 +16,14 @@ Multichar_Symbols
 	+WithoutBeingAbleToHaveDoneSo +WithoutHavingDoneSo +Zero ^DB
 
 LEXICON Root
-+Verb:temizle		Voice;
++Verb:gül		Voice;
 
 LEXICON Voice
 			Polarity;
 ^DB+Verb+Pass:+Hl	Polarity;
 ^DB+Verb+Caus:+t	Voice3;
 ^DB+Verb+Recip:+Hş	Voice2;
-^DB+Verb+Reflex:+Hn	Voice2;		!! See Issue 8.
+!^DB+Verb+Reflex:+Hn	Voice2;		!! See Issue 8.
 
 LEXICON Voice3
 			Polarity;
@@ -53,7 +53,7 @@ LEXICON Compound3
 				Compound2;
 
 LEXICON Compound2
-!^DB+Verb+Continue:+yAgit	Deriv;  !! BUG: Uncomment when t-d conversion is fixed
+!^DB+Verb+Continue:+yAgit	Deriv;  !! BUG:  t-d conversion is not fixed
 ^DB+Verb+Repeat:+yAdur		Deriv;
 ^DB+Verb+Hastily:+yHver		HastilyNeg;
 				Compound1;
@@ -68,15 +68,15 @@ LEXICON HastilyNeg
 
 LEXICON Agt
 ^DB+Adj+Agt:+yHcH	#;
-^DB+Noun+Agt:+yHcH	#;
+^DB+Noun+Agt+A3sg+Pnon+Nom:+yHcH	#;
 
 LEXICON Deriv
 			Tense;
 ^DB+Adj+AorPart:+Hr	#;
 ^DB+Adj+FeelLike:+yAsH	#;
-^DB+Adj+FutPart:+yAcAk	#;
+^DB+Adj+FutPart+Pnon:+yAcAk	#;
 ^DB+Adj+NarrPart:+mHş	#;
-^DB+Adj+PastPart:+DHk	#;
+^DB+Adj+PastPart+Pnon:+DHk	#;
 ^DB+Adj+PresPart:+yAn	#;
 ^DB+Adverb+Adamantly:+yAsHyA	#;
 ^DB+Adverb+AfterDoingSo:+yHp	#;
@@ -87,15 +87,15 @@ LEXICON Deriv
 ^DB+Adverb+WithoutBeingAbleToHaveDoneSo:+yAmAdAn	#;
 ^DB+Adverb+WithoutHavingDoneSo:+mAdAn	#;
 ^DB+Adverb+WithoutHavingDoneSo:+mAksHzHn	#;
-^DB+Noun+ActOf:+mAcA	#;
-^DB+Noun+FeelLike:+yAsH	#;
-^DB+Noun+FutPart:+yAcAk	#;
-^DB+Noun+Inf1:+mAk	#;
-^DB+Noun+Inf2:+mA	#;
-^DB+Noun+Inf3:+yHş	#;
-^DB+Noun+NotAbleState:+yAmAzlHk	#;
-^DB+Noun+NotState:+mAzlHk	#;
-^DB+Noun+PastPart:+DHk	#;
+^DB+Noun+ActOf+A3sg+Pnon+Nom:+mAcA	#;
+^DB+Noun+FeelLike+A3sg+Pnon+Nom:+yAsH	#;
+^DB+Noun+FutPart+A3sg+P3sg+Nom:+yAcAğH	#;		!! uncomment
+^DB+Noun+Inf1+A3sg+Pnon+Nom:+mAk	#;
+^DB+Noun+Inf2+A3sg+Pnon+Nom:+mA	#;
+^DB+Noun+Inf3+A3sg+Pnon+Nom:+yHş	#;
+^DB+Noun+NotAbleState+A3sg+Pnon+Nom:+yAmAzlHk	#;
+^DB+Noun+NotState+A3sg+Pnon+Nom:+mAzlHk	#;
+^DB+Noun+PastPart+A3sg+P3sg+Nom:+DHğH	#;
 
 LEXICON Tense
 +Aor:+Hr	CNP|Person;
@@ -185,8 +185,8 @@ LEXICON Person2
 LEXICON Person2+CP?
 +A1sg:+m  	CP?;
 +A2sg:+n  	CP?;
-!+A3sg:0	CP?;
-+A3sg:0	  	C?;  !! BUG: I think this is oflazer's bug should be CP?
++A3sg:0		#;   !! No need for A3sg here, put at the end.
+!+A3sg:0  	C?;  !! BUG: I think this is oflazer's bug should be CP?
 +A1pl:+k  	CP?;
 +A2pl:+nHz	CP?;
 +A3pl:+lAr	CP?;
@@ -466,17 +466,16 @@ systematic noun adjective conversion:
 
 ^DB+Adj+Agt:+yHcH	#;   ! don't need both noun and adj
 ^DB+Adj+FeelLike:+yAsH	#;   ! don't need both noun and adj
-^DB+Adj+FutPart:+yAcAk	#;   ! don't need both noun and adj
-^DB+Adj+PastPart:+DHk	#;   ! don't need both noun and adj
 ^DB+Noun+Agt:+yHcH	#;   ! don't need both noun and adj
 ^DB+Noun+FeelLike:+yAsH	#;   ! don't need both noun and adj
-^DB+Noun+FutPart:+yAcAk	#;   ! don't need both noun and adj
-^DB+Noun+PastPart:+DHk	#;   ! don't need both noun and adj
 
+Same problem in futpart and pastpart but noun usually in p3sg mode.
+In fact futpart not allowed in Pnon mode.
 
 ;;; Issue 8: very few words have +Reflex
 boya giy gizle hazırla kaşı kurula süsle tara temizle yıka yuvarla
 No longer sure about handling +HnHl with Reflex+Pass.
+These would be considered passive except for giy.
 
 ;;; Issue 9: different suffixes sharing a name:
 Imp, Narr, Past, ^DB+Adverb+WithoutHavingDoneSo
@@ -532,3 +531,26 @@ All but "yapaydi" is recognized by tfeaturesulx.
 Testing with verb "kurtar"
 tfeaturesulx is much more restricted with kurtarayaz endings
 fixed error with dikca suffix
+
+;;;; Test 090904
+
+The only diff in lower language is oflazer does not like mezlerken ending.
+(32 paths)
+
+The upper language has 272 differences.
+Fixed standard A3sg position at the end after Past+Cond: 160 differences.
+Commented recip reflex and futpart: 48 differences.
+They all are:
++Neg+Aor+A3pl^DB+Adverb+While
++Neg+Aor+A3sg^DB+Adverb+AsIf
+In both cases the +Pos variation works.
+In the +While case the word is unrecognized.
+In the +AsIf case it is recognized as an Adj+AorPart only.
+
+OK, what is wrong with reflex, recip, and futpart:
+Recip only applies to certain words: gulusmek is ok, temizlesmek is not, sevismek has its own root.
+Reflex only applies to few words (see issue 8).
+Noun+Futpart not allowed in Pnon mode.
+I guess pastpart is allowed because of things like tanidik.
+
+Final result with continue and reflex commented out: 72 differences from while and asif.
