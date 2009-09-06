@@ -14,6 +14,7 @@ Multichar_Symbols
 	+Quant +Ques +Recip +Reflex +Rel +Related +Repeat +Since
 	+SinceDoingSo +Start +Stay +Verb +When +While +With +Without
 	+WithoutBeingAbleToHaveDoneSo +WithoutHavingDoneSo +Zero ^DB
+	+Narr2 +Past2 +Imp2 +WithoutHavingDoneSo2
 
 LEXICON Root
 +Verb:gül		Voice;
@@ -23,7 +24,7 @@ LEXICON Voice
 ^DB+Verb+Pass:+Hl	Polarity;
 ^DB+Verb+Caus:+t	Voice3;
 ^DB+Verb+Recip:+Hş	Voice2;
-!^DB+Verb+Reflex:+Hn	Voice2;		!! See Issue 8.
+^DB+Verb+Reflex:+Hn	Voice2;		!! See Issue 8.
 
 LEXICON Voice3
 			Polarity;
@@ -53,7 +54,7 @@ LEXICON Compound3
 				Compound2;
 
 LEXICON Compound2
-!^DB+Verb+Continue:+yAgit	Deriv;  !! BUG:  t-d conversion is not fixed
+^DB+Verb+Continue:+yAgit	Deriv;  !! BUG:  t-d conversion is not fixed
 ^DB+Verb+Repeat:+yAdur		Deriv;
 ^DB+Verb+Hastily:+yHver		HastilyNeg;
 				Compound1;
@@ -86,10 +87,10 @@ LEXICON Deriv
 ^DB+Adverb+When:+yHncA	#;
 ^DB+Adverb+WithoutBeingAbleToHaveDoneSo:+yAmAdAn	#;
 ^DB+Adverb+WithoutHavingDoneSo:+mAdAn	#;
-^DB+Adverb+WithoutHavingDoneSo:+mAksHzHn	#;
+^DB+Adverb+WithoutHavingDoneSo2:+mAksHzHn	#;
 ^DB+Noun+ActOf+A3sg+Pnon+Nom:+mAcA	#;
 ^DB+Noun+FeelLike+A3sg+Pnon+Nom:+yAsH	#;
-^DB+Noun+FutPart+A3sg+P3sg+Nom:+yAcAğH	#;		!! uncomment
+^DB+Noun+FutPart+A3sg+P3sg+Nom:+yAcAğH	#;
 ^DB+Noun+Inf1+A3sg+Pnon+Nom:+mAk	#;
 ^DB+Noun+Inf2+A3sg+Pnon+Nom:+mA	#;
 ^DB+Noun+Inf3+A3sg+Pnon+Nom:+yHş	#;
@@ -103,7 +104,7 @@ LEXICON Tense
 +Desr:+sA	NP|Person2;
 +Fut:+yAcAk	CNP|Person+Cop;
 +Imp:0		PersonImp;
-+Imp:+sA	PersonImpSA;
++Imp2:+sA	PersonImpSA;
 +Narr:+mHş	CNP|Person+Cop;
 +Narr:+mHş	NarrAdv1;
 +Neces:+mAlH	CNP|Person+Cop;
@@ -135,25 +136,25 @@ LEXICON NP|Person2
 LEXICON CNP+Person
 +A3pl:+lAr	CNP;
 +Cond:+ysA	Person2;
-+Past:+yDH	Person2;
-+Narr:+ymHş	Person1+Cop?;
-+Narr:+ymHş	NarrAdv2;
++Past2:+yDH	Person2;
++Narr2:+ymHş	Person1+Cop?;
++Narr2:+ymHş	NarrAdv2;
 		While;
 
 LEXICON CNP
 +Cond:+ysA	#;
-+Narr:+ymHş	#;
-+Past:+yDH	#;
++Narr2:+ymHş	#;
++Past2:+yDH	#;
 		While;
 
 LEXICON NP+Person
 +A3pl:+lAr	NP;
-+Narr:+ymHş	Person1;
-+Past:+yDH	Person2;
++Narr2:+ymHş	Person1;
++Past2:+yDH	Person2;
 
 LEXICON NP
-+Narr:+ymHş	#;
-+Past:+yDH	#;
++Narr2:+ymHş	#;
++Past2:+yDH	#;
 
 LEXICON C+Person
 +Cond:+ysA	Person2;
@@ -225,12 +226,12 @@ LEXICON Cop?
 
 LEXICON CP?
 +Cond:+ysA	#;
-+Past:+yDH	#;
++Past2:+yDH	#;
 		#;
 
-LEXICON C?
-+Cond:+ysA	#;
-		#;
+! LEXICON C?
+! +Cond:+ysA	#;
+!		#;
 
 END
 
