@@ -1,0 +1,36 @@
+define Alphabet [a|b|c|ç|d|e|f|g|ğ|h|ı|i|j|k|l|m|n|o|ö|p|r|s|ş|t|u|ü|v|y|z];
+define Consonant [b|c|ç|d|f|g|ğ|h|j|k|l|m|n|p|r|s|ş|t|v|y|z];
+define ConsonantVX [ç|f|h|k|p|s|ş|t];
+define Vowel [a|e|ı|i|o|ö|u|ü];
+define VowelAH [a|e|ı|i|o|ö|u|ü|A|H];
+define VowelA [a|e|ı|i|o|ö|u|ü|A];
+define VowelB [a|ı|o|u];
+define VowelF [e|i|ö|ü];
+define VowelBU [a|ı];
+define VowelBR [o|u];
+define VowelFU [e|i];
+define VowelFR [ö|ü];
+
+read regex [ %+ -> 0 ];
+
+read regex [ A -> a || VowelB \Vowel* _ ];
+read regex [ A -> e || VowelF \Vowel* _ ];
+
+read regex [ H -> ı || VowelB \Vowel* A \Vowel* _ ];
+read regex [ H -> i || VowelF \Vowel* A \Vowel* _ ];
+read regex [ H -> ı || VowelBU \VowelA* _ ];
+read regex [ H -> i || VowelFU \VowelA* _ ];
+read regex [ H -> u || VowelBR \VowelA* _ ];
+read regex [ H -> ü || VowelFR \VowelA* _ ];
+read regex [ H -> 0 || VowelAH %+ _ ];
+read regex [ VowelAH -> 0 || _ {+Hyor} ];
+
+read regex [ D -> d, C -> c ];
+read regex [ D -> t, C -> ç || ConsonantVX %+ _ ];
+read regex [ ç -> c, k -> ğ || _ %+ VowelAH ];
+read regex [ k -> g || n _ %+ VowelAH ];
+read regex [ g -> ğ || \[n|r] _ %+ VowelAH ];
+
+read regex [ y -> 0 || Consonant %+ _ ];
+
+compose net
