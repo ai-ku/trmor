@@ -14,8 +14,12 @@ Multichar_Symbols
 	+WithoutBeingAbleToHaveDoneSo +WithoutHavingDoneSo +Zero ^DB
 	+Narr2 +Past2 +Imp2 +WithoutHavingDoneSo2
 
-LEXICON Root
-+Verb:gül		Voice;
+LEXICON Root	
++Verb:gül	Verb;
+
+
+LEXICON Verb
+	Voice;
 
 LEXICON Voice
 			Polarity;
@@ -66,35 +70,35 @@ LEXICON HastilyNeg
 		Deriv;	
 
 LEXICON Agt
-^DB+Adj+Agt:+yHcH	#;
-^DB+Noun+Agt+A3sg+Pnon+Nom:+yHcH	#;
+^DB+Adj+Agt:+yHcH	Adj;
+^DB+Noun+Agt:+yHcH	Noun;
 
 LEXICON Deriv
 			Tense;
-^DB+Adj+AorPart:+Hr	#;
+^DB+Adj+AorPart:+Hr	Adj;
 ^DB+Adj+FeelLike:+yAsH	#;
-^DB+Adj+FutPart+Pnon:+yAcAk	#;
-^DB+Adj+NarrPart:+mHş	#;
-^DB+Adj+PastPart+Pnon:+DHk	#;
-^DB+Adj+PresPart:+yAn	#;
+^DB+Adj+FutPart:+yAcAk	AdjPoss;
+^DB+Adj+NarrPart:+mHş	Adj;
+^DB+Adj+PastPart:+DHk	AdjPoss;
+^DB+Adj+PresPart:+yAn	Adj;
 ^DB+Adverb+Adamantly:+yAsHyA	#;
 ^DB+Adverb+AfterDoingSo:+yHp	#;
 ^DB+Adverb+AsLongAs:+DHkçA	#;
 ^DB+Adverb+ByDoingSo:+yArAk	#;
-^DB+Adverb+SinceDoingSo:+yAlH	#;
-^DB+Adverb+When:+yHncA	#;
+^DB+Adverb+SinceDoingSo:+yAlH	Noun0?;
+^DB+Adverb+When:+yHncA		Noun0?;
 ^DB+Adverb+WithoutBeingAbleToHaveDoneSo:+yAmAdAn	#;
-^DB+Adverb+WithoutHavingDoneSo:+mAdAn	#;
+^DB+Adverb+WithoutHavingDoneSo:+mAdAn		#;
 ^DB+Adverb+WithoutHavingDoneSo2:+mAksHzHn	#;
-^DB+Noun+ActOf+A3sg+Pnon+Nom:+mAcA	#;
-^DB+Noun+FeelLike+A3sg+Pnon+Nom:+yAsH	#;
-^DB+Noun+FutPart+A3sg+P3sg+Nom:+yAcAğH	#;
-^DB+Noun+Inf1+A3sg+Pnon+Nom:+mAk	#;
-^DB+Noun+Inf2+A3sg+Pnon+Nom:+mA	#;
-^DB+Noun+Inf3+A3sg+Pnon+Nom:+yHş	#;
-^DB+Noun+NotAbleState+A3sg+Pnon+Nom:+yAmAzlHk	#;
-^DB+Noun+NotState+A3sg+Pnon+Nom:+mAzlHk	#;
-^DB+Noun+PastPart+A3sg+P3sg+Nom:+DHğH	#;
+^DB+Noun+ActOf:+mAcA		Noun;
+^DB+Noun+FeelLike:+yAsH		Noun;
+^DB+Noun+FutPart:+yAcAk		Noun;
+^DB+Noun+Inf1:+mAk		Noun;
+^DB+Noun+Inf2:+mA		Noun;
+^DB+Noun+Inf3:+yHş		Noun;
+^DB+Noun+NotAbleState:+yAmAzlHk	Noun;
+^DB+Noun+NotState:+mAzlHk	Noun;
+^DB+Noun+PastPart:+DHk		Noun;
 
 LEXICON Tense
 +Aor:+Hr	CNP|Person;
@@ -213,7 +217,7 @@ LEXICON AorAdv
 +A3sg:0		AsIf;
 
 LEXICON While
-^DB+Adverb+While:+yken	#;
+^DB+Adverb+While:+yken	AdjRel?;
 
 LEXICON AsIf
 ^DB+Adverb+AsIf:+CAsHnA	#;
@@ -230,5 +234,101 @@ LEXICON CP?
 ! LEXICON C?
 ! +Cond:+ysA	#;
 !		#;
+
+
+LEXICON Noun
+	Ncount;
++Prop:0	Ncount;
+
+LEXICON Ncount
++A3sg:0		Nposs;
++A3pl:+lAr	Nposs;
+
+LEXICON Nposs
++P1sg:+Hm	Ncase;
++P1pl:+HmHz	Ncase;
++P2sg:+Hn	Ncase;
++P2pl:+HnHz	Ncase;
++P3sg:+sH	Ncase3;
++P3pl:+lArH	Ncase3;
++Pnon:0		Ncase;
+
+LEXICON Ncase
++Abl:+DAn	Verb0?;
++Acc:+yH	#;
++Dat:+yA	Verb0?;
++Loc:+DA	Loc;
+		Ncase0;
+
+LEXICON Ncase3
++Abl:+nDAn	Verb0?;
++Acc:+nH	#;
++Dat:+nA	Verb0?;
++Loc:+nDA	Loc;
+		Ncase0;
+
+LEXICON Ncase0
++Equ:+CA	#;
++Gen:+nHn	Gen;
++Ins:+ylA	Verb0?;
++Nom:0		Nom;
+
+LEXICON Gen
+^DB+Pron+Rel:+ki	Noun;
+			Verb0?;
+
+LEXICON Loc
+^DB+Adj+Rel:+ki		Adj;
+			Verb0?;
+
+LEXICON Nom
+^DB+Adj+InBetween:+arası	Adj;
+^DB+Adj+Rel:+ki		Adj;
+^DB+Adj+Related:+sAl	Adj;
+^DB+Adj+With:+lH	Adj;
+^DB+Adj+Without:+sHz	Adj;
+^DB+Adverb+Since:+dHr	#;
+^DB+Noun+Dim:+CHk	Noun;
+			AdjNom;
+
+LEXICON Adj
+^DB+Adj+AsIf:+CA	Adj;
+^DB+Adverb+Ly:+CA	#;
+^DB+Noun+Zero:0		Noun;
+			AdjNom;
+
+LEXICON AdjNom
+^DB+Adj+JustLike:+sH	Adj;
+^DB+Noun+Agt:+CH	Noun;
+^DB+Noun+Ness:+lHk	Noun;
+^DB+Verb+Acquire:+lAn	Verb;
+^DB+Verb+Become:+lAş	Verb;
+			Verb0?;
+
+LEXICON AdjPoss
++P1sg:+Hm	#;
++P1pl:+HmHz	#;
++P2sg:+Hn	#;
++P2pl:+HnHz	#;	
++P3sg:+sH	#;
++P3pl:+lArH	#;
++Pnon:0		#;
+
+LEXICON Verb0?
+^DB+Verb+Zero:0	AfterVerb0;
+		#;
+		
+LEXICON AfterVerb0
++Pres:0		Person1+Cop?;
+		CNP+Person;
+		AsIf;
+
+LEXICON Noun0?
+^DB+Noun+Zero:0	Noun;
+		#;
+
+LEXICON AdjRel?
+^DB+Adj+Rel:+ki	#;
+		#;
 
 END
