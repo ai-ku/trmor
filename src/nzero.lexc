@@ -1,5 +1,8 @@
-!! Describes the sequence following a final ^DB+Noun with no
+!! Describes the sequence following a final ^DB+Noun+Zero with no
 !! further derivations.
+
+!! Singular nouns are not followed by Equ (why?)
+!! Unmarked ending +A3sg+Pnon+Nom is not allowed.
 
 Multichar_Symbols
 	+Abl +Able +Acc +Acquire +ActOf +Adamantly +Adj +Adverb
@@ -18,19 +21,45 @@ Multichar_Symbols
 	+Narr2 +Past2 +Imp2 +WithoutHavingDoneSo2
 
 LEXICON Root
-+A3sg:0		Nposs;
-+A3pl:+lAr	Nposs;
++A3sg:0		Nposs1;
++A3pl:+lAr	Nposs2;
 
-LEXICON Nposs
-+P1sg:+Hm	Ncase;
-+P1pl:+HmHz	Ncase;
-+P2sg:+Hn	Ncase;
-+P2pl:+HnHz	Ncase;
-+P3sg:+sH	Ncase;
-+P3pl:+lArH	Ncase;
-+Pnon:0		Ncase;
+LEXICON Nposs1
++P1sg:+Hm	Ncase1;
++P1pl:+HmHz	Ncase1;
++P2sg:+Hn	Ncase1;
++P2pl:+HnHz	Ncase1;
++P3sg:+sH	Ncase1;
++P3pl:+lArH	Ncase1;
++Pnon:0		Ncase0;
 
-LEXICON Ncase
+LEXICON Nposs2
++P1sg:+Hm	Ncase2;
++P1pl:+HmHz	Ncase2;
++P2sg:+Hn	Ncase2;
++P2pl:+HnHz	Ncase2;
++P3sg:+sH	Ncase2;
++P3pl:+lArH	Ncase2;
++Pnon:0		Ncase2;
+
+LEXICON Ncase0
++Abl:+nDAn	#;
++Acc:+nH	#;
++Dat:+nA	#;
++Gen:+nHn	#;
++Ins:+ylA	#;
++Loc:+nDA	#;
+
+LEXICON Ncase1
++Abl:+nDAn	#;
++Acc:+nH	#;
++Dat:+nA	#;
++Gen:+nHn	#;
++Ins:+ylA	#;
++Loc:+nDA	#;
++Nom:0		#;
+
+LEXICON Ncase2
 +Abl:+nDAn	#;
 +Acc:+nH	#;
 +Dat:+nA	#;
