@@ -1,0 +1,14 @@
+~$[
+	"+Dat""^DB""+Verb""+Zero""+Pres""+A3pl"
+|	"+A3pl""+Pnon""+Nom""^DB""+Verb""+Zero" ? ["+A1sg"|"+A2sg"]
+|	"+A3sg" ["+P1sg"|"+P2sg"] "+Nom""^DB""+Verb""+Zero""+Pres" ["+A1pl"|"+A3pl"]
+|	"+A3sg""+P3sg""+Nom""^DB""+Verb""+Zero""+Pres""+A3pl"
+|	"+Gen""^DB""+Verb""+Zero""+Pres""+A3pl"
+|	"+Noun""+A3pl""+Pnon""+Nom""^DB""+Verb""+Zero""^DB""+Adverb""+While"
+|	"+A3pl""+Pnon""+Nom""^DB""+Verb""+Zero""+Pres""+A3sg""+Cop"
+|	"+Inf1""+A3pl"
+|	"+Hastily""+Neg"\"+Aor"
+
+] & ~[
+	?* "+Noun""+Zero""+A3sg""+Pnon""+Nom"
+];

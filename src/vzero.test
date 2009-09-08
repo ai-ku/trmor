@@ -1,0 +1,32 @@
+#!/usr/local/bin/xfst -f
+
+clear
+
+read lexc vzero.lexc
+upper net
+substitute label "+Past" for "+Past2"
+substitute label "+Narr" for "+Narr2"
+
+define vzero
+define model [ "+Adj" "^DB" "+Verb" "+Zero" vzero ];
+
+load tfnowords.fst
+define tf
+
+read regex [ model - tf ];
+print words > vzero.extra
+pop
+
+read regex $["^DB" "+Verb" "+Zero"];
+load Milliyet.fst
+intersect net
+define test0
+read regex [ ?+ "^DB" "+Verb" "+Zero" @-> 0 ];
+push test0
+compose net
+lower net
+define test
+
+read regex [ test - vzero ];
+print words > vzero.missing
+pop

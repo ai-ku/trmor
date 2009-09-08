@@ -1,0 +1,51 @@
+#!/usr/local/bin/xfst -f
+
+clear
+
+read lexc nflect.lexc
+define nflect
+read lexc nzero.lexc
+define nzero
+read lexc vzero.lexc
+define vzero
+
+push nflect
+upper net
+substitute defined nzero for "^Nzero"
+substitute defined vzero for "^Vzero"
+upper net
+substitute label "+Past" for "+Past2"
+substitute label "+Narr" for "+Narr2"
+define model1
+define model2 [ "+Noun" model1 ];
+
+read regex < deriv.regex
+define agree
+
+define model [ model2 & agree ];
+read regex [ "+Prop""+Noun"* @-> 0 ];
+load Milliyet.fst
+compose net
+lower net
+define test0
+
+read regex [ "+Noun" ? ? \"+Nom" ?+ ];
+push test0
+intersect net
+define test
+
+read regex [ test - model ];
+print words > nflect.missing
+pop
+
+load tfnowords.fst
+define tf
+read regex [ model - tf ];
+print words > nflect.extra
+pop
+
+! EXTRA:
+! 837 paths
+! 670 Pron+Rel
+! 413 Equ: not allowed in every context?
+! 69 Other: incompatible person/number?
