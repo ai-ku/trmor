@@ -1,0 +1,43 @@
+!! Describes the sequence following a final ^DB+Noun with no
+!! further derivations.
+
+Multichar_Symbols
+	+Abl +Able +Acc +Acquire +ActOf +Adamantly +Adj +Adverb
+	+AfterDoingSo +Agt +Almost +Aor +AorPart +AsIf +AsLongAs +A1pl
+	+A1sg +A2pl +A2sg +A3pl +A3sg +Become +ByDoingSo +Card +Caus
+	+Cond +Conj +Continue +Cop +Dat +Demons +Desr +Det +Dim +Dist
+	+Dup +Equ +EverSince +FeelLike +Fut +FutPart +Gen +Hastily +Imp
+	+InBetween +Inf1 +Inf2 +Inf3 +Ins +Interj +JustLike +Loc +Ly
+	+Narr +NarrPart +Neces +Neg +Ness +Nom +NotAbleState +NotState
+	+Noun +Num +Opt +Ord +PCAbl +PCAcc +PCDat +PCGen +PCIns +PCNom
+	+Pass +Past +PastPart +Pers +Pnon +Pos +Postp +Pres +PresPart
+	+Prog1 +Prog2 +Pron +Prop +P1pl +P1sg +P2pl +P2sg +P3pl +P3sg
+	+Quant +Ques +Recip +Reflex +Rel +Related +Repeat +Since
+	+SinceDoingSo +Start +Stay +Verb +When +While +With +Without
+	+WithoutBeingAbleToHaveDoneSo +WithoutHavingDoneSo +Zero ^DB
+	+Narr2 +Past2 +Imp2 +WithoutHavingDoneSo2
+
+LEXICON Root
++A3sg:0		Nposs;
++A3pl:+lAr	Nposs;
+
+LEXICON Nposs
++P1sg:+Hm	Ncase;
++P1pl:+HmHz	Ncase;
++P2sg:+Hn	Ncase;
++P2pl:+HnHz	Ncase;
++P3sg:+sH	Ncase;
++P3pl:+lArH	Ncase;
++Pnon:0		Ncase;
+
+LEXICON Ncase
++Abl:+nDAn	#;
++Acc:+nH	#;
++Dat:+nA	#;
++Equ:+nCA	#;
++Gen:+nHn	#;
++Ins:+ylA	#;
++Loc:+nDA	#;
++Nom:0		#;
+
+END;

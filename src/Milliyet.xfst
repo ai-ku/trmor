@@ -1,0 +1,4 @@
+#!/usr/local/bin/xfst -f
+clear
+read regex < Milliyet.regex
+save stack Milliyet.fst

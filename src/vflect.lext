@@ -1,0 +1,152 @@
+Multichar_Symbols
+	+Abl +Able +Acc +Acquire +ActOf +Adamantly +Adj +Adverb
+	+AfterDoingSo +Agt +Almost +Aor +AorPart +AsIf +AsLongAs +A1pl
+	+A1sg +A2pl +A2sg +A3pl +A3sg +Become +ByDoingSo +Card +Caus
+	+Cond +Conj +Continue +Cop +Dat +Demons +Desr +Det +Dim +Dist
+	+Dup +Equ +EverSince +FeelLike +Fut +FutPart +Gen +Hastily +Imp
+	+InBetween +Inf1 +Inf2 +Inf3 +Ins +Interj +JustLike +Loc +Ly
+	+Narr +NarrPart +Neces +Neg +Ness +Nom +NotAbleState +NotState
+	+Noun +Num +Opt +Ord +PCAbl +PCAcc +PCDat +PCGen +PCIns +PCNom
+	+Pass +Past +PastPart +Pers +Pnon +Pos +Postp +Pres +PresPart
+	+Prog1 +Prog2 +Pron +Prop +P1pl +P1sg +P2pl +P2sg +P3pl +P3sg
+	+Quant +Ques +Recip +Reflex +Rel +Related +Repeat +Since
+	+SinceDoingSo +Start +Stay +Verb +When +While +With +Without
+	+WithoutBeingAbleToHaveDoneSo +WithoutHavingDoneSo +Zero ^DB
+	+Narr2 +Past2 +Imp2 +WithoutHavingDoneSo2
+
+LEXICON Root
++Aor:+Hr	CNP|Person;
++Aor:+Hr	AorAdv;
++Desr:+sA	NP|Person2;
++Fut:+yAcAk	CNP|Person+Cop;
++Imp:0		PersonImp;
++Imp2:+sA	PersonImpSA;
++Narr:+mHş	CNP|Person+Cop;
++Narr:+mHş	NarrAdv1;
++Neces:+mAlH	CNP|Person+Cop;
++Opt:+yA	NP|Person1;
++Past:+DH	CP|Person;
++Prog1:+Hyor	CNP|Person+Cop;
++Prog2:+mAktA	CNP|Person+Cop;
+
+LEXICON CNP|Person+Cop
+		CNP+Person;
+		Person1+Cop?;
+
+LEXICON CNP|Person
+		CNP+Person;
+		Person1;
+
+LEXICON CP|Person
+		C+Person;
+		Person2+CP?;
+
+LEXICON NP|Person1
+		NP+Person;
+		Person1;
+
+LEXICON NP|Person2
+		NP+Person;
+		Person2;
+
+LEXICON CNP+Person
++A3pl:+lAr	CNP;
++Cond:+ysA	Person2;
++Past2:+yDH	Person2;
++Narr2:+ymHş	Person1+Cop?;
++Narr2:+ymHş	NarrAdv2;
+		While;
+
+LEXICON CNP
++Cond:+ysA	#;
++Narr2:+ymHş	#;
++Past2:+yDH	#;
+		While;
+
+LEXICON NP+Person
++A3pl:+lAr	NP;
++Narr2:+ymHş	Person1;
++Past2:+yDH	Person2;
+
+LEXICON NP
++Narr2:+ymHş	#;
++Past2:+yDH	#;
+
+LEXICON C+Person
++Cond:+ysA	Person2;
+
+LEXICON Person1
++A1sg:+yHm	#;
++A2sg:+sHn	#;
++A3sg:0		#;
++A1pl:+yHz	#;	!! Should be +lHm following +Opt - fixed with regex
++A2pl:+sHnHz	#;
++A3pl:+lAr	#;
+
+LEXICON Person1+Cop?
++A1sg:+yHm	Cop?;
++A2sg:+sHn	Cop?;
++A3sg:0		Cop?;
++A1pl:+yHz	Cop?;
++A2pl:+sHnHz	Cop?;
++A3pl:+lAr	Cop?;
+
+LEXICON Person2
++A1sg:+m  	#;
++A2sg:+n  	#;
++A3sg:0	  	#;
++A1pl:+k  	#;
++A2pl:+nHz	#;
++A3pl:+lAr	#;
+
+LEXICON Person2+CP?
++A1sg:+m  	CP?;
++A2sg:+n  	CP?;
++A3sg:0		#;   !! No need for A3sg here, put at the end.
+!+A3sg:0  	C?;  !! BUG: I think this is oflazer's bug should be CP?
++A1pl:+k  	CP?;
++A2pl:+nHz	CP?;
++A3pl:+lAr	CP?;
+
+LEXICON PersonImp
++A2sg:0		#;
++A3sg:+sHn	#;
++A2pl:+yHn	#;
++A2pl:+yHnHz	#;
++A3pl:+sHnlAr	#;
+
+LEXICON PersonImpSA
++A2sg:+nA	#;
++A2pl:+nHzA	#;
+
+LEXICON NarrAdv1
++A3sg:0		AsIf;
++A3pl:+lAr	AsIf;
+
+LEXICON NarrAdv2
++A3sg:0		AsIf;
++A3pl:+lAr	While;
+
+LEXICON AorAdv
++A3sg:0		AsIf;
+
+LEXICON While
+^DB+Adverb+While:+yken	AdjRel?;
+
+LEXICON AdjRel?
+^DB+Adj+Rel:+ki	#;
+		#;
+
+LEXICON AsIf
+^DB+Adverb+AsIf:+CAsHnA	#;
+
+LEXICON Cop?
++Cop:+DHr	#;
+		#;
+
+LEXICON CP?
++Cond:+ysA	#;
++Past2:+yDH	#;
+		#;
+
+END;

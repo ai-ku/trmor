@@ -1,0 +1,500 @@
+Multichar_Symbols
+	+Abl +Able +Acc +Acquire +ActOf +Adamantly +Adj +Adverb
+	+AfterDoingSo +Agt +Almost +Aor +AorPart +AsIf +AsLongAs +A1pl
+	+A1sg +A2pl +A2sg +A3pl +A3sg +Become +ByDoingSo +Card +Caus
+	+Cond +Conj +Continue +Cop +Dat +Demons +Desr +Det +Dim +Dist
+	+Dup +Equ +EverSince +FeelLike +Fut +FutPart +Gen +Hastily +Imp
+	+InBetween +Inf1 +Inf2 +Inf3 +Ins +Interj +JustLike +Loc +Ly
+	+Narr +NarrPart +Neces +Neg +Ness +Nom +NotAbleState +NotState
+	+Noun +Num +Opt +Ord +PCAbl +PCAcc +PCDat +PCGen +PCIns +PCNom
+	+Pass +Past +PastPart +Pers +Pnon +Pos +Postp +Pres +PresPart
+	+Prog1 +Prog2 +Pron +Prop +P1pl +P1sg +P2pl +P2sg +P3pl +P3sg
+	+Quant +Ques +Recip +Reflex +Rel +Related +Repeat +Since
+	+SinceDoingSo +Start +Stay +Verb +When +While +With +Without
+	+WithoutBeingAbleToHaveDoneSo +WithoutHavingDoneSo +Zero ^DB
+	+Narr2 +Past2 +Imp2 +WithoutHavingDoneSo2 
+	^Vflect ^Vzero ^Nflect ^Nfinal
+
+
+LEXICON Root	
++Noun	Noun;
++Verb	Verb;
++Adj	Adj;
+
+
+!! Derivations following Noun
+
+LEXICON Noun
+^Nflect			#;	!! describes all sequences except some derivations following +Nom
++A3sg+Pnon+Nom:0	A3sg;	!! we should not have to specify no-inflection before derivation
++A3pl+Pnon+Nom:+lAr	A3pl;
+
+LEXICON A3pl
+^DB+Adj+InBetween:+arası	InBetween;
+^DB+Adverb+Since:+dHr	#;	!! only with gunlerdir etc?
+
+LEXICON A3sg
+^DB+Adj+JustLike:+sH	JustLike;	!! BUG: This should be +AsH or +msH or something.
+^DB+Adj+Rel:+ki		Rel;
+^DB+Adj+Related:+sAl	Related;
+^DB+Adj+With:+lH	With;
+^DB+Adj+Without:+sHz	Without;
+^DB+Adverb+Since:+dHr	#;	!! only with gunlerdir etc?
+^DB+Noun+Agt:+CH	Agt;
+^DB+Noun+Dim:+CHk	Dim;
+^DB+Noun+Ness:+lHk	Ness;
+^DB+Verb+Acquire:+lAn	Acquire;
+^DB+Verb+Become:+lAş	Become;
+
+
+!! Derivations following Adj
+
+LEXICON Adj
+^DB+Adj+AsIf:+CA	AsIf;
+^DB+Adj+JustLike:+sH	JustLike;	!! BUG: This should be +AsH or +msH or something.
+^DB+Adverb+Ly:+CA	#;
+^DB+Noun+Agt:+CH	Agt;
+^DB+Noun+Ness:+lHk	Ness;
+^DB+Noun+Zero:0		NounZero;
+^DB+Verb+Acquire:+lAn	Acquire;
+^DB+Verb+Become:+lAş	Become;
+			Vzero?;
+
+
+!! Derivations following Verb (non-verb derivations)
+
+LEXICON Vderiv
+^DB+Adj+AorPart:+Hr	AorPart;
+^DB+Adj+FeelLike:+yAsH	#;
+^DB+Adj+FutPart:+yAcAk	AdjPoss+Pnon;
+^DB+Adj+NarrPart:+mHş	NarrPart;
+^DB+Adj+PastPart:+DHk	AdjPoss+Pnon;
+^DB+Adj+PresPart:+yAn	PresPart;
+^DB+Adverb+Adamantly:+yAsHyA	#;
+^DB+Adverb+AfterDoingSo:+yHp	#;
+^DB+Adverb+AsLongAs:+DHkçA	#;
+^DB+Adverb+ByDoingSo:+yArAk	#;
+^DB+Adverb+SinceDoingSo:+yAlH	Dat?;	!! No need?
+^DB+Adverb+When:+yHncA		Dat?;
+^DB+Adverb+WithoutBeingAbleToHaveDoneSo:+yAmAdAn	#;
+^DB+Adverb+WithoutHavingDoneSo:+mAdAn		#;
+^DB+Adverb+WithoutHavingDoneSo2:+mAksHzHn	#;
+^DB+Noun+ActOf:+mAcA		ActOf;
+^DB+Noun+FeelLike:+yAsH		FeelLike;
+^DB+Noun+FutPart:+yAcAk		Nflect;	!! also has verb0 and deki
+^DB+Noun+Inf1:+mAk		Inf1;
+^DB+Noun+Inf2:+mA		Inf2;
+^DB+Noun+Inf3:+yHş		Inf3;
+^DB+Noun+NotAbleState:+yAmAzlHk	Nflect;   !! always ambig with +Verb^DB+Verb+Able+Neg^DB+Adj+AorPart^DB+Noun+Ness+A3sg+Pnon+Nom
+^DB+Noun+NotState:+mAzlHk	Nflect;   !! always ambig with +Verb+Neg^DB+Adj+AorPart^DB+Noun+Ness+A3sg+Pnon+Nom
+^DB+Noun+PastPart:+DHk		Nflect;
+
+LEXICON VerbAgt
+^DB+Adj+Agt:+yHcH	AgtAdj;
+^DB+Noun+Agt:+yHcH	Agt;
+
+
+
+!! After ^DB+Adj
+
+LEXICON AgtAdj		!! Verb+yHcH
+!^DB+Adj+AsIf:+CA	AsIf;
+^DB+Adj+JustLike:+sH	JustLike;
+!^DB+Adverb+Ly:+CA	#;
+!^DB+Noun+Agt:+CH	Agt;
+^DB+Noun+Ness:+lHk	Ness;
+!^DB+Noun+Zero:0	NounZero;
+!^DB+Verb+Acquire:+lAn	Acquire;
+^DB+Verb+Become:+lAş	Become;
+			Vzero?;
+
+LEXICON AorPart		!! Verb+Hr
+^DB+Adj+AsIf:+CA	AsIf;
+^DB+Adj+JustLike:+sH	JustLike;
+^DB+Adverb+Ly:+CA	#;
+^DB+Noun+Agt:+CH	Agt;
+^DB+Noun+Ness:+lHk	Ness;
+^DB+Noun+Zero:0		NounZero;
+!^DB+Verb+Acquire:+lAn	Acquire;
+!^DB+Verb+Become:+lAş	Become;
+			Vzero?;
+
+LEXICON AsIf		!! Adj+CA
+!^DB+Adj+AsIf:+CA	AsIf;
+^DB+Adj+JustLike:+sH	JustLike;
+!^DB+Adverb+Ly:+CA	#;
+^DB+Noun+Agt:+CH	Agt;
+^DB+Noun+Ness:+lHk	Ness;
+^DB+Noun+Zero:0		NounZero;
+!^DB+Verb+Acquire:+lAn	Acquire;
+!^DB+Verb+Become:+lAş	Become;
+			Vzero?;
+
+LEXICON InBetween	!! Noun+lAr+arası
+!^DB+Adj+AsIf:+CA	AsIf;
+!^DB+Adj+JustLike:+sH	JustLike;
+!^DB+Adverb+Ly:+CA	#;
+!^DB+Noun+Agt:+CH	Agt;
+^DB+Noun+Ness:+lHk	Ness;
+^DB+Noun+Zero:0		NounZero;
+!^DB+Verb+Acquire:+lAn	Acquire;
+^DB+Verb+Become:+lAş	Become;
+			Vzero?;
+
+LEXICON JustLike	!! Noun|Adj+sH
+!^DB+Adj+AsIf:+CA	AsIf;
+!^DB+Adj+JustLike:+sH	JustLike;
+!^DB+Adverb+Ly:+CA	#;
+!^DB+Noun+Agt:+CH	Agt;
+^DB+Noun+Ness:+lHk	Ness;
+!^DB+Noun+Zero:0		NounZero;
+!^DB+Verb+Acquire:+lAn	Acquire;
+!^DB+Verb+Become:+lAş	Become;
+			Vzero?;
+
+LEXICON NarrPart	!! Verb+mHş
+^DB+Adj+AsIf:+CA	AsIf;
+!^DB+Adj+JustLike:+sH	JustLike;
+!^DB+Adverb+Ly:+CA	#;
+^DB+Noun+Agt:+CH	Agt;
+^DB+Noun+Ness:+lHk	Ness;
+^DB+Noun+Zero:0		NounZero;
+!^DB+Verb+Acquire:+lAn	Acquire;
+!^DB+Verb+Become:+lAş	Become;
+			Vzero?;
+
+LEXICON PresPart	!! Verb+yAn
+^DB+Adj+AsIf:+CA	AsIf;
+!^DB+Adj+JustLike:+sH	JustLike;
+^DB+Adverb+Ly:+CA	#;
+^DB+Noun+Agt:+CH	Agt;
+!^DB+Noun+Ness:+lHk	Ness;
+^DB+Noun+Zero:0		NounZero;
+!^DB+Verb+Acquire:+lAn	Acquire;
+!^DB+Verb+Become:+lAş	Become;
+			Vzero?;
+
+LEXICON Rel		!! Noun+ki
+	#;
+!^DB+Adj+AsIf:+CA	AsIf;
+!^DB+Adj+JustLike:+sH	JustLike;
+!^DB+Adverb+Ly:+CA	#;
+!^DB+Noun+Agt:+CH	Agt;
+!^DB+Noun+Ness:+lHk	Ness;
+^DB+Noun+Zero:0		NounZero;
+!^DB+Verb+Acquire:+lAn	Acquire;
+!^DB+Verb+Become:+lAş	Become;
+!			Vzero?;
+
+LEXICON Related		!! Noun+sAl
+!^DB+Adj+AsIf:+CA	AsIf;
+!^DB+Adj+JustLike:+sH	JustLike;
+!^DB+Adverb+Ly:+CA	#;
+^DB+Noun+Agt:+CH	Agt;
+^DB+Noun+Ness:+lHk	Ness;
+^DB+Noun+Zero:0		NounZero;
+!^DB+Verb+Acquire:+lAn	Acquire;
+^DB+Verb+Become:+lAş	Become;
+			Vzero?;
+
+LEXICON With		!! Noun+lH
+^DB+Adj+AsIf:+CA	AsIf;
+^DB+Adj+JustLike:+sH	JustLike;
+^DB+Adverb+Ly:+CA	#;
+^DB+Noun+Agt:+CH	Agt;
+^DB+Noun+Ness:+lHk	Ness;
+^DB+Noun+Zero:0		NounZero;
+!^DB+Verb+Acquire:+lAn	Acquire;
+^DB+Verb+Become:+lAş	Become;
+			Vzero?;
+
+LEXICON Without		!! Noun+sHz
+^DB+Adj+AsIf:+CA	AsIf;
+!^DB+Adj+JustLike:+sH	JustLike;
+^DB+Adverb+Ly:+CA	#;
+^DB+Noun+Agt:+CH	Agt;
+^DB+Noun+Ness:+lHk	Ness;
+^DB+Noun+Zero:0		NounZero;
+^DB+Verb+Acquire:+lAn	Acquire;
+^DB+Verb+Become:+lAş	Become;
+			Vzero?;
+
+
+!! After ^DB+Noun
+
+LEXICON ActOf		!! Verb+mAcA
+^Nflect			#;
++A3sg+Pnon+Nom:0	ActOfA3sg;
+
+LEXICON ActOfA3sg
+^DB+Adj+JustLike:+sH	JustLike;
+!^DB+Adj+Rel:+ki		Rel;
+!^DB+Adj+Related:+sAl	Related;
+^DB+Adj+With:+lH	With;
+^DB+Adj+Without:+sHz	Without;
+!^DB+Adverb+Since:+dHr	#;
+!^DB+Noun+Agt:+CH	Agt;
+!^DB+Noun+Dim:+CHk	Dim;
+^DB+Noun+Ness:+lHk	Ness;
+!^DB+Verb+Acquire:+lAn	Acquire;
+!^DB+Verb+Become:+lAş	Become;
+
+
+
+LEXICON Agt		!! (Noun|Verb|Adj)+CH
+^Nflect			#;
++A3sg+Pnon+Nom:0	AgtA3sg;
+
+LEXICON AgtA3sg
+^DB+Adj+JustLike:+sH	JustLike;
+!^DB+Adj+Rel:+ki		Rel;
+!^DB+Adj+Related:+sAl	Related;
+^DB+Adj+With:+lH	With;
+^DB+Adj+Without:+sHz	Without;
+!^DB+Adverb+Since:+dHr	#;
+!^DB+Noun+Agt:+CH	Agt;
+!^DB+Noun+Dim:+CHk	Dim;
+^DB+Noun+Ness:+lHk	Ness;
+!^DB+Verb+Acquire:+lAn	Acquire;
+!^DB+Verb+Become:+lAş	Become;
+
+
+
+LEXICON Dim		!! Noun+CHk
+^Nflect			#;
++A3sg+Pnon+Nom:0	DimA3sg;
+
+LEXICON DimA3sg
+!^DB+Adj+JustLike:+sH	JustLike;
+!^DB+Adj+Rel:+ki		Rel;
+!^DB+Adj+Related:+sAl	Related;
+^DB+Adj+With:+lH	With;
+^DB+Adj+Without:+sHz	Without;
+!^DB+Adverb+Since:+dHr	#;
+!^DB+Noun+Agt:+CH	Agt;
+!^DB+Noun+Dim:+CHk	Dim;
+^DB+Noun+Ness:+lHk	Ness;
+!^DB+Verb+Acquire:+lAn	Acquire;
+!^DB+Verb+Become:+lAş	Become;
+
+
+
+LEXICON FeelLike	!! Verb+yAsH
+^Nflect			#;
++A3sg+Pnon+Nom:0	FeelLikeA3sg;
+
+LEXICON FeelLikeA3sg
+!^DB+Adj+JustLike:+sH	JustLike;
+!^DB+Adj+Rel:+ki		Rel;
+!^DB+Adj+Related:+sAl	Related;
+!^DB+Adj+With:+lH	With;
+!^DB+Adj+Without:+sHz	Without;
+!^DB+Adverb+Since:+dHr	#;
+!^DB+Noun+Agt:+CH	Agt;
+!^DB+Noun+Dim:+CHk	Dim;
+^DB+Noun+Ness:+lHk	Ness;
+!^DB+Verb+Acquire:+lAn	Acquire;
+!^DB+Verb+Become:+lAş	Become;
+
+
+
+LEXICON Inf1		!! Verb+mAk
+^Nflect			#;
++A3sg+Pnon+Nom:0	Inf1A3sg;
+
+LEXICON Inf1A3sg
+!^DB+Adj+JustLike:+sH	JustLike;
+!^DB+Adj+Rel:+ki		Rel;
+!^DB+Adj+Related:+sAl	Related;
+^DB+Adj+With:+lH	With;
+^DB+Adj+Without:+sHz	Without;
+!^DB+Adverb+Since:+dHr	#;
+^DB+Noun+Agt:+CH	Agt;
+!^DB+Noun+Dim:+CHk	Dim;
+!^DB+Noun+Ness:+lHk	Ness;
+!^DB+Verb+Acquire:+lAn	Acquire;
+!^DB+Verb+Become:+lAş	Become;
+
+
+
+LEXICON Inf2		!! Verb+mA
+^Nflect			#;
++A3sg+Pnon+Nom:0	Inf2A3sg;
+
+LEXICON Inf2A3sg
+!^DB+Adj+JustLike:+sH	JustLike;
+!^DB+Adj+Rel:+ki		Rel;
+!^DB+Adj+Related:+sAl	Related;
+^DB+Adj+With:+lH	With;
+^DB+Adj+Without:+sHz	Without;
+!^DB+Adverb+Since:+dHr	#;
+^DB+Noun+Agt:+CH	Agt;
+!^DB+Noun+Dim:+CHk	Dim;
+!^DB+Noun+Ness:+lHk	Ness;		!! BUG: This should be possible?
+!^DB+Verb+Acquire:+lAn	Acquire;
+!^DB+Verb+Become:+lAş	Become;
+
+
+
+LEXICON Inf3		!! Verb+Hş
+^Nflect			#;
++A3sg+Pnon+Nom:0	Inf3A3sg;
+
+LEXICON Inf3A3sg
+!^DB+Adj+JustLike:+sH	JustLike;
+!^DB+Adj+Rel:+ki		Rel;
+^DB+Adj+Related:+sAl	Related;
+^DB+Adj+With:+lH	With;
+^DB+Adj+Without:+sHz	Without;
+!^DB+Adverb+Since:+dHr	#;
+^DB+Noun+Agt:+CH	Agt;
+!^DB+Noun+Dim:+CHk	Dim;
+^DB+Noun+Ness:+lHk	Ness;
+!^DB+Verb+Acquire:+lAn	Acquire;
+!^DB+Verb+Become:+lAş	Become;
+
+
+
+LEXICON Ness		!! (Noun|Adj)+lHk
+^Nflect			#;
++A3sg+Pnon+Nom:0	NessA3sg;
+
+LEXICON NessA3sg
+!^DB+Adj+JustLike:+sH	JustLike;
+!^DB+Adj+Rel:+ki		Rel;
+^DB+Adj+Related:+sAl	Related;
+^DB+Adj+With:+lH	With;
+^DB+Adj+Without:+sHz	Without;
+!^DB+Adverb+Since:+dHr	#;
+!^DB+Noun+Agt:+CH	Agt;
+!^DB+Noun+Dim:+CHk	Dim;
+!^DB+Noun+Ness:+lHk	Ness;
+!^DB+Verb+Acquire:+lAn	Acquire;
+!^DB+Verb+Become:+lAş	Become;
+
+
+
+LEXICON NounZero
+^Nflect			#;
++A3sg+Pnon+Nom:0	NounZeroA3sg;
+
+LEXICON NounZeroA3sg
+^DB+Adj+JustLike:+sH	JustLike;
+^DB+Adj+Rel:+ki		Rel;
+^DB+Adj+Related:+sAl	Related;
+^DB+Adj+With:+lH	With;
+^DB+Adj+Without:+sHz	Without;
+!^DB+Adverb+Since:+dHr	#;
+^DB+Noun+Agt:+CH	Agt;
+^DB+Noun+Dim:+CHk	Dim;
+^DB+Noun+Ness:+lHk	Ness;
+!^DB+Verb+Acquire:+lAn	Acquire;
+!^DB+Verb+Become:+lAş	Become;
+
+
+LEXICON Acquire
+	Verb;
+
+LEXICON Become
+	Verb;
+
+
+
+LEXICON Verb
+	Voice;
+
+LEXICON Voice
+			Polarity;
+^DB+Verb+Pass:+Hl	Polarity;
+^DB+Verb+Caus:+t	Voice3;
+^DB+Verb+Recip:+Hş	Voice2;
+^DB+Verb+Reflex:+Hn	Voice2;		!! See Issue 8.
+
+LEXICON Voice3
+			Polarity;
+^DB+Verb+Pass:+Hl	Polarity;
+^DB+Verb+Caus:+t	Voice2;
+
+LEXICON Voice2
+			Polarity;
+^DB+Verb+Pass:+Hl	Polarity;
+^DB+Verb+Caus:+t	Voice1;
+
+LEXICON Voice1
+			Polarity;
+^DB+Verb+Pass:+Hl	Polarity;
+
+LEXICON Polarity
++Pos:0			VerbAgt;
++Pos:0			Compound3;
++Neg:+mA		Compound2;
+^DB+Verb+Able+Neg:+yAmA	Compound1;
+
+LEXICON Compound3
+^DB+Verb+Start:+yAkoy		Vstem;
+^DB+Verb+Stay:+yAkal		Vstem;
+^DB+Verb+Almost:+yAyaz		Vstem;
+^DB+Verb+EverSince:+yAgel	Vstem;
+				Compound2;
+
+LEXICON Compound2
+^DB+Verb+Continue:+yAgit	Vstem;  !! BUG:  t-d conversion is not fixed
+^DB+Verb+Repeat:+yAdur		Vstem;
+^DB+Verb+Hastily:+yHver		HastilyNeg?;
+				Compound1;
+
+LEXICON Compound1
+^DB+Verb+Able:+yAbil		Vstem;
+				Vstem;
+
+LEXICON HastilyNeg?
++Neg:+mA	Vstem;		!! BUG: This is Oflazer's hack, only followed by Aor
+		Vstem;	
+
+LEXICON Vstem
+^Vflect	#;
+	Vderiv;
+
+
+
+LEXICON AdjPoss+Pnon
++Pnon:0		#;
+		AdjPoss;
+
+LEXICON AdjPoss
++P1sg:+Hm	#;
++P1pl:+HmHz	#;
++P2sg:+Hn	#;
++P2pl:+HnHz	#;	
++P3sg:+sH	#;
++P3pl:+lArH	#;
+
+LEXICON Dat?
+^DB+Noun+Zero+A3sg+Pnon+Dat	#;
+				#;
+
+LEXICON Vzero?
+	Vzero;
+	#;
+
+LEXICON Vzero
+^DB+Verb+Zero:0	AfterVzero;
+
+LEXICON AfterVzero
+^Vzero	#;
+
+LEXICON Nflect
+^Nflect	#;
+
+! LEXICON Nzero?
+! ^DB+Noun+Zero	Nfinal;
+! 	#;
+
+! LEXICON Nfinal
+! ^Nfinal	#;
+
+! LEXICON Ness?
+! ^DB+Noun+Ness	Nflect;
+! 	#;
+
+END
