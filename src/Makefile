@@ -1,4 +1,19 @@
-all:
+all: deriv.extra nflect.extra nzero.extra vflect.extra vzero.extra
+
+deriv.extra: deriv.test deriv.lexc nzero.lexc nflect.lexc vflect.lexc vzero.lexc deriv.regex
+
+nflect.extra: nflect.test nflect.lexc nzero.lexc vzero.lexc deriv.regex
+
+nzero.extra: nzero.test nzero.lexc
+
+vflect.extra: vflect.test vflect.lexc
+
+vzero.extra: vzero.test vzero.lexc
+
+%.extra: %.test %.lexc
+	$<
+	wc -l *.extra
+	wc -l *.missing
 
 Milliyet.rcount: Milliyet.clean.bz2
 	bunzip2 -c $^ | \

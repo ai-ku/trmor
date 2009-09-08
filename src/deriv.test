@@ -4,8 +4,8 @@ clear
 
 read lexc deriv.lexc
 define deriv
-read lexc nfinal.lexc
-define nfinal
+read lexc nzero.lexc
+define nzero
 read lexc nflect.lexc
 define nflect
 read lexc vflect.lexc
@@ -16,7 +16,7 @@ define vzero
 push deriv
 upper net
 substitute defined nflect for "^Nflect"
-substitute defined nfinal for "^Nfinal"
+substitute defined nzero for "^Nzero"
 substitute defined vflect for "^Vflect"
 substitute defined vzero  for "^Vzero"
 upper net
@@ -24,12 +24,22 @@ substitute label "+Past" for "+Past2"
 substitute label "+Narr" for "+Narr2"
 substitute label "+Imp" for "+Imp2"
 substitute label "+WithoutHavingDoneSo" for "+WithoutHavingDoneSo2"
-define model
+define model0
+
+read regex < deriv.regex
+define agree
+define model [ model0 & agree ];
 
 load tfnowords.fst
 define tf
 read regex [ model - tf ];
-print words > deriv.extra
+
+#read regex ~$["+Equ"];
+#read regex ~$["+Neg""+Aor" ? "^DB""+Adverb"["+While"|"+AsIf"]];
+#intersect
+
+print random-words 5000 > deriv.extra
+# print words > deriv.extra
 pop
 
 read regex [ "+Prop" "+Noun"* @-> 0 ];
@@ -44,10 +54,16 @@ read regex [ test - model ];
 print words > deriv.missing
 pop
 
-! 47 paths
-! 9 x +Pron+Rel.*^DB+Verb+Zero
-! 6 x +Verb+Pos+Cond (ise)
+! Extra:
+! tf does not have AsIf after NegAor even though it does after PosAor:
+! ^DB+Verb+Able+Neg+Aor+A3sg^DB+Adverb+AsIf
+
+! Missing:
+! 45 paths
 ! 18 x +Verb+Neg (degil)
+! 6 x +Verb+Pos+Cond (ise)
+! 5 x yapmacik bug:
+! yap+Verb+Pos^DB+Noun+Inf2+A3sg+Pnon+Nom^DB+Noun+Dim+A3sg+Pnon+Nom
 ! 2 x cikar bug: (root should be cikar)
 ! çik+Verb+Pos+Aor+Past+A3pl+Cond
 ! çik+Verb+Pos+Aor+Narr^DB+Adverb+While
@@ -56,8 +72,6 @@ pop
 ! ver+Verb+Pos^DB+Adj+Agt^DB+Noun+Agt+A3sg+Pnon+Nom
 ! 1 x olmaksi bug:
 ! ol+Verb+Pos^DB+Noun+Inf1+A3sg+Pnon+Nom^DB+Adj+JustLike
-! 5 x yapmacik bug:
-! yap+Verb+Pos^DB+Noun+Inf2+A3sg+Pnon+Nom^DB+Noun+Dim+A3sg+Pnon+Nom
 ! 1 x Yağışçık bug: (should be nominalized)
 ! yağ+Verb+Pos^DB+Noun+Inf3+A3sg+Pnon+Nom^DB+Noun+Dim+A3sg+Pnon+Nom
 ! 1 x terliksi bug: (root should be terlik)

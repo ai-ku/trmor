@@ -16,23 +16,24 @@ Multichar_Symbols
 	+SinceDoingSo +Start +Stay +Verb +When +While +With +Without
 	+WithoutBeingAbleToHaveDoneSo +WithoutHavingDoneSo +Zero ^DB
 	+Narr2 +Past2 +Imp2 +WithoutHavingDoneSo2
-	^Nfinal ^Vzero
+	^Nzero ^Vzero
+	 
 
 LEXICON Noun
 	Ncount;
 
 LEXICON Ncount
-+A3sg:0		Nposs;
-+A3pl:+lAr	Nposs;
++A3sg	Nposs;
++A3pl	Nposs;
 
 LEXICON Nposs
-+P1sg:+Hm	Ncase;
-+P1pl:+HmHz	Ncase;
-+P2sg:+Hn	Ncase;
-+P2pl:+HnHz	Ncase;
-+P3sg:+sH	Ncase;
-+P3pl:+lArH	Ncase;
-+Pnon:0		Ncase;
++P1sg	Ncase;
++P1pl	Ncase;
++P2sg	Ncase;
++P2pl	Ncase;
++P3sg	Ncase;
++P3pl	Ncase;
++Pnon	Ncase;
 
 LEXICON Ncase
 +Abl:+nDAn	Vzero?;
@@ -48,29 +49,38 @@ LEXICON Ncase
 
 
 LEXICON PronRel
-^DB+Pron+Rel:+ki	Nfinal;
-^DB+Pron+Rel:+ki	JustLike;
-^DB+Pron+Rel:+ki	Vzero?;
+^DB+Pron+Rel:+ki	PRcount;
+
+LEXICON PRcount
++A3sg	PRposs;
++A3pl	PRposs;
+
+LEXICON PRposs
++P3sg	Ncase;
++Pnon	Ncase;
 
 LEXICON AdjRel
 ^DB+Adj+Rel:+ki		Nzero?;
 
-LEXICON JustLike
-^DB+Adj+JustLike:+sH	#;	!! BUG: This should be +AsH or +msH or something.
-
 LEXICON Vzero?
-^DB+Verb+Zero	Vzero;
+	Vzero;
 	#;
-
-LEXICON Nzero?
-^DB+Noun+Zero	Nfinal;
-	#;
-
-LEXICON Nfinal
-^Nfinal	#;
 
 LEXICON Vzero
+^DB+Verb+Zero	AfterVzero;
+
+LEXICON AfterVzero
 ^Vzero	#;
+
+LEXICON Nzero?
+	Nzero;
+	#;
+
+LEXICON Nzero
+^DB+Noun+Zero	AfterNzero;
+
+LEXICON AfterNzero
+^Nzero	#;
 
 
 END;
