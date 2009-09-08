@@ -1,51 +1,119 @@
 #!/usr/local/bin/xfst -f
-define compat [
-	"+Past2" -> "+Past",
-	"+Narr2" -> "+Narr",
-	"+Imp2"  -> "+Imp",
-	"+WithoutHavingDoneSo2"	-> "+WithoutHavingDoneSo"
-];
-read lexc deriv.mtac
+
+clear
+
+read lexc deriv.lexc
+define deriv
+read lexc nfinal.lexc
+define nfinal
+read lexc nflect.lexc
+define nflect
+read lexc vflect.lexc
+define vflect
+read lexc vzero.lexc
+define vzero
+
+push deriv
 upper net
-define mtac0
-read regex [ mtac0 .o. compat ];
+substitute defined nflect for "^Nflect"
+substitute defined nfinal for "^Nfinal"
+substitute defined vflect for "^Vflect"
+substitute defined vzero  for "^Vzero"
+upper net
+substitute label "+Past" for "+Past2"
+substitute label "+Narr" for "+Narr2"
+substitute label "+Imp" for "+Imp2"
+substitute label "+WithoutHavingDoneSo" for "+WithoutHavingDoneSo2"
+define model
+
+load tfnowords.fst
+define tf
+read regex [ model - tf ];
+print words > deriv.extra
+pop
+
+read regex [ "+Prop" "+Noun"* @-> 0 ];
+load Milliyet.fst
+compose net
 lower net
-define mtac1
+read regex [["+Noun"|"+Verb"|"+Adj"] ?*];
+intersect net
+define test
 
-!read regex < test/Milliyet.regex
-read regex < test/foo.short
-define mill1
-
-define noflect0 [ [\"^DB"]+ -> 0 || .#. ["+Noun"|"+Verb"] _ ["^DB"|.#.]];
-define noflect1 [ [\"^DB"]+ -> 0 || "^DB" ["+Noun"|"+Verb"] ? _ .#. ];
-define nva [["+Noun"|"+Verb"|"+Adj"] ?*];
-define db $["^DB"];
-define prop $["+Prop"];
-
-read regex [[mill1 & nva & db & ~prop] .o. noflect1 ];
-lower net
-define mill2
-
-define noroot [ \["+Noun"|"+Verb"|"+Adj"]* -> 0 || .#. _ ];
-read regex [ mtac1 .o. noroot ];
-lower net
-define mtac2
-read regex [[mtac2 & nva] .o. noflect1 ];
-lower net
-define mtac3
-
-read regex [ mill2 - mtac3 ];
+read regex [ test - model ];
 print words > deriv.missing
+pop
 
-# define filter ~$["NULL"];
-# read regex mtac .o. filter .o. compat;
-# lower net
-# define vupper
-# load tfeaturesulx.fst
-# push vupper
-# compose
+! 47 paths
+! 9 x +Pron+Rel.*^DB+Verb+Zero
+! 6 x +Verb+Pos+Cond (ise)
+! 18 x +Verb+Neg (degil)
+! 2 x cikar bug: (root should be cikar)
+! çik+Verb+Pos+Aor+Past+A3pl+Cond
+! çik+Verb+Pos+Aor+Narr^DB+Adverb+While
+! 2 x vericici bug:
+! ver+Verb+Pos^DB+Noun+Agt+A3sg+Pnon+Nom^DB+Noun+Agt+A3sg+Pnon+Nom
+! ver+Verb+Pos^DB+Adj+Agt^DB+Noun+Agt+A3sg+Pnon+Nom
+! 1 x olmaksi bug:
+! ol+Verb+Pos^DB+Noun+Inf1+A3sg+Pnon+Nom^DB+Adj+JustLike
+! 5 x yapmacik bug:
+! yap+Verb+Pos^DB+Noun+Inf2+A3sg+Pnon+Nom^DB+Noun+Dim+A3sg+Pnon+Nom
+! 1 x Yağışçık bug: (should be nominalized)
+! yağ+Verb+Pos^DB+Noun+Inf3+A3sg+Pnon+Nom^DB+Noun+Dim+A3sg+Pnon+Nom
+! 1 x terliksi bug: (root should be terlik)
+! ter+Noun+A3sg+Pnon+Nom^DB+Noun+Ness+A3sg+Pnon+Nom^DB+Adj+JustLike
+! 1 x iplikcik bug: (root should be iplik)
+! ip+Noun+A3sg+Pnon+Nom^DB+Noun+Ness+A3sg+Pnon+Nom^DB+Noun+Dim+A3pl+Pnon+Dat
+! 1 x tanidiklik bug: (root should be tanidik)
+! tanı+Verb+Pos^DB+Noun+PastPart+A3sg+Pnon+Nom^DB+Noun+Ness+A3sg+Pnon+Nom
+
+# define compat [
+# 	"+Past2" -> "+Past",
+# 	"+Narr2" -> "+Narr",
+# 	"+Imp2"  -> "+Imp",
+# 	"+WithoutHavingDoneSo2"	-> "+WithoutHavingDoneSo"
+# ];
+# read lexc deriv.mtac
 # upper net
-# define iupper
-# read regex [ vupper - iupper ];
-# print words > deriv.extra
+# define mtac0
+# read regex [ mtac0 .o. compat ];
+# lower net
+# define mtac1
+
+# !read regex < test/Milliyet.regex
+# read regex < test/foo.short
+# define mill1
+
+# define noflect0 [ [\"^DB"]+ -> 0 || .#. ["+Noun"|"+Verb"] _ ["^DB"|.#.]];
+# define noflect1 [ [\"^DB"]+ -> 0 || "^DB" ["+Noun"|"+Verb"] ? _ .#. ];
+# define nva [["+Noun"|"+Verb"|"+Adj"] ?*];
+# define db $["^DB"];
+# define prop $["+Prop"];
+
+# read regex [[mill1 & nva & db & ~prop] .o. noflect1 ];
+# lower net
+# define mill2
+
+# define noroot [ \["+Noun"|"+Verb"|"+Adj"]* -> 0 || .#. _ ];
+# read regex [ mtac1 .o. noroot ];
+# lower net
+# define mtac2
+# read regex [[mtac2 & nva] .o. noflect1 ];
+# lower net
+# define mtac3
+
+# read regex [ mill2 - mtac3 ];
+# print words > deriv.missing
+
+# # define filter ~$["NULL"];
+# # read regex mtac .o. filter .o. compat;
+# # lower net
+# # define vupper
+# # load tfeaturesulx.fst
+# # push vupper
+# # compose
+# # upper net
+# # define iupper
+# # read regex [ vupper - iupper ];
+# # print words > deriv.extra
 
