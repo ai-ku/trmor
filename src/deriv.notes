@@ -1,0 +1,62 @@
+Adj	Vzero	Nzero	Ness	Agt	AsIf	Just	Ly	Become	Acquire	
+Without	x	x	x	x	x		x	x	x	
+With	x	x	x	x	x	x	x	x		
+AorP	x	x	x	x	x	x	x			
+Relat	x	x	x	x				x		
+NarrP	x	x	x	x	x					
+AsIf	x	x	x	x		x				
+PresP	x	x		x	x		x			
+InBet	x	x	x					x		
+Agt	x		x			x		x		
+Just	x		x							
+Rel		x								
+
+
+Noun	With	Without	Ness	Agt	Just	Relat	Rel	Dim	InBet	Since	Acquire	Become
+Noun0	x	x	x	x	x	x	x	x			
+Inf3	x	x	x	x		x						
+ActOf	x	x	x		x						
+Agt	x	x	x		x						
+Dim	x	x	x								
+Inf1	x	x		x							
+Inf2	x	x		x							
+Ness	x	x				x					
+Feel			x									
+
+
++Acquire:+lAn		+InBetween:+arası	+NotState:+mAzlHk	
++ActOf:+mAcA		+Inf1:+mAk	       	+PastPart:+DHk		
++Agt:+CH		+Inf2:+mA	       	+PresPart:+yAn		
++Agt:+yHcH		+Inf3:+yHş	       	+Rel:+ki		
++AorPart:+Hr		+JustLike:+HmsH	       	+Related:+sAl		
++AsIf:+CA		+JustLike:+sH	       	+Since:+dHr		
++Become:+lAş		+Ly:+CA		       	+With:+lH		
++Dim:+CHk		+NarrPart:+mHş	       	+Without:+sHz		
++FeelLike:+yAsH		+Ness:+lHk	       	+Zero:0			
++FutPart:+yAcAk		+NotAbleState:+yAmAzlHk
+
+Vzero person agreement:
+A3sg+Pnon -> xim xsin x xiz xsiniz xler
+A3sg+P1pl -> ximizim ximizsin ximiz ximiziz ximizsiniz ximizler
+A3sg+P2pl -> xinizim xinizsin xiniz xiniziz xinizsiniz xinizler
+A3sg+P3pl -> xleriyim xlerisin xleri xleriyiz xlerisiniz xleri???
+A3sg+P1sg -> ximim ximsin xim ximiz?? ximsiniz ximler???
+A3sg+P2sg -> xinim xinsin xin xiniz?? xinsiniz xinler???
+A3sg+P3sg -> xiyim xisin xi xiyiz xisiniz xiler???
+A3pl+Pnon -> xlerim?? xlersin?? xler?? xleriz xlersiniz xlerler???
+A3pl+P1pl -> xlerimizim xlerimizsin xlerimiz xlerimiziz xlerimizsiniz xlerimizler
+A3pl+P2pl -> xlerinizim xlerinizsin xleriniz xleriniziz xlerinizsiniz xlerinizler
+A3pl+P3pl -> xleriyim xlerisin xleri xleriyiz xlerisiniz xleri???
+A3pl+P1sg -> xlerimim xlerimsin xlerim xlerimiz xlerimsiniz xlerimler?
+A3pl+P2sg -> xlerinim xlerinsin xlerin xleriniz xlerinsiniz xlerinler?
+A3pl+P3sg -> xleriyim xlerisin xleri xleriyiz xlerisiniz xleri???
+
+
+A3sg+Pnon -> all	kitap
+A3sg+P?pl -> all	kitabimiz
+A3sg+P1sg -> no A1pl, A3pl	kitabim
+A3sg+P2sg -> no A1pl, A3pl	kitabin
+A3sg+P3sg -> no A3pl		kitabi
+A3pl+Pnon -> A?pl (Pres:A?pl, Cond+Past+Narr:A?pl+A3sg)
+A3pl+P?sg -> all
+A3pl+P?pl -> all
