@@ -80,7 +80,7 @@ LEXICON Vderiv
 ^DB+Adverb+WithoutHavingDoneSo:+mAdAn		#;
 ^DB+Adverb+WithoutHavingDoneSo2:+mAksHzHn	#;
 ^DB+Noun+ActOf:+mAcA		ActOf;
-^DB+Noun+FeelLike:+yAsH		FeelLike;
+^DB+Noun+FeelLike:+yAsH		Nflect;	!! olasilik was the only exception
 ^DB+Noun+FutPart:+yAcAk		Nflect;	!! BUG: Pnon may not be possible
 ^DB+Noun+Inf1:+mAk		Inf1;
 ^DB+Noun+Inf2:+mA		Inf2;
@@ -175,13 +175,14 @@ LEXICON PresPart	!! Verb+yAn
 			Vzero?;
 
 LEXICON Rel		!! Noun+ki
-	#;
+^DB+Noun+Zero		Nflect;
+			#;
 !^DB+Adj+AsIf:+CA	AsIf;
 !^DB+Adj+JustLike:+sH	JustLike;
 !^DB+Adverb+Ly:+CA	#;
 !^DB+Noun+Agt:+CH	Agt;
 !^DB+Noun+Ness:+lHk	Ness;
-^DB+Noun+Zero:0		NounZero;
+!^DB+Noun+Zero:0	NounZero;
 !^DB+Verb+Acquire:+lAn	Verb;
 !^DB+Verb+Become:+lAş	Verb;
 !			Vzero?;
@@ -279,25 +280,6 @@ LEXICON DimA3sg
 
 
 
-LEXICON FeelLike	!! Verb+yAsH
-^Nflect			#;
-+A3sg+Pnon+Nom:0	FeelLikeA3sg;
-
-LEXICON FeelLikeA3sg
-!^DB+Adj+JustLike:+sH	JustLike;
-!^DB+Adj+Rel:+ki		Rel;
-!^DB+Adj+Related:+sAl	Related;
-!^DB+Adj+With:+lH	With;
-!^DB+Adj+Without:+sHz	Without;
-!^DB+Adverb+Since:+dHr	#;
-!^DB+Noun+Agt:+CH	Agt;
-!^DB+Noun+Dim:+CHk	Dim;
-^DB+Noun+Ness:+lHk	Ness;
-!^DB+Verb+Acquire:+lAn	Verb;
-!^DB+Verb+Become:+lAş	Verb;
-
-
-
 LEXICON Inf1		!! Verb+mAk
 ^Nflect			#;		!! BUG: only A3sg+Pnon is allowed
 +A3sg+Pnon+Nom:0	Inf1A3sg;
@@ -362,7 +344,7 @@ LEXICON Ness		!! (Noun|Adj)+lHk
 LEXICON NessA3sg
 !^DB+Adj+JustLike:+sH	JustLike;
 !^DB+Adj+Rel:+ki		Rel;
-^DB+Adj+Related:+sAl	Related;
+!^DB+Adj+Related:+sAl	Related;
 ^DB+Adj+With:+lH	With;
 ^DB+Adj+Without:+sHz	Without;
 !^DB+Adverb+Since:+dHr	#;
