@@ -1,0 +1,56 @@
+#!/usr/local/bin/xfst -f
+
+clear
+
+source mlex.xfst
+define mlex
+
+source phon.xfst
+define phon
+
+read lexc vzero.lexc
+upper net
+define vzero
+
+read lexc vflect.lexc
+upper net
+define vflect
+
+read lexc nzero.lexc
+upper net
+define nzero
+
+read lexc nflect.lexc
+upper net
+substitute defined nzero for "^Nzero"
+substitute defined vzero for "^Vzero"
+upper net
+define nflect1
+read regex < deriv.regex
+define agree
+define nflect [ nflect1 & agree ];
+
+read regex [
+	{yap} "+Verb" "+Pos" vflect
+|	{boz} "+Verb" "+Pos" vflect
+|	{ara} "+Verb" "+Pos" vflect
+|	{kas} "+Noun" nflect
+|	{kaz} "+Noun" nflect
+|	{ata} "+Noun" nflect
+];
+upper net
+define feat
+
+read regex [ feat .o. mlex .o. phon ];
+lower net
+define test
+
+load tfeaturesulx.fst
+define tf
+
+read regex [ tf .o. test ];
+lower net
+define corr
+
+read regex [ test - corr ];
+print words > phon.extra

@@ -1,0 +1,46 @@
+define Alphabet [a|b|c|ç|d|e|f|g|ğ|h|ı|i|j|k|l|m|n|o|ö|p|r|s|ş|t|u|ü|v|y|z];
+define Consonant [b|c|ç|d|f|g|ğ|h|j|k|l|m|n|p|r|s|ş|t|v|y|z];
+define ConsonantVX [ç|f|h|k|p|s|ş|t];
+define Vowel [a|e|ı|i|o|ö|u|ü];
+define VowelAH [a|e|ı|i|o|ö|u|ü|A|H];
+define VowelA [a|e|ı|i|o|ö|u|ü|A];
+define VowelB [a|ı|o|u];
+define VowelF [e|i|ö|ü];
+define VowelBU [a|ı];
+define VowelBR [o|u];
+define VowelFU [e|i];
+define VowelFR [ö|ü];
+
+read regex [
+
+VowelAH -> 0 || _ {+Hyor} 
+
+].o.[
+
+D -> t, C -> ç || ConsonantVX %+ _ ,,
+[Y|N|S] -> 0 || Consonant %+ _ ,,
+H -> 0 || VowelAH %+ _ 
+
+].o.[
+
+D -> d, C -> c,
+Y -> y, N -> n, S -> s
+
+].o.[
+
+A -> a || VowelB \Vowel* _ ,,
+A -> e || VowelF \Vowel* _ ,,
+H -> ı || VowelB \Vowel* A \Vowel* _ ,,
+H -> i || VowelF \Vowel* A \Vowel* _ ,,
+H -> ı || VowelBU \VowelA* _ ,,
+H -> i || VowelFU \VowelA* _ ,,
+H -> u || VowelBR \VowelA* _ ,,
+H -> ü || VowelFR \VowelA* _
+
+].o.[
+
+ç -> c, k -> ğ || _ %+ VowelAH ,,
+k -> g || n _ %+ VowelAH ,,
+[k|g] -> ğ || \[n|r] _ %+ VowelAH
+
+].o.[ %+ -> 0 ];
