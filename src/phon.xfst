@@ -38,9 +38,10 @@ H -> u || VowelBR \VowelA* _ ,,
 H -> ü || VowelFR \VowelA* _
 
 ].o.[
-
-ç -> c, k -> ğ || _ %+ VowelAH ,,
-k -> g || n _ %+ VowelAH ,,
-[k|g] -> ğ || \[n|r] _ %+ VowelAH
+#
+#ç -> c, k -> ğ || _ %+ VowelAH ,,
+#k -> g || n _ %+ VowelAH ,,
+#[k|g] -> ğ || \[n|r] _ %+ VowelAH
+t -> d || _ %+ VowelAH 
 
 ].o.[ %+ -> 0 ];
