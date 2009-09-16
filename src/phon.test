@@ -30,18 +30,52 @@ read regex < deriv.regex
 define agree
 define nflect [ nflect1 & agree ];
 
-read regex [
-	{yap} "+Verb" "+Pos" vflect
-|	{boz} "+Verb" "+Pos" vflect
-|	{ara} "+Verb" "+Pos" vflect
-|	{kas} "+Noun" nflect
-|	{kaz} "+Noun" nflect
-|	{ata} "+Noun" nflect
-];
+#read text < Milliyet.dict
+#define dict
+#define nopos ["\t" ?+ @-> 0];
+
+clear
+read regex [%+ ?+ @-> 0];
+read text < dict/oflazer/Noun
+compose net
+lower net
+define Vowel [a|e|ı|i|o|ö|u|ü];
+#read regex $[Vowel];
+#read regex [? ?+];
+read regex [a b ?+];
+intersect net
+define nouns
+
+#clear
+# push nopos
+# read regex [ dict & $[{+Verb}] ];
+# compose net
+# lower net
+# define verbs
+
+# clear
+# push nopos
+# read regex [ dict & $[{+Noun}] ];
+# compose net
+# lower net
+# read regex $[a|e|ı|i|o|ö|u|ü];
+# intersect net
+# define nouns
+
+# define nouns [ {kas} | {kaz} | {ata} | {ütü} ];
+# define nouns [ {izbandut} ];
+
+# read regex [ verbs "+Verb" "+Pos" vflect ];
+# upper net
+# define feat
+
+#read regex [ nouns "+Noun" nflect ];
+read regex [ nouns "+Noun" nzero ];
 upper net
 define feat
 
-read regex [ feat .o. mlex .o. phon ];
+define model [ feat .o. mlex .o. phon ];
+push model
 lower net
 define test
 
@@ -54,3 +88,98 @@ define corr
 
 read regex [ test - corr ];
 print words > phon.extra
+print random-words 5000 > phon.random
+
+
+# read regex [
+# 	{yap} "+Verb" "+Pos" vflect
+# |	{boz} "+Verb" "+Pos" vflect
+# |	{ara} "+Verb" "+Pos" vflect
+# |	{gör} "+Verb" "+Pos" vflect
+# |	{de} "+Verb" "+Pos" vflect
+# |	{ye} "+Verb" "+Pos" vflect
+# |	{kas} "+Noun" nflect
+# |	{kaz} "+Noun" nflect
+# |	{ata} "+Noun" nflect
+
+# # Examples from TDK
+# |	{adem}	"+Noun" nflect
+# |	{âdem}	"+Noun" nflect
+# |	{adet}	"+Noun" nflect
+# |	{âdet}	"+Noun" nflect
+# |	{alem}	"+Noun" nflect
+# |	{âlem}	"+Noun" nflect
+# |	{alim}	"+Noun" nflect
+# |	{âlim}	"+Noun" nflect
+# |	{aşık}	"+Noun" nflect
+# |	{âşık}	"+Noun" nflect
+# |	{hakim}	"+Noun" nflect
+# |	{hâkim}	"+Noun" nflect
+# |	{hal}	"+Noun" nflect
+# |	{hâl}	"+Noun" nflect
+# |	{hala}	"+Noun" nflect
+# |	{hâlâ}	"+Noun" nflect
+# |	{şura}	"+Noun" nflect
+# |	{şûra}	"+Noun" nflect
+# |	{katil}	"+Noun" nflect
+# |	{kadir}	"+Noun" nflect
+# dergâh, gâvur, ordugâh, tezgâh, yadigâr,
+# Nigâr; dükkân, hikâye, kâfir, kâğıt, Hakkâri, Kâzım, mahkûm, mekân,
+# mezkûr, sükûn, sükût
+# Halûk, Lâle,
+# # Nalân; Balâ, Elâzığ, İslâhiye, Lâdik, Lâpseki
+# askeri ve askerî
+# dini ve dinî
+# ilmi ve ilmî
+# resmi ve resmî
+# milli ve millî
+# adım,
+# # ağız, ayak, boyun, boyunduruk, burun, dalga, dudak, duvak,
+# # kırlangıç; beşik, bilezik, gelincik, gözlük, üzengi, vergi,
+# # yüzük
+# anne,
+# # dahi, elma, hangi, hani, inanmak, kardeş, şişman.
+# ahenk, badem, ceylan,
+# # çiroz, dükkân, fidan, gazete, hamsi, kestane, limon, model, nişasta,
+# # pehlivan, selam, tiyatro, viraj, ziyaret.
+# açıkgöz, bilgisayar,
+# # çekyat, hanımeli.
+# alkol / alkolü,
+# # hakikat / hakikati, helak / helakimiz, kabul / kabulü, kontrol /
+# # kontrolü, protokol / protokolü, saat / saate, sadakat / sadakatten.
+# anlaşmak, yanaşmak, kayıkçı,
+# # ısırmak, ılıklaşmak, seslenmek, yelek, bilek, çilek.
+# boyunduruk, çocuk, odun, yorgunluk, yoklamak, vurmak,
+# # yumurta, özlemek, güreşmek, sürmek.
+# avuç,
+# # avurt, çamur, kabuk, kavuk, kavun, kavur-, kavuş-, savur-, yağmur.
+# aktör, alkol, bandrol,
+# # daktilo, doktor, horoz, kabul, kitap, konsolos, muzır, mühim, mümin,
+# # müzik, profesör, radyo, vakur.
+# kavun-u, konsolos-luğ-u, mümin-lik, müzik-çi,
+# # yağmur-luk.
+# bugünkü, dünkü, öbürkü.
+# (bakar, alır) 
+# (omuz, oya)	 
+# (geçer, gelir)
+# (ölçü, ördek) 
+# (kılıç, kısa) 
+# (uzun, uzak)	 
+# (ilik, ince)	 
+# (ütü, ürkek)  
+# # başlıyor, kanıyor, oynuyor, doymuyor; izliyor, diyor, gelmiyor,
+# # gözlüyor.
+# başlayan, yaşayacak,
+# # atlayarak, saklayalı, atmayalım, gelmeyen, izlemeyecek, gitmeyerek,
+# # gizleyeli, besleyelim.
+# diyen, diyerek, diyecek,
+# # diyelim, diye; yiyen, yiyerek, yiyecek, yiyelim, yiye, yiyince,
+# # yiyip. 
+#  deyince, deyip
+# ağız / ağzı, alın / alnı, bağır / bağra, bağrım,
+# # beniz / benzi, beyin / beynimiz, boyun / boynu, böğür / böğrüm,
+# # burun / burnu, geniz / genzi, göğüs / göğsün, gönül / gönlünüz,
+# # karın / karnı, oğul / oğlu; çevir- / çevril-, devir- / devril-.
+
+#];
+#define feat

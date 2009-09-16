@@ -56,7 +56,11 @@ define Nflect1	[Nflect0 (Vzero Vflect)]
 # e.g. !partilerdim, !partilerdin
 
 !? Shouldn't +A3sg also be illegal?  partilerdi(r) should make both
-!? the noun and the verb plural.
+!? the noun and the verb plural.  In fact sepetlerdir is tagged as:
+!? e.g. sepetlerdir	sepet	+Noun+A3sg+Pnon+Nom^DB+Verb+Zero+Pres+A3pl+Cop
+!? So this is just disambiguation.  But proper nouns don't match:
+!? e.g. DGM'lerdir	Dgm+Noun+Prop+A3pl+Pnon+Nom^DB+Verb+Zero+Pres+A3sg+Cop
+!? which causes the one missing case.
 
 & ~$["+A3pl""+Pnon""+Nom""^DB""+Verb""+Zero" ? ["+A1sg"|"+A2sg"|"+A3sg""+Cop"]]
 
