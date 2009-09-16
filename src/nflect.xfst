@@ -1,0 +1,122 @@
+### nflect.xfst: defines all inflections and some derivations for
+### nouns.  In particular all sequences except cyclic derivational
+### sequences following the Nominative case are defined here.
+
+### First some useful definitions:
+
+define Ncount	["+A3sg"|"+A3pl"];
+define Nposs	["+P1sg"|"+P2sg"|"+P3sg"|"+P1pl"|"+P2pl"|"+P3pl"|"+Pnon"];
+define Ncase	["+Abl"|"+Acc"|"+Dat"|"+Equ"|"+Gen"|"+Ins"|"+Loc"|"+Nom"];
+define Prel	["^DB""+Pron""+Rel"];
+define Arel	["^DB""+Adj""+Rel"];
+define Nzero	["^DB""+Noun""+Zero"];
+read lexc vzero.lexc
+upper net
+define Vflect
+define Vzero	["^DB""+Verb""+Zero"];
+
+
+### 0. Basic inflection consists of count, possessive and case markers:
+# e.g. partilerime
+
+define Nflect0	[Ncount Nposs Ncase]; 
+
+
+
+### 1. The noun may be followed by copular verb + person suffixes:
+### +Past:di +Narr:miş +Cond:se +Pres:0 (+Cop:dir)
+# e.g. partilerimdi
+
+define Nflect1	[Nflect0 (Vzero Vflect)]
+
+
+!? Some of the following are illegal combinations but some are just
+!? there to reduce ambiguity:
+
+## 1.1 Except Accusative and Equatives
+# e.g. !partiyiydi, !partisinceydi
+
+& ~$[["+Acc"|"+Equ"] "^DB"]
+
+
+## 1.2 Dative cannot be followed by a +Pres+A3pl
+# e.g. !partineler
+
+& ~$["+Dat""^DB""+Verb""+Zero""+Pres""+A3pl"]
+
+
+## 1.3 Singular possessive cannot be followed by +Pres+A3pl
+# e.g. !partimler
+
+& ~$["+A3sg" ["+P1sg"|"+P2sg"|"+P3sg"] "+Nom""^DB""+Verb""+Zero""+Pres""+A3pl"]
+
+
+## 1.4 Plural nominative cannot be followed by 1st 2nd person
+# singular, or 3rd person copular.
+# e.g. !partilerdim, !partilerdin
+
+!? Shouldn't +A3sg also be illegal?  partilerdi(r) should make both
+!? the noun and the verb plural.
+
+& ~$["+A3pl""+Pnon""+Nom""^DB""+Verb""+Zero" ? ["+A1sg"|"+A2sg"|"+A3sg""+Cop"]]
+
+## 1.5 No while after plural
+# e.g. !partilerken
+
+& ~$["+A3pl""+Pnon""+Nom""^DB""+Verb""+Zero""^DB""+Adverb""+While"]
+
+## 1.6 No +Pres+A1pl after +P12sg:
+# e.g. partimizdir => +Noun+A3sg+P1pl+Nom^DB+Verb+Zero+Pres+A3sg+Cop
+
+& ~$["+A3sg" ["+P1sg"|"+P2sg"] "+Nom""^DB""+Verb""+Zero""+Pres""+A1pl"]
+
+## 1.7 No +Pres+A3pl after genitive:
+# e.g. !sepetinler
+
+& ~$["+A3sg""+Pnon""+Gen""^DB""+Verb""+Zero""+Pres""+A3pl"]
+
+;
+
+
+
+### 2. The Locative case may be optionally followed by an Adjective
+### Relative suffix -ki and further nominalization:
+
+define ArelNzero [ Arel (Nzero Nflect0) ]
+
+## 2.1 No singular equative case:
+# !partidekince
+!? why??
+
+& ~$["^DB""+Noun""+Zero""+A3sg" ? "+Equ"]
+
+## 2.2 No unmarked noun derivation
+
+& ~$["^DB""+Noun""+Zero""+A3sg""+Pnon""+Nom"]
+
+;
+
+read regex Nflect1 
+.o. [ "+Loc" -> "+Loc" (ArelNzero) || .#. ? ? _ .#. ];
+lower net
+define Nflect2
+
+
+
+### 3. The Genitive case may be optionally followed by a Pronoun
+### Relative suffix -ki and further noun inflection:
+
+define PrelNflect [Prel Nflect1]
+
+## 3.1 Only P3sg and Pnon are allowed after +Pron+Rel:
+
+& ~$["^DB""+Pron""+Rel" ? \["+P3sg"|"+Pnon"]]
+
+;
+
+read regex Nflect2 
+.o. [ "+Gen" -> "+Gen" (PrelNflect) || .#. ? ? _ .#. ];
+lower net
+define Nflect3
+
+push Nflect3
