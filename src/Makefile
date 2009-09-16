@@ -1,16 +1,16 @@
-all: deriv.extra nflect.extra nzero.extra vflect.extra vzero.extra
+all: phon.extra deriv.extra nflect.extra vflect.extra vzero.extra
 
-deriv.extra: deriv.test deriv.lexc nzero.lexc nflect.lexc vflect.lexc vzero.lexc deriv.regex
+phon.extra: phon.test phon.xfst mlex.xfst deriv.lexc nflect.xfst vflect.lexc vzero.lexc deriv.regex
 
-nflect.extra: nflect.test nflect.lexc nzero.lexc vzero.lexc deriv.regex
+deriv.extra: deriv.test deriv.lexc nflect.xfst vflect.lexc vzero.lexc deriv.regex
 
-nzero.extra: nzero.test nzero.lexc
+nflect.extra: nflect.test nflect.xfst vzero.lexc deriv.regex
 
 vflect.extra: vflect.test vflect.lexc
 
 vzero.extra: vzero.test vzero.lexc
 
-%.extra: %.test %.lexc
+%.extra: %.test
 	$<
 	wc -l *.extra
 	wc -l *.missing
@@ -31,3 +31,13 @@ Milliyet.regex: Milliyet.rcount
 
 Milliyet.fst: Milliyet.regex Milliyet.xfst
 	Milliyet.xfst
+
+Milliyet.dict: Milliyet.rcount
+	cut -f3,4 $< | \
+	grep . | grep -v +? | grep -v ^+ | grep -v +Prop | \
+	perl -pe 's/\^DB.*//;s/(\t\+(Noun|Verb|Adj|Adverb|Ques|Pron\+[^+]+)).*/$$1/;' | \
+	perl -C -pe 's/\S+/lc($$&)/e' | \
+	LANG=tr_TR.UTF-8 sort -k1,1 -k2,2 -u > $@
+
+clean:
+	-rm *.missing *.extra
