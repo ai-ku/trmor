@@ -21,8 +21,8 @@ define model2 [ "+Noun" model1 ];
 
 read regex < deriv.regex
 define agree
-
 define model [ model2 & agree ];
+
 read regex [ "+Prop""+Noun"* @-> 0 ];
 load Milliyet.fst
 compose net
