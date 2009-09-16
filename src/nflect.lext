@@ -15,9 +15,8 @@ Multichar_Symbols
 	+Quant +Ques +Recip +Reflex +Rel +Related +Repeat +Since
 	+SinceDoingSo +Start +Stay +Verb +When +While +With +Without
 	+WithoutBeingAbleToHaveDoneSo +WithoutHavingDoneSo +Zero ^DB
-	+Narr2 +Past2 +Imp2 +WithoutHavingDoneSo2
-	^Nzero ^Vzero
-	 
+	+Narr2 +Past2 +Imp2 +WithoutHavingDoneSo2 ^Vzero
+
 
 LEXICON Noun
 	Ncount;
@@ -36,20 +35,20 @@ LEXICON Nposs
 +Pnon	Ncase;
 
 LEXICON Ncase
-+Abl:+nDAn	Vzero?;
-+Acc:+nH	#;
-+Dat:+nA	Vzero?;
-+Equ:+nCA	#;
-+Gen:+nHn	Vzero?;
-+Gen:+nHn	PronRel;
-+Ins:+ylA	Vzero?;
-+Loc:+nDA	Vzero?;
-+Loc:+nDA	AdjRel;
-+Nom:0		Vzero?;
++Abl	Vzero?;
++Acc	#;
++Dat	Vzero?;
++Equ	#;
++Gen	Vzero?;
++Gen	PronRel;
++Ins	Vzero?;
++Loc	Vzero?;
++Loc	AdjRel;
++Nom	Vzero?;
 
 
 LEXICON PronRel
-^DB+Pron+Rel:+ki	PRcount;
+^DB+Pron+Rel	PRcount;
 
 LEXICON PRcount
 +A3sg	PRposs;
@@ -60,7 +59,7 @@ LEXICON PRposs
 +Pnon	Ncase;
 
 LEXICON AdjRel
-^DB+Adj+Rel:+ki		Nzero?;
+^DB+Adj+Rel	Nzero?;
 
 LEXICON Vzero?
 	Vzero;
@@ -80,7 +79,52 @@ LEXICON Nzero
 ^DB+Noun+Zero	AfterNzero;
 
 LEXICON AfterNzero
-^Nzero	#;
++A3sg	Nposs1;
++A3pl	Nposs2;
 
+LEXICON Nposs1
++P1sg	Ncase1;
++P1pl	Ncase1;
++P2sg	Ncase1;
++P2pl	Ncase1;
++P3sg	Ncase1;
++P3pl	Ncase1;
++Pnon	Ncase0;
+
+LEXICON Nposs2
++P1sg	Ncase2;
++P1pl	Ncase2;
++P2sg	Ncase2;
++P2pl	Ncase2;
++P3sg	Ncase2;
++P3pl	Ncase2;
++Pnon	Ncase2;
+
+LEXICON Ncase0
++Abl	#;
++Acc	#;
++Dat	#;
++Gen	#;
++Ins	#;
++Loc	#;
+
+LEXICON Ncase1
++Abl	#;
++Acc	#;
++Dat	#;
++Gen	#;
++Ins	#;
++Loc	#;
++Nom	#;
+
+LEXICON Ncase2
++Abl	#;
++Acc	#;
++Dat	#;
++Equ	#;
++Gen	#;
++Ins	#;
++Loc	#;
++Nom	#;
 
 END;
