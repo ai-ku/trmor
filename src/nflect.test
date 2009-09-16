@@ -12,11 +12,11 @@ read regex [ "+Prop""+Noun"* @-> 0 ];
 load Milliyet.fst
 compose net
 lower net
-define test0
-
-read regex [ "+Noun" ? ? \"+Nom" ?+ ];
-push test0
+read regex [ "+Noun" ?* ];
+read regex ~$[ "+Nom" "^DB" \"+Verb" ];
+read regex ~$[ "+Nom" "^DB" "+Verb" \"+Zero"];
 intersect net
+
 define test
 
 read regex [ test - model ];
