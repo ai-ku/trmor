@@ -92,7 +92,7 @@ açkı	+Noun
 açlık	+Noun+CV
 açmalık	+Noun+CV
 açmaz	+Noun
-ad	+Noun+VF
+ad	+Noun+VF+CD
 ada	+Noun
 adabalığı	+Noun+P3
 adabımuaşeret	+Noun
@@ -141,7 +141,7 @@ adsorpsiyon	+Noun
 adu	+Noun
 aerodinamik	+Noun+CV
 aerosol	+Noun
-af	+Noun
+af	+Noun+CD
 afacan	+Noun
 afak	+Noun
 afat	+Noun
@@ -2914,7 +2914,7 @@ cephe	+Noun
 cepken	+Noun
 cepkitabı	+Noun+P3
 cepkitapı	+Noun+P3
-cer	+Noun
+cer	+Noun+CD
 cerahat	+Noun+VF
 cerbeze	+Noun
 cereme	+Noun
@@ -2928,7 +2928,7 @@ cerrahi	+Noun
 cesamet	+Noun
 cesaret	+Noun
 ceset	+Noun+CV
-cet	+Noun+CV
+cet	+Noun+CV+CD
 cetvel	+Noun
 cevahir	+Noun
 cevap	+Noun+CV
@@ -4972,7 +4972,7 @@ ehlivukuf	+Noun
 ehliyet	+Noun
 ehliyetname	+Noun
 ehram	+Noun
-ehvenişer	+Noun
+ehvenişer	+Noun+CD
 ejder	+Noun
 ejderha	+Noun
 ek	+Noun
@@ -5713,7 +5713,7 @@ fedai	+Noun
 federalizm	+Noun
 federasyon	+Noun
 fehamet	+Noun
-fek	+Noun
+fek	+Noun+CD
 fekül	+Noun
 felah	+Noun
 felaket	+Noun
@@ -5728,7 +5728,7 @@ felsefe	+Noun
 felsefeci	+Noun
 feminist	+Noun
 feminizm	+Noun
-fen	+Noun
+fen	+Noun+CD
 fenci	+Noun
 fener	+Noun
 fenerbalığı	+Noun+P3
@@ -6948,7 +6948,7 @@ haberalma	+Noun
 haberci	+Noun
 haberdar	+Noun
 habitat	+Noun
-hac	+Noun
+hac	+Noun+CD
 hacamat	+Noun
 hacet	+Noun
 hacı	+Noun
@@ -6963,7 +6963,7 @@ hacim	+Noun
 hacir	+Noun
 haciz	+Noun
 haç	+Noun
-had	+Noun+VF
+had	+Noun+VF+CD
 hadde	+Noun
 hademe	+Noun
 hadım	+Noun
@@ -6988,7 +6988,7 @@ hahamhane	+Noun
 hahnyum	+Noun
 hail	+Noun
 hain	+Noun
-hak	+Noun+VF
+hak	+Noun+VF+CD
 hakan	+Noun
 hakaret	+Noun
 hakem	+Noun
@@ -7004,7 +7004,7 @@ hakkıhuzur	+Noun
 hakkısükut	+Noun
 haksever	+Noun
 hakuran	+Noun
-hal	+Noun+VF
+hal	+Noun+VF+CD
 hala	+Noun
 halas	+Noun
 halat	+Noun
@@ -7204,7 +7204,7 @@ haşlamlılar	+Noun+PL
 haşmet	+Noun
 haşmetli	+Noun
 haşviyat	+Noun
-hat	+Noun
+hat	+Noun+CD
 hata	+Noun
 hatbakıcı	+Noun
 hatıl	+Noun
@@ -7242,7 +7242,7 @@ havan	+Noun
 havaneli	+Noun+P3
 havaölçer	+Noun
 havari	+Noun
-havas	+Noun
+havas	+Noun+CD
 havasahası	+Noun+P3
 havataşı	+Noun+P3
 havaüs	+Noun
@@ -7295,7 +7295,7 @@ hayvanat	+Noun
 hayvanbilim	+Noun
 hayvancılık	+Noun+CV
 hayvankömürü	+Noun+P3
-haz	+Noun
+haz	+Noun+CD
 hazakat	+Noun+VF
 hazan	+Noun
 hazar	+Noun
@@ -7578,7 +7578,7 @@ hipotermi	+Noun
 hipotez	+Noun
 hipotiroidizm	+Noun
 hippi	+Noun
-his	+Noun
+his	+Noun+CD
 hisar	+Noun
 hisarbuselik	+Noun+CV
 hisse	+Noun
@@ -9621,7 +9621,7 @@ kavuşumdevri	+Noun+P3
 kavut	+Noun
 kavuz	+Noun
 kavuzlular	+Noun+PL
-kay	+Noun
+kay	+Noun+CD
 kaya	+Noun
 kayabalığı	+Noun+P3
 kayabaşı	+Noun+P3
@@ -11153,7 +11153,7 @@ küheylan	+Noun
 kükürt	+Noun+CV
 kükürtatar	+Noun
 kükürtçiçeği	+Noun+P3
-kül	+Noun
+kül	+Noun+CD
 külah	+Noun
 külbastı	+Noun
 külçe	+Noun
@@ -11344,7 +11344,7 @@ lazımlık	+Noun+CV
 leasing	+Noun
 leb	+Noun
 leblebi	+Noun
-ledün	+Noun
+ledün	+Noun+CD
 legorn	+Noun
 leğen	+Noun
 leh	+Noun
@@ -11607,7 +11607,7 @@ mağfiret	+Noun
 mağlubiyet	+Noun
 mağma	+Noun
 mağmum	+Noun
-mahal	+Noun+VF
+mahal	+Noun+VF+CD
 mahalle	+Noun
 maharet	+Noun
 mahcubiyet	+Noun
@@ -12198,7 +12198,7 @@ meşrep	+Noun+CV
 meşrubat	+Noun
 meşruiyet	+Noun
 meşrutiyet	+Noun
-met	+Noun+CV
+met	+Noun+CV+CD
 meta	+Noun
 metabolizma	+Noun
 metafizik	+Noun+CV
@@ -13026,7 +13026,7 @@ narkoz	+Noun
 narsisist	+Noun
 narsisizm	+Noun
 narsislik	+Noun
-nas	+Noun
+nas	+Noun+CD
 nasır	+Noun
 nasihat	+Noun+VF
 nasip	+Noun+CV
@@ -15766,7 +15766,7 @@ sergerde	+Noun
 sergi	+Noun
 sergievi	+Noun+P3
 sergüzeşt	+Noun
-serhat	+Noun+CV+VF
+serhat	+Noun+CV+VF+CD
 seri	+Noun
 serif	+Noun
 serigrafi	+Noun
@@ -15895,7 +15895,7 @@ sındırgı	+Noun
 sınıf	+Noun
 sınır	+Noun
 sıpa	+Noun
-sır	+Noun
+sır	+Noun+CD
 sıra	+Noun
 sıraca	+Noun
 sıracagiller	+Noun+PL
@@ -16012,7 +16012,7 @@ simülasyon	+Noun
 simülatör	+Noun
 simya	+Noun
 simyacı	+Noun
-sin	+Noun
+sin	+Noun+CD
 sinagog	+Noun
 sinameki	+Noun
 sinaps	+Noun
@@ -16469,7 +16469,7 @@ suikastçi	+Noun
 suimuamele	+Noun
 suiniyet	+Noun
 suistimal	+Noun+VF
-suizan	+Noun
+suizan	+Noun+CD
 sukabağı	+Noun+P3
 sukamışı	+Noun+P3
 sukayağı	+Noun+P3
@@ -16737,7 +16737,7 @@ süzüntü	+Noun
 şahteregiller	+Noun+PL
 şaibe	+Noun
 şair	+Noun
-şak	+Noun
+şak	+Noun+CD
 şaka	+Noun
 şakacı	+Noun
 şakak	+Noun+CV
@@ -16879,7 +16879,7 @@ süzüntü	+Noun
 şenaat	+Noun+VF
 şendere	+Noun
 şenlik	+Noun+CV
-şer	+Noun
+şer	+Noun+CD
 şerait	+Noun
 şerare	+Noun
 şerbet	+Noun
@@ -16905,7 +16905,7 @@ süzüntü	+Noun
 şeşper	+Noun
 şeşüse	+Noun
 şeşyek	+Noun
-şet	+Noun+CV
+şet	+Noun+CV+CD
 şetaret	+Noun
 şev	+Noun
 şevk	+Noun
@@ -16927,7 +16927,7 @@ süzüntü	+Noun
 şeytanters	+Noun
 şeytantırnağı	+Noun+P3
 şezlong	+Noun
-şık	+Noun
+şık	+Noun+CD
 şıkırtı	+Noun
 şıllık	+Noun+CV
 şıngırtı	+Noun
@@ -18926,7 +18926,7 @@ uzyazı	+Noun
 ürperti	+Noun
 ürün	+Noun
 üryani	+Noun
-üs	+Noun
+üs	+Noun+CD
 üsküf	+Noun
 üslup	+Noun+CV
 üslupbilim	+Noun
@@ -19943,7 +19943,7 @@ zahire	+Noun
 zahmet	+Noun
 zakkum	+Noun
 zakkumgiller	+Noun+PL
-zam	+Noun
+zam	+Noun+CD
 zaman	+Noun
 zamanaşımı	+Noun+P3
 zamanbilim	+Noun
@@ -19956,7 +19956,7 @@ zambakgiller	+Noun+PL
 zamir	+Noun
 zamk	+Noun
 zampara	+Noun
-zan	+Noun
+zan	+Noun+CD
 zanaat	+Noun
 zanaatkar	+Noun
 zangoç	+Noun+CV
@@ -20002,7 +20002,7 @@ zekni	+Noun
 zelil	+Noun
 zelve	+Noun
 zelzele	+Noun
-zem	+Noun
+zem	+Noun+CD
 zemberek	+Noun+CV
 zembil	+Noun
 zembilotu	+Noun+P3
@@ -20121,7 +20121,7 @@ züğürt	+Noun
 züht	+Noun+CV
 zühul	+Noun+VF
 zükam	+Noun
-zül	+Noun
+zül	+Noun+CD
 zülal	+Noun+VF
 zülfaris	+Noun
 zülüf	+Noun
