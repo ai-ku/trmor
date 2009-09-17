@@ -402,7 +402,7 @@ aksülümen	+Noun
 akşam	+Noun
 akşamcı	+Noun
 akşamsefa	+Noun+P3
-akşamüst	+Noun
+akşamüst	+Noun+P3
 akşamüzer	+Noun+P3
 akşamyıldız	+Noun+P3
 akşın	+Noun
@@ -1631,7 +1631,7 @@ bakıcı	+Noun
 bakıcılık	+Noun+CV
 bakım	+Noun
 bakımev	+Noun+P3
-bakımyurtu	+Noun
+bakımyurt	+Noun+P3+CV
 bakıncak	+Noun+CV
 bakır	+Noun
 bakırrenk	+Noun+P3+CV
@@ -1686,7 +1686,7 @@ balerin	+Noun
 balet	+Noun
 balgam	+Noun
 balgamtaş	+Noun+P3
-balgümec	+Noun
+#balgümeç	+Noun+P3
 balık	+Noun+CV
 balıkadam	+Noun
 balıkağz	+Noun+P3
@@ -1959,7 +1959,7 @@ baştankaragiller	+Noun+PL
 baştarde	+Noun
 başteknisyen	+Noun
 baştemsilci	+Noun
-başuc	+Noun
+başuç	+Noun+P3+CV
 başuzman	+Noun
 başülke	+Noun
 başvekalet	+Noun
@@ -2203,10 +2203,10 @@ beybaba	+Noun
 beyefendi	+Noun
 beyerki	+Noun
 beygir	+Noun
-beygirgüc	+Noun
+beygirgüç	+Noun+P3+CV
 beyin	+Noun+VD
 beyincik	+Noun+CV
-beyingüc	+Noun
+beyingüç	+Noun+P3+CV
 beyinorak	+Noun+P3+CV
 beyinüçgen	+Noun+P3
 beyit	+Noun+VD
@@ -2505,7 +2505,7 @@ boru	+Noun
 borucu	+Noun
 boruçiçek	+Noun+P3+CV
 boruçiçeğigiller	+Noun+PL
-boruhat	+Noun+P3+CD
+#boruhat	+Noun+P3+CD
 borukabak	+Noun+P3+CV
 boruyol	+Noun+P3
 bostan	+Noun
@@ -2862,7 +2862,7 @@ cebellezi	+Noun
 ceberut	+Noun
 cebir	+Noun+VD
 cebire	+Noun
-ced	+Noun
+#ced	+Noun
 cedre	+Noun
 cefa	+Noun
 cehalet	+Noun
@@ -3600,7 +3600,7 @@ cüzzam	+Noun
 çobanminare	+Noun+P3
 çobanpüskül	+Noun+P3
 çobansalata	+Noun+P3
-çobansüzgec	+Noun
+çobansüzgeç	+Noun+P3+CV
 çobantarak	+Noun+P3+CV
 çobantuzluk	+Noun+P3+CV
 çobanyıldız	+Noun+P3
@@ -3795,7 +3795,7 @@ damlasakız	+Noun+P3
 damlataş	+Noun
 damper	+Noun
 damping	+Noun
-damüst	+Noun
+damüst	+Noun+P3
 dan	+Noun
 dana	+Noun
 danaayak	+Noun+P3+CV
@@ -4003,7 +4003,7 @@ deneyci	+Noun
 deneyim	+Noun
 deneykap	+Noun
 deneylik	+Noun
-deneyüst	+Noun
+deneyüst	+Noun+P3
 deneyüstücülük	+Noun+CV
 denge	+Noun
 dengelem	+Noun
@@ -4032,7 +4032,7 @@ denizkadayıf	+Noun+P3
 denizkaz	+Noun+P3
 denizkedi	+Noun+P3
 denizkestane	+Noun+P3
-denizkırlangıc	+Noun
+denizkırlangıç	+Noun+P3+CV
 denizkız	+Noun+P3
 denizkozalak	+Noun+P3+CV
 denizköpuk	+Noun+P3+CV
@@ -4087,7 +4087,7 @@ derbi	+Noun
 derç	+Noun+CV
 derdest	+Noun
 dere	+Noun
-dereağız	+Noun+P3+VD
+#dereağız	+Noun+P3+VD
 derebey	+Noun+P3
 derebeylik	+Noun+CV
 derece	+Noun
@@ -4325,7 +4325,7 @@ dinamometre	+Noun
 dinar	+Noun
 dinazor	+Noun
 dinci	+Noun
-dincierk	+Noun
+dincierk	+Noun+P3
 dindar	+Noun
 dindaş	+Noun
 dineri	+Noun
@@ -4407,7 +4407,7 @@ dişli	+Noun
 dişot	+Noun+P3
 dişotugiller	+Noun+PL
 dişöz	+Noun+P3
-diştac	+Noun
+diştaç	+Noun+P3+CV
 ditiramp	+Noun+CV
 diva	+Noun
 dival	+Noun
@@ -4495,7 +4495,7 @@ doğaçlama	+Noun
 doğadışı	+Noun
 doğalgaz	+Noun
 doğaöte	+Noun+P3
-doğaüst	+Noun
+doğaüst	+Noun+P3
 doğram	+Noun
 doğramacı	+Noun
 doğru	+Noun
@@ -4675,8 +4675,8 @@ draje	+Noun
 dram	+Noun
 dramatizasyon	+Noun
 dramatize	+Noun
-dramaturg	+Noun
-dramaturgi	+Noun
+#dramaturg	+Noun
+#dramaturgi	+Noun
 dren	+Noun
 drenaj	+Noun
 dretnot	+Noun
@@ -4806,7 +4806,7 @@ düşün	+Noun
 düşünce	+Noun
 düşünceleme	+Noun
 düşüngü	+Noun
-düşüngüc	+Noun
+düşüngüç	+Noun+P3+CV
 düşüntü	+Noun
 düşünür	+Noun
 düşünyazı	+Noun
@@ -4855,9 +4855,9 @@ ebat	+Noun+CV
 ebced	+Noun
 ebcet	+Noun+CV
 ebe	+Noun
-ebebulgutu	+Noun
+ebebulgur	+Noun+P3
 ebediyet	+Noun
-ebegümec	+Noun
+ebegümeç	+Noun+P3+CV
 ebegümecigiller	+Noun+PL
 ebekuşak	+Noun+P3+CV
 ebemkuşak	+Noun+P3+CV
@@ -5093,7 +5093,7 @@ eleman	+Noun
 element	+Noun
 elemge	+Noun
 elenti	+Noun
-elerk	+Noun
+elerk	+Noun+P3
 eleştiri	+Noun
 eleştirim	+Noun
 eleştirmeci	+Noun
@@ -5296,7 +5296,7 @@ epitel	+Noun
 epitelyum	+Noun
 epoksi	+Noun
 epope	+Noun
-eposta	+Noun
+#eposta	+Noun
 e-posta	+Noun
 epsilon	+Noun
 er	+Noun
@@ -5484,7 +5484,7 @@ etıbba	+Noun
 etik	+Noun+CV
 etiket	+Noun
 etil	+Noun
-etilalk	+Noun
+#etilalkol	+Noun+VF
 etilen	+Noun
 etimolog	+Noun
 etimoloji	+Noun
@@ -6378,8 +6378,7 @@ gelinkuş	+Noun+P3
 gelinlik	+Noun+CV
 gelinot	+Noun+P3
 gelinparmak	+Noun+P3+CV
-gelinsac	+Noun
-gelinsaç	+Noun+P3
+gelinsaç	+Noun+P3+CV
 gelir	+Noun
 gelişim	+Noun
 gelişmişlik	+Noun+CV
@@ -6411,7 +6410,7 @@ geometri	+Noun
 gerçek	+Noun+CV
 gerçekdış	+Noun+P3
 gerçekleştirim	+Noun
-gerçeküst	+Noun
+gerçeküst	+Noun+P3
 gerçel	+Noun
 gerdan	+Noun
 gerdaniye	+Noun
@@ -6681,7 +6680,7 @@ göveri	+Noun
 göverti	+Noun
 göydergi	+Noun
 göz	+Noun
-gözak	+Noun+P3
+#gözak	+Noun+P3
 gözalt	+Noun+P3
 gözart	+Noun+P3+CV
 gözaşı	+Noun+P3
@@ -6705,7 +6704,7 @@ gözetimev	+Noun+P3
 gözetmen	+Noun
 gözev	+Noun+P3
 gözeyutarlik	+Noun+P3+CV
-gözhap	+Noun+P3
+#gözhap	+Noun+P3
 gözkapak	+Noun+P3+CV
 gözleği	+Noun
 gözlem	+Noun
@@ -6735,7 +6734,7 @@ gram	+Noun
 gramağırlık	+Noun+CV
 gramaj	+Noun
 gramer	+Noun
-gramerc	+Noun
+gramerci	+Noun
 gramkuvvet	+Noun
 gramofon	+Noun
 gramsantimetre	+Noun
@@ -6820,8 +6819,7 @@ güldürmen	+Noun
 güldürü	+Noun
 güleryüz	+Noun
 gülgiller	+Noun+PL
-gülhatm	+Noun
-gülhatmi	+Noun
+gülhatim	+Noun+P3+VD
 gülistan	+Noun
 gülkuru	+Noun+P3
 güllabi	+Noun
@@ -7083,7 +7081,7 @@ hançere	+Noun
 handikap	+Noun+CV
 hane	+Noun
 hanedan	+Noun
-hanehalk	+Noun
+hanehalk	+Noun+P3
 hanende	+Noun
 hangar	+Noun
 hanım	+Noun
@@ -7222,7 +7220,7 @@ havaciva	+Noun
 havadeğişim	+Noun+P3
 havadis	+Noun
 havagaz	+Noun+P3
-havagüc	+Noun
+havagüç	+Noun+P3+CV
 havaiyat	+Noun
 havaküre	+Noun
 havale	+Noun
@@ -7236,7 +7234,7 @@ havari	+Noun
 havas	+Noun+CD
 havasaha	+Noun+P3
 havataş	+Noun+P3
-havaüs	+Noun
+havaüs	+Noun+P3+CD
 havayol	+Noun+P3
 havayuvar	+Noun+P3
 havil	+Noun
@@ -7256,7 +7254,7 @@ haya	+Noun
 hayal	+Noun+VF
 hayalci	+Noun
 hayalet	+Noun
-hayalgüc	+Noun
+hayalgüç	+Noun+P3+CV
 hayalhane	+Noun
 hayalifener	+Noun
 hayalkırıklık	+Noun+P3+CV
@@ -7486,7 +7484,7 @@ hidrosiyanik	+Noun+CV
 hidroskopi	+Noun
 hidrostatik	+Noun+CV
 hidroterapi	+Noun
-hidroz	+Noun
+#hidroz	+Noun
 hidrür	+Noun
 higrometre	+Noun
 higroskop	+Noun+CV
@@ -7534,7 +7532,7 @@ hintkenevir	+Noun+P3
 hintkertenkele	+Noun+P3
 hintkestane	+Noun+P3
 hintkiraz	+Noun+P3
-hintpirinc	+Noun
+hintpirinç	+Noun+P3+CV
 hintsafran	+Noun+P3
 hintsarı	+Noun+P3
 hintyağ	+Noun+P3
@@ -8084,7 +8082,7 @@ ikili	+Noun
 ikilik	+Noun+CV
 ikincizar	+Noun
 ikindi	+Noun
-ikindiüst	+Noun
+ikindiüst	+Noun+P3
 ikircik	+Noun+CV
 ikircilik	+Noun
 ikircim	+Noun
@@ -8378,7 +8376,7 @@ ipka	+Noun
 iplik	+Noun+CV
 iplikçi	+Noun
 iplikhane	+Noun
-iplikkurtu	+Noun
+iplikkurt	+Noun+P3+CV
 ipliksolucanlar	+Noun+PL
 ipnotizma	+Noun
 ipnoz	+Noun
@@ -8871,8 +8869,7 @@ kadro	+Noun
 kafa	+Noun
 kafadanbacaklılar	+Noun+PL
 kafadar	+Noun
-kafaic	+Noun
-kafaiç	+Noun+P3
+kafaiç	+Noun+P3+CV
 kafakağıt	+Noun+P3+CV
 kafakol	+Noun
 kafatasçı	+Noun
@@ -8944,7 +8941,7 @@ kalay	+Noun
 kalaycı	+Noun
 kalbur	+Noun
 kalburkemik	+Noun+P3+CV
-kalburüst	+Noun
+kalburüst	+Noun+P3
 kalcı	+Noun
 kalça	+Noun
 kalçete	+Noun
@@ -9207,7 +9204,7 @@ karabibergiller	+Noun+PL
 karabina	+Noun
 karabinyer	+Noun
 karaborsa	+Noun
-karaborsac	+Noun
+karaborsacı	+Noun
 karaboya	+Noun
 karabuğday	+Noun
 karabuğdaygiller	+Noun+PL
@@ -9476,7 +9473,7 @@ kastar	+Noun
 kastor	+Noun
 kasvet	+Noun
 kaş	+Noun
-kaşağı	+Noun
+#kaşağı	+Noun
 kaşalot	+Noun
 kaşan	+Noun
 kaşane	+Noun
@@ -9919,7 +9916,7 @@ kestane	+Noun
 kestanecik	+Noun+CV
 kestanefişek	+Noun+P3+CV
 kestanekabak	+Noun+P3+CV
-kestanekarg	+Noun
+#kestanekarga	+Noun+P3
 kestanerenk	+Noun+P3+CV
 kestaneşeker	+Noun+P3
 kestere	+Noun
@@ -9984,7 +9981,7 @@ kılıç	+Noun+CV
 kılıçbalık	+Noun+P3+CV
 kılıçgagalı	+Noun
 kılıçhane	+Noun
-kılıçkırlangıc	+Noun
+kılıçkırlangıç	+Noun+P3+CV
 kılıçkuyruk	+Noun+CV
 kılıçlama	+Noun
 kılıçoyun	+Noun+P3
@@ -10019,7 +10016,7 @@ kıranta	+Noun
 kırat	+Noun
 kırba	+Noun
 kırbaç	+Noun+CV
-kırbaçkurtu	+Noun
+kırbaçkurt	+Noun+P3+CV
 kırcın	+Noun
 kırç	+Noun+CV
 kırgın	+Noun
@@ -10039,7 +10036,7 @@ kırkgeçit	+Noun+CV
 kırkı	+Noun
 kırkım	+Noun
 kırkıntı	+Noun
-kırkırlangıc	+Noun
+kırkırlangıç	+Noun+P3+CV
 kırkikindi	+Noun
 kırkmerdiven	+Noun
 kırkyaprak	+Noun
@@ -10154,8 +10151,7 @@ kızıltı	+Noun
 kızılyaprak	+Noun+CV
 kızılyara	+Noun
 kızılyörük	+Noun+CV
-kızkalb	+Noun
-kızkalp	+Noun
+kızkalp	+Noun+P3+CV
 kızkardeş	+Noun
 kızkuş	+Noun+P3
 kızlık	+Noun+CV
@@ -10736,7 +10732,7 @@ köken	+Noun
 kökenbilim	+Noun
 kökenbilimci	+Noun
 kökkırmızı	+Noun+P3
-kökkurtu	+Noun
+kökkurt	+Noun+P3+CV
 kökmantar	+Noun
 köknar	+Noun
 köksap	+Noun
@@ -11404,7 +11400,7 @@ liman	+Noun
 limbo	+Noun
 lime	+Noun
 limit	+Noun
-limited	+Noun
+#limited	+Noun
 limon	+Noun
 limonata	+Noun
 limonit	+Noun
@@ -11432,7 +11428,7 @@ lirik	+Noun+CV
 lirizm	+Noun
 lisan	+Noun
 lisans	+Noun
-lisansüst	+Noun
+lisansüst	+Noun+P3
 lise	+Noun
 liste	+Noun
 literatür	+Noun
@@ -11969,7 +11965,7 @@ mecmua	+Noun
 mecra	+Noun
 mecus	+Noun
 meç	+Noun
-med	+Noun
+#med	+Noun
 medar	+Noun
 meddah	+Noun
 meddücezir	+Noun
@@ -12521,7 +12517,7 @@ molibden	+Noun
 molibdin	+Noun
 molla	+Noun
 molotof	+Noun
-molotofkokteyl	+Noun
+molotofkokteyl	+Noun+P3
 moloz	+Noun
 moment	+Noun
 monadizm	+Noun
@@ -12588,7 +12584,7 @@ motor	+Noun
 motorbot	+Noun
 motorin	+Noun
 motorsiklet	+Noun
-motorsikletçi	+Noun
+#motorsikletçi	+Noun
 motoryağ	+Noun+P3
 mototren	+Noun
 motris	+Noun
@@ -13633,7 +13629,7 @@ ozon	+Noun
 öğle	+Noun
 öğlen	+Noun
 öğlenci	+Noun
-öğleüst	+Noun
+öğleüst	+Noun+P3
 öğrencelik	+Noun+CV
 öğrenci	+Noun
 öğrenek	+Noun
@@ -14481,7 +14477,7 @@ platika	+Noun
 platin	+Noun
 plato	+Noun
 platonculuk	+Noun+CV
-play	+Noun
+#play	+Noun
 plaza	+Noun
 plazma	+Noun
 plebisit	+Noun
@@ -14906,7 +14902,7 @@ recep	+Noun+CV
 reçel	+Noun
 reçete	+Noun
 reçine	+Noun
-red	+Noun
+#red	+Noun
 redaksiyon	+Noun
 redaktör	+Noun
 reddiye	+Noun
@@ -15570,7 +15566,7 @@ seçim	+Noun
 seçki	+Noun
 seçmecilik	+Noun+CV
 seçmen	+Noun
-sed	+Noun
+#sed	+Noun
 seda	+Noun
 sedef	+Noun
 sedefot	+Noun+P3
@@ -15711,7 +15707,7 @@ senyör	+Noun
 sepek	+Noun+CV
 sepet	+Noun
 sepetçisöğüt	+Noun+P3+CV
-sepetkulp	+Noun
+sepetkulp	+Noun+P3
 sepettop	+Noun+P3
 sepi	+Noun
 sepken	+Noun
@@ -15779,7 +15775,7 @@ seselim	+Noun
 seslem	+Noun
 seslitaş	+Noun
 sesteş	+Noun
-sesüst	+Noun
+sesüst	+Noun+P3
 sesyazar	+Noun
 sesyükseltir	+Noun
 set	+Noun
@@ -16240,7 +16236,7 @@ sote	+Noun
 soy	+Noun
 soya	+Noun
 soyaçekim	+Noun
-soyad	+Noun
+soyad	+Noun+P3
 soyağaç	+Noun+P3+CV
 soybilim	+Noun
 soydaş	+Noun
@@ -16428,7 +16424,7 @@ suçiçek	+Noun+P3+CV
 suçlularevi	+Noun
 suçlü	+Noun
 suçulluk	+Noun+P3+CV
-suçüst	+Noun
+suçüst	+Noun+P3
 sudak	+Noun+CV
 sudantavuk	+Noun+P3+CV
 sudolap	+Noun+P3+CV
@@ -16504,7 +16500,6 @@ susam	+Noun
 susamcı	+Noun
 susamgiller	+Noun+PL
 susamhelva	+Noun+P3
-susamutu	+Noun
 susamyağ	+Noun+P3
 susarmısak	+Noun+P3+CV
 susığır	+Noun+P3
@@ -16515,7 +16510,7 @@ suspansuvar	+Noun
 susta	+Noun
 sustalı	+Noun
 susümbül	+Noun+P3
-suşehr	+Noun
+suşehir	+Noun+P3+VD
 suşerit	+Noun+P3+CV
 suşi	+Noun
 sut	+Noun+CV
@@ -16899,7 +16894,7 @@ süzüntü	+Noun
 şeytanörümcek	+Noun+P3+CV
 şeytansaç	+Noun+P3+CV
 şeytanşalgam	+Noun+P3
-şeytanters	+Noun
+şeytanters	+Noun+P3
 şeytantırnak	+Noun+P3+CV
 şezlong	+Noun
 şık	+Noun+CD
@@ -17048,7 +17043,7 @@ tabela	+Noun
 tabhane	+Noun
 tabı	+Noun
 tabiat	+Noun
-tabiatüst	+Noun
+tabiatüst	+Noun+P3
 tabiiyet	+Noun
 tabip	+Noun+CV
 tabir	+Noun
@@ -17484,7 +17479,7 @@ tavukbalık	+Noun+P3+CV
 tavukbit	+Noun+P3
 tavukçu	+Noun
 tavukgiller	+Noun+PL
-tavukgök	+Noun+P3+CV
+tavukgöğüs	+Noun+P3+VD
 tavukgöt	+Noun+P3
 tavukkara	+Noun+P3
 tavulga	+Noun
@@ -18101,7 +18096,7 @@ tezyif	+Noun
 tezyin	+Noun
 tezyinat	+Noun
 tezyit	+Noun+CV
-tıb	+Noun
+tıp	+Noun+CV
 tıbbiye	+Noun
 tıfıl	+Noun
 tıgala	+Noun
@@ -18136,7 +18131,7 @@ tırmık	+Noun+CV
 tırnak	+Noun+CV
 tırpan	+Noun
 tırpana	+Noun
-tırpankurtu	+Noun
+tırpankurt	+Noun+P3+CV
 tırtık	+Noun+CV
 tırtıl	+Noun
 tırtır	+Noun
@@ -18267,7 +18262,6 @@ topatan	+Noun
 topaz	+Noun
 topçeker	+Noun
 topçu	+Noun
-topçü	+Noun
 tophane	+Noun
 topla	+Noun
 toplaç	+Noun+CV
@@ -19495,7 +19489,7 @@ yatak	+Noun+CV
 yatakçı	+Noun
 yatakhane	+Noun
 yatalak	+Noun
-yatç	+Noun
+yatçı	+Noun
 yatı	+Noun
 yatık	+Noun+CV
 yatılı	+Noun
@@ -19660,7 +19654,7 @@ yersarsıntı	+Noun+P3
 yersıçan	+Noun+P3
 yersizme	+Noun
 yersolucan	+Noun+P3
-yerüst	+Noun
+yerüst	+Noun+P3
 yeryuvar	+Noun+P3
 yeryuvarlak	+Noun+P3+CV
 yeryüz	+Noun+P3
@@ -19715,7 +19709,7 @@ yıldızküme	+Noun+P3
 yıldızpat	+Noun+P3
 yıldızpoyraz	+Noun
 yıldıztaş	+Noun+P3
-yıldızyağmutu	+Noun
+yıldızyağmur	+Noun+P3
 yıldızyel	+Noun+P3
 yıldönüm	+Noun+P3
 yılgı	+Noun
@@ -19758,7 +19752,7 @@ yolak	+Noun+CV
 yolcu	+Noun
 yolculuk	+Noun+CV
 yoldaş	+Noun
-yoldüzer	+Noun
+#yoldüzler	+Noun
 yolgeçen	+Noun
 yom	+Noun
 yonca	+Noun
@@ -19891,7 +19885,7 @@ yüzölçüm	+Noun+P3
 yüzsuy	+Noun+P3
 yüzük	+Noun+CV
 yüzükparmak	+Noun+P3+CV
-yüzüst	+Noun
+yüzüst	+Noun+P3
 yüzyıl	+Noun
 z	+Noun
 z.	+Noun
