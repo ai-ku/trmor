@@ -606,7 +606,7 @@ altınbaş	+Noun
 altınkök	+Noun+P3
 altınoluk	+Noun+CV
 altınöz	+Noun+P3
-altınsuy	+Noun+P3
+altınsu	+Noun+P3
 altıntop	+Noun
 altıparmak	+Noun+CV
 altıpatlar	+Noun
@@ -1006,7 +1006,7 @@ aranjman	+Noun
 arap	+Noun+CV
 arapsabun	+Noun+P3
 arapsaç	+Noun+P3
-arapsuy	+Noun+P3
+arapsu	+Noun+P3
 arapzamk	+Noun+P3
 ararot	+Noun
 arasöz	+Noun
@@ -1120,7 +1120,7 @@ arpa	+Noun
 arpacı	+Noun
 arpacık	+Noun+CV
 arpalama	+Noun
-arpasuy	+Noun+P3
+arpasu	+Noun+P3
 arpej	+Noun
 arsa	+Noun
 arsenik	+Noun+CV
@@ -1224,7 +1224,7 @@ askıntı	+Noun
 asklı	+Noun
 askospor	+Noun
 aslan	+Noun
-aslanağz	+Noun+P3
+aslanağız	+Noun+P3+VD
 aslangiller	+Noun+PL
 aslankuyruk	+Noun+P3+CV
 aslanpençe	+Noun+P3
@@ -1689,7 +1689,7 @@ balgamtaş	+Noun+P3
 #balgümeç	+Noun+P3
 balık	+Noun+CV
 balıkadam	+Noun
-balıkağz	+Noun+P3
+balıkağız	+Noun+P3+VD
 balıkçı	+Noun
 balıkçılgiller	+Noun+PL
 balıkçılık	+Noun+CV
@@ -2149,7 +2149,7 @@ besi	+Noun
 besidoku	+Noun
 besin	+Noun
 besiörü	+Noun
-besisuy	+Noun+P3
+besisu	+Noun+P3
 beslek	+Noun+CV
 besleme	+Noun
 beslengi	+Noun
@@ -2819,7 +2819,7 @@ cami	+Noun
 camia	+Noun
 camkanatlılar	+Noun+PL
 campamuk	+Noun+P3+CV
-camsuy	+Noun+P3
+camsu	+Noun+P3
 camyün	+Noun+P3
 can	+Noun
 canan	+Noun
@@ -3168,7 +3168,7 @@ cüzzam	+Noun
 çamart	+Noun+P3
 çamaşır	+Noun
 çamaşırhane	+Noun
-çamaşırsuy	+Noun+P3
+çamaşırsu	+Noun+P3
 çamça	+Noun
 çamçak	+Noun+CV
 çamfıstık	+Noun+P3+CV
@@ -3470,7 +3470,7 @@ cüzzam	+Noun
 çiçekçi	+Noun
 çiçekdağ	+Noun+P3
 çiçeksime	+Noun
-çiçeksuy	+Noun+P3
+çiçeksu	+Noun+P3
 çiçektaç	+Noun+P3+CV
 çiçektoz	+Noun+P3
 çiçekyaprak	+Noun+P3+CV
@@ -5356,7 +5356,7 @@ erosçuluk	+Noun+CV
 erotizm	+Noun
 erozyon	+Noun
 erselik	+Noun+CV
-ersuy	+Noun+P3
+ersu	+Noun+P3
 erte	+Noun
 ertem	+Noun
 ervah	+Noun
@@ -5581,7 +5581,7 @@ eziyet	+Noun
 ezme	+Noun
 #f	+Noun
 #f.	+Noun
-fa	+Noun
+#fa	+Noun
 faaliyet	+Noun
 faanahtar	+Noun+P3
 fabrika	+Noun
@@ -6588,7 +6588,7 @@ gök	+Noun+CV
 gökada	+Noun
 gökbilim	+Noun
 gökbilimci	+Noun
-gökcism	+Noun+P3
+gökcisim	+Noun+P3+VD
 gökçeağaç	+Noun+P3+CV
 gökçebalık	+Noun+P3+CV
 gökçeyazın	+Noun
@@ -6721,7 +6721,7 @@ gözpınar	+Noun+P3
 göztaş	+Noun+P3
 gözyaş	+Noun+P3
 gözyuvarı	+Noun
-gr	+Noun
+#gr	+Noun
 grado	+Noun
 gradyan	+Noun
 grafik	+Noun+CV
@@ -6826,7 +6826,7 @@ güllabi	+Noun
 güllaç	+Noun+CV
 gülle	+Noun
 gülmece	+Noun
-gülsuy	+Noun+P3
+gülsu	+Noun+P3
 gülücük	+Noun+CV
 gülük	+Noun+CV
 gülyağcı	+Noun
@@ -7938,7 +7938,7 @@ içlem	+Noun
 içliköfte	+Noun
 içme	+Noun
 içmece	+Noun
-içmesuy	+Noun+P3
+içmesu	+Noun+P3
 içmimar	+Noun
 içoğlanı	+Noun
 içplazma	+Noun
@@ -9820,7 +9820,7 @@ kemoterapi	+Noun
 kemre	+Noun
 kenar	+Noun
 kenarortay	+Noun
-kenarsuy	+Noun+P3
+kenarsu	+Noun+P3
 kendiliğindelik	+Noun+CV
 kendiliğindenlik	+Noun+CV
 kendincelik	+Noun+CV
@@ -11004,9 +11004,9 @@ kurşunkalem	+Noun
 kurşunrenk	+Noun+P3+CV
 kurt	+Noun+CV
 kurtadam	+Noun
-kurtağz	+Noun+P3
+kurtağız	+Noun+P3+VD
 kurtayak	+Noun+P3+CV
-kurtbağr	+Noun+P3
+kurtbağır	+Noun+P3+VD
 kurtbilim	+Noun
 kurtboğan	+Noun
 kurtçuk	+Noun+CV
@@ -11556,7 +11556,7 @@ mademki	+Noun
 maden	+Noun
 madenkırmız	+Noun
 madenkömür	+Noun+P3
-madensuy	+Noun+P3
+madensu	+Noun+P3
 madenyün	+Noun+P3
 maderşahi	+Noun
 madımak	+Noun+CV
@@ -11656,7 +11656,7 @@ makroişlemci	+Noun
 makrosefal	+Noun
 maksat	+Noun+CV
 maksimum	+Noun
-maktul	+Noun
+maktul	+Noun+VF
 makuliyet	+Noun
 makyaj	+Noun
 makyavelci	+Noun
@@ -13617,7 +13617,7 @@ ozon	+Noun
 ödev	+Noun
 ödevbilgi	+Noun+P3
 ödkese	+Noun+P3
-ödsuy	+Noun+P3
+ödsu	+Noun+P3
 ödül	+Noun
 ödün	+Noun
 ödünc	+Noun
@@ -14886,7 +14886,7 @@ ray	+Noun
 rayiç	+Noun+CV
 rayiha	+Noun
 razakı	+Noun
-re	+Noun
+#re	+Noun
 reaksiyon	+Noun
 reaktör	+Noun
 realist	+Noun
@@ -18445,7 +18445,7 @@ trombüs	+Noun
 tromp	+Noun
 trompet	+Noun
 tropika	+Noun
-tropikal	+Noun
+tropikal	+Noun+VF
 tropizm	+Noun
 troplar	+Noun+PL
 troposfer	+Noun
@@ -19505,7 +19505,7 @@ yavaşa	+Noun
 yave	+Noun
 yaver	+Noun
 yavru	+Noun
-yavruağz	+Noun+P3
+yavruağız	+Noun+P3+VD
 yavrucak	+Noun+CV
 yavrukurt	+Noun+CV
 yavsı	+Noun
@@ -19747,7 +19747,7 @@ yoklamacı	+Noun
 yoksul	+Noun
 yokuş	+Noun
 yol	+Noun
-yolağz	+Noun+P3
+yolağız	+Noun+P3+VD
 yolak	+Noun+CV
 yolcu	+Noun
 yolculuk	+Noun+CV
@@ -19882,7 +19882,7 @@ yüzgörümlük	+Noun+P3+CV
 yüzkara	+Noun+P3
 yüznumara	+Noun
 yüzölçüm	+Noun+P3
-yüzsuy	+Noun+P3
+yüzsu	+Noun+P3
 yüzük	+Noun+CV
 yüzükparmak	+Noun+P3+CV
 yüzüst	+Noun+P3
