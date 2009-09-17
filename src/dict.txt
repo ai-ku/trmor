@@ -92,7 +92,7 @@ açkı	+Noun
 açlık	+Noun+CV
 açmalık	+Noun+CV
 açmaz	+Noun
-ad	+Noun
+ad	+Noun+VF
 ada	+Noun
 adabalığı	+Noun+P3
 adabımuaşeret	+Noun
@@ -265,7 +265,7 @@ ahşa	+Noun+PL
 ahtapot	+Noun
 ahu	+Noun
 ahududu	+Noun
-ahval	+Noun+PL
+ahval	+Noun+PL+VF
 ahzu	+Noun
 aıds	+Noun
 aidat	+Noun
@@ -346,7 +346,7 @@ akit	+Noun
 akkan	+Noun
 akkarınca	+Noun
 akkavak	+Noun+CV
-akkefal	+Noun
+akkefal	+Noun+VF
 akkelebek	+Noun+CV
 akkor	+Noun
 akkuyruk	+Noun+CV
@@ -376,7 +376,7 @@ akromatin	+Noun
 akromatopsi	+Noun
 akromegali	+Noun
 akronim	+Noun
-akropol	+Noun
+akropol	+Noun+VF
 akrostiş	+Noun
 aks	+Noun
 aksakal	+Noun
@@ -544,7 +544,7 @@ alkarna	+Noun
 alkım	+Noun
 alkış	+Noun
 alkil	+Noun
-alkol	+Noun
+alkol	+Noun+VF
 alkolizm	+Noun
 alkolölçer	+Noun
 allah	+Noun
@@ -647,7 +647,7 @@ alzheimer	+Noun
 am	+Noun
 ama	+Noun
 amaç	+Noun+CV
-amal	+Noun
+amal	+Noun+VF
 amalgam	+Noun
 amazon	+Noun
 ambalaj	+Noun
@@ -688,12 +688,12 @@ amerikatavşanı	+Noun+P3
 amerikaüzümü	+Noun+P3
 amerikyum	+Noun
 amerisyum	+Noun
-ametal	+Noun
+ametal	+Noun+VF
 ametist	+Noun
 amfetamin	+Noun
 amfi	+Noun
 amfibi	+Noun
-amfibol	+Noun
+amfibol	+Noun+VF
 amfibyumlar	+Noun+PL
 amfiteatr	+Noun
 amfizem	+Noun
@@ -707,7 +707,7 @@ amin	+Noun
 aminoasit	+Noun
 amip	+Noun+CV
 amir	+Noun
-amiral	+Noun
+amiral	+Noun+VF
 amit	+Noun+CV
 amitoz	+Noun
 amme	+Noun
@@ -725,14 +725,14 @@ amortisör	+Noun
 amper	+Noun
 ampermetre	+Noun
 amperölçer	+Noun
-ampersaat	+Noun
+ampersaat	+Noun+VF
 ampir	+Noun
 ampirisizm	+Noun
 ampirist	+Noun
 ampirizm	+Noun
 amplifikasyon	+Noun
 amplifikatör	+Noun
-ampul	+Noun
+ampul	+Noun+VF
 ampütasyon	+Noun
 amut	+Noun+CV
 amyant	+Noun
@@ -1361,7 +1361,7 @@ atmasyon	+Noun
 atmık	+Noun+CV
 atmosfer	+Noun
 atnalı	+Noun+P3
-atol	+Noun
+atol	+Noun+VF
 atom	+Noun
 atomizm	+Noun
 atölye	+Noun
@@ -1373,7 +1373,7 @@ aut	+Noun
 av	+Noun
 avadancı	+Noun
 avadanlık	+Noun+CV
-aval	+Noun
+aval	+Noun+VF
 avallık	+Noun
 avam	+Noun+PL
 avane	+Noun
@@ -1427,7 +1427,7 @@ ayakucu	+Noun+P3
 ayaküst	+Noun
 ayaküzeri	+Noun+P3
 ayakyolu	+Noun+P3
-ayal	+Noun
+ayal	+Noun+VF
 ayandon	+Noun
 ayar	+Noun
 ayartı	+Noun
@@ -1748,7 +1748,7 @@ bandaj	+Noun
 bandana	+Noun
 bandıra	+Noun
 bando	+Noun
-bandrol	+Noun
+bandrol	+Noun+VF
 bangır	+Noun
 bangırtı	+Noun
 bani	+Noun
@@ -1808,7 +1808,7 @@ bariton	+Noun
 bariyer	+Noun
 bark	+Noun
 barka	+Noun
-barkarol	+Noun
+barkarol	+Noun+VF
 barkod	+Noun
 barlam	+Noun
 barmen	+Noun
@@ -1947,7 +1947,7 @@ başpehlivan	+Noun
 başpiskopos	+Noun
 başplan	+Noun
 başrahip	+Noun+CV
-başrol	+Noun
+başrol	+Noun+VF
 başsağlığı	+Noun+P3
 başsavcı	+Noun
 başsavcıvekili	+Noun+P3
@@ -2001,7 +2001,7 @@ baton	+Noun
 batonsale	+Noun
 battaniye	+Noun
 batur	+Noun
-batyal	+Noun
+batyal	+Noun+VF
 baut	+Noun
 bav	+Noun
 bavul	+Noun
@@ -2070,7 +2070,7 @@ bektaşikavuğu	+Noun+P3
 bektaşiüzümü	+Noun+P3
 bel	+Noun
 bela	+Noun
-belagat	+Noun
+belagat	+Noun+VF
 belahat	+Noun
 belboy	+Noun
 belce	+Noun
@@ -2104,7 +2104,7 @@ bellem	+Noun
 bellenim	+Noun
 belletmen	+Noun
 belsoğukluğu	+Noun+P3
-bemol	+Noun
+bemol	+Noun+VF
 ben	+Noun
 bencileyin	+Noun
 bencilik	+Noun+CV
@@ -2125,8 +2125,8 @@ benzeti	+Noun
 benzetim	+Noun
 benzin	+Noun
 benzinci	+Noun
-benzol	+Noun
-beraat	+Noun
+benzol	+Noun+VF
+beraat	+Noun+VF
 berat	+Noun
 berber	+Noun
 berberbalığı	+Noun+P3
@@ -2219,7 +2219,7 @@ beylikçi	+Noun
 beynamaz	+Noun
 beypazarı	+Noun+P3
 beysbol	+Noun
-beytülmal	+Noun
+beytülmal	+Noun+VF
 beyzade	+Noun
 beyzbol	+Noun
 bez	+Noun
@@ -2406,7 +2406,7 @@ biyokimya	+Noun
 biyokimyacı	+Noun
 biyolog	+Noun
 biyoloji	+Noun
-biyomedikal	+Noun
+biyomedikal	+Noun+VF
 biyometeorolog	+Noun
 biyometeoroloji	+Noun
 biyopsi	+Noun
@@ -2876,7 +2876,7 @@ cehre	+Noun
 cehri	+Noun
 ceket	+Noun
 celadet	+Noun
-celal	+Noun
+celal	+Noun+VF
 celbe	+Noun
 celep	+Noun+CV
 cellat	+Noun+CV
@@ -2884,8 +2884,8 @@ celp	+Noun+CV
 celpname	+Noun
 celse	+Noun
 cem	+Noun
-cemaat	+Noun
-cemal	+Noun
+cemaat	+Noun+VF
+cemal	+Noun+VF
 cemaziyülahır	+Noun
 cemaziyülevvel	+Noun
 cemevi	+Noun+P3
@@ -2915,7 +2915,7 @@ cepken	+Noun
 cepkitabı	+Noun+P3
 cepkitapı	+Noun+P3
 cer	+Noun
-cerahat	+Noun
+cerahat	+Noun+VF
 cerbeze	+Noun
 cereme	+Noun
 ceren	+Noun
@@ -2984,7 +2984,7 @@ cicianne	+Noun
 cicik	+Noun+CV
 cicim	+Noun
 cicoz	+Noun
-cidal	+Noun
+cidal	+Noun+VF
 cidar	+Noun
 ciddiyet	+Noun
 cif	+Noun
@@ -3870,7 +3870,7 @@ dayı	+Noun
 dayımlar	+Noun+PL
 dayınlar	+Noun+PL
 dayızade	+Noun
-debagat	+Noun
+debagat	+Noun+VF
 debdebe	+Noun
 debi	+Noun
 debriyaj	+Noun
@@ -4135,7 +4135,7 @@ desen	+Noun
 desibel	+Noun
 desigram	+Noun
 desilitre	+Noun
-desimal	+Noun
+desimal	+Noun+VF
 desimetre	+Noun
 desinatör	+Noun
 desise	+Noun
@@ -4248,7 +4248,7 @@ dışyarıçap	+Noun
 dışyüz	+Noun
 dışzar	+Noun
 dızdız	+Noun
-dialkol	+Noun
+dialkol	+Noun+VF
 diapozitif	+Noun
 diaspora	+Noun
 diba	+Noun
@@ -4282,7 +4282,7 @@ dikimevi	+Noun+P3
 dikişçi	+Noun
 dikit	+Noun
 dikiz	+Noun
-dikkat	+Noun
+dikkat	+Noun+VF
 dikme	+Noun
 dikmen	+Noun
 dikse	+Noun
@@ -4421,7 +4421,7 @@ dival	+Noun
 divan	+Noun
 divanhane	+Noun
 divanıali	+Noun
-divanıharp	+Noun+CV
+divanıharp	+Noun+CV+VF
 divanımuhasebat	+Noun
 divansazı	+Noun+P3
 divertikül	+Noun
@@ -4455,7 +4455,7 @@ diyapozon	+Noun
 diyar	+Noun
 diyaspora	+Noun
 diyastaz	+Noun
-diyastol	+Noun
+diyastol	+Noun+VF
 diyatome	+Noun
 diyelek	+Noun
 diyet	+Noun
@@ -4630,7 +4630,7 @@ döleşi	+Noun+P3
 dölüt	+Noun
 dölyatağı	+Noun+P3
 dölyolu	+Noun+P3
-dömifinal	+Noun
+dömifinal	+Noun+VF
 dönbaba	+Noun
 döneç	+Noun+CV
 dönek	+Noun
@@ -4705,7 +4705,7 @@ dublör	+Noun
 dudak	+Noun+CV
 dudu	+Noun
 duetto	+Noun
-duhul	+Noun
+duhul	+Noun+VF
 duhuliye	+Noun
 duka	+Noun
 dul	+Noun
@@ -5004,7 +5004,7 @@ ekmekağac	+Noun
 ekmekayvası	+Noun+P3
 ekmekkadayıfı	+Noun+P3
 eko	+Noun
-ekol	+Noun
+ekol	+Noun+VF
 ekolali	+Noun
 ekolog	+Noun
 ekoloji	+Noun
@@ -5033,7 +5033,7 @@ ekspres	+Noun
 ekspresyonist	+Noun
 ekspresyonizm	+Noun
 ekstrafor	+Noun
-ekstrasistol	+Noun
+ekstrasistol	+Noun+VF
 ekstre	+Noun
 eksüre	+Noun
 ekşimik	+Noun+CV
@@ -5170,7 +5170,7 @@ emirkulu	+Noun+P3
 emirlik	+Noun
 emirname	+Noun
 emisyon	+Noun
-emlak	+Noun+PL
+emlak	+Noun+PL+VF
 emlakçı	+Noun
 emmeç	+Noun+CV
 emmi	+Noun
@@ -5187,10 +5187,10 @@ empresyonizm	+Noun
 emprezaryo	+Noun
 emprime	+Noun
 emrivaki	+Noun
-emsal	+Noun
+emsal	+Noun+VF
 emtia	+Noun+PL
 emülsiyon	+Noun
-emval	+Noun+PL
+emval	+Noun+PL+VF
 emzik	+Noun+CV
 en	+Noun
 enam	+Noun
@@ -5271,7 +5271,7 @@ entelektüel	+Noun
 entelekya	+Noun
 entelijansiya	+Noun
 entellektüel	+Noun
-enternasyonal	+Noun
+enternasyonal	+Noun+VF
 enternasyonalizm	+Noun
 entertip	+Noun
 entimem	+Noun
@@ -5480,7 +5480,7 @@ et	+Noun
 etajer	+Noun
 etalon	+Noun
 etamin	+Noun
-etanol	+Noun
+etanol	+Noun+VF
 etap	+Noun+CV
 etçiller	+Noun+PL
 etek	+Noun+CV
@@ -5515,7 +5515,7 @@ etnoğrafya	+Noun
 etnolog	+Noun
 etnoloji	+Noun
 etobur	+Noun
-etol	+Noun
+etol	+Noun+VF
 etoloji	+Noun
 etraf	+Noun
 etsineği	+Noun+P3
@@ -5694,7 +5694,7 @@ fatalist	+Noun
 fatalizm	+Noun
 fatiha	+Noun
 fatura	+Noun
-faul	+Noun
+faul	+Noun+VF
 fauna	+Noun
 fava	+Noun
 favori	+Noun
@@ -5706,7 +5706,7 @@ fayrap	+Noun+CV
 fayton	+Noun
 faz	+Noun
 fazilet	+Noun
-fecaat	+Noun
+fecaat	+Noun+VF
 fecir	+Noun
 feda	+Noun
 fedai	+Noun
@@ -5719,7 +5719,7 @@ felah	+Noun
 felaket	+Noun
 felç	+Noun+CV
 feldispat	+Noun
-feldmareşal	+Noun
+feldmareşal	+Noun+VF
 felek	+Noun+CV
 felekıyat	+Noun
 felfelek	+Noun+CV
@@ -5734,7 +5734,7 @@ fener	+Noun
 fenerbalığı	+Noun+P3
 fenilalanin	+Noun
 fenilbutazon	+Noun
-fenol	+Noun
+fenol	+Noun+VF
 fenomen	+Noun
 fenomenizm	+Noun
 fenomenolog	+Noun
@@ -5746,11 +5746,11 @@ feodalizm	+Noun
 fer	+Noun
 ferace	+Noun
 feracelık	+Noun
-feragat	+Noun
+feragat	+Noun+VF
 ferağ	+Noun
 ferahfeza	+Noun
 ferahi	+Noun
-ferahnak	+Noun
+ferahnak	+Noun+VF
 ferak	+Noun
 feraset	+Noun
 ferç	+Noun+CV
@@ -5773,12 +5773,12 @@ fertik	+Noun
 feryat	+Noun+CV
 ferz	+Noun
 fes	+Noun
-fesahat	+Noun
+fesahat	+Noun+VF
 fesat	+Noun+CV
 fesih	+Noun
 fesleğen	+Noun
 fesrengi	+Noun+P3
-festival	+Noun
+festival	+Noun+VF
 fesuphanallah	+Noun
 fetih	+Noun
 fetiş	+Noun
@@ -5903,7 +5903,7 @@ filtre	+Noun
 filtreleme	+Noun
 filum	+Noun
 filvaki	+Noun
-final	+Noun
+final	+Noun+VF
 finalist	+Noun
 finalizm	+Noun
 finans	+Noun
@@ -5925,7 +5925,7 @@ fire	+Noun
 firez	+Noun
 firfiri	+Noun
 firik	+Noun+CV
-firkat	+Noun
+firkat	+Noun+VF
 firkateyn	+Noun
 firkete	+Noun
 firma	+Noun
@@ -5983,7 +5983,7 @@ flaşör	+Noun
 flavta	+Noun
 flebit	+Noun
 flegmon	+Noun
-fleol	+Noun
+fleol	+Noun+VF
 flit	+Noun
 flok	+Noun
 flor	+Noun
@@ -6047,7 +6047,7 @@ format	+Noun
 formik	+Noun
 formika	+Noun
 formikasit	+Noun
-formol	+Noun
+formol	+Noun+VF
 formula	+Noun
 formül	+Noun
 formülasyon	+Noun
@@ -6149,7 +6149,7 @@ fuel	+Noun
 fueloil	+Noun
 fuhuş	+Noun
 fukusgiller	+Noun+PL
-ful	+Noun
+ful	+Noun+VF
 fular	+Noun
 fultaym	+Noun
 fulya	+Noun
@@ -6170,7 +6170,7 @@ fücceten	+Noun
 füg	+Noun
 fülüs	+Noun
 füme	+Noun
-fümerol	+Noun
+fümerol	+Noun+VF
 fünye	+Noun
 fürs	+Noun
 füru	+Noun+PL
@@ -6275,7 +6275,7 @@ gasıp	+Noun
 gasil	+Noun
 gasp	+Noun+CV
 gaspçı	+Noun
-gassal	+Noun
+gassal	+Noun+VF
 gastrit	+Noun
 gastroenterolog	+Noun
 gastroenteroloji	+Noun
@@ -6290,7 +6290,7 @@ gauss	+Noun
 gavot	+Noun
 gavur	+Noun
 gavurca	+Noun
-gayakol	+Noun
+gayakol	+Noun+VF
 gaybubet	+Noun
 gayda	+Noun
 gaydacı	+Noun
@@ -6300,12 +6300,12 @@ gayret	+Noun
 gayrımenkul	+Noun
 gayrımüslim	+Noun
 gayri	+Noun
-gayrimenkul	+Noun
+gayrimenkul	+Noun+VF
 gayya	+Noun
 gayzer	+Noun
 gaz	+Noun
 gaza	+Noun
-gazal	+Noun
+gazal	+Noun+VF
 gazap	+Noun+CV
 gazcı	+Noun
 gazel	+Noun
@@ -6404,7 +6404,7 @@ geneleme	+Noun
 genelev	+Noun
 genelge	+Noun
 genelkurmay	+Noun
-general	+Noun
+general	+Noun+VF
 genetik	+Noun+CV
 gengüdüm	+Noun
 genişbant	+Noun
@@ -6543,7 +6543,7 @@ glase	+Noun
 glayöl	+Noun
 gliding	+Noun
 glikojen	+Noun
-glikol	+Noun
+glikol	+Noun+VF
 glikoprotein	+Noun
 glikoz	+Noun
 glikozit	+Noun+CV
@@ -6559,10 +6559,10 @@ glüten	+Noun
 goblen	+Noun
 gocuk	+Noun+CV
 gofret	+Noun
-gol	+Noun
+gol	+Noun+VF
 golcü	+Noun
 goldol	+Noun
-golf	+Noun
+golf	+Noun+VF
 golfçü	+Noun
 gomalak	+Noun+CV
 gonca	+Noun
@@ -6822,7 +6822,7 @@ güherçile	+Noun
 gül	+Noun
 gülabdan	+Noun
 gülağacı	+Noun+P3
-gülbank	+Noun+CV
+gülbank	+Noun+CV+VF
 gülbeşeker	+Noun
 güldeste	+Noun
 güldürmen	+Noun
@@ -6963,7 +6963,7 @@ hacim	+Noun
 hacir	+Noun
 haciz	+Noun
 haç	+Noun
-had	+Noun
+had	+Noun+VF
 hadde	+Noun
 hademe	+Noun
 hadım	+Noun
@@ -6988,12 +6988,12 @@ hahamhane	+Noun
 hahnyum	+Noun
 hail	+Noun
 hain	+Noun
-hak	+Noun
+hak	+Noun+VF
 hakan	+Noun
 hakaret	+Noun
 hakem	+Noun
 haki	+Noun
-hakikat	+Noun
+hakikat	+Noun+VF
 hakim	+Noun
 hakimiyet	+Noun
 hakir	+Noun
@@ -7004,7 +7004,7 @@ hakkıhuzur	+Noun
 hakkısükut	+Noun
 haksever	+Noun
 hakuran	+Noun
-hal	+Noun
+hal	+Noun+VF
 hala	+Noun
 halas	+Noun
 halat	+Noun
@@ -7142,7 +7142,7 @@ hareke	+Noun
 hareket	+Noun
 harem	+Noun
 haremağası	+Noun+P3
-harf	+Noun
+harf	+Noun+VF
 harharyas	+Noun
 harıltı	+Noun
 hariciye	+Noun
@@ -7159,7 +7159,7 @@ harmonik	+Noun
 harmonizasyon	+Noun
 harmonyum	+Noun
 harnup	+Noun+CV
-harp	+Noun+CV
+harp	+Noun+CV+VF
 hars	+Noun
 hartuç	+Noun+CV
 hasar	+Noun
@@ -7262,7 +7262,7 @@ havyar	+Noun
 havza	+Noun
 hay	+Noun
 haya	+Noun
-hayal	+Noun
+hayal	+Noun+VF
 hayalci	+Noun
 hayalet	+Noun
 hayalgüc	+Noun
@@ -7296,7 +7296,7 @@ hayvanbilim	+Noun
 hayvancılık	+Noun+CV
 hayvankömürü	+Noun+P3
 haz	+Noun
-hazakat	+Noun
+hazakat	+Noun+VF
 hazan	+Noun
 hazar	+Noun
 hazım	+Noun
@@ -7328,8 +7328,8 @@ hektogram	+Noun
 hektolitre	+Noun
 hektometre	+Noun
 hela	+Noun
-helak	+Noun
-helal	+Noun
+helak	+Noun+VF
+helal	+Noun+VF
 helalzade	+Noun
 helecan	+Noun
 helenistik	+Noun
@@ -7507,10 +7507,10 @@ hikaye	+Noun
 hikmet	+Noun
 hilaf	+Noun
 hilafet	+Noun
-hilal	+Noun
-hilat	+Noun
+hilal	+Noun+VF
+hilat	+Noun+VF
 hile	+Noun
-hilkat	+Noun
+hilkat	+Noun+VF
 hilozoizm	+Noun
 himaye	+Noun
 himmet	+Noun
@@ -7548,7 +7548,7 @@ hintpirinc	+Noun
 hintsafranı	+Noun+P3
 hintsarısı	+Noun+P3
 hintyağı	+Noun+P3
-hiperbol	+Noun
+hiperbol	+Noun+VF
 hiperboloit	+Noun
 hiperenflasyon	+Noun
 hipergeometri	+Noun
@@ -7617,7 +7617,7 @@ hodri	+Noun
 hokey	+Noun
 hokka	+Noun
 hokkabaz	+Noun
-hol	+Noun
+hol	+Noun+VF
 holding	+Noun
 holigan	+Noun
 holmiyum	+Noun
@@ -7680,7 +7680,7 @@ huğ	+Noun
 hukuk	+Noun
 hukukçu	+Noun
 hulasa	+Noun
-hulul	+Noun
+hulul	+Noun+VF
 hulus	+Noun
 hulya	+Noun
 humbara	+Noun
@@ -7697,7 +7697,7 @@ hurma	+Noun
 hurra	+Noun
 huruç	+Noun+CV
 hurufat	+Noun
-husul	+Noun
+husul	+Noun+VF
 husumet	+Noun
 husus	+Noun
 hususiyet	+Noun
@@ -7744,7 +7744,7 @@ hürriyet	+Noun
 hürriyetçi	+Noun
 hüseyni	+Noun
 hüsnühal	+Noun
-hüsnükabul	+Noun
+hüsnükabul	+Noun+VF
 hüsnükuruntu	+Noun
 hüsnüniyet	+Noun
 hüsnütelakki	+Noun
@@ -7902,7 +7902,7 @@ icaz	+Noun
 icazet	+Noun
 icazetname	+Noun
 icbar	+Noun
-icmal	+Noun
+icmal	+Noun+VF
 icra	+Noun
 icraat	+Noun
 icracı	+Noun
@@ -7984,7 +7984,7 @@ iddiacı	+Noun
 iddianame	+Noun
 iddihar	+Noun
 ide	+Noun
-ideal	+Noun
+ideal	+Noun+VF
 idealist	+Noun
 idealizm	+Noun
 ideolog	+Noun
@@ -7993,8 +7993,8 @@ idil	+Noun
 idiopati	+Noun
 idman	+Noun
 idmancı	+Noun
-idol	+Noun
-idrak	+Noun
+idol	+Noun+VF
+idrak	+Noun+VF
 idrar	+Noun
 idrarzoru	+Noun
 idrisağac	+Noun
@@ -8023,7 +8023,7 @@ iğağac	+Noun
 iğde	+Noun
 iğdegiller	+Noun+PL
 iğdemir	+Noun
-iğfal	+Noun
+iğfal	+Noun+VF
 iğne	+Noun
 iğneardı	+Noun+P3
 iğnedanlık	+Noun
@@ -8039,9 +8039,9 @@ ihbar	+Noun
 ihbariye	+Noun
 ihbarname	+Noun
 ihdas	+Noun
-ihlal	+Noun
+ihlal	+Noun+VF
 ihlas	+Noun
-ihmal	+Noun
+ihmal	+Noun+VF
 ihracat	+Noun
 ihracatçı	+Noun
 ihraç	+Noun+CV
@@ -8052,14 +8052,14 @@ ihsas	+Noun
 ihtar	+Noun
 ihtarname	+Noun
 ihtida	+Noun
-ihtifal	+Noun
+ihtifal	+Noun+VF
 ihtikar	+Noun
 ihtilaç	+Noun+CV
 ihtilaf	+Noun
-ihtilal	+Noun
+ihtilal	+Noun+VF
 ihtilas	+Noun
 ihtilat	+Noun
-ihtimal	+Noun
+ihtimal	+Noun+VF
 ihtimam	+Noun
 ihtira	+Noun
 ihtiram	+Noun
@@ -8079,7 +8079,7 @@ ikame	+Noun
 ikamet	+Noun
 ikametgah	+Noun
 ikaz	+Noun
-ikbal	+Noun
+ikbal	+Noun+VF
 ikdam	+Noun
 ikebana	+Noun
 ikibir	+Noun
@@ -8106,7 +8106,7 @@ iklim	+Noun
 iklimbilim	+Noun
 iklimbilimci	+Noun
 iklimleme	+Noun
-ikmal	+Noun
+ikmal	+Noun+VF
 ikna	+Noun
 ikon	+Noun
 ikona	+Noun
@@ -8197,7 +8197,7 @@ ilzam	+Noun
 im	+Noun
 ima	+Noun
 imaj	+Noun
-imal	+Noun
+imal	+Noun+VF
 imalat	+Noun
 imalatçı	+Noun
 imalathane	+Noun
@@ -8239,7 +8239,7 @@ imparatorotu	+Noun+P3
 imren	+Noun
 imrence	+Noun
 imrenti	+Noun
-imsak	+Noun
+imsak	+Noun+VF
 imsakiye	+Noun
 imtihan	+Noun
 imtina	+Noun
@@ -8287,7 +8287,7 @@ inek	+Noun+CV
 inekağac	+Noun
 infaz	+Noun
 infertilite	+Noun
-infial	+Noun
+infial	+Noun+VF
 infilak	+Noun
 infinitezimal	+Noun
 infisah	+Noun
@@ -8297,7 +8297,7 @@ ingilizce	+Noun
 ingilizci	+Noun
 inha	+Noun
 inhidam	+Noun
-inhilal	+Noun
+inhilal	+Noun+VF
 inhiraf	+Noun
 inhisar	+Noun
 inhitat	+Noun
@@ -8341,7 +8341,7 @@ intaç	+Noun+CV
 intak	+Noun
 intan	+Noun
 intaniye	+Noun
-integral	+Noun
+integral	+Noun+VF
 integrasyon	+Noun
 intelek	+Noun
 interferometre	+Noun
@@ -8356,18 +8356,18 @@ internetçi	+Noun
 intiba	+Noun
 intibak	+Noun
 intifa	+Noun
-intihal	+Noun
+intihal	+Noun+VF
 intihalci	+Noun
 intihap	+Noun+CV
 intihar	+Noun
-intikal	+Noun
+intikal	+Noun+VF
 intikam	+Noun
 intisap	+Noun+CV
 intizam	+Noun
 intizar	+Noun
 intranet	+Noun
 intravenöz	+Noun
-inzal	+Noun
+inzal	+Noun+VF
 inzibat	+Noun
 inzimam	+Noun
 inziva	+Noun
@@ -8395,7 +8395,7 @@ ipnoz	+Noun
 ipotek	+Noun+CV
 ipotez	+Noun
 ipsiler	+Noun+PL
-iptal	+Noun
+iptal	+Noun+VF
 iptida	+Noun
 iptila	+Noun
 ipucu	+Noun+P3
@@ -8416,7 +8416,7 @@ irrasyonalizm	+Noun
 irrasyonel	+Noun
 irredantizm	+Noun
 irs	+Noun
-irsal	+Noun
+irsal	+Noun+VF
 irsaliye	+Noun
 irşat	+Noun+CV
 irtibat	+Noun
@@ -8430,7 +8430,7 @@ is	+Noun
 isabet	+Noun
 isfendan	+Noun
 ishakkuşu	+Noun+P3
-ishal	+Noun
+ishal	+Noun+VF
 isilik	+Noun+CV
 isim	+Noun
 iskalarya	+Noun
@@ -8503,13 +8503,13 @@ isteri	+Noun
 istiap	+Noun+CV
 istiare	+Noun
 istibdat	+Noun+CV
-istical	+Noun
+istical	+Noun+VF
 isticar	+Noun
 isticvap	+Noun+CV
 istida	+Noun
 istidaname	+Noun
 istidat	+Noun+CV
-istidlal	+Noun
+istidlal	+Noun+VF
 istif	+Noun
 istifa	+Noun
 istifade	+Noun
@@ -8528,13 +8528,13 @@ istihfaf	+Noun
 istihkak	+Noun
 istihkam	+Noun
 istihkar	+Noun
-istihlak	+Noun
-istihsal	+Noun
+istihlak	+Noun+VF
+istihsal	+Noun+VF
 istihza	+Noun
 istika	+Noun
 istikamet	+Noun
-istikbal	+Noun
-istiklal	+Noun
+istikbal	+Noun+VF
+istiklal	+Noun+VF
 istikra	+Noun
 istikrah	+Noun
 istikrar	+Noun
@@ -8542,11 +8542,11 @@ istikraz	+Noun
 istikşaf	+Noun
 istila	+Noun
 istim	+Noun
-istimal	+Noun
+istimal	+Noun+VF
 istimator	+Noun
 istimbot	+Noun
 istimdat	+Noun+CV
-istimlak	+Noun
+istimlak	+Noun+VF
 istinabe	+Noun
 istinaf	+Noun
 istinat	+Noun+CV
@@ -8554,11 +8554,11 @@ istinga	+Noun
 istinkaf	+Noun
 istinsah	+Noun
 istintak	+Noun
-istirahat	+Noun
+istirahat	+Noun+VF
 istirdat	+Noun+CV
 istirham	+Noun
 istiridye	+Noun
-istiskal	+Noun
+istiskal	+Noun+VF
 istismar	+Noun
 istismarcı	+Noun
 istisna	+Noun
@@ -8587,7 +8587,7 @@ işbölümü	+Noun+P3
 işbu	+Noun
 işçi	+Noun
 işçilik	+Noun+CV
-işgal	+Noun
+işgal	+Noun+VF
 işgalci	+Noun
 işgörü	+Noun
 işgücü	+Noun+P3
@@ -8624,10 +8624,10 @@ işporta	+Noun
 işportacı	+Noun
 işret	+Noun
 iştah	+Noun
-iştial	+Noun
-iştigal	+Noun
+iştial	+Noun+VF
+iştigal	+Noun+VF
 iştikak	+Noun
-iştirak	+Noun
+iştirak	+Noun+VF
 iştirakçi	+Noun
 iştiyak	+Noun
 işve	+Noun
@@ -8637,7 +8637,7 @@ işyazar	+Noun
 işyeri	+Noun+P3
 it	+Noun
 ita	+Noun
-itaat	+Noun
+itaat	+Noun+VF
 italyan	+Noun
 itboğan	+Noun
 itburnu	+Noun+P3
@@ -8650,7 +8650,7 @@ itfa	+Noun
 itfaiye	+Noun
 itfaiyeci	+Noun
 ithaf	+Noun
-ithal	+Noun
+ithal	+Noun+VF
 ithalat	+Noun
 ithalatçı	+Noun
 itham	+Noun
@@ -8658,7 +8658,7 @@ ithamname	+Noun
 ithıyarı	+Noun+P3
 itibar	+Noun
 itibari	+Noun
-itidal	+Noun
+itidal	+Noun+VF
 itikat	+Noun+CV
 itilaf	+Noun
 itimat	+Noun+CV
@@ -8770,7 +8770,7 @@ jeomorfolog	+Noun
 jeomorfoloji	+Noun
 jeopolitik	+Noun+CV
 jeosantrizm	+Noun
-jeosenklinal	+Noun
+jeosenklinal	+Noun+VF
 jeostrateji	+Noun
 jeotropizma	+Noun
 jest	+Noun
@@ -8796,9 +8796,9 @@ jorjet	+Noun
 jöle	+Noun
 jönprömiye	+Noun
 judo	+Noun
-jul	+Noun
+jul	+Noun+VF
 jumping	+Noun
-jurnal	+Noun
+jurnal	+Noun+VF
 jübile	+Noun
 jüpon	+Noun
 jüri	+Noun
@@ -8807,7 +8807,7 @@ k	+Noun
 k.	+Noun
 kababurun	+Noun
 kabadayı	+Noun
-kabahat	+Noun
+kabahat	+Noun+VF
 kabak	+Noun+CV
 kabakgiller	+Noun+PL
 kabakulak	+Noun+CV
@@ -8837,7 +8837,7 @@ kabotaj	+Noun
 kabristan	+Noun
 kabuk	+Noun+CV
 kabuklular	+Noun+PL
-kabul	+Noun
+kabul	+Noun+VF
 kaburga	+Noun
 kabus	+Noun
 kabza	+Noun
@@ -9017,7 +9017,7 @@ kalorifer	+Noun
 kaloriferci	+Noun
 kalorimetre	+Noun
 kalorimetri	+Noun
-kalp	+Noun+CV
+kalp	+Noun+CV+VF
 kalpak	+Noun+CV
 kalpazan	+Noun
 kalseduan	+Noun
@@ -9074,7 +9074,7 @@ kamyoncu	+Noun
 kamyonet	+Noun
 kan	+Noun
 kana	+Noun
-kanaat	+Noun
+kanaat	+Noun+VF
 kanaktarım	+Noun
 kanal	+Noun
 kanalizasyon	+Noun
@@ -9170,7 +9170,7 @@ kapıkulu	+Noun+P3
 kapılanduygu	+Noun
 kapıoğlanı	+Noun+P3
 kapik	+Noun+CV
-kapital	+Noun
+kapital	+Noun+VF
 kapitalist	+Noun
 kapitalizm	+Noun
 kapitone	+Noun
@@ -9276,7 +9276,7 @@ karaleylek	+Noun+CV
 karaltı	+Noun
 karaman	+Noun
 karamandola	+Noun
-karambol	+Noun
+karambol	+Noun+VF
 karamel	+Noun
 karamela	+Noun
 karamuk	+Noun+CV
@@ -9337,7 +9337,7 @@ kardaş	+Noun
 kardelen	+Noun
 kardeş	+Noun
 kardeşkanı	+Noun+P3
-kardinal	+Noun
+kardinal	+Noun+VF
 kardinalkuşu	+Noun+P3
 kardiyograf	+Noun
 kardiyografi	+Noun
@@ -9507,7 +9507,7 @@ kaşıyacak	+Noun
 kaşif	+Noun
 kaşkariko	+Noun
 kaşkaval	+Noun
-kaşkol	+Noun
+kaşkol	+Noun+VF
 kaşkorse	+Noun
 kaşmir	+Noun
 kat	+Noun
@@ -9527,7 +9527,7 @@ katar	+Noun
 katarakt	+Noun
 katavasya	+Noun
 katbilim	+Noun
-katedral	+Noun
+katedral	+Noun+VF
 kategori	+Noun
 kategorizasyon	+Noun
 katev	+Noun
@@ -9764,7 +9764,7 @@ kedidili	+Noun+P3
 kedigözü	+Noun+P3
 kedinanesi	+Noun+P3
 kediotu	+Noun+P3
-kefal	+Noun
+kefal	+Noun+VF
 kefalet	+Noun
 kefaletname	+Noun
 kefaret	+Noun
@@ -9806,7 +9806,7 @@ kelime	+Noun
 kelle	+Noun
 kelleci	+Noun
 keloğlan	+Noun
-kemal	+Noun
+kemal	+Noun+VF
 kemalist	+Noun
 kemalizm	+Noun
 keman	+Noun
@@ -9852,7 +9852,7 @@ kenevir	+Noun
 kenger	+Noun
 kengersakızı	+Noun+P3
 kent	+Noun
-kental	+Noun
+kental	+Noun+VF
 kentbilim	+Noun
 kentet	+Noun
 kentilyon	+Noun
@@ -9956,7 +9956,7 @@ keşmekeş	+Noun
 keşmir	+Noun
 keşşaf	+Noun
 ket	+Noun
-ketal	+Noun
+ketal	+Noun+VF
 ketçap	+Noun+CV
 kete	+Noun
 keten	+Noun
@@ -10028,7 +10028,7 @@ kıpı	+Noun
 kıpır	+Noun
 kıpırtı	+Noun
 kır	+Noun
-kıraat	+Noun
+kıraat	+Noun+VF
 kıraathane	+Noun
 kırağı	+Noun
 kıranta	+Noun
@@ -10202,7 +10202,7 @@ kilogram	+Noun
 kilogramkuvvet	+Noun
 kilogrammetre	+Noun
 kilohertz	+Noun
-kilojul	+Noun
+kilojul	+Noun+VF
 kilokalori	+Noun
 kilometre	+Noun
 kilometrekare	+Noun
@@ -10210,7 +10210,7 @@ kilometretaşı	+Noun+P3
 kilosikl	+Noun
 kiloton	+Noun
 kilovat	+Noun
-kilovatsaat	+Noun
+kilovatsaat	+Noun+VF
 kilovolt	+Noun
 kils	+Noun
 kimlik	+Noun+CV
@@ -10422,7 +10422,7 @@ kolera	+Noun
 kolesistektomi	+Noun
 kolesistit	+Noun
 kolesterin	+Noun
-kolesterol	+Noun
+kolesterol	+Noun+VF
 kolhoz	+Noun
 koli	+Noun
 kolibasil	+Noun
@@ -10589,7 +10589,7 @@ kontrbas	+Noun
 kontrendikasyon	+Noun
 kontrfile	+Noun
 kontrgerilla	+Noun
-kontrol	+Noun
+kontrol	+Noun+VF
 kontrolör	+Noun
 kontrplak	+Noun+CV
 kontür	+Noun
@@ -10619,7 +10619,7 @@ koordinasyon	+Noun
 koordinat	+Noun
 koordinatör	+Noun
 koordinatörlük	+Noun+CV
-kopal	+Noun
+kopal	+Noun+VF
 kopanaki	+Noun
 kopça	+Noun
 kopil	+Noun
@@ -10630,8 +10630,8 @@ kopuz	+Noun
 kopya	+Noun
 kor	+Noun
 kora	+Noun
-koral	+Noun
-koramiral	+Noun
+koral	+Noun+VF
+koramiral	+Noun+VF
 kordalılar	+Noun+PL
 kordela	+Noun
 kordiplomatik	+Noun+CV
@@ -10640,7 +10640,7 @@ kordone	+Noun
 korelasyon	+Noun
 koreograf	+Noun
 koreografi	+Noun
-korgeneral	+Noun
+korgeneral	+Noun+VF
 koridor	+Noun
 korindon	+Noun
 korkak	+Noun
@@ -10853,7 +10853,7 @@ kretase	+Noun
 kreten	+Noun
 kretenizm	+Noun
 kreton	+Noun
-krezol	+Noun
+krezol	+Noun+VF
 kriket	+Noun
 kriko	+Noun
 kriminolog	+Noun
@@ -10862,7 +10862,7 @@ kriptografi	+Noun
 kriptolog	+Noun
 kriptoloji	+Noun
 kripton	+Noun
-kristal	+Noun
+kristal	+Noun+VF
 kristalografi	+Noun
 kriter	+Noun
 kritisizm	+Noun
@@ -11281,7 +11281,7 @@ lakros	+Noun
 laktaz	+Noun
 laktik	+Noun
 laktoz	+Noun
-lal	+Noun
+lal	+Noun+VF
 lala	+Noun
 lalanga	+Noun
 lale	+Noun
@@ -11463,9 +11463,9 @@ liturya	+Noun
 lityum	+Noun
 liva	+Noun
 livar	+Noun
-liyakat	+Noun
+liyakat	+Noun+VF
 liyezon	+Noun
-lizol	+Noun
+lizol	+Noun+VF
 lobelya	+Noun
 lobi	+Noun
 lobut	+Noun
@@ -11484,7 +11484,7 @@ lohusa	+Noun
 lojistik	+Noun+CV
 lojman	+Noun
 lok	+Noun
-lokal	+Noun
+lokal	+Noun+VF
 lokanta	+Noun
 lokantacı	+Noun
 lokatif	+Noun
@@ -11532,7 +11532,7 @@ lumpektomi	+Noun
 lunapark	+Noun
 luti	+Noun
 lüfer	+Noun
-lügat	+Noun
+lügat	+Noun+VF
 lügatçe	+Noun
 lüks	+Noun
 lüksmetre	+Noun
@@ -11607,7 +11607,7 @@ mağfiret	+Noun
 mağlubiyet	+Noun
 mağma	+Noun
 mağmum	+Noun
-mahal	+Noun
+mahal	+Noun+VF
 mahalle	+Noun
 maharet	+Noun
 mahcubiyet	+Noun
@@ -11633,7 +11633,7 @@ mahreç	+Noun+CV
 mahremiyet	+Noun
 mahrukat	+Noun
 mahrumiyet	+Noun
-mahsul	+Noun
+mahsul	+Noun+VF
 mahsül	+Noun
 mahşer	+Noun
 mahunya	+Noun
@@ -11816,7 +11816,7 @@ maraton	+Noun
 maraz	+Noun
 maraza	+Noun
 marda	+Noun
-mareşal	+Noun
+mareşal	+Noun+VF
 margarin	+Noun
 marifet	+Noun
 marihuana	+Noun
@@ -11916,7 +11916,7 @@ matbuat	+Noun
 matem	+Noun
 matematik	+Noun+CV
 matematikçi	+Noun
-materyal	+Noun
+materyal	+Noun+VF
 materyalizm	+Noun
 matine	+Noun
 matiz	+Noun
@@ -11969,14 +11969,14 @@ mazoşizm	+Noun
 mazot	+Noun
 mazur	+Noun
 mazurka	+Noun
-meal	+Noun
+meal	+Noun+VF
 mebde	+Noun
 mebiz	+Noun
 meblağ	+Noun
 mebus	+Noun
 mebusan	+Noun+PL
 mebzul	+Noun
-mecal	+Noun
+mecal	+Noun+VF
 mecaz	+Noun
 mecburiyet	+Noun
 mecelle	+Noun
@@ -12039,7 +12039,7 @@ mekkare	+Noun
 mektep	+Noun+CV
 mektup	+Noun+CV
 melaike	+Noun
-melal	+Noun
+melal	+Noun+VF
 melamin	+Noun
 melanet	+Noun
 melanin	+Noun
@@ -12092,14 +12092,14 @@ menekşerengi	+Noun+P3
 menemen	+Noun
 menenjit	+Noun
 meneviş	+Noun
-menfaat	+Noun
+menfaat	+Noun+VF
 menfez	+Noun
 mengel	+Noun
 mengene	+Noun
 meni	+Noun
 menisk	+Noun
 menkıbe	+Noun
-menkul	+Noun
+menkul	+Noun+VF
 menopoz	+Noun
 menstruasyon	+Noun
 mensubiyet	+Noun
@@ -12108,7 +12108,7 @@ mensup	+Noun
 menşe	+Noun
 menşevik	+Noun
 menteşe	+Noun
-mentol	+Noun
+mentol	+Noun+VF
 menü	+Noun
 menzil	+Noun
 mera	+Noun
@@ -12184,7 +12184,7 @@ mesnevi	+Noun
 meson	+Noun
 mest	+Noun
 mesuliyet	+Noun
-meşakkat	+Noun
+meşakkat	+Noun+VF
 meşale	+Noun
 meşe	+Noun
 meşecik	+Noun+CV
@@ -12202,7 +12202,7 @@ met	+Noun+CV
 meta	+Noun
 metabolizma	+Noun
 metafizik	+Noun+CV
-metal	+Noun
+metal	+Noun+VF
 metalbilim	+Noun
 metalograf	+Noun
 metalografi	+Noun
@@ -12219,7 +12219,7 @@ meteorit	+Noun
 meteorolog	+Noun
 meteoroloji	+Noun
 meteortaşı	+Noun+P3
-methal	+Noun
+methal	+Noun+VF
 methiye	+Noun
 metih	+Noun
 metil	+Noun
@@ -12241,7 +12241,7 @@ metro	+Noun
 metrolog	+Noun
 metroloji	+Noun
 metronom	+Noun
-metropol	+Noun
+metropol	+Noun+VF
 metropolis	+Noun
 metropolit	+Noun
 metrukat	+Noun
@@ -12433,7 +12433,7 @@ minder	+Noun
 mine	+Noun
 mineçiçeği	+Noun+P3
 mineçiçeğigiller	+Noun+PL
-mineral	+Noun
+mineral	+Noun+VF
 mineralbilim	+Noun
 mineralog	+Noun
 mineraloji	+Noun
@@ -12454,7 +12454,7 @@ minnettar	+Noun
 minnoş	+Noun
 minör	+Noun
 mintan	+Noun
-minval	+Noun
+minval	+Noun+VF
 minyatür	+Noun
 minyon	+Noun
 mir	+Noun
@@ -12471,7 +12471,7 @@ misafirlik	+Noun+CV
 misafirperver	+Noun
 misafirpeverlik	+Noun
 misak	+Noun
-misal	+Noun
+misal	+Noun+VF
 misel	+Noun
 misil	+Noun
 misilleme	+Noun
@@ -12560,12 +12560,12 @@ monogami	+Noun
 monograf	+Noun
 monografi	+Noun
 monogram	+Noun
-monokl	+Noun
+monokl	+Noun+VF
 monokrom	+Noun
 monoksit	+Noun
 monokültür	+Noun
 monolog	+Noun
-monopol	+Noun
+monopol	+Noun+VF
 monosodyum	+Noun
 monoteist	+Noun
 monoteizm	+Noun
@@ -12576,7 +12576,7 @@ montaj	+Noun
 monte	+Noun
 moped	+Noun
 mopet	+Noun+CV
-moral	+Noun
+moral	+Noun+VF
 moralist	+Noun
 moralizm	+Noun
 morartı	+Noun
@@ -12767,7 +12767,7 @@ mutlakıyet	+Noun
 mutlakiyet	+Noun
 muttali	+Noun
 muvacehe	+Noun
-muvafakat	+Noun
+muvafakat	+Noun+VF
 muvaffakıyet	+Noun
 muvasalat	+Noun
 muvazaa	+Noun
@@ -12949,10 +12949,10 @@ müze	+Noun
 müzeci	+Noun
 müzekkere	+Noun
 müzik	+Noun+CV
-müzikal	+Noun
+müzikal	+Noun+VF
 müzikbilim	+Noun
 müzikçi	+Noun
-müzikhol	+Noun
+müzikhol	+Noun+VF
 müzikolog	+Noun
 müzikoloji	+Noun
 müziksever	+Noun
@@ -13007,7 +13007,7 @@ nanik	+Noun+CV
 nanosaniye	+Noun
 nanoteknoloji	+Noun
 nansuk	+Noun+CV
-napalm	+Noun
+napalm	+Noun+VF
 napolyoncu	+Noun
 nar	+Noun
 nara	+Noun
@@ -13028,7 +13028,7 @@ narsisizm	+Noun
 narsislik	+Noun
 nas	+Noun
 nasır	+Noun
-nasihat	+Noun
+nasihat	+Noun+VF
 nasip	+Noun+CV
 nasyonalizm	+Noun
 naşir	+Noun
@@ -13262,7 +13262,7 @@ nümayiş	+Noun
 nüsha	+Noun
 nütasyon	+Noun
 nüve	+Noun
-nüzul	+Noun
+nüzul	+Noun+VF
 o	+Noun
 o.	+Noun
 oba	+Noun
@@ -13405,7 +13405,7 @@ onyıl	+Noun
 oolit	+Noun
 oosfer	+Noun
 oosit	+Noun
-opal	+Noun
+opal	+Noun+VF
 opera	+Noun
 operakomik	+Noun+CV
 operasyon	+Noun
@@ -13424,7 +13424,7 @@ opus	+Noun
 ora	+Noun
 orak	+Noun+CV
 orakböceği	+Noun+P3
-oramiral	+Noun
+oramiral	+Noun+VF
 oran	+Noun
 orandışı	+Noun
 orangutan	+Noun
@@ -13451,7 +13451,7 @@ organizma	+Noun
 organza	+Noun
 organze	+Noun
 orgazm	+Noun
-orgeneral	+Noun
+orgeneral	+Noun+VF
 orhaneli	+Noun+P3
 origami	+Noun
 orijin	+Noun
@@ -13520,7 +13520,7 @@ ortoz	+Noun
 oruç	+Noun+CV
 orun	+Noun
 orya	+Noun
-oryantal	+Noun
+oryantal	+Noun+VF
 oryantalist	+Noun
 oryantalizm	+Noun
 osiloskop	+Noun
@@ -14035,9 +14035,9 @@ papyon	+Noun
 par	+Noun
 para	+Noun
 parabellum	+Noun
-parabol	+Noun
+parabol	+Noun+VF
 paraboloit	+Noun+CV
-paraçol	+Noun
+paraçol	+Noun+VF
 paradarlığı	+Noun+P3
 paradi	+Noun
 paradigma	+Noun
@@ -14344,7 +14344,7 @@ petek	+Noun+CV
 petekgöz	+Noun
 petrografi	+Noun
 petrokimya	+Noun
-petrol	+Noun
+petrol	+Noun+VF
 petrolcü	+Noun
 petroloji	+Noun
 petunya	+Noun
@@ -14585,7 +14585,7 @@ porsukgiller	+Noun+PL
 port	+Noun
 portakal	+Noun
 portakalrengi	+Noun+P3
-portal	+Noun
+portal	+Noun+VF
 portbagaj	+Noun
 porte	+Noun
 portföy	+Noun
@@ -14707,7 +14707,7 @@ protesto	+Noun
 protestocu	+Noun
 protez	+Noun
 protojin	+Noun
-protokol	+Noun
+protokol	+Noun+VF
 proton	+Noun
 protonema	+Noun
 protoplazma	+Noun
@@ -14938,7 +14938,7 @@ redresör	+Noun
 redüksüyon	+Noun
 reeskont	+Noun
 refah	+Noun
-refakat	+Noun
+refakat	+Noun+VF
 referandum	+Noun
 referans	+Noun
 refik	+Noun
@@ -15014,15 +15014,15 @@ resif	+Noun
 resim	+Noun
 resimlik	+Noun+CV
 resimyazı	+Noun
-resital	+Noun
+resital	+Noun+VF
 resmiyet	+Noun
 ressam	+Noun
 rest	+Noun
 restoran	+Noun
 restorasyon	+Noun
-resul	+Noun
+resul	+Noun+VF
 resül	+Noun
-resülmal	+Noun
+resülmal	+Noun+VF
 retina	+Noun
 retorik	+Noun+CV
 revaç	+Noun+CV
@@ -15062,9 +15062,9 @@ ribaund	+Noun
 ribaunt	+Noun
 ribozom	+Noun
 rica	+Noun
-rical	+Noun
-ricat	+Noun
-rikkat	+Noun
+rical	+Noun+VF
+ricat	+Noun+VF
+rikkat	+Noun+VF
 rimel	+Noun
 rina	+Noun
 ring	+Noun
@@ -15076,7 +15076,7 @@ ritim	+Noun
 ritüel	+Noun
 rivayet	+Noun
 riya	+Noun
-riyal	+Noun
+riyal	+Noun+VF
 riyala	+Noun
 riyaset	+Noun
 riyaziyat	+Noun
@@ -15095,7 +15095,7 @@ roket	+Noun
 roketatar	+Noun
 rokfor	+Noun
 rokoko	+Noun
-rol	+Noun
+rol	+Noun+VF
 rom	+Noun
 roman	+Noun
 romancı	+Noun
@@ -15183,7 +15183,7 @@ rüzgarölçer	+Noun
 s	+Noun
 s.	+Noun
 saadet	+Noun
-saat	+Noun
+saat	+Noun+VF
 saatçi	+Noun
 saba	+Noun
 sabah	+Noun
@@ -15226,7 +15226,7 @@ saçula	+Noun
 saçuzatan	+Noun
 sadak	+Noun+CV
 sadaka	+Noun
-sadakat	+Noun
+sadakat	+Noun+VF
 sadakor	+Noun
 sadaret	+Noun
 sadet	+Noun+CV
@@ -15442,7 +15442,7 @@ santimetreküp	+Noun
 santonin	+Noun
 santra	+Noun
 santrafor	+Noun
-santral	+Noun
+santral	+Noun+VF
 santrfor	+Noun
 santrhaf	+Noun
 santrifüj	+Noun
@@ -15466,7 +15466,7 @@ saptırım	+Noun
 sara	+Noun
 saraç	+Noun+CV
 saraçhane	+Noun
-sarahat	+Noun
+sarahat	+Noun+VF
 saraka	+Noun
 saray	+Noun
 sardalya	+Noun
@@ -15604,7 +15604,7 @@ sedimantoloji	+Noun
 sedir	+Noun
 sedye	+Noun
 sefa	+Noun
-sefahat	+Noun
+sefahat	+Noun+VF
 sefalet	+Noun
 sefaret	+Noun
 sefarethane	+Noun
@@ -15645,7 +15645,7 @@ seksolog	+Noun
 seksoloji	+Noun
 seksüel	+Noun
 sekte	+Noun
-sekteikalp	+Noun+CV
+sekteikalp	+Noun+CV+VF
 sektör	+Noun
 sekülarist	+Noun
 sekülarizm	+Noun
@@ -15683,7 +15683,7 @@ seman	+Noun
 semantem	+Noun
 semantik	+Noun+CV
 semaver	+Noun
-sembol	+Noun
+sembol	+Noun+VF
 sembolist	+Noun
 sembolizm	+Noun
 semen	+Noun
@@ -15766,7 +15766,7 @@ sergerde	+Noun
 sergi	+Noun
 sergievi	+Noun+P3
 sergüzeşt	+Noun
-serhat	+Noun+CV
+serhat	+Noun+CV+VF
 seri	+Noun
 serif	+Noun
 serigrafi	+Noun
@@ -15819,7 +15819,7 @@ seviye	+Noun
 sevk	+Noun
 sevkıyat	+Noun
 sevkiyat	+Noun
-seyahat	+Noun
+seyahat	+Noun+VF
 seyahatname	+Noun
 seyek	+Noun
 seyelan	+Noun
@@ -15870,7 +15870,7 @@ sığırkuyruğu	+Noun+P3
 sığırtenyası	+Noun+P3
 sığırtmaç	+Noun+CV
 sığlık	+Noun+CV
-sıhhat	+Noun
+sıhhat	+Noun+VF
 sıhhiye	+Noun
 sıhriyet	+Noun
 sıkacak	+Noun+CV
@@ -16063,7 +16063,7 @@ sintine	+Noun
 sinüs	+Noun
 sinüzit	+Noun
 sinüzoit	+Noun+CV
-sinyal	+Noun
+sinyal	+Noun+VF
 sinyalizasyon	+Noun
 sinyor	+Noun
 sipahi	+Noun
@@ -16075,7 +16075,7 @@ sipsi	+Noun
 sirayet	+Noun
 siren	+Noun
 sirk	+Noun
-sirkat	+Noun
+sirkat	+Noun+VF
 sirke	+Noun
 sirkengebin	+Noun
 sirkesineği	+Noun+P3
@@ -16095,7 +16095,7 @@ sismometre	+Noun
 sistem	+Noun
 sistire	+Noun
 sistit	+Noun
-sistol	+Noun
+sistol	+Noun+VF
 sit	+Noun
 sitayiş	+Noun
 site	+Noun
@@ -16180,7 +16180,7 @@ soku	+Noun
 sokum	+Noun
 sokun	+Noun
 sokur	+Noun
-sol	+Noun
+sol	+Noun+VF
 solaçık	+Noun
 solak	+Noun+CV
 solanahtarı	+Noun+P3
@@ -16342,7 +16342,7 @@ spermatozoit	+Noun+CV
 spesifikasyon	+Noun
 spesiyalite	+Noun
 spiker	+Noun
-spiral	+Noun
+spiral	+Noun+VF
 spiril	+Noun
 spiritualist	+Noun
 spiritualizm	+Noun
@@ -16399,7 +16399,7 @@ stereotipi	+Noun
 sterilizasyon	+Noun
 sterlin	+Noun
 sterling	+Noun
-sterol	+Noun
+sterol	+Noun+VF
 stetoskop	+Noun+CV
 steyşın	+Noun
 stil	+Noun
@@ -16428,7 +16428,7 @@ strüktüralist	+Noun
 strüktüralizm	+Noun
 stüdyo	+Noun
 su	+Noun
-sual	+Noun
+sual	+Noun+VF
 sualtı	+Noun+P3
 suare	+Noun
 suaskıları	+Noun+P3
@@ -16468,7 +16468,7 @@ suikast	+Noun
 suikastçi	+Noun
 suimuamele	+Noun
 suiniyet	+Noun
-suistimal	+Noun
+suistimal	+Noun+VF
 suizan	+Noun
 sukabağı	+Noun+P3
 sukamışı	+Noun+P3
@@ -16483,7 +16483,7 @@ sulamaç	+Noun
 sulfata	+Noun
 sulh	+Noun
 sulhname	+Noun
-sulp	+Noun+CV
+sulp	+Noun+CV+VF
 sulta	+Noun
 sultan	+Noun
 sultani	+Noun
@@ -16559,7 +16559,7 @@ suyuk	+Noun+CV
 suyuvarı	+Noun+P3
 suzidil	+Noun
 suzidilara	+Noun
-suzinak	+Noun
+suzinak	+Noun+VF
 sübek	+Noun+CV
 sübjektivite	+Noun
 sübjektivizm	+Noun
@@ -16628,7 +16628,7 @@ süpürgeçalısı	+Noun+P3
 süpürgedarısı	+Noun+P3
 süpürgeotu	+Noun+P3
 sürahi	+Noun
-sürat	+Noun
+sürat	+Noun+VF
 sürç	+Noun
 sürdürüm	+Noun
 süre	+Noun
@@ -16748,7 +16748,7 @@ süzüntü	+Noun
 şakir	+Noun
 şakrakkuşu	+Noun+P3
 şakşak	+Noun+CV
-şakul	+Noun
+şakul	+Noun+VF
 şal	+Noun
 şalak	+Noun+CV
 şalgam	+Noun
@@ -16794,7 +16794,7 @@ süzüntü	+Noun
 şaplak	+Noun+CV
 şaprak	+Noun
 şaptaşı	+Noun+P3
-şarampol	+Noun
+şarampol	+Noun+VF
 şarap	+Noun+CV
 şarapçı	+Noun
 şaraphane	+Noun
@@ -16831,13 +16831,13 @@ süzüntü	+Noun
 şebek	+Noun+CV
 şebeke	+Noun
 şebnem	+Noun
-şecaat	+Noun
+şecaat	+Noun+VF
 şecere	+Noun
 şeci	+Noun
 şedde	+Noun
 şef	+Noun
-şefaat	+Noun
-şefkat	+Noun
+şefaat	+Noun+VF
+şefkat	+Noun+VF
 şehadet	+Noun
 şehbender	+Noun
 şehir	+Noun
@@ -16876,7 +16876,7 @@ süzüntü	+Noun
 şemse	+Noun
 şemsi	+Noun
 şemsiye	+Noun
-şenaat	+Noun
+şenaat	+Noun+VF
 şendere	+Noun
 şenlik	+Noun+CV
 şer	+Noun
@@ -16910,7 +16910,7 @@ süzüntü	+Noun
 şev	+Noun
 şevk	+Noun
 şevket	+Noun
-şevval	+Noun
+şevval	+Noun+VF
 şey	+Noun
 şeyh	+Noun
 şeyhülislam	+Noun
@@ -16966,7 +16966,7 @@ süzüntü	+Noun
 şilin	+Noun
 şilt	+Noun+CV
 şilte	+Noun
-şimal	+Noun
+şimal	+Noun+VF
 şimdi	+Noun
 şimendifer	+Noun
 şimiotaksi	+Noun
@@ -17038,7 +17038,7 @@ süzüntü	+Noun
 şüheda	+Noun
 şükran	+Noun
 şükür	+Noun
-şümul	+Noun
+şümul	+Noun+VF
 şüphe	+Noun
 şüreka	+Noun+PL
 şüyu	+Noun
@@ -17188,7 +17188,7 @@ takanak	+Noun+CV
 takarrüp	+Noun+CV
 takarrür	+Noun
 takas	+Noun
-takat	+Noun
+takat	+Noun+VF
 takatuka	+Noun
 takaza	+Noun
 takbih	+Noun
@@ -17244,7 +17244,7 @@ takviye	+Noun
 takyidat	+Noun
 takyit	+Noun+CV
 talak	+Noun
-talakat	+Noun
+talakat	+Noun+VF
 talakatli	+Noun
 talan	+Noun
 talaş	+Noun
@@ -17328,7 +17328,7 @@ tansif	+Noun
 tansiyometre	+Noun
 tansiyometri	+Noun
 tansiyon	+Noun
-tantal	+Noun
+tantal	+Noun+VF
 tantana	+Noun
 tanyeli	+Noun+P3
 tanyeri	+Noun+P3
@@ -17936,7 +17936,7 @@ tereyağ	+Noun
 tereyağı	+Noun+P3
 terfi	+Noun
 terfih	+Noun
-tergal	+Noun
+tergal	+Noun+VF
 terhin	+Noun
 terhis	+Noun
 terilen	+Noun
@@ -17951,7 +17951,7 @@ terkin	+Noun
 terkip	+Noun+CV
 terlik	+Noun+CV
 terme	+Noun
-terminal	+Noun
+terminal	+Noun+VF
 terminatör	+Noun
 terminolog	+Noun
 terminoloji	+Noun
@@ -18188,9 +18188,9 @@ tilki	+Noun
 tilkikuyruğu	+Noun+P3
 tilmiz	+Noun
 tim	+Noun
-timbal	+Noun
+timbal	+Noun+VF
 timsah	+Noun
-timsal	+Noun
+timsal	+Noun+VF
 timus	+Noun
 timüs	+Noun
 tin	+Noun
@@ -18409,7 +18409,7 @@ trampetçi	+Noun
 tramplen	+Noun
 tramvay	+Noun
 trança	+Noun
-transandantal	+Noun
+transandantal	+Noun+VF
 transandantalizm	+Noun
 transatlantik	+Noun+CV
 transdüktör	+Noun
@@ -18452,7 +18452,7 @@ trigonometri	+Noun
 trigonometrik	+Noun
 trigram	+Noun
 triko	+Noun
-trikosefal	+Noun
+trikosefal	+Noun+VF
 trikotaj	+Noun
 trilyoner	+Noun
 trinketa	+Noun
@@ -18466,7 +18466,7 @@ tritium	+Noun
 triton	+Noun
 trityum	+Noun
 triyo	+Noun
-trol	+Noun
+trol	+Noun+VF
 trolcü	+Noun
 troleybüs	+Noun
 trombin	+Noun
@@ -18494,9 +18494,9 @@ tufan	+Noun
 tufeyli	+Noun
 tugay	+Noun
 tuğ	+Noun
-tuğamiral	+Noun
+tuğamiral	+Noun+VF
 tuğbay	+Noun
-tuğgeneral	+Noun
+tuğgeneral	+Noun+VF
 tuğla	+Noun
 tuğlu	+Noun
 tuğra	+Noun
@@ -18506,7 +18506,7 @@ tuh	+Noun
 tuhaf	+Noun
 tuhafiye	+Noun
 tuhafiyeci	+Noun
-tul	+Noun
+tul	+Noun+VF
 tulu	+Noun
 tuluat	+Noun
 tuluatçı	+Noun
@@ -18549,7 +18549,7 @@ turnageçiti	+Noun+P3
 turne	+Noun
 turnike	+Noun
 turno	+Noun
-turnusol	+Noun
+turnusol	+Noun+VF
 turnuva	+Noun
 turp	+Noun
 turpgiller	+Noun+PL
@@ -18585,7 +18585,7 @@ tutulum	+Noun
 tutum	+Noun
 tuturuk	+Noun+CV
 tutya	+Noun
-tuval	+Noun
+tuval	+Noun+VF
 tuvalet	+Noun
 tuyug	+Noun
 tuz	+Noun
@@ -18610,7 +18610,7 @@ tükürükotu	+Noun+P3
 tül	+Noun
 tülbent	+Noun+CV
 tülyum	+Noun
-tümamiral	+Noun
+tümamiral	+Noun+VF
 tümbakış	+Noun
 tümbaşkalaşma	+Noun
 tümbaşlılar	+Noun+PL
@@ -18624,7 +18624,7 @@ tümdevre	+Noun
 tümedanış	+Noun
 tümen	+Noun
 tümevarım	+Noun
-tümgeneral	+Noun
+tümgeneral	+Noun+VF
 tümgün	+Noun
 tümkirpikliler	+Noun+PL
 tümleç	+Noun+CV
@@ -18790,7 +18790,7 @@ ustura	+Noun
 usturlap	+Noun+CV
 usturmaça	+Noun
 usturpa	+Noun
-usul	+Noun
+usul	+Noun+VF
 uşak	+Noun+CV
 uşakkapan	+Noun
 uşkun	+Noun
@@ -18986,7 +18986,7 @@ uzyazı	+Noun
 üzüntü	+Noun
 v	+Noun
 v.	+Noun
-vaat	+Noun+CV
+vaat	+Noun+CV+VF
 vaaz	+Noun
 vabeste	+Noun
 vade	+Noun
@@ -19017,7 +19017,7 @@ vaki	+Noun
 vakit	+Noun
 vakum	+Noun
 vale	+Noun
-valf	+Noun
+valf	+Noun+VF
 vali	+Noun
 valide	+Noun
 valilik	+Noun+CV
@@ -19089,7 +19089,7 @@ vazo	+Noun
 v.b.	+Noun
 vb.	+Noun
 veba	+Noun
-vebal	+Noun
+vebal	+Noun+VF
 veca	+Noun
 vecibe	+Noun
 vecit	+Noun
@@ -19189,8 +19189,8 @@ virt	+Noun+CV
 virtüoz	+Noun
 virtüöz	+Noun
 virüs	+Noun
-visal	+Noun
-visamiral	+Noun
+visal	+Noun+VF
+visamiral	+Noun+VF
 viski	+Noun
 viskoz	+Noun
 vişne	+Noun
@@ -19216,7 +19216,7 @@ vizör	+Noun
 vizyon	+Noun
 vodvil	+Noun
 vokabüler	+Noun
-vokal	+Noun
+vokal	+Noun+VF
 vokalist	+Noun
 volan	+Noun
 volatilite	+Noun
@@ -19252,7 +19252,7 @@ vuslat	+Noun
 vuzuh	+Noun
 vücut	+Noun+CV
 vükela	+Noun
-vüsat	+Noun
+vüsat	+Noun+VF
 w	+Noun
 w.	+Noun
 walkman	+Noun
@@ -20028,7 +20028,7 @@ zerrin	+Noun
 zerzevat	+Noun
 zerzevatçı	+Noun
 zevahir	+Noun
-zeval	+Noun
+zeval	+Noun+VF
 zevat	+Noun
 zevce	+Noun
 zevç	+Noun+CV
@@ -20119,10 +20119,10 @@ zurna	+Noun
 züccaciye	+Noun
 züğürt	+Noun
 züht	+Noun+CV
-zühul	+Noun
+zühul	+Noun+VF
 zükam	+Noun
 zül	+Noun
-zülal	+Noun
+zülal	+Noun+VF
 zülfaris	+Noun
 zülüf	+Noun
 zümre	+Noun
