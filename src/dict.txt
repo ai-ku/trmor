@@ -202,7 +202,7 @@ ağbenek	+Noun+CV
 ağda	+Noun
 ağdacı	+Noun
 ağı	+Noun
-ağıağac	+Noun
+ağıağaç	+Noun+P3+CV
 ağıl	+Noun
 ağım	+Noun
 ağıot	+Noun+P3
@@ -667,7 +667,7 @@ ambülans	+Noun
 amca	+Noun
 amcamlar	+Noun+PL
 amcanlar	+Noun+PL
-amcaoğl	+Noun+P3
+amcaoğul	+Noun+P3+VD
 amcazade	+Noun
 amel	+Noun
 amele	+Noun
@@ -1348,7 +1348,7 @@ atkuyruğugiller	+Noun+PL
 atlambaç	+Noun+CV
 atlangıç	+Noun+CV
 atlas	+Noun
-atlasağac	+Noun
+atlasağaç	+Noun+P3+CV
 atlasçiçek	+Noun+P3+CV
 atlasçiçeğigiller	+Noun+PL
 atlet	+Noun
@@ -1392,7 +1392,7 @@ avgın	+Noun
 avionik	+Noun
 avisto	+Noun
 avize	+Noun
-avizeağac	+Noun
+avizeağaç	+Noun+P3+CV
 avlak	+Noun+CV
 avlu	+Noun
 avokado	+Noun
@@ -1421,7 +1421,7 @@ ayaktaş	+Noun
 ayakter	+Noun+P3
 ayaktop	+Noun+P3
 ayakuç	+Noun+P3+CV
-ayaküst	+Noun
+ayaküst	+Noun+P3
 ayaküzer	+Noun+P3
 ayakyol	+Noun+P3
 ayal	+Noun+VF
@@ -1739,7 +1739,7 @@ bambul	+Noun
 bamtel	+Noun+P3
 bamya	+Noun
 ban	+Noun
-banağac	+Noun
+banağaç	+Noun+P3+CV
 banço	+Noun
 bandaj	+Noun
 bandana	+Noun
@@ -2280,7 +2280,7 @@ bijon	+Noun
 bikarbonat	+Noun
 bikini	+Noun
 bikir	+Noun+VD
-biladerağac	+Noun
+biladerağaç	+Noun+P3+CV
 bilanço	+Noun
 bilar	+Noun+PL
 bilardo	+Noun
@@ -3191,7 +3191,7 @@ cüzzam	+Noun
 çap	+Noun
 çapa	+Noun
 çapak	+Noun+CV
-çapanoğl	+Noun+P3
+çapanoğul	+Noun+P3+VD
 çapar	+Noun
 çaparı	+Noun
 çaparız	+Noun
@@ -3685,7 +3685,7 @@ cüzzam	+Noun
 çözünürlük	+Noun+CV
 çözüşme	+Noun
 çubuk	+Noun+CV
-çubukağac	+Noun
+çubukağaç	+Noun+P3+CV
 çubukkod	+Noun
 çuha	+Noun
 çuhaçiçek	+Noun+P3+CV
@@ -3800,7 +3800,7 @@ dan	+Noun
 dana	+Noun
 danaayak	+Noun+P3+CV
 danabaş	+Noun
-danaburn	+Noun+P3
+danaburun	+Noun+P3+VD
 danakıranot	+Noun+P3
 dandini	+Noun
 dangıl	+Noun
@@ -3815,11 +3815,11 @@ dansör	+Noun
 dansöz	+Noun
 dantel	+Noun
 dantela	+Noun
-dantelağac	+Noun
+dantelağaç	+Noun+P3+CV
 dara	+Noun
 daraban	+Noun
 daraç	+Noun
-darağac	+Noun
+darağaç	+Noun+P3+CV
 darbe	+Noun
 darbeci	+Noun
 darboğaz	+Noun
@@ -3964,7 +3964,7 @@ demeç	+Noun+CV
 demet	+Noun
 demin	+Noun
 demir	+Noun
-demirağac	+Noun
+demirağaç	+Noun+P3+CV
 demirbaş	+Noun
 demirci	+Noun
 demircilik	+Noun+CV
@@ -4087,7 +4087,7 @@ derbi	+Noun
 derç	+Noun+CV
 derdest	+Noun
 dere	+Noun
-dereagz	+Noun+P3
+dereağız	+Noun+P3+VD
 derebey	+Noun+P3
 derebeylik	+Noun+CV
 derece	+Noun
@@ -4167,7 +4167,7 @@ devaskülarizasyon	+Noun
 devayna	+Noun+P3
 deve	+Noun
 devebağırtan	+Noun
-deveboyn	+Noun+P3
+deveboyun	+Noun+P3+VD
 deveci	+Noun
 devediken	+Noun+P3
 devediş	+Noun+P3
@@ -4993,7 +4993,7 @@ eklemot	+Noun+P3
 eklenti	+Noun
 eklimetre	+Noun
 ekmek	+Noun+CV
-ekmekağac	+Noun
+ekmekağaç	+Noun+P3+CV
 ekmekayva	+Noun+P3
 ekmekkadayıf	+Noun+P3
 eko	+Noun
@@ -5121,8 +5121,7 @@ elmas	+Noun
 elmasiye	+Noun
 elmaşeker	+Noun+P3
 elmen	+Noun
-eloğl	+Noun+P3
-eloğul	+Noun+P3
+eloğul	+Noun+P3+VD
 eltakım	+Noun+P3
 elta	+Noun+P3
 elti	+Noun
@@ -6591,7 +6590,7 @@ gökada	+Noun
 gökbilim	+Noun
 gökbilimci	+Noun
 gökcism	+Noun+P3
-gökçeağac	+Noun
+gökçeağaç	+Noun+P3+CV
 gökçebalık	+Noun+P3+CV
 gökçeyazın	+Noun
 gökdelen	+Noun
@@ -6911,8 +6910,8 @@ güvenoylama	+Noun+P3
 güvenoy	+Noun+P3
 güvensizlik	+Noun+CV
 güvercin	+Noun
-güvercinboyn	+Noun+P3
-güvercingöğs	+Noun
+güvercinboyun	+Noun+P3+VD
+güvercingöğüs	+Noun+P3+VD
 güverte	+Noun
 güvey	+Noun
 güveyfener	+Noun+P3
@@ -7263,7 +7262,7 @@ hayalifener	+Noun
 hayalkırıklık	+Noun+P3+CV
 hayalperest	+Noun
 hayat	+Noun
-hayatağac	+Noun
+hayatağaç	+Noun+P3+CV
 hayatiyet	+Noun
 haydari	+Noun
 haydariye	+Noun
@@ -7368,7 +7367,7 @@ herek	+Noun+CV
 hergele	+Noun
 hergün	+Noun
 herif	+Noun
-herifçioğl	+Noun+P3
+herifçioğul	+Noun+P3+VD
 herkes	+Noun+PL
 herkül	+Noun
 herşey	+Noun
@@ -7514,7 +7513,7 @@ hindistansülün	+Noun+P3
 hindolog	+Noun
 hindoloji	+Noun
 hinduizm	+Noun
-hinoğl	+Noun+P3
+hinoğul	+Noun+P3+VD
 hint	+Noun
 hintarmut	+Noun+P3+CV
 hintbadem	+Noun+P3
@@ -7988,7 +7987,7 @@ idol	+Noun+VF
 idrak	+Noun+VF
 idrar	+Noun
 idrarzoru	+Noun
-idrisağac	+Noun
+idrisağaç	+Noun+P3+CV
 idrisot	+Noun+P3
 ifa	+Noun
 ifade	+Noun
@@ -8010,7 +8009,7 @@ iftira	+Noun
 iglo	+Noun
 iguana	+Noun
 iğ	+Noun
-iğağac	+Noun
+iğağaç	+Noun+P3+CV
 iğde	+Noun
 iğdegiller	+Noun+PL
 iğdemir	+Noun
@@ -8275,7 +8274,7 @@ indükleç	+Noun+CV
 indüksiyon	+Noun
 ineç	+Noun+CV
 inek	+Noun+CV
-inekağac	+Noun
+inekağaç	+Noun+P3+CV
 infaz	+Noun
 infertilite	+Noun
 infial	+Noun+VF
@@ -8316,7 +8315,7 @@ insancı	+Noun
 insanımsılar	+Noun+PL
 insaniçincilik	+Noun+CV
 insaniyet	+Noun
-insanoğl	+Noun+P3
+insanoğul	+Noun+P3+VD
 insansılar	+Noun+PL
 insektaryum	+Noun
 insicam	+Noun
@@ -8472,7 +8471,7 @@ ispiyon	+Noun
 ispiyoncu	+Noun
 ispritizma	+Noun
 israf	+Noun
-israiloğl	+Noun+P3
+israiloğul	+Noun+P3+VD
 istakoz	+Noun
 istalagmit	+Noun
 istalaktit	+Noun
@@ -8630,7 +8629,7 @@ ita	+Noun
 itaat	+Noun+VF
 italyan	+Noun
 itboğan	+Noun
-itburn	+Noun+P3
+itburun	+Noun+P3+VD
 itdirsek	+Noun+P3+CV
 itelem	+Noun
 itenek	+Noun+CV
@@ -9340,7 +9339,7 @@ kare	+Noun
 karekök	+Noun
 karfiçe	+Noun
 karga	+Noun
-kargaburn	+Noun+P3
+kargaburun	+Noun+P3+VD
 kargabüken	+Noun
 kargacık	+Noun
 kargadelen	+Noun
@@ -9598,14 +9597,14 @@ kavşak	+Noun+CV
 kavuk	+Noun+CV
 kavukçu	+Noun
 kavun	+Noun
-kavunağac	+Noun
+kavunağaç	+Noun+P3+CV
 kavuncu	+Noun
 kavuniç	+Noun+P3+CV
 kavurga	+Noun
 kavurma	+Noun
 kavurmaç	+Noun+CV
 kavuşum	+Noun
-kavuşumdevr	+Noun+P3
+kavuşumdevir	+Noun+P3+VD
 kavut	+Noun
 kavuz	+Noun
 kavuzlular	+Noun+PL
@@ -10056,7 +10055,7 @@ kırmataş	+Noun
 kırmık	+Noun
 kırmız	+Noun
 kırmızböcek	+Noun+P3+CV
-kırmızıağaç	+Noun
+kırmızıağaç	+Noun+CV
 kırmızıbiber	+Noun
 kırmızıkeklik	+Noun
 kırmızılahana	+Noun
@@ -10258,7 +10257,7 @@ kisve	+Noun
 kişi	+Noun
 kişilik	+Noun+CV
 kişilikdış	+Noun+P3
-kişioğl	+Noun+P3
+kişioğul	+Noun+P3+VD
 kişmiş	+Noun
 kişniş	+Noun
 kişnişşeker	+Noun+P3
@@ -11054,7 +11053,7 @@ kuşbaş	+Noun+P3
 kuşbaz	+Noun
 kuşbilim	+Noun
 kuşbilimci	+Noun
-kuşburn	+Noun+P3
+kuşburun	+Noun+P3+VD
 kuşdil	+Noun+P3
 kuşe	+Noun
 kuşekağıt	+Noun+P3+CV
@@ -13661,7 +13660,7 @@ ozon	+Noun
 öksüz	+Noun
 öküz	+Noun
 öküzbalık	+Noun+P3+CV
-öküzburn	+Noun+P3
+öküzburun	+Noun+P3+VD
 öküzdil	+Noun+P3
 öküzgöz	+Noun+P3
 öküzsoğuk	+Noun+P3+CV
@@ -13677,7 +13676,7 @@ ozon	+Noun
 ölçüt	+Noun
 öleş	+Noun
 ölet	+Noun
-ölmezoğl	+Noun+P3
+ölmezoğul	+Noun+P3+VD
 ölü	+Noun
 ölüdoğa	+Noun
 ölüm	+Noun
@@ -16739,7 +16738,6 @@ süzüntü	+Noun
 şamanizm	+Noun
 şamar	+Noun
 şamaroğlan	+Noun+P3
-şamaröğlan	+Noun+P3
 şamata	+Noun
 şambaba	+Noun
 şambriyel	+Noun
