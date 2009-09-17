@@ -1,47 +1,399 @@
-define Alphabet [a|b|c|ç|d|e|f|g|ğ|h|ı|i|j|k|l|m|n|o|ö|p|r|s|ş|t|u|ü|v|y|z];
-define Consonant [b|c|ç|d|f|g|ğ|h|j|k|l|m|n|p|r|s|ş|t|v|y|z];
-define ConsonantVX [ç|f|h|k|p|s|ş|t];
+#### Türk Dil Kurumu Yazım Kılavuzundan: (15 Eylül 2009)
+
+
+### 1. Ses, Harf ve Alfabe
+
+# Türk alfabesi, Latin harfleri esas alınarak 1.XI.1928 gün ve 1353
+# sayılı Türk Harflerinin Kabul ve Tatbiki Hakkında Kanun ile kabul
+# edilmiştir. Bu Kanun’a göre, Türk alfabesinde 29 harf bulunmaktadır.
+
+define Alphabet0  [a|b|c|ç|d|e|f|g|ğ|h|ı|i|j|k|l|m|n|o|ö|p|r|s|ş|t|u|ü|v|y|z];
+define Circumflex [â|î|û];
+define Foreign [q|w|x];
+define Alphabet [Alphabet|Circumflex|Foreign];
 define Vowel [a|e|ı|i|o|ö|u|ü];
-define VowelAH [a|e|ı|i|o|ö|u|ü|A|H];
-define VowelA [a|e|ı|i|o|ö|u|ü|A];
-define VowelB [a|ı|o|u];
-define VowelF [e|i|ö|ü];
-define VowelBU [a|ı];
-define VowelBR [o|u];
-define VowelFU [e|i];
-define VowelFR [ö|ü];
+define Cons [b|c|ç|d|f|g|ğ|h|j|k|l|m|n|p|r|s|ş|t|v|y|z];
 
-read regex [
 
-VowelAH -> 0 || _ {+Hyor} 
+!! Special characters in the input:
+!! Stems consist of regular lowercase characters in the Alphabet.
+!! The following multichar flags may appear after the stem:
+!! +CD +CV +VD +VF
+!! Special characters in suffixes:
+!! All suffixes start with a "+".
+!! The capital A represents [ae]
+!! The capital H represents [ıiuü]
+!! The capital D represents [dt]
+!! The capital C represents [cç]
+!! The capital Y,N,S represent optional y,n,s characters
 
+define Multi ["+CD"|"+CV"|"+VD"|"+VF"];
+define StemEnd [Multi* %+];
+
+
+### 2. Düzeltme İşareti
+
+# Düzeltme işaretinin kullanılacağı yerler aşağıda gösterilmiştir:
+
+## 2.1 Uzun okunuşlu ünlüler
+
+# Yazılışları bir, anlamları ve okunuşları ayrı olan kelimeleri ayırt
+# etmek için, okunuşları uzun olan ünlülerin üzerine konur: adem
+# (yokluk), âdem (insan); adet (sayı), âdet (gelenek, alışkanlık);
+# alem (bayrak), âlem (dünya, evren); alim (her şeyi bilen), âlim
+# (bilgin); aşık (eklem kemiği), âşık (vurgun, tutkun); hakim (hikmet
+# sahibi), hâkim (yargıç); hal (pazar yeri), hâl (durum, vaziyet);
+# hala (babanın kız kardeşi), hâlâ (henüz); şura (şu yer), şûra
+# (danışma kurulu).
+
+# UYARI : Katil (< katl = öldürme) ve kadir (< kadr = değer)
+# kelimeleriyle karışma olasılığı olduğu hâlde katil (ka:til =
+# öldüren) ve kadir (< ka:dir = güçlü) kelimelerinin düzeltme işareti
+# konmadan yazılması yaygınlaşmıştır.
+
+## 2.2 Yabancı kelimeler ve özel isimler
+
+# Arapça ve Farsçadan dilimize giren birtakım kelime ve eklerle özel
+# adlarda bulunan ince g, k ünsüzlerinden sonra gelen a ve u ünlüleri
+# üzerine konur: dergâh, gâvur, ordugâh, tezgâh, yadigâr, Nigâr;
+# dükkân, hikâye, kâfir, kâğıt, Hakkâri, Kâzım, mahkûm, mekân, mezkûr,
+# sükûn, sükût. Kişi ve yer adlarında ince l ünsüzünden sonra gelen a
+# ve u ünlüleri de düzeltme işareti ile yazılır: Halûk, Lâle, Nalân;
+# Balâ, Elâzığ, İslâhiye, Lâdik, Lâpseki.
+
+## 2.3 Nispet i'si
+
+# Nispet i'sinin belirtme durumu ve iyelik ekiyle karışmasını önlemek
+# için kullanılır. Böylece (Türk) askeri ve askerî (okul), (İslam)
+# dini ve dinî (bilgiler), (fizik) ilmi ve ilmî (tartışmalar),
+# (Atatürk'ün) resmi ve resmî (kuruluşlar) gibi anlamları farklı
+# kelimelerin karıştırılması da önlenmiş olur.
+
+# Nispet i'si alan kelimelere Türkçe ekler getirildiğinde düzeltme
+# işareti olduğu gibi kalır: millîleştirmek, millîlik, resmîleştirmek,
+# resmîlik.
+
+
+
+### 3. Ünlüler
+
+
+## 3.1 Ünlülerin Nitelikleri
+
+# Ses yolunda herhangi bir engele çarpmadan çıkan seslere ünlü
+# denir. Türkçede sekiz ünlü vardır: a, e, ı, i, o, ö, u, ü.
+
+# Ünlüler şu biçimde sınıflandırılır:
+
+# A. Çıkış yeri ve dilin durumuna göre:
+
+#    1.        Kalın ünlüler: a, ı, o, u.
+#    2.        İnce ünlüler: e, i, ö, ü.
+
+# B. Dudakların durumuna göre:
+
+#    1.        Düz ünlüler: a, e, ı, i.
+#    2.        Yuvarlak ünlüler: o, ö, u, ü.
+
+# C. Ağzın açıklığına göre:
+
+#    1.        Geniş ünlüler: a, e, o, ö.
+#    2.        Dar ünlüler: ı, i, u, ü.
+
+define VB  [a|ı|o|u];		# Back
+define VF  [e|i|ö|ü];		# Front
+define VFU [e|i];		# Front unrounded
+define VFR [ö|ü];		# Front rounded
+define VBU [a|ı];		# Back unrounded
+define VBR [o|u];		# Back rounded
+
+
+## 3.2 Büyük Ünlü Uyumu
+
+# Bir kelimenin birinci hecesinde kalın bir ünlü (a, ı, o, u)
+# bulunuyorsa, diğer hecelerdeki ünlüler de kalın; ince bir ünlü (e,
+# i, ö, ü) bulunuyorsa diğer hecelerdeki ünlüler de ince olur: adım,
+# ağız, ayak, boyun, boyunduruk, burun, dalga, dudak, duvak,
+# kırlangıç; beşik, bilezik, gelincik, gözlük, üzengi, vergi,
+# yüzük. Buna büyük ünlü uyumu adı verilir.
+
+# Büyük ünlü uyumuna aykırı bazı Türkçe kelimeler de vardır: anne,
+# dahi, elma, hangi, hani, inanmak, kardeş, şişman.
+
+# Büyük ünlü uyumu alıntı kelimelerde aranmaz: ahenk, badem, ceylan,
+# çiroz, dükkân, fidan, gazete, hamsi, kestane, limon, model, nişasta,
+# pehlivan, selam, tiyatro, viraj, ziyaret.
+
+# Birleşik kelimelerde büyük ünlü uyumu aranmaz: açıkgöz, bilgisayar,
+# çekyat, hanımeli.
+
+# -gil, -ken, -leyin, -mtırak, -yor ekleri büyük ünlü uyumuna uymaz:
+# akşam-leyin, bakla-gil-ler, çalışır-ken, ekşi-mtırak, yürü-yor.
+
+# -daş (-taş) eki bazı kelimelerde büyük ünlü uyumuna uymaz: din-daş,
+# gönül-daş, meslek-taş, ülkü-daş.
+
+# -ki aitlik eki büyük ünlü uyumuna uymaz: akşamki, yarınki,
+# duvardaki, yoldaki, ondaki, yazıdaki, onunki.
+
+# Büyük ünlü uyumuna girmeyen kelimelere gelen ekler, kalınlık incelik
+# bakımından son hecenin ünlüsüne uyar: adalet-li, anne-si,
+# kardeş-lik, meslektaş-ımız, şişman-lık.
+
+# Son ünlüleri kalın sıradan olmasına karşın incelik özelliği gösteren
+# bazı alıntı kelimeler ince ünlülü ekler alır: alkol / alkolü,
+# hakikat / hakikati, helak / helakimiz, kabul / kabulü, kontrol /
+# kontrolü, protokol / protokolü, saat / saate, sadakat / sadakatten.
+
+
+## 3.3 Küçük Ünlü Uyumu
+
+# Küçük ünlü uyumu kuralı iki yönlüdür:
+
+# 5.1. Bir kelimenin ilk hecesinde düz ünlü (a, e, ı, i) varsa
+# sonraki hecelerde de düz ünlü bulunur: anlaşmak, yanaşmak, kayıkçı,
+# ısırmak, ılıklaşmak, seslenmek, yelek, bilek, çilek.
+
+# 5.2. Bir kelimenin ilk hecesinde yuvarlak ünlü (o, ö, u, ü) varsa
+# bunu izleyen ilk hecede dar yuvarlak (u, ü) veya geniş düz (a, e)
+# ünlü bulunur: boyunduruk, çocuk, odun, yorgunluk, yoklamak, vurmak,
+# yumurta, özlemek, güreşmek, sürmek.
+
+# Küçük ünlü uyumuna aykırı bazı Türkçe kelimeler de vardır: avuç,
+# avurt, çamur, kabuk, kavuk, kavun, kavur-, kavuş-, savur-, yağmur.
+
+# Küçük ünlü uyumu, alıntı kelimelerde aranmaz: aktör, alkol, bandrol,
+# daktilo, doktor, horoz, kabul, kitap, konsolos, muzır, mühim, mümin,
+# müzik, profesör, radyo, vakur.
+
+# Küçük ünlü uyumuna aykırı kelimelere getirilen ekler, kelimenin son
+# ünlüsüne uyar: kavun-u, konsolos-luğ-u, mümin-lik, müzik-çi,
+# yağmur-luk.
+
+# -ki aitlik eki yalnızca birkaç örnekte küçük ünlü uyumuna uyar:
+# bugünkü, dünkü, öbürkü.
+
+# Bu ünlü düzenleri ve ilk heceyi izleyen ünlüler aşağıdaki çizelgede
+# gösterilmiştir:
+
+# a › a, ı (bakar, alır)
+# o › u, a (omuz, oya)
+# e › e, i (geçer, gelir)
+# ö › ü, e (ölçü, ördek)
+# ı › ı, a (kılıç, kısa)
+# u › u, a (uzun, uzak)
+# i › i, e (ilik, ince)
+# ü › ü, e (ütü, ürkek)  
+
+
+define VowelHarmony [
+    H -> 0 // Vowel StemEnd _
 ].o.[
-
-D -> t, C -> ç || ConsonantVX %+ _ ,,
-[Y|N|S] -> 0 || Consonant %+ _ ,,
-H -> 0 || VowelAH %+ _ 
-
+    A -> e // VB  \Vowel* "+VF" \Vowel* _ ,,
+    H -> i // VBU \Vowel* "+VF" \Vowel* _ ,,
+    H -> ü // VBR \Vowel* "+VF" \Vowel* _
 ].o.[
-
-D -> d, C -> c,
-Y -> y, N -> n, S -> s
-
+    "+VF" -> 0
 ].o.[
-
-A -> a || VowelB \Vowel* _ ,,
-A -> e || VowelF \Vowel* _ ,,
-H -> ı || VowelB \Vowel* A \Vowel* _ ,,
-H -> i || VowelF \Vowel* A \Vowel* _ ,,
-H -> ı || VowelBU \VowelA* _ ,,
-H -> i || VowelFU \VowelA* _ ,,
-H -> u || VowelBR \VowelA* _ ,,
-H -> ü || VowelFR \VowelA* _
-
+    A -> a // VB  \Vowel* _ ,,
+    A -> e // VF  \Vowel* _ ,,
+    H -> ı // VBU \Vowel* _ ,,
+    H -> i // VFU \Vowel* _ ,,
+    H -> u // VBR \Vowel* _ ,,
+    H -> ü // VFR \Vowel* _
 ].o.[
-#
-#ç -> c, k -> ğ || _ %+ VowelAH ,,
-#k -> g || n _ %+ VowelAH ,,
-#[k|g] -> ğ || \[n|r] _ %+ VowelAH
-t -> d || _ %+ VowelAH 
+    A -> e,
+    H -> i
+];
 
-].o.[ %+ -> 0 ];
+
+## 3.4 Ünlü Daralması (a - ı, e – i)
+
+# Türkçede a, e ünlüsü ile biten fiillerin şimdiki zaman çekiminde,
+# söyleyiş ve yazılışta da a ünlüleri ı, u; e ünlüleri i, ü olur:
+# başlıyor, kanıyor, oynuyor, doymuyor; izliyor, diyor, gelmiyor,
+# gözlüyor.
+
+# Birden çok heceli ve a, e ünlüleri ile biten fiiller, ünlüyle
+# başlayan ek aldıklarında bu fiillerdeki a, e ünlülerinde söyleyişte
+# yaygın bir daralma (ı ve i'ye dönme) eğilimi görülür. Ancak,
+# söyleyişteki ı, i ünlüleri yazıya geçirilmez: başlayan, yaşayacak,
+# atlayarak, saklayalı, atmayalım, gelmeyen, izlemeyecek, gitmeyerek,
+# gizleyeli, besleyelim.
+
+# Buna karşılık tek heceli olan demek ve yemek fiillerinde,
+# söyleyişteki i ünlüsü yazıya da geçirilir: diyen, diyerek, diyecek,
+# diyelim, diye; yiyen, yiyerek, yiyecek, yiyelim, yiye, yiyince,
+# yiyip. Ancak deyince, deyip sözlerindeki e yazılışta korunur.
+
+
+define VowelClosing [
+    Vowel -> 0	|| _ StemEnd ? {yor}
+].o.[
+    e -> i	|| .#. y _ StemEnd [Y|y] ,,
+    e -> i	|| .#. d _ StemEnd [Y|y] \[H|i] ,,
+    H -> i	|| .#. [d|y] StemEnd _ {yor}
+];
+
+
+## 3.5 Ünlü Düşmesi
+
+# İkinci hecesinde dar ünlü bulunan iki heceli kelimeler ünlüyle
+# başlayan bir ek aldıklarında ikinci hecelerindeki dar ünlüler
+# genellikle düşer: ağız / ağzı, alın / alnı, bağır / bağra, bağrım,
+# beniz / benzi, beyin / beynimiz, boyun / boynu, böğür / böğrüm,
+# burun / burnu, geniz / genzi, göğüs / göğsün, gönül / gönlünüz,
+# karın / karnı, oğul / oğlu; çevir- / çevril-, devir- / devril-.
+
+
+define VDflag [ Multi* "+VD" ];
+define Vsuffix [ StemEnd (Y|N|S) [Vowel|A|H] ];
+
+define VowelDrop [
+    Vowel -> 0 || _ Cons VDflag Vsuffix
+].o.[
+    "+VD" -> 0
+];
+
+
+### 4. Ünsüzler
+
+## 4.1 Ünsüzlerin Nitelikleri
+
+# Ses yolunda bir engele çarparak çıkan seslere ünsüz denir.
+
+# Dilimizde yirmi bir ünsüz vardır. Bunlar: b, c, ç, d, f, g, ğ, h, j,
+# k, l, m, n, p, r, s, ş, t, v, y, z.
+
+# Ünsüzler ses tellerinin titreşime uğrayıp uğramamasına göre iki
+# gruba ayrılır:
+
+# 1. Ses tellerinin titreşmesiyle oluşan ünsüzlere tonlu (yumuşak)
+# ünsüzler adı verilir: b, c, d, g, ğ, j, l, m, n, r, v, y, z.
+
+define CV [b|c|d|g|ğ|j|l|m|n|r|v|y|z]; # Voiced consonant
+
+# 2. Ses telleri titreşmeden oluşan ünsüzlere tonsuz (sert) ünsüzler
+# denir: ç, f, h, k, p, s, ş, t.
+
+define CU [ç|f|h|k|p|s|ş|t];	# Unvoiced consonant
+
+
+## 4.2 Ünsüz Tonlanması
+
+# Kökeni Türkçe olan kelimelerin sonunda b, c, d, g ünsüzleri
+# bulunmaz. Ancak, anlam farkını belirtmek üzere ad, od, sac gibi
+# birkaç kelimenin yazılışında buna uyulmaz: ad (isim), at (binek
+# hayvanı); od (ateş), ot (bitki); sac (yassı demir), saç (kıl).
+
+define CVP [b|c|d|g];		# Voiced plosives
+define CUP [p|ç|t|k];		# Unvoiced plosives
+
+# Dilimizdeki hac, şad, yâd gibi birkaç örnek dışında, alıntı
+# kelimelerde tonsuzlaşma kuralına uyulmuştur: sebep (< sebeb), kitap
+# (< kitab), bent (< bend), cilt (< cild), bant (< band), etüt (<
+# etüd), metot (< metod), standart (< standard), ahenk (< aheng),
+# hevenk (< aveng), renk (< reng). Bu gibi alıntılar ünlü ile başlayan
+# bir ek aldıklarında kelime sonundaki tonsuz ünsüzler tonlulaşır:
+# sebep / sebebi, kitap / kitabı, bent / bendi, cilt / cildi, etüt /
+# etüdü, metot / metodu, ahenk / ahengi, hevenk / hevengi, renk /
+# rengi.
+
+# UYARI : Bazı alıntı kelimelerde tonlulaşma (yumuşama) olmaz: ahlak /
+# ahlakın, cumhuriyet / cumhuriyete, evrak / evrakı, hukuk / hukuku,
+# ittifak / ittifaka, sepet / sepeti, tank / tankı, bank / bankı.
+
+# Birden fazla heceli kelimelerin sonunda bulunan p, ç, t, k ünsüzleri
+# ünlüyle başlayan bir ek aldığında tonlulaşarak b, c, d, ğ'ye
+# dönüşür: kelep / kelebi; ağaç / ağacı, kazanç / kazancı; geçit /
+# geçidi, kanat / kanadı; başak / başağı, bıçak / bıçağı, çocuk /
+# çocuğu, dudak / dudağı, durak / durağı, uzak / uzağı.
+
+# Tek heceli kelimelerin sonunda bulunan p, ç, t, k ünsüzleri ise iki
+# ünlü arasında çoğunlukla korunur: ak / akı; at / atı; ek / eki; et /
+# eti; göç / göçü; ip / ipi; kaç / kaçıncı; kök / kökü; ok / oku; ot /
+# otu; saç / saçı; sap / sapı; suç / suçu; süt / sütü; üç /
+# üçü. Ancak, tek heceli olduğu hâlde sonundaki ünsüzü tonlulaşan
+# kelimeler de vardır: but / budu, dip / dibi, gök / göğü, kap / kabı,
+# kurt / kurdu, uç / ucu, yurt / yurdu.
+
+define CVflag [ Multi* "+CV" ];
+
+define ConsVoicing [
+    p -> b, ç -> c, t -> d, k -> G || _ CVflag Vsuffix
+].o.[
+    G -> ğ  || \n _ ,,
+    G -> g  ||  n _
+].o.[
+    "+CV" -> 0
+];
+
+
+## 4.3 Ünsüz Uyumu
+
+# Dilimizde tonsuz (sert) ünsüzle biten kelimelere gelen ekler tonsuz
+# (sert) ünsüzle başlar: aç-tı, aş-çı, bak-tım, bas-kı, çiçek-ten,
+# düş-kün, geç-tim, ipek-çi, seç-kin, seç-ti, süt-çü.
+
+define ConsUnvoicing [
+	D -> t, C -> ç //  CU StemEnd _
+].o.[
+	D -> d, C -> c
+];
+
+
+## 4.4 Ünsüz Türemesi (y, v)
+
+# İki ünlünün yan yana bulunduğu bazı alıntı kelimelerde ünlüler
+# arasında y, v sesleri türemiştir: fiyat (< fiat), zayıf (< zaif);
+# konservatuvar, laboratuvar, pisuvar, repertuvar, tretuvar, tuval,
+# tuvalet.  
+
+## 4.5 Ünsüz Düşmesi
+
+# Arapçadan dilimize girmiş olan ve sonunda ikiz ünsüz bulunan
+# kelimelerin yalın durumunda ünsüzlerden biri düşer (ünsüz tekleşir):
+# hak (< hakk), his (< hiss), ret (< redd), zan (< zann), zem (<
+# zemm). Bu tür kelimelere ünlüyle başlayan bir ek geldiğinde düşen
+# ünsüz ortaya çıkar: hak, hakka; his, hissimiz; ret, reddi; zan,
+# zannımca; zem, zemmi.
+
+define CDflag [ Multi* "+CD" ];
+
+define ConsDoubling [
+    b->{bb}, c->{cc}, ç->{çç}, d->{dd}, f->{ff}, g->{gg}, ğ->{ğğ},
+    h->{hh}, j->{jj}, k->{kk}, l->{ll}, m->{mm}, n->{nn}, p->{pp},
+    r->{rr}, s->{ss}, ş->{şş}, t->{tt}, v->{vv}, y->{yy}, z->{zz}
+    || _ CDflag Vsuffix
+].o.[
+    "+CD" -> 0
+];
+
+## 4.6 n > m Değişmesi
+
+# Türkçede kullanılan bazı kelimelerdeki b ünsüzünden önce gelen n
+# ünsüzü m'ye dönüşür: saklambaç (< saklanbaç), dolambaç (< dolanbaç),
+# ambar (< anbar), amber (< anber), cambaz (< canbaz), çember (<
+# çenber), kümbet (< gunbed), memba (< menba), mümbit (< munbit),
+# tambur (< tanbur).
+
+
+define Optionals [
+    Y -> y, N -> n, S -> s  || Vowel StemEnd _
+].o.[
+    [Y|N|S] -> 0
+];
+
+
+!! The following special characters are in the input:
+!! A, H, D, C, Y, N, S, +VF, +VD, +CV, +CD, +
+
+read regex
+VowelClosing .o.		# modifies stem ending vowel
+VowelHarmony .o.		# assigns A, H; removes +VF
+VowelDrop .o.			# must come after VowelHarmony, removes +VD
+ConsUnvoicing .o.		# assigns D, C
+ConsVoicing .o. 		# modifies stem ending consonant, removes +CV
+ConsDoubling .o.		# must come after ConsVoicing, removes +CD
+Optionals .o.			# assigns Y, N, S
+[ %+ -> 0 ];
