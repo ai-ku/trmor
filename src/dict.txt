@@ -120,7 +120,7 @@ adçekme	+Noun
 adem	+Noun
 ademelma	+Noun+P3
 ademiyet	+Noun
-ademoğl	+Noun+P3
+ademoğul	+Noun+P3+VD
 ademot	+Noun+P3
 adenin	+Noun
 adenokarsinom	+Noun
@@ -250,7 +250,7 @@ ahfat	+Noun+CV
 ahır	+Noun
 ahir	+Noun
 ahiret	+Noun
-ahit	+Noun
+ahit	+Noun+CV+VD
 ahitname	+Noun
 ahize	+Noun
 ahkam	+Noun+PL
@@ -342,7 +342,7 @@ akide	+Noun
 akifer	+Noun
 akik	+Noun+CV
 akis	+Noun+VD
-akit	+Noun
+akit	+Noun+CV+VD
 akkan	+Noun
 akkarınca	+Noun
 akkavak	+Noun+CV
@@ -5526,7 +5526,7 @@ evci	+Noun
 evdemonizm	+Noun
 evdeş	+Noun
 evham	+Noun+PL
-eviç	+Noun
+eviç	+Noun+CV+VD
 evin	+Noun
 evirgeç	+Noun
 evirtim	+Noun
@@ -7595,7 +7595,7 @@ hititoloji	+Noun
 hiyerarşi	+Noun
 hiyeroglif	+Noun
 hiza	+Noun
-hizip	+Noun
+hizip	+Noun+CV+VD
 hizmet	+Noun
 hizmetçi	+Noun
 hizmetkar	+Noun
@@ -9654,7 +9654,7 @@ kayışbalık	+Noun+P3+CV
 kayışçı	+Noun
 kayışdil	+Noun+P3
 kayışkıran	+Noun
-kayıt	+Noun
+kayıt	+Noun+CV+VD
 kayıtım	+Noun
 kaykay	+Noun
 kaykaycı	+Noun
@@ -11081,7 +11081,7 @@ kutan	+Noun
 kutnu	+Noun
 kutsiyet	+Noun
 kutu	+Noun
-kutup	+Noun
+kutup	+Noun+CV+VD
 kutupengel	+Noun
 kutuplanma	+Noun
 kutupyıldız	+Noun+P3
@@ -11246,7 +11246,7 @@ lağıv	+Noun+VD
 lahana	+Noun
 lahavle	+Noun
 lahika	+Noun
-lahit	+Noun
+lahit	+Noun+CV+VD
 lahmacun	+Noun
 lahuri	+Noun
 lahza	+Noun
@@ -12960,7 +12960,7 @@ nakavt	+Noun
 nakıs	+Noun
 nakış	+Noun+VD
 nakil	+Noun+VD
-nakit	+Noun
+nakit	+Noun+CV+VD
 nakkare	+Noun
 nakkaş	+Noun
 nakliyat	+Noun
@@ -13088,7 +13088,7 @@ nergisgiller	+Noun+PL
 nergizzambak	+Noun+P3+CV
 nervür	+Noun
 nesep	+Noun+CV
-nesiç	+Noun
+nesiç	+Noun+CV+VD
 nesih	+Noun+VD
 nesil	+Noun+VD
 nesir	+Noun+VD
@@ -13735,7 +13735,7 @@ ozon	+Noun
 önişlem	+Noun
 önişlemci	+Noun
 önizleme	+Noun
-önkayıt	+Noun
+önkayıt	+Noun+CV+VD
 önkol	+Noun
 önkoşul	+Noun
 önlem	+Noun
