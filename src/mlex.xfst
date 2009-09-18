@@ -114,6 +114,7 @@ define Morphemes [
     "+SinceDoingSo"	-> {+YAlH},
     "+Start"		-> {+YAkoy},
     "+Stay"		-> {+YAkal},
+    "+TM"		-> 0,		!! New flag indicating time words
 !    "+VD"		-> "+VD",	!! Phonetic flag for vowel dropping
 !    "+VF"		-> "+VF",	!! Phonetic flag for vowel fronting
     "+Verb"		-> 0,
@@ -137,7 +138,6 @@ define Vowel [a|e|ı|i|o|ö|u|ü];
 define VowelAH [a|e|ı|i|o|ö|u|ü|A|H];
 define PDC ["+Past"|"+Past2"|"+Desr"|"+Cond"];
 define Alpha [Consonant|Vowel];
-define Multi \Alpha;
 
 define AltCase [
 	"+Abl" -> {+ndAn}, 
@@ -149,7 +149,7 @@ define AltCase [
 	["+P3sg"|"+P3pl"] _,
 	"+Pron""+Rel""+A3sg""+Pnon" _,
 	"+Adj""+Rel""^DB""+Noun""+Zero""+A3sg""+Pnon" _,
-	"+P3" ?* "+Pnon" _
+	"+P3" \"^DB"* "+Pnon" _
 ];
 
 define AltPersonPDC [
@@ -179,7 +179,7 @@ define AltPersonNegAor [
 
 define AltPersonMisc [
     "+A1pl" -> {+lHm}	|| "+Opt" _ ,,
-    "+A3pl" -> 0	|| "+PL" ?* _
+    "+A3pl" -> 0	|| "+PL" \"^DB"* _
 ];
 
 define AltPossSu [
@@ -187,16 +187,16 @@ define AltPossSu [
     "+P1sg"	-> {+YHm},
     "+P2pl"	-> {+YHnHz},
     "+P2sg"	-> {+YHn},
-    "+P3sg"	-> {+YH}  || "+SU" Multi* "+A3sg" _ ,,
-    "+Gen"	-> {+YHn} || .#. \"+P3"* "+SU" \"+P3"* "+A3sg" "+Pnon" _ ,,
-    "+Pnon"	-> {+YH}  || "+P3" ?* "+SU" ?* _, "+SU" ?* "+P3" ?* _
+    "+P3sg"	-> {+YH}  || "+SU" \"^DB"* "+A3sg" _ ,,
+    "+Gen"	-> {+YHn} || .#. \["^DB"|"+P3"]* "+SU" \["^DB"|"+P3"]* "+A3sg" "+Pnon" _ ,,
+    "+Pnon"	-> {+YH}  || "+P3" \"^DB"* "+SU" \"^DB"* _, "+SU" \"^DB"* "+P3" \"^DB"* _
 ];
 
 define AltPossMisc [
-    "+P1sg" -> 0	|| "+P1" ?* _ ,,
-    "+P2sg" -> 0	|| "+P2" ?* _ ,,
-    "+P3pl" -> {+SH}	|| "+A3pl" _ , "+PL" ?* _ ,,
-    "+Pnon" -> {+SH}	|| "+P3" ?* _ 
+    "+P1sg" -> 0	|| "+P1" \"^DB"* _ ,,
+    "+P2sg" -> 0	|| "+P2" \"^DB"* _ ,,
+    "+P3pl" -> {+SH}	|| "+A3pl" _ , "+PL" \"^DB"* _ ,,
+    "+Pnon" -> {+SH}	|| "+P3" \"^DB"* _ 
 ];
 
 define AltAor [
