@@ -399,7 +399,7 @@ aksöğüt	+Noun+CV
 aksu	+Noun+SU
 aksülamel	+Noun
 aksülümen	+Noun
-akşam	+Noun
+akşam	+Noun+TM
 akşamcı	+Noun
 akşamsefa	+Noun+P3
 akşamüst	+Noun+P3
@@ -2639,7 +2639,7 @@ budunbetim	+Noun
 budunbilim	+Noun
 bufa	+Noun
 bufalo	+Noun
-bugün	+Noun
+bugün	+Noun+TM
 buğday	+Noun
 buğdaybit	+Noun+P3
 buğdaygiller	+Noun+PL
@@ -4779,7 +4779,7 @@ dümdar	+Noun
 dümen	+Noun
 dümenci	+Noun
 dümtek	+Noun
-dün	+Noun
+dün	+Noun+TM
 dünit	+Noun
 dünür	+Noun
 dünya	+Noun
@@ -6337,8 +6337,8 @@ geberik	+Noun+CV
 gebre	+Noun
 gebreot	+Noun+P3
 gebreotugiller	+Noun+PL
-gece	+Noun
-gececi	+Noun
+gece	+Noun+TM
+#gececi	+Noun
 gecekondu	+Noun
 gecekonducu	+Noun
 gecesefa	+Noun+P3
@@ -6870,7 +6870,7 @@ gündoğum	+Noun+P3
 gündoğu	+Noun+P3
 gündöndü	+Noun
 gündönüm	+Noun+P3
-gündüz	+Noun
+gündüz	+Noun+TM
 gündüzlü	+Noun
 gündüzsefa	+Noun+P3
 günebakan	+Noun
@@ -15186,7 +15186,7 @@ saadet	+Noun
 saat	+Noun+VF
 saatçi	+Noun
 saba	+Noun
-sabah	+Noun
+sabah	+Noun+TM
 sabahçı	+Noun
 sabahlık	+Noun+CV
 saban	+Noun
@@ -16967,7 +16967,7 @@ süzüntü	+Noun
 şilt	+Noun+CV
 şilte	+Noun
 şimal	+Noun+VF
-şimdi	+Noun
+şimdi	+Noun+TM
 şimendifer	+Noun
 şimiotaksi	+Noun
 şimioterapi	+Noun
@@ -19483,7 +19483,7 @@ yarımca	+Noun
 yarımgün	+Noun
 yarımkanatlılar	+Noun+PL
 yarımküre	+Noun
-yarın	+Noun
+yarın	+Noun+TM
 yarıson	+Noun
 yarış	+Noun
 yarışçı	+Noun
