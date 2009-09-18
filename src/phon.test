@@ -43,10 +43,12 @@ intersect net
 define nouns
 
 # read regex [ nouns "+A3sg""+P1pl""+Nom" ];
-read regex [nouns Nflect0]
+read regex [nouns Nflect1]
 & ~$["+PL" ?* "+A3sg"]
 & ~$["+P1" ?* ["+A3pl"|"+A3sg"] \"+P1sg"]
-& ~$["+P2" ?* ["+A3pl"|"+A3sg"] \"+P2sg"];
+& ~$["+P2" ?* ["+A3pl"|"+A3sg"] \"+P2sg"]
+& ~$["+A3pl""+Pnon""+Nom""^DB""+Verb""+Zero""+Pres""+A3pl""+Cop"]
+;
 upper net
 define feat
 
