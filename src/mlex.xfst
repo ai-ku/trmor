@@ -72,8 +72,10 @@ define Morphemes [
     "+Num"		-> 0,
     "+Opt"		-> {+YA},
     "+Ord"		-> 0,
+    "+P1"		-> 0,		!! New flag for stems with possessives
     "+P1pl"		-> {+HmHz},
     "+P1sg"		-> {+Hm},
+    "+P2"		-> 0,		!! New flag for stems with possessives
     "+P2pl"		-> {+HnHz},
     "+P2sg"		-> {+Hn},
     "+P3"		-> 0,		!! New flag for compound nouns
@@ -107,6 +109,7 @@ define Morphemes [
     "+Rel"		-> {+ki},
     "+Related"		-> {+sAl},	!! {+k}
     "+Repeat"		-> {+YAdur},
+    "+SU"		-> 0,		!! New flag for special handling of "su"
     "+Since"		-> {+DHr},
     "+SinceDoingSo"	-> {+YAlH},
     "+Start"		-> {+YAkoy},
@@ -133,7 +136,8 @@ define Consonant [b|c|ç|d|f|g|ğ|h|j|k|l|m|n|p|r|s|ş|t|v|y|z];
 define Vowel [a|e|ı|i|o|ö|u|ü];
 define VowelAH [a|e|ı|i|o|ö|u|ü|A|H];
 define PDC ["+Past"|"+Past2"|"+Desr"|"+Cond"];
-define Multi \[Consonant|Vowel];
+define Alpha [Consonant|Vowel];
+define Multi \Alpha;
 
 define AltCase [
 	"+Abl" -> {+ndAn}, 
@@ -178,11 +182,19 @@ define AltPersonMisc [
     "+A3pl" -> 0	|| "+PL" ?* _
 ];
 
-define AltPoss [
-    "+P3sg" -> {+YH}, 
-    "+Pnon" -> {+YH}	|| {su} Multi* "+P3" ?* _ ,,
-    "+P3sg" -> {+YH}	|| .#. {su} Multi* _
-].o.[
+define AltPossSu [
+    "+P1pl"	-> {+YHmHz},
+    "+P1sg"	-> {+YHm},
+    "+P2pl"	-> {+YHnHz},
+    "+P2sg"	-> {+YHn},
+    "+P3sg"	-> {+YH}  || "+SU" Multi* "+A3sg" _ ,,
+    "+Gen"	-> {+YHn} || .#. \"+P3"* "+SU" \"+P3"* "+A3sg" "+Pnon" _ ,,
+    "+Pnon"	-> {+YH}  || "+P3" ?* "+SU" ?* _, "+SU" ?* "+P3" ?* _
+];
+
+define AltPossMisc [
+    "+P1sg" -> 0	|| "+P1" ?* _ ,,
+    "+P2sg" -> 0	|| "+P2" ?* _ ,,
     "+P3pl" -> {+SH}	|| "+A3pl" _ , "+PL" ?* _ ,,
     "+Pnon" -> {+SH}	|| "+P3" ?* _ 
 ];
@@ -218,7 +230,8 @@ read regex [
     AltPersonImp2 .o. 
     AltPersonNegAor .o. 
     AltPersonMisc .o. 
-    AltPoss .o.
+    AltPossSu .o.
+    AltPossMisc .o.
     AltAor .o. 
     AltNeg .o. 
     AltMisc .o. 

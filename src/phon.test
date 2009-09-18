@@ -8,43 +8,67 @@ define mlex
 source phon.xfst
 define phon
 
-read lexc vzero.lexc
-upper net
-define vzero
+# read lexc vzero.lexc
+# upper net
+# define vzero
 
-read lexc vflect.lexc
-upper net
-define vflect
+# read lexc vflect.lexc
+# upper net
+# define vflect
 
-read lexc nzero.lexc
-upper net
-define nzero
-
-read lexc nflect.lexc
-upper net
-substitute defined nzero for "^Nzero"
-substitute defined vzero for "^Vzero"
-upper net
-define nflect1
-read regex < deriv.regex
-define agree
-define nflect [ nflect1 & agree ];
-
-#read text < Milliyet.dict
-#define dict
-#define nopos ["\t" ?+ @-> 0];
+source nflect.xfst
+define nflect
 
 clear
-read regex [%+ ?+ @-> 0];
-read text < dict/oflazer/Noun
+read regex [
+    {+Noun} -> "+Noun",
+    {+P1} -> "+P1",
+    {+P2} -> "+P2",
+    {+P3} -> "+P3",
+    {+PL} -> "+PL",
+
+    {+CV} -> "+CV",
+    {+VF} -> "+VF",
+    {+VD} -> "+VD",
+    {+CD} -> "+CD",
+    {+SU} -> "+SU",
+
+    "	" -> 0
+];
+read text < dict.txt
 compose net
 lower net
-define Vowel [a|e|ı|i|o|ö|u|ü];
-#read regex $[Vowel];
-#read regex [? ?+];
-read regex [a b ?+];
+read regex ~[ %# ?* ];
 intersect net
 define nouns
+
+# read regex [ nouns "+A3sg""+P1pl""+Nom" ];
+read regex [nouns Nflect0]
+& ~$["+PL" ?* "+A3sg"]
+& ~$["+P1" ?* ["+A3pl"|"+A3sg"] \"+P1sg"]
+& ~$["+P2" ?* ["+A3pl"|"+A3sg"] \"+P2sg"];
+upper net
+define feat
+
+define model [ feat .o. mlex .o. phon ];
+push model
+lower net
+define test
+
+load tfeaturesulx.fst
+define tf
+
+read regex [ tf .o. test ];
+lower net
+define corr
+
+read regex [ test - corr ];
+print words > phon.extra
+print random-words 5000 > phon.random
+
+clear
+push model
+save stack "phon.fst"
 
 #clear
 # push nopos
@@ -69,27 +93,9 @@ define nouns
 # upper net
 # define feat
 
-#read regex [ nouns "+Noun" nflect ];
-read regex [ nouns "+Noun" nzero ];
-upper net
-define feat
-
-define model [ feat .o. mlex .o. phon ];
-push model
-lower net
-define test
-
-load tfeaturesulx.fst
-define tf
-
-read regex [ tf .o. test ];
-lower net
-define corr
-
-read regex [ test - corr ];
-print words > phon.extra
-print random-words 5000 > phon.random
-
+#read text < Milliyet.dict
+#define dict
+#define nopos ["\t" ?+ @-> 0];
 
 # read regex [
 # 	{yap} "+Verb" "+Pos" vflect

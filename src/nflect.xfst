@@ -19,8 +19,22 @@ define Vzero	["^DB""+Verb""+Zero"];
 ### 0. Basic inflection consists of count, possessive and case markers:
 # e.g. partilerime
 
-define Nflect0	[Ncount Nposs Ncase]; 
+define Nflect0	[Ncount Nposs Ncase]
 
+!! The following two flags do not work, because we cannot see the flags attached to the root:
+
+## 0.1 Some words are inherently plural
+# e.g. amcamlar, bakliyat
+
+& ~$["+PL" ?* "+A3sg"]
+
+## 0.2 Some words come with possessive
+# e.g. amcamlar, amcanlar
+
+& ~$["+P1" ?* ["A3pl"|"+A3sg"] \"P1sg"]
+& ~$["+P2" ?* ["A3pl"|"+A3sg"] \"P2sg"]
+
+;
 
 
 ### 1. The noun may be followed by copular verb + person suffixes:
