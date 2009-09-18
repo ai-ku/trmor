@@ -336,7 +336,7 @@ define ConsVoicing [
 # düş-kün, geç-tim, ipek-çi, seç-kin, seç-ti, süt-çü.
 
 define ConsUnvoicing [
-	D -> t, C -> ç //  CU StemEnd _
+	D -> t, C -> ç //  CU StemEnd (Y|S|N) _
 ].o.[
 	D -> d, C -> c
 ];
