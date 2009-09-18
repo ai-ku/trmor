@@ -8272,7 +8272,7 @@ incirkuş	+Noun+P3
 incirsimeyve	+Noun
 incitaş	+Noun+P3
 incitmebeni	+Noun
-inç	+Noun+CV
+inç	+Noun
 indeks	+Noun
 indeterminizm	+Noun
 indifa	+Noun
