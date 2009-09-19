@@ -21,14 +21,21 @@ define Morphemes [
     "+Almost"		-> {+YAyaz},
     "+Aor"		-> {+Hr},	!! 0, {+z}, {+Ar}, {+r}
     "+AorPart"		-> {+Hr},	!! 0, {+z}, {+Ar}, {+r}
+    "+AR"		-> 0,		!! New flag for AorAr exception
     "+AsIf"		-> {+CA},	!! {+CAsHnA}
     "+AsLongAs"		-> {+DHkçA},
     "+Become"		-> {+lAş},
     "+ByDoingSo"	-> {+YArAk},
+    "+CAR"		-> 0,		!! New flag for causative suffix type
+    "+CHR"		-> 0,		!! New flag for causative suffix type
+    "+CHT"		-> 0,		!! New flag for causative suffix type
+    "+C0T"		-> 0,		!! New flag for causative suffix type
+    "+C00"		-> 0,		!! New flag for causative suffix type
+    "+AAR"		-> 0,		!! New flag for aorist suffix type
 !    "+CD"		-> "+CD",	!! Phonetic flag for consonant doubling
 !    "+CV"		-> "+CV",	!! Phonetic flag for consonant voicing
     "+Card"		-> 0,
-    "+Caus"		-> {+t},	!! {+DHr}, {+Ar}, {+Hr}, {+Ht}
+    "+Caus"		-> {+DHr},	!! {+DHr}, {+Ar}, {+Hr}, {+Ht}, {+t}
     "+Cond"		-> {+YsA},	!! {+sA}
     "+Conj"		-> 0,
     "+Continue"		-> {+YAgit},
@@ -43,7 +50,7 @@ define Morphemes [
     "+Equ"		-> {+CA},	!! {+ncA}
     "+EverSince"	-> {+YAgel},
     "+FeelLike"		-> {+YAsH},
-    !"+FitFor"		-> {+lHk},	!! disappeared in latest version
+!   "+FitFor"		-> {+lHk},	!! disappeared in latest version
     "+Fut"		-> {+YAcAk},
     "+FutPart"		-> {+YAcAk},
     "+Gen"		-> {+NHn},	!! {+nHm}
@@ -138,6 +145,7 @@ define Vowel [a|e|ı|i|o|ö|u|ü];
 define VowelAH [a|e|ı|i|o|ö|u|ü|A|H];
 define PDC ["+Past"|"+Past2"|"+Desr"|"+Cond"];
 define Alpha [Consonant|Vowel];
+define NoDB \"^DB"*;
 
 define AltCase [
 	"+Abl" -> {+ndAn}, 
@@ -149,7 +157,7 @@ define AltCase [
 	["+P3sg"|"+P3pl"] _,
 	"+Pron""+Rel""+A3sg""+Pnon" _,
 	"+Adj""+Rel""^DB""+Noun""+Zero""+A3sg""+Pnon" _,
-	"+P3" \"^DB"* "+Pnon" _
+	"+P3" NoDB "+Pnon" _
 ];
 
 define mlex AltCase;
@@ -188,8 +196,8 @@ define AltPersonNegAor [
 define mlex [mlex .o. AltPersonNegAor];
 
 define AltPersonMisc [
-    "+A1pl" -> {+lHm}	|| "+Opt" _ ,,
-    "+A3pl" -> 0	|| "+PL" \"^DB"* _
+    "+A1pl" -> {+lHm}	|| "+Opt" _ .o.
+    "+A3pl" -> 0	|| "+PL" NoDB _
 ];
 
 define mlex [mlex .o. AltPersonMisc];
@@ -199,40 +207,56 @@ define AltPossSu [
     "+P1sg"	-> {+YHm},
     "+P2pl"	-> {+YHnHz},
     "+P2sg"	-> {+YHn},
-    "+P3sg"	-> {+YH}  || "+SU" \"^DB"* "+A3sg" _ ,,
-    "+Gen"	-> {+YHn} || .#. \["^DB"|"+P3"]* "+SU" \["^DB"|"+P3"]* "+A3sg" "+Pnon" _ ,,
-    "+Pnon"	-> {+YH}  || "+P3" \"^DB"* "+SU" \"^DB"* _, "+SU" \"^DB"* "+P3" \"^DB"* _
+    "+P3sg"	-> {+YH}  || "+SU" NoDB "+A3sg" _ .o.
+    "+Gen"	-> {+YHn} || .#. \["^DB"|"+P3"]* "+SU" \["^DB"|"+P3"]* "+A3sg" "+Pnon" _ .o.
+    "+Pnon"	-> {+YH}  || "+P3" NoDB "+SU" NoDB _, "+SU" NoDB "+P3" NoDB _
 ];
 
 define mlex [mlex .o. AltPossSu];
 
 define AltPossMisc [
-    "+P1sg" -> 0	|| "+P1" \"^DB"* _ ,,
-    "+P2sg" -> 0	|| "+P2" \"^DB"* _ ,,
-    "+P3pl" -> {+SH}	|| "+A3pl" _ , "+PL" \"^DB"* _ ,,
-    "+Pnon" -> {+SH}	|| "+P3" \"^DB"* _ 
+    "+P1sg" -> 0	|| "+P1" NoDB _ .o.
+    "+P2sg" -> 0	|| "+P2" NoDB _ .o.
+    "+P3pl" -> {+SH}	|| "+A3pl" _ , "+PL" NoDB _ .o.
+    "+Pnon" -> {+SH}	|| "+P3" NoDB _ 
 ];
 
 define mlex [mlex .o. AltPossMisc];
 
-define AltAor [
-    "+Aor"	-> 0	|| "+Neg" _ ["+A1sg"|"+A1pl"]
+define AltAor [			# Default: +Hr
+    "+Aor"	-> 0	|| "+Neg" _ ["+A1sg"|"+A1pl"] .o.
+    "+Aor"	-> {+Ar} || "+AAR" NoDB _
 ].o.[
-    "+Aor"	-> {+z}	|| "+Neg" _ ,,
+    "+Aor"	-> {+z}	|| "+Neg" _ .o.
     "+AorPart" -> {+z}	|| "+Neg""^DB""+Adj" _
 ];
 
 define mlex [mlex .o. AltAor];
 
+define AltPass [		# Deafult: +Hl
+    "+Pass"	-> {+Hn} || [Vowel|l] "+Verb" NoDB "^DB""+Verb" _
+];  # maybe we should do a flag for this too.
+
+define mlex [mlex .o. AltPass];
+
+define AltCaus [		# Default: +DHr
+    "+Caus"	-> {+Ar}	|| "+CAR" NoDB "^DB""+Verb" _ .o.
+    "+Caus"	-> {+Hr}	|| "+CHR" NoDB "^DB""+Verb" _ .o.
+    "+Caus"	-> {+Ht}	|| "+CHT" NoDB "^DB""+Verb" _ .o.
+    "+Caus"	-> {+t}		|| "+C0T" NoDB "^DB""+Verb" _
+];
+
+define mlex [mlex .o. AltCaus];
+
 define AltNeg [
-    "+Able"	-> 0		|| _ "+Neg" ,,
+    "+Able"	-> 0		|| _ "+Neg" .o.
     "+Neg"	-> {+YAmA}	|| "+Able" _
 ];
 
 define mlex [mlex .o. AltNeg];
 
 define AltMisc [
-    "+Agt"	-> {+YHcH}	|| "+Verb" \"^DB"* "^DB" \"^DB"* _ ,,
+    "+Agt"	-> {+YHcH}	|| "+Verb" NoDB "^DB" NoDB _ .o.
     "+AsIf"	-> {+CAsHnA}	|| "+Adverb" _ 
 ];
 
