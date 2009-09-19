@@ -12,16 +12,26 @@ define phon
 # upper net
 # define vzero
 
-# read lexc vflect.lexc
-# upper net
-# define vflect
+read lexc vflect.lexc
+upper net
+define vflect
 
 source nflect.xfst
 define nflect
 
 clear
 read regex [
+    {+Verb} -> "+Verb",
+
+    {+AAR} -> "+AAR",
+    {+CAR} -> "+CAR",
+    {+CHR} -> "+CHR",
+    {+CHT} -> "+CHT",
+    {+C0T} -> "+C0T",
+    {+C00} -> "+C00",
+
     {+Noun} -> "+Noun",
+
     {+P1} -> "+P1",
     {+P2} -> "+P2",
     {+P3} -> "+P3",
@@ -41,11 +51,24 @@ compose net
 lower net
 read regex ~[ %# ?* ];
 intersect net
-define nouns
+define dict
+
+define nouns [ dict & $"+Noun" ];
+define verbs [ dict & $"+Verb" ];
 
 # read regex [ nouns "+A3sg""+P1pl""+Nom" ];
-read regex [nouns Nflect] & Nfilter;
+# read regex [nouns nflect] & Nfilter;
+#read regex [verbs vflect];
+
+define vfilter ~$[ "+C00" \"^DB"* "^DB""+Verb""+Caus" ];
+#read regex [ verbs "^DB""+Verb""+Caus""+Imp""+A2sg" ] & vfilter;
+
+clear
+read regex [ verbs vflect ] & vfilter;
 upper net
+read regex [nouns nflect] & Nfilter;
+upper net
+union net
 define feat
 
 define model [ feat .o. mlex .o. phon ];

@@ -233,6 +233,8 @@ define VowelClosing [
     e -> i	|| .#. y _ StemEnd [Y|y] ,,
     e -> i	|| .#. d _ StemEnd [Y|y] \[H|i] ,,
     H -> i	|| .#. [d|y] StemEnd _ {yor}
+].o.[
+    e -> 0	|| .#. [d|y] _ StemEnd {Ar}
 ];
 
 
@@ -324,6 +326,8 @@ define ConsVoicing [
 ].o.[
     G -> ğ  || \n _ ,,
     G -> g  ||  n _
+].o.[
+    k -> ğ  || %+ (Y|y) [A|a|e] c [A|a|e] _ %+ (Y|N|S) [Vowel|A|H]
 ].o.[
     "+CV" -> 0
 ];
