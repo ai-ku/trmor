@@ -378,6 +378,8 @@ define ConsDoubling [
 # tambur (< tanbur).
 
 
+## 5. Kaynaştırma harfleri:
+
 define Optionals [
     Y -> y, N -> n, S -> s  || Vowel StemEnd _
 ].o.[

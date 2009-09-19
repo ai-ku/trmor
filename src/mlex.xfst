@@ -152,12 +152,16 @@ define AltCase [
 	"+P3" \"^DB"* "+Pnon" _
 ];
 
+define mlex AltCase;
+
 define AltPersonPDC [
     "+A1pl" -> {+k},
     "+A1sg" -> {+m},
     "+A2pl" -> {+nHz},
     "+A2sg" -> {+n}	||  PDC _
 ];
+
+define mlex [mlex .o. AltPersonPDC];
 
 define AltPersonImp [
     "+A2pl" -> {+YHnHz},
@@ -167,20 +171,28 @@ define AltPersonImp [
     "+A3sg" -> {+sHn}	||  "+Imp" _
 ];
 
+define mlex [mlex .o. AltPersonImp];
+
 define AltPersonImp2 [
     "+A2pl" -> {+nHzA},
     "+A2sg" -> {+nA}	|| "+Imp2" _
 ];
+
+define mlex [mlex .o. AltPersonImp2];
 
 define AltPersonNegAor [
     "+A1sg" -> {+m},
     "+A1pl" -> {+YHz}	|| "+Neg""+Aor" _
 ];
 
+define mlex [mlex .o. AltPersonNegAor];
+
 define AltPersonMisc [
     "+A1pl" -> {+lHm}	|| "+Opt" _ ,,
     "+A3pl" -> 0	|| "+PL" \"^DB"* _
 ];
+
+define mlex [mlex .o. AltPersonMisc];
 
 define AltPossSu [
     "+P1pl"	-> {+YHmHz},
@@ -192,12 +204,16 @@ define AltPossSu [
     "+Pnon"	-> {+YH}  || "+P3" \"^DB"* "+SU" \"^DB"* _, "+SU" \"^DB"* "+P3" \"^DB"* _
 ];
 
+define mlex [mlex .o. AltPossSu];
+
 define AltPossMisc [
     "+P1sg" -> 0	|| "+P1" \"^DB"* _ ,,
     "+P2sg" -> 0	|| "+P2" \"^DB"* _ ,,
     "+P3pl" -> {+SH}	|| "+A3pl" _ , "+PL" \"^DB"* _ ,,
     "+Pnon" -> {+SH}	|| "+P3" \"^DB"* _ 
 ];
+
+define mlex [mlex .o. AltPossMisc];
 
 define AltAor [
     "+Aor"	-> 0	|| "+Neg" _ ["+A1sg"|"+A1pl"]
@@ -206,35 +222,46 @@ define AltAor [
     "+AorPart" -> {+z}	|| "+Neg""^DB""+Adj" _
 ];
 
+define mlex [mlex .o. AltAor];
+
 define AltNeg [
     "+Able"	-> 0		|| _ "+Neg" ,,
     "+Neg"	-> {+YAmA}	|| "+Able" _
 ];
+
+define mlex [mlex .o. AltNeg];
 
 define AltMisc [
     "+Agt"	-> {+YHcH}	|| "+Verb" \"^DB"* "^DB" \"^DB"* _ ,,
     "+AsIf"	-> {+CAsHnA}	|| "+Adverb" _ 
 ];
 
-define AltPhonetic [
-    {+Hr} -> {+Ar}	// .#. AorAr _ ,,
-    {+DH+} -> {+ydH+}, {+mHş} -> {+ymHş} // %+ ?* VowelAH _ ,,
-    {+DH} -> {+ydH} // %+ ?* VowelAH _ .#.
-];
+define mlex [mlex .o. AltMisc];
 
+define mlex [mlex .o. Morphemes];
 
-read regex [
-    AltCase .o. 
-    AltPersonPDC .o. 
-    AltPersonImp .o. 
-    AltPersonImp2 .o. 
-    AltPersonNegAor .o. 
-    AltPersonMisc .o. 
-    AltPossSu .o.
-    AltPossMisc .o.
-    AltAor .o. 
-    AltNeg .o. 
-    AltMisc .o. 
-    Morphemes .o. 		# Has to follow non-phonetic alternations
-    AltPhonetic			# Has to be at the end
-];
+# define AltPhonetic [
+#     {+Hr} -> {+Ar}	// .#. AorAr _ ,,
+#     {+DH+} -> {+ydH+}, {+mHş} -> {+ymHş} // %+ ?* VowelAH _ ,,
+#     {+DH} -> {+ydH} // %+ ?* VowelAH _ .#.
+# ];
+
+# define mlex [mlex .o. AltPhonetic];
+
+push mlex
+
+# read regex [
+#     AltCase .o. 
+#     AltPersonPDC .o. 
+#     AltPersonImp .o. 
+#     AltPersonImp2 .o. 
+#     AltPersonNegAor .o. 
+#     AltPersonMisc .o. 
+#     AltPossSu .o.
+#     AltPossMisc .o.
+#     AltAor .o. 
+#     AltNeg .o. 
+#     AltMisc .o. 
+#     Morphemes .o. 		# Has to follow non-phonetic alternations
+#     AltPhonetic			# Has to be at the end
+# ];

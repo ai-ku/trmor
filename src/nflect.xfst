@@ -2,70 +2,81 @@
 ### nouns.  In particular all sequences except cyclic derivational
 ### sequences following the Nominative case are defined here.
 
-### First some useful definitions:
+
+### 0. Basic noun inflection consists of count, possessive and case
+### markers: e.g. partilerime
 
 define Ncount	["+A3sg"|"+A3pl"];
 define Nposs	["+P1sg"|"+P2sg"|"+P3sg"|"+P1pl"|"+P2pl"|"+P3pl"|"+Pnon"];
 define Ncase	["+Abl"|"+Acc"|"+Dat"|"+Equ"|"+Gen"|"+Ins"|"+Loc"|"+Nom"];
-define Prel	["^DB""+Pron""+Rel"];
-define Arel	["^DB""+Adj""+Rel"];
-define Nzero	["^DB""+Noun""+Zero"];
+
+
+### 1. The inflected noun may be followed by copular verb + person
+### suffixes, except after the Accusative and Equative cases.
+### +Past:di +Narr:miş +Cond:se +Pres:0 (+Cop:dir)
+# e.g. partilerimdeydi
+
 read lexc vzero.lexc
 upper net
 define Vflect
-define Vzero	["^DB""+Verb""+Zero"];
+define VerbDB	["^DB""+Verb""+Zero"];
+define NcaseV	[Ncase - ["+Acc"|"+Equ"]];
+define Vzero	[NcaseV VerbDB Vflect];
 
 
-### 0. Basic inflection consists of count, possessive and case markers:
-# e.g. partilerime
+### 2. The Locative case may be optionally followed by an Adjective
+### Relative suffix -ki and further nominalization:
+# e.g. okuldakileri
 
-define Nflect0	[Ncount Nposs Ncase]
-
-!! The following two flags do not work, because we cannot see the flags attached to the root:
-
-## 0.1 Some words are inherently plural
-# e.g. amcamlar, bakliyat
-
-& ~$["+PL" ?* "+A3sg"]
-
-## 0.2 Some words come with possessive
-# e.g. amcamlar, amcanlar
-
-& ~$["+P1" ?* ["A3pl"|"+A3sg"] \"P1sg"]
-& ~$["+P2" ?* ["A3pl"|"+A3sg"] \"P2sg"]
-
-;
+define NounDB	["^DB""+Noun""+Zero"];
+define AdjDB	["^DB""+Adj""+Rel"];
+define AdjRel	["+Loc" AdjDB (NounDB Ncount Nposs Ncase)];
 
 
-### 1. The noun may be followed by copular verb + person suffixes:
-### +Past:di +Narr:miş +Cond:se +Pres:0 (+Cop:dir)
-# e.g. partilerimdi
+### 3. The Genitive case may be optionally followed by a Pronoun
+### Relative suffix -ki and further noun inflection.  Not all
+### possessives are allowed after the Pronoun Relative.
+# e.g. okulunkilerle
 
-define Nflect1	[Nflect0 (Vzero Vflect)]
-
-
-!? Some of the following are illegal combinations but some are just
-!? there to reduce ambiguity:
-
-## 1.1 Except Accusative and Equatives
-# e.g. !partiyiydi, !partisinceydi
-
-& ~$[["+Acc"|"+Equ"] "^DB"]
+define PronDB	["^DB""+Pron""+Rel"];
+define NpossP	["+P3sg"|"+Pnon"];
+define PronRel	["+Gen" PronDB Ncount NpossP [Ncase | Vzero]];
 
 
-## 1.2 Dative cannot be followed by a +Pres+A3pl
+### Here is the basic inflection skeleton:
+
+define Nflect 	[Ncount Nposs [Ncase | Vzero | AdjRel | PronRel]];
+
+
+### EXCEPTIONS:
+
+## 1.1 Dative cannot be followed by a +Pres+A3pl
 # e.g. !partineler
 
-& ~$["+Dat""^DB""+Verb""+Zero""+Pres""+A3pl"]
+define PresA3pl	[VerbDB "+Pres" "+A3pl"];
+define Nflect	[Nflect & ~$["+Dat" PresA3pl]];
+
+
+## 1.2 No +Pres+A3pl after genitive:
+# e.g. !sepetinler
+
+define Nflect	[Nflect & ~$["+Gen" PresA3pl]];
 
 
 ## 1.3 Singular possessive cannot be followed by +Pres+A3pl
 # e.g. !partimler
 
-& ~$["+A3sg" ["+P1sg"|"+P2sg"|"+P3sg"] "+Nom""^DB""+Verb""+Zero""+Pres""+A3pl"]
+define P123sg	["+P1sg"|"+P2sg"|"+P3sg"];
+define Nflect	[Nflect & ~$["+A3sg" P123sg "+Nom" PresA3pl]];
 
 
-## 1.4 Plural nominative cannot be followed by 1st 2nd person
+## 1.4 Plural nominative cannot be followed by +Pres+A3pl
+# e.g. imzalarlar: this is almost always from "imzala" root.
+
+define PluNom	["+A3pl" ? "+Nom"];
+define Nflect	[Nflect & ~$[PluNom PresA3pl]];
+
+## 1.4 Plain plural cannot be followed by 1st 2nd person
 # singular, or 3rd person copular.
 # e.g. !partilerdim, !partilerdin
 
@@ -76,65 +87,62 @@ define Nflect1	[Nflect0 (Vzero Vflect)]
 !? e.g. DGM'lerdir	Dgm+Noun+Prop+A3pl+Pnon+Nom^DB+Verb+Zero+Pres+A3sg+Cop
 !? which causes the one missing case.
 
-& ~$["+A3pl""+Pnon""+Nom""^DB""+Verb""+Zero" ? ["+A1sg"|"+A2sg"|"+A3sg""+Cop"]]
+define Plural	["+A3pl" "+Pnon" "+Nom"];
+define A123sg	["+A1sg"|"+A2sg"|"+A3sg""+Cop"];
+define Nflect	[Nflect & ~$[Plural VerbDB ? A123sg]];
+
 
 ## 1.5 No while after plural
 # e.g. !partilerken
 
-& ~$["+A3pl""+Pnon""+Nom""^DB""+Verb""+Zero""^DB""+Adverb""+While"]
+define AdverbDB	["^DB""+Adverb""+While"];
+define Nflect	[Nflect & ~$[Plural VerbDB AdverbDB]];
 
-## 1.6 No +Pres+A1pl after +P12sg:
+
+## 1.6 No +Pres+A1pl after singular +P12sg:
 # e.g. partimizdir => +Noun+A3sg+P1pl+Nom^DB+Verb+Zero+Pres+A3sg+Cop
 
-& ~$["+A3sg" ["+P1sg"|"+P2sg"] "+Nom""^DB""+Verb""+Zero""+Pres""+A1pl"]
-
-## 1.7 No +Pres+A3pl after genitive:
-# e.g. !sepetinler
-
-& ~$["+A3sg""+Pnon""+Gen""^DB""+Verb""+Zero""+Pres""+A3pl"]
-
-;
+define P12sg	["+P1sg"|"+P2sg"];
+define PresA1pl	["+Pres" "+A1pl"];
+define Nflect	[Nflect & ~$["+A3sg" P12sg "+Nom" VerbDB PresA1pl]];
 
 
-
-### 2. The Locative case may be optionally followed by an Adjective
-### Relative suffix -ki and further nominalization:
-
-define ArelNzero [ Arel (Nzero Nflect0) ]
 
 ## 2.1 No singular equative case:
 # !partidekince
 !? why??
 
-& ~$["^DB""+Noun""+Zero""+A3sg" ? "+Equ"]
+define Nflect	[Nflect & ~$[NounDB "+A3sg" ? "+Equ"]];
 
 ## 2.2 No unmarked noun derivation
 
-& ~$["^DB""+Noun""+Zero""+A3sg""+Pnon""+Nom"]
-
-;
-
-read regex Nflect1 
-.o. [ "+Loc" -> "+Loc" (ArelNzero) || .#. ? ? _ .#. ];
-lower net
-define Nflect2
+define Nflect	[Nflect & ~$[NounDB "+A3sg""+Pnon""+Nom"]];
 
 
+### The following filters depend on dictionary flags and should be
+### applied after the network has been concatenated with the
+### dictionary.
 
-### 3. The Genitive case may be optionally followed by a Pronoun
-### Relative suffix -ki and further noun inflection:
+define NoDB \"^DB"*;
 
-define PrelNflect [Prel Nflect1]
+define Nfilter [
 
-## 3.1 Only P3sg and Pnon are allowed after +Pron+Rel:
+## 0.1 Some words are inherently plural
+# e.g. amcamlar, bakliyat
 
-& ~$["^DB""+Pron""+Rel" ? \["+P3sg"|"+Pnon"]]
+~$["+PL" NoDB "+A3sg"] &
+~$["+PL" NoDB VerbDB PresA3pl] &
 
-;
+## 0.2 Some words come with possessive
+# e.g. amcamlar, amcanlar
 
-read regex Nflect2 
-.o. [ "+Gen" -> "+Gen" (PrelNflect) || .#. ? ? _ .#. ];
-lower net
-define Nflect3
+~$["+P1" NoDB Ncount \"P1sg"] &
+~$["+P2" NoDB Ncount \"P2sg"] &
 
-push Nflect3
+## 0.3 Some time words do not take AdjRel
+# BUG: this rules out sabahki trying to fix sabahtaki
+~$["+TM" NoDB "+Loc""^DB""+Adj""+Rel"] 
+
+];
+
+push Nflect

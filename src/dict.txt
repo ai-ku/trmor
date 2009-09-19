@@ -1535,8 +1535,8 @@ babaev	+Noun+P3
 babafingo	+Noun
 babaköş	+Noun
 babalık	+Noun+CV
-babamlar	+Noun+PL
-babanlar	+Noun+PL
+babamlar	+Noun+PL+P1
+babanlar	+Noun+PL+P2
 babaocak	+Noun+P3+CV
 babatatlı	+Noun+P3
 babayiğit	+Noun+CV

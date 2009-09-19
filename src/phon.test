@@ -44,14 +44,7 @@ intersect net
 define nouns
 
 # read regex [ nouns "+A3sg""+P1pl""+Nom" ];
-read regex [nouns nflect]
-& ~$["+PL" \"^DB"* "+A3sg"]
-& ~$["+P1" \"^DB"* ["+A3pl"|"+A3sg"] \"+P1sg"]
-& ~$["+P2" \"^DB"* ["+A3pl"|"+A3sg"] \"+P2sg"]
-& ~$["+A3pl""+Pnon""+Nom""^DB""+Verb""+Zero""+Pres""+A3pl""+Cop"]
-& ~$["+TM" ?* "+Loc""^DB""+Adj""+Rel"] # this rules out sabahki trying to fix sabahtaki
-& ~$["+PL" ?* "^DB""+Verb""+Zero""+Pres""+A3pl"]
-;
+read regex [nouns Nflect] & Nfilter;
 upper net
 define feat
 
