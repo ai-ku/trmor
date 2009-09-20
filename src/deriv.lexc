@@ -460,15 +460,4 @@ LEXICON AfterVzero
 LEXICON Nflect
 ^Nflect	#;
 
-! LEXICON Nzero?
-! ^DB+Noun+Zero	Nzero;
-! 	#;
-
-! LEXICON Nzero
-! ^Nzero	#;
-
-! LEXICON Ness?
-! ^DB+Noun+Ness	Nflect;
-! 	#;
-
 END
