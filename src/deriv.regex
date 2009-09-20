@@ -1,14 +1,21 @@
 ~$[
 	"+Dat""^DB""+Verb""+Zero""+Pres""+A3pl"
-|	"+A3pl""+Pnon""+Nom""^DB""+Verb""+Zero" ? ["+A1sg"|"+A2sg"]
+|	"+A3pl""+Pnon""+Nom""^DB""+Verb""+Zero" ? ["+A1sg"|"+A2sg"|"+A3pl"]
 |	"+A3sg" ["+P1sg"|"+P2sg"] "+Nom""^DB""+Verb""+Zero""+Pres" ["+A1pl"|"+A3pl"]
 |	"+A3sg""+P3sg""+Nom""^DB""+Verb""+Zero""+Pres""+A3pl"
 |	"+Gen""^DB""+Verb""+Zero""+Pres""+A3pl"
-|	"+Noun""+A3pl""+Pnon""+Nom""^DB""+Verb""+Zero""^DB""+Adverb""+While"
+|	"+A3pl""+Pnon""+Nom""^DB""+Verb""+Zero""^DB""+Adverb""+While"
 |	"+A3pl""+Pnon""+Nom""^DB""+Verb""+Zero""+Pres""+A3sg""+Cop"
-|	"+Inf1""+A3pl"
+|	"+Inf1""+A3pl"		!! maybe Inf1+Inf2 is one morpheme sharing suffixes
+|	"+Inf1" ? \"+Pnon"
+|	"+Inf1" ? ? ["+Acc"|"+Dat"|"+Equ"|"+Gen"]
 |	"+Hastily""+Neg"\"+Aor"
-
+|	"+FutPart""+A3sg""+Pnon"
+|	"+JustLike" ?+ "+JustLike"
+|	"+Adj""+Rel" ?+ "+Adj""+Rel"
+|	["+Become"|"+Acquire"] ?+ ["+Reflex"|"+Recip"]
+|	"+Related" ?+ "+Become"		!! oflazer bug?
+|	"+NarrPart" ?+ "+While"		!! oflazer bug?
 ] & ~[
 	?* "+Noun""+Zero""+A3sg""+Pnon""+Nom"
 ];
