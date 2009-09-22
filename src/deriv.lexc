@@ -344,7 +344,7 @@ LEXICON Ness		!! (Noun|Adj)+lHk
 LEXICON NessA3sg
 !^DB+Adj+JustLike:+sH	JustLike;
 !^DB+Adj+Rel:+ki		Rel;
-!^DB+Adj+Related:+sAl	Related;
+^DB+Adj+Related:+sAl	Related;
 ^DB+Adj+With:+lH	With;
 ^DB+Adj+Without:+sHz	Without;
 !^DB+Adverb+Since:+dHr	#;
