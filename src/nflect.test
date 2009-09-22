@@ -19,12 +19,17 @@ intersect net
 
 define test
 
+read regex < nflect.missing.known
 read regex [ test - model ];
+minus net
 print words > nflect.missing
 pop
 
 load tfnowords.fst
 define tf
+
+read regex < nflect.extra.known
 read regex [ model - tf ];
+minus net
 print words > nflect.extra
 pop

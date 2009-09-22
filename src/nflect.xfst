@@ -4,7 +4,7 @@
 
 
 ### 0. Basic noun inflection consists of count, possessive and case
-### markers: e.g. partilerime
+### markers: e.g. parti-ler-im-e
 
 define Ncount	["+A3sg"|"+A3pl"];
 define Nposs	["+P1sg"|"+P2sg"|"+P3sg"|"+P1pl"|"+P2pl"|"+P3pl"|"+Pnon"];
@@ -14,7 +14,7 @@ define Ncase	["+Abl"|"+Acc"|"+Dat"|"+Equ"|"+Gen"|"+Ins"|"+Loc"|"+Nom"];
 ### 1. The inflected noun may be followed by copular verb + person
 ### suffixes, except after the Accusative and Equative cases.
 ### +Past:di +Narr:miş +Cond:se +Pres:0 (+Cop:dir)
-# e.g. partilerimdeydi
+# e.g. parti-ler-im-de-ydi
 
 read lexc vzero.lexc
 upper net
@@ -24,9 +24,10 @@ define NcaseV	[Ncase - ["+Acc"|"+Equ"]];
 define Vzero	[NcaseV VerbDB Vflect];
 
 
-### 2. The Locative case may be optionally followed by an Adjective
+### 2. The Locative (and for some time words like "şimdi" the
+### Nominative) case may be optionally followed by an Adjective
 ### Relative suffix -ki and further nominalization:
-# e.g. okuldakileri
+# e.g. parti-de-ki-ler-i
 
 define NounDB	["^DB""+Noun""+Zero"];
 define AdjDB	["^DB""+Adj""+Rel"];
@@ -36,7 +37,7 @@ define AdjRel	["+Loc" AdjDB (NounDB Ncount Nposs Ncase)];
 ### 3. The Genitive case may be optionally followed by a Pronoun
 ### Relative suffix -ki and further noun inflection.  Not all
 ### possessives are allowed after the Pronoun Relative.
-# e.g. okulunkilerle
+# e.g. parti-nin-ki-ler-le
 
 define PronDB	["^DB""+Pron""+Rel"];
 define NpossP	["+P3sg"|"+Pnon"];
@@ -72,12 +73,15 @@ define Nflect	[Nflect & ~$["+A3sg" P123sg "+Nom" PresA3pl]];
 
 ## 1.4 Plural nominative cannot be followed by +Pres+A3pl
 # e.g. imzalarlar: this is almost always from "imzala" root.
+!! It is not clear if we should restrict this to Pnon or not.
+!! It seems to be ok when there is a cop 
 
+#define PluNom	["+A3pl" "+Pnon" "+Nom"];
 define PluNom	["+A3pl" ? "+Nom"];
 define Nflect	[Nflect & ~$[PluNom PresA3pl]];
 
 ## 1.4 Plain plural cannot be followed by 1st 2nd person
-# singular, or 3rd person copular.
+# singular, (or 3rd person copular?)
 # e.g. !partilerdim, !partilerdin
 
 !? Shouldn't +A3sg also be illegal?  partilerdi(r) should make both
@@ -88,12 +92,14 @@ define Nflect	[Nflect & ~$[PluNom PresA3pl]];
 !? which causes the one missing case.
 
 define Plural	["+A3pl" "+Pnon" "+Nom"];
-define A123sg	["+A1sg"|"+A2sg"|"+A3sg""+Cop"];
-define Nflect	[Nflect & ~$[Plural VerbDB ? A123sg]];
+#define A123sg	["+A1sg"|"+A2sg"|"+A3sg""+Cop"];
+define A12sg	["+A1sg"|"+A2sg"];
+define Nflect	[Nflect & ~$[Plural VerbDB ? A12sg]];
 
 
 ## 1.5 No while after plural
 # e.g. !partilerken
+!? Why? We have yüzlülerken without a problem...
 
 define AdverbDB	["^DB""+Adverb""+While"];
 define Nflect	[Nflect & ~$[Plural VerbDB AdverbDB]];
