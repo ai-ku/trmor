@@ -1,0 +1,13 @@
+[]
+# değil:
+| "+Verb""+Neg""+Cond" ?*
+| "+Verb""+Neg""+Pres" ?*
+| "+Verb""+Neg""+A3pl" ?*
+
+# ise:
+| "+Verb""+Pos""+Cond" ?*
+
+# çıkardılarsa	çık	+Verb+Pos+Aor+Past+A3pl+Cond
+| "+Verb""+Pos""+Aor""+Past""+A3pl""+Cond"
+
+;
