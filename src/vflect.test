@@ -13,7 +13,9 @@ define model [ "+Verb" ["+Pos"|"+Neg"] vflect ];
 load tfnowords.fst
 define tf
 
+read regex < vflect.extra.known
 read regex [ model - tf ];
+minus net
 print words > vflect.extra
 pop
 
@@ -22,6 +24,8 @@ load Milliyet.fst
 intersect net
 define test
 
+read regex < vflect.missing.known
 read regex [ test - model ];
+minus net
 print words > vflect.missing
 pop
