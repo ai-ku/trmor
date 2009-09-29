@@ -3,46 +3,56 @@
 LEXICON Root
 #include "dict.lexc"
 
+#include "nderiv.lexc"
+
+#include "vderiv.lexc"
+
+#include "nflect.lexc"
+
 #include "vflect.lexc"
 
+
 LEXICON +Noun
-+Noun	#;
++Noun	Nroot;
 
 LEXICON +Adj
-+Adj	#;
++Adj	Aroot;
+
+LEXICON +Verb
++Verb	Vroot;
 
 LEXICON +Noun+CV
-+Noun+CV	#;
++Noun+CV	Nroot;
 
 LEXICON +Verb+C0T
-+Verb+C0T	#;
++Verb+C0T	Vroot;
 
 LEXICON +Noun+P3
-+Noun+P3	#;
++Noun+P3	Nroot;
 
 LEXICON +Noun+P3+CV
-+Noun+P3+CV	#;
++Noun+P3+CV	Nroot;
 
 LEXICON +Adverb
 +Adverb	#;
 
 LEXICON +Noun+PL
-+Noun+PL	#;
++Noun+PL	Nroot;
 
 LEXICON +Noun+VF
-+Noun+VF	#;
++Noun+VF	Nroot;
 
 LEXICON +Verb+AAR
-+Verb+AAR	#;
++Verb+AAR	Vroot;
 
 LEXICON +Noun+VD
-+Noun+VD	#;
++Noun+VD	Nroot;
 
 LEXICON +Dup
 +Dup	#;
 
 LEXICON +Verb+CV+AAR
-+Verb+CV+AAR	#;
++Verb+CV+AAR	Vroot;
 
 LEXICON +Interj
 +Interj	#;
@@ -57,10 +67,10 @@ LEXICON +Num+Ord
 +Num+Ord	#;
 
 LEXICON +Noun+P3+VD
-+Noun+P3+VD	#;
++Noun+P3+VD	Nroot;
 
 LEXICON +Noun+CD
-+Noun+CD	#;
++Noun+CD	Nroot;
 
 LEXICON +Postp+PCDat
 +Postp+PCDat	#;
@@ -69,7 +79,7 @@ LEXICON +Num+Dist
 +Num+Dist	#;
 
 LEXICON +Verb+AAR+CHR
-+Verb+AAR+CHR	#;
++Verb+AAR+CHR	Vroot;
 
 LEXICON +Postp+PCAbl
 +Postp+PCAbl	#;
@@ -78,7 +88,7 @@ LEXICON +Pron+Quant
 +Pron+Quant	#;
 
 LEXICON +Noun+P3+SU
-+Noun+P3+SU	#;
++Noun+P3+SU	Nroot;
 
 LEXICON +Det
 +Det	#;
@@ -87,25 +97,25 @@ LEXICON +Postp+PCNom
 +Postp+PCNom	#;
 
 LEXICON +Noun+SU
-+Noun+SU	#;
++Noun+SU	Nroot;
 
 LEXICON +Noun+PL+P1
-+Noun+PL+P1	#;
++Noun+PL+P1	Nroot;
 
 LEXICON +Noun+TM
-+Noun+TM	#;
++Noun+TM	Nroot;
 
 LEXICON +Noun+PL+P2
-+Noun+PL+P2	#;
++Noun+PL+P2	Nroot;
 
 LEXICON +Noun+VF+CV
-+Noun+VF+CV	#;
++Noun+VF+CV	Nroot;
 
 LEXICON +Noun+CV+VD
-+Noun+CV+VD	#;
++Noun+CV+VD	Nroot;
 
 LEXICON +Verb+AAR+C0T
-+Verb+AAR+C0T	#;
++Verb+AAR+C0T	Vroot;
 
 LEXICON +Pron+Ques
 +Pron+Ques	#;
@@ -114,10 +124,10 @@ LEXICON +Pron+Pers
 +Pron+Pers	#;
 
 LEXICON +Noun+CV+VF
-+Noun+CV+VF	#;
++Noun+CV+VF	Nroot;
 
 LEXICON +Verb+AAR+CHT
-+Verb+AAR+CHT	#;
++Verb+AAR+CHT	Vroot;
 
 LEXICON +Postp+PCGen
 +Postp+PCGen	#;
@@ -126,52 +136,52 @@ LEXICON +Ques
 +Ques	#;
 
 LEXICON +Verb+AAR+CAR
-+Verb+AAR+CAR	#;
++Verb+AAR+CAR	Vroot;
 
 LEXICON +Noun+PL+VF
-+Noun+PL+VF	#;
++Noun+PL+VF	Nroot;
 
 LEXICON +Noun+CV+CD
-+Noun+CV+CD	#;
++Noun+CV+CD	Nroot;
 
 LEXICON +Postp+PCAcc
 +Postp+PCAcc	#;
 
 LEXICON +Noun+VF+CD
-+Noun+VF+CD	#;
++Noun+VF+CD	Nroot;
 
 LEXICON +Pron+Demons
 +Pron+Demons	#;
 
 LEXICON +Noun+P3+CD
-+Noun+P3+CD	#;
++Noun+P3+CD	Nroot;
 
 LEXICON +Noun+VD+VF
-+Noun+VD+VF	#;
++Noun+VD+VF	Nroot;
 
 LEXICON +Noun+CV+VD+VF
-+Noun+CV+VD+VF	#;
++Noun+CV+VD+VF	Nroot;
 
 LEXICON +Postp+PCIns
 +Postp+PCIns	#;
 
 LEXICON +Verb+C00
-+Verb+C00	#;
++Verb+C00	Vroot;
 
 LEXICON +Noun+P3+CV+VD
-+Noun+P3+CV+VD	#;
++Noun+P3+CV+VD	Nroot;
 
 LEXICON +Noun+CV+VF+CD
-+Noun+CV+VF+CD	#;
++Noun+CV+VF+CD	Nroot;
 
 LEXICON +Noun+PL+CV
-+Noun+PL+CV	#;
++Noun+PL+CV	Nroot;
 
 LEXICON +Pron+Reflex
 +Pron+Reflex	#;
 
 LEXICON +Noun+CD+CV
-+Noun+CD+CV	#;
++Noun+CD+CV	Nroot;
 
 LEXICON +Verb+CV+AAR+C00
-+Verb+CV+AAR+C00	#;
++Verb+CV+AAR+C00	Vroot;

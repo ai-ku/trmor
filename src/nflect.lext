@@ -1,13 +1,7 @@
 !! Includes all sequences following +Noun except cyclic derivational
 !! suffixes following +Nom.
 
-Multichar_Symbols
-       +Abl +Acc +Adj +A3pl +A3sg +Dat +Equ +Gen +Ins +Loc +Nom +Noun 
-       +Pnon +Pron +P1pl +P1sg +P2pl +P2sg +P3pl +P3sg +Rel +Verb +Zero
-       ^DB ^Vzero
-
-
-LEXICON Root
+LEXICON Nflect
 	Ncount;
 
 LEXICON Ncount
@@ -49,16 +43,6 @@ LEXICON PRposs
 
 LEXICON AdjRel
 ^DB+Adj+Rel	Nzero?;
-
-LEXICON Vzero?
-	Vzero;
-	#;
-
-LEXICON Vzero
-^DB+Verb+Zero	AfterVzero;
-
-LEXICON AfterVzero
-^Vzero	#;
 
 LEXICON Nzero?
 	Nzero;
@@ -115,5 +99,3 @@ LEXICON Ncase2
 +Ins	#;
 +Loc	#;
 +Nom	#;
-
-END;

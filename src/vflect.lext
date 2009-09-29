@@ -1,20 +1,4 @@
-Multichar_Symbols
-	+Abl +Able +Acc +Acquire +ActOf +Adamantly +Adj +Adverb
-	+AfterDoingSo +Agt +Almost +Aor +AorPart +AsIf +AsLongAs +A1pl
-	+A1sg +A2pl +A2sg +A3pl +A3sg +Become +ByDoingSo +Card +Caus
-	+Cond +Conj +Continue +Cop +Dat +Demons +Desr +Det +Dim +Dist
-	+Dup +Equ +EverSince +FeelLike +Fut +FutPart +Gen +Hastily +Imp
-	+InBetween +Inf1 +Inf2 +Inf3 +Ins +Interj +JustLike +Loc +Ly
-	+Narr +NarrPart +Neces +Neg +Ness +Nom +NotAbleState +NotState
-	+Noun +Num +Opt +Ord +PCAbl +PCAcc +PCDat +PCGen +PCIns +PCNom
-	+Pass +Past +PastPart +Pers +Pnon +Pos +Postp +Pres +PresPart
-	+Prog1 +Prog2 +Pron +Prop +P1pl +P1sg +P2pl +P2sg +P3pl +P3sg
-	+Quant +Ques +Recip +Reflex +Rel +Related +Repeat +Since
-	+SinceDoingSo +Start +Stay +Verb +When +While +With +Without
-	+WithoutBeingAbleToHaveDoneSo +WithoutHavingDoneSo +Zero ^DB
-	+Narr2 +Past2 +Imp2 +WithoutHavingDoneSo2
-
-LEXICON Root
+LEXICON Vflect
 +Aor:+Hr	CNP|Person;
 +Aor:+Hr	AorAdv;
 +Desr:+sA	NP|Person2;
@@ -28,6 +12,21 @@ LEXICON Root
 +Past:+DH	CP|Person;
 +Prog1:+Hyor	CNP|Person+Cop;
 +Prog2:+mAktA	CNP|Person+Cop;
+
+LEXICON Vzero?
+	Vzero;
+	#;
+
+LEXICON Vzero
+^DB+Verb+Zero:0	AfterVzero;
+
+LEXICON AfterVzero
++Cond:+ysA	Person2;
++Past2:+yDH	Person2;
++Pres:0		Person1+Cop?;
++Narr2:+ymHş	Person1+AsIf?;
+		While;
+		AsIf;
 
 LEXICON CNP|Person+Cop
 		CNP+Person;
@@ -91,6 +90,14 @@ LEXICON Person1+Cop?
 +A2pl:+sHnHz	Cop?;
 +A3pl:+lAr	Cop?;
 
+LEXICON Person1+AsIf?
++A1sg:+yHm	AsIf?;
++A2sg:+sHn	AsIf?;
++A3sg:0		AsIf?;
++A1pl:+yHz	AsIf?;
++A2pl:+sHnHz	AsIf?;
++A3pl:+lAr	AsIf?;
+
 LEXICON Person2
 +A1sg:+m  	#;
 +A2sg:+n  	#;
@@ -137,16 +144,22 @@ LEXICON AdjRel?
 ^DB+Adj+Rel:+ki	#;
 		#;
 
+LEXICON AsIf?
+	#;
+	AsIf;
+
 LEXICON AsIf
 ^DB+Adverb+AsIf:+CAsHnA	#;
 
 LEXICON Cop?
+	#;
+	Cop;
+
+LEXICON Cop
 +Cop:+DHr	#;
-		#;
 
 LEXICON CP?
 +Cond:+ysA	#;
 +Past2:+yDH	#;
 		#;
 
-END;

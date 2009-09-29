@@ -240,16 +240,22 @@ define AltPass [		# Deafult: +Hl
 define mlex [mlex .o. AltPass];
 
 define AltCaus [		# Default: +DHr
+    # Set the first Caus
     "+Caus"	-> {+Ar}	|| "+CAR" NoDB "^DB""+Verb" _ .o.
     "+Caus"	-> {+Hr}	|| "+CHR" NoDB "^DB""+Verb" _ .o.
     "+Caus"	-> {+Ht}	|| "+CHT" NoDB "^DB""+Verb" _ .o.
-    "+Caus"	-> {+t}		|| "+C0T" NoDB "^DB""+Verb" _
+    "+Caus"	-> {+t}		|| "+C0T" NoDB "^DB""+Verb" _ .o.
+    "+Caus"	-> {+DHr}	|| .#. NoDB "^DB""+Verb" _
+].o.[
+    # Set repeating Caus suffixes
+    "+Caus"	-> {+t}		// r "^DB""+Verb" _ ,,
+    "+Caus"	-> {+DHr}	// t "^DB""+Verb" _
 ];
 
 define mlex [mlex .o. AltCaus];
 
 define AltNeg [
-    "+Able"	-> 0		|| _ "+Neg" .o.
+    "+Able"	-> 0		|| _ "+Neg" ,,
     "+Neg"	-> {+YAmA}	|| "+Able" _
 ];
 
