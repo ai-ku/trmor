@@ -13,7 +13,7 @@ Multichar_Symbols
 	+SinceDoingSo +Start +Stay +Verb +When +While +With +Without
 	+WithoutBeingAbleToHaveDoneSo +WithoutHavingDoneSo +Zero ^DB
 	+Narr2 +Past2 +Imp2 +WithoutHavingDoneSo2 
-	^Vflect ^Vzero ^Nflect ^Nzero
+	^Vflect ^Vzero ^Nflect
 
 
 LEXICON Root	
@@ -35,7 +35,7 @@ LEXICON A3pl
 
 LEXICON A3sg
 ^DB+Adj+JustLike:+HmsH	JustLike;
-^DB+Adj+Rel:+ki		Rel;
+!^DB+Adj+Rel:+ki	Rel;	!! only bugunku, yarinki etc.
 ^DB+Adj+Related:+sAl	Related;
 ^DB+Adj+With:+lH	With;
 ^DB+Adj+Without:+sHz	Without;
@@ -174,19 +174,6 @@ LEXICON PresPart	!! Verb+yAn
 !^DB+Verb+Become:+lAş	Verb;
 			Vzero?;
 
-LEXICON Rel		!! Noun+ki
-^DB+Noun+Zero		Nflect;
-			#;
-!^DB+Adj+AsIf:+CA	AsIf;
-!^DB+Adj+JustLike:+sH	JustLike;
-!^DB+Adverb+Ly:+CA	#;
-!^DB+Noun+Agt:+CH	Agt;
-!^DB+Noun+Ness:+lHk	Ness;
-!^DB+Noun+Zero:0	NounZero;
-!^DB+Verb+Acquire:+lAn	Verb;
-!^DB+Verb+Become:+lAş	Verb;
-!			Vzero?;
-
 LEXICON Related		!! Noun+sAl
 !^DB+Adj+AsIf:+CA	AsIf;
 !^DB+Adj+JustLike:+sH	JustLike;
@@ -229,7 +216,6 @@ LEXICON ActOf		!! Verb+mAcA
 
 LEXICON ActOfA3sg
 ^DB+Adj+JustLike:+sH	JustLike;
-!^DB+Adj+Rel:+ki		Rel;
 !^DB+Adj+Related:+sAl	Related;
 ^DB+Adj+With:+lH	With;
 ^DB+Adj+Without:+sHz	Without;
@@ -248,7 +234,6 @@ LEXICON Agt		!! (Noun|Verb|Adj)+CH
 
 LEXICON AgtA3sg
 ^DB+Adj+JustLike:+sH	JustLike;
-!^DB+Adj+Rel:+ki		Rel;
 !^DB+Adj+Related:+sAl	Related;
 ^DB+Adj+With:+lH	With;
 ^DB+Adj+Without:+sHz	Without;
@@ -267,7 +252,6 @@ LEXICON Dim		!! Noun+CHk
 
 LEXICON DimA3sg
 !^DB+Adj+JustLike:+sH	JustLike;
-!^DB+Adj+Rel:+ki		Rel;
 !^DB+Adj+Related:+sAl	Related;
 ^DB+Adj+With:+lH	With;
 ^DB+Adj+Without:+sHz	Without;
@@ -286,7 +270,6 @@ LEXICON Inf1		!! Verb+mAk
 
 LEXICON Inf1A3sg
 !^DB+Adj+JustLike:+sH	JustLike;
-!^DB+Adj+Rel:+ki		Rel;
 !^DB+Adj+Related:+sAl	Related;
 ^DB+Adj+With:+lH	With;
 ^DB+Adj+Without:+sHz	Without;
@@ -305,7 +288,6 @@ LEXICON Inf2		!! Verb+mA
 
 LEXICON Inf2A3sg
 !^DB+Adj+JustLike:+sH	JustLike;
-!^DB+Adj+Rel:+ki		Rel;
 !^DB+Adj+Related:+sAl	Related;
 ^DB+Adj+With:+lH	With;
 ^DB+Adj+Without:+sHz	Without;
@@ -324,7 +306,6 @@ LEXICON Inf3		!! Verb+Hş
 
 LEXICON Inf3A3sg
 !^DB+Adj+JustLike:+sH	JustLike;
-!^DB+Adj+Rel:+ki		Rel;
 ^DB+Adj+Related:+sAl	Related;
 ^DB+Adj+With:+lH	With;
 ^DB+Adj+Without:+sHz	Without;
@@ -343,7 +324,6 @@ LEXICON Ness		!! (Noun|Adj)+lHk
 
 LEXICON NessA3sg
 !^DB+Adj+JustLike:+sH	JustLike;
-!^DB+Adj+Rel:+ki		Rel;
 ^DB+Adj+Related:+sAl	Related;
 ^DB+Adj+With:+lH	With;
 ^DB+Adj+Without:+sHz	Without;
@@ -362,7 +342,7 @@ LEXICON NounZero
 
 LEXICON NounZeroA3sg
 ^DB+Adj+JustLike:+sH	JustLike;
-^DB+Adj+Rel:+ki		Rel;
+!^DB+Adj+Rel:+ki		Rel;	!! Only after Postp like oteki etc.
 ^DB+Adj+Related:+sAl	Related;
 ^DB+Adj+With:+lH	With;
 ^DB+Adj+Without:+sHz	Without;
