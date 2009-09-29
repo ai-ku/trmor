@@ -1,0 +1,216 @@
+LEXICON Vroot
+	Voice;
+
+LEXICON Voice
+			Polarity;
+^DB+Verb+Pass:+Hl	Polarity;
+^DB+Verb+Caus:+t	Voice3;
+^DB+Verb+Recip:+Hş	Voice2;
+^DB+Verb+Reflex:+Hn	Voice2;		!! See Issue 8.
+
+LEXICON Voice3
+			Polarity;
+^DB+Verb+Pass:+Hl	Polarity;
+^DB+Verb+Caus:+t	Voice2;
+
+LEXICON Voice2
+			Polarity;
+^DB+Verb+Pass:+Hl	Polarity;
+^DB+Verb+Caus:+t	Voice1;
+
+LEXICON Voice1
+			Polarity;
+^DB+Verb+Pass:+Hl	Polarity;
+
+LEXICON Polarity
++Pos:0			VerbAgt;
++Pos:0			Compound3;
++Neg:+mA		Compound2;
+^DB+Verb+Able+Neg:+yAmA	Compound1;
+
+LEXICON Compound3
+^DB+Verb+Start:+yAkoy		Vstem;
+^DB+Verb+Stay:+yAkal		Vstem;
+^DB+Verb+Almost:+yAyaz		Vstem;
+^DB+Verb+EverSince:+yAgel	Vstem;
+				Compound2;
+
+LEXICON Compound2
+^DB+Verb+Continue:+yAgit	Vstem;  !! BUG:  t-d conversion is not fixed
+^DB+Verb+Repeat:+yAdur		Vstem;
+^DB+Verb+Hastily:+yHver		HastilyNeg?;
+				Compound1;
+
+LEXICON Compound1
+^DB+Verb+Able:+yAbil		Vstem;
+				Vstem;
+
+LEXICON HastilyNeg?
++Neg:+mA	Vstem;		!! BUG: This is Oflazer's hack, only followed by Aor
+		Vstem;	
+
+LEXICON Vstem
+	Vflect;
+	Vderiv;
+
+!! Derivations following Verb (non-verb derivations)
+
+LEXICON Vderiv
+^DB+Adj+AorPart:+Hr	AorPart;
+^DB+Adj+FeelLike:+yAsH	#;
+^DB+Adj+FutPart:+yAcAk	AdjPoss+Pnon;
+^DB+Adj+NarrPart:+mHş	NarrPart;
+^DB+Adj+PastPart:+DHk	AdjPoss+Pnon;
+^DB+Adj+PresPart:+yAn	PresPart;
+^DB+Adverb+Adamantly:+yAsHyA	#;
+^DB+Adverb+AfterDoingSo:+yHp	#;
+^DB+Adverb+AsLongAs:+DHkçA	#;
+^DB+Adverb+ByDoingSo:+yArAk	#;
+^DB+Adverb+SinceDoingSo:+yAlH	Dat?;	!! No need?
+^DB+Adverb+When:+yHncA		Dat?;
+^DB+Adverb+WithoutBeingAbleToHaveDoneSo:+yAmAdAn	#;
+^DB+Adverb+WithoutHavingDoneSo:+mAdAn		#;
+^DB+Adverb+WithoutHavingDoneSo2:+mAksHzHn	#;
+^DB+Noun+ActOf:+mAcA		ActOf;
+^DB+Noun+FeelLike:+yAsH		Nflect;	!! olasilik was the only exception
+^DB+Noun+FutPart:+yAcAk		Nflect;	!! BUG: Pnon may not be possible
+^DB+Noun+Inf1:+mAk		Inf1;
+^DB+Noun+Inf2:+mA		Inf2;
+^DB+Noun+Inf3:+yHş		Inf3;
+^DB+Noun+NotAbleState:+yAmAzlHk	Nflect;	!! always ambig with +Verb^DB+Verb+Able+Neg^DB+Adj+AorPart^DB+Noun+Ness+A3sg+Pnon+Nom
+^DB+Noun+NotState:+mAzlHk	Nflect;	!! always ambig with +Verb+Neg^DB+Adj+AorPart^DB+Noun+Ness+A3sg+Pnon+Nom
+^DB+Noun+PastPart:+DHk		Nflect;	!! BUG: Pnon may not be possible
+
+LEXICON VerbAgt
+^DB+Adj+Agt:+yHcH	AgtAdj;
+^DB+Noun+Agt:+yHcH	Agt;
+
+LEXICON AgtAdj		!! Verb+yHcH
+!^DB+Adj+AsIf:+CA	AdjAsIf;
+^DB+Adj+JustLike:+sH	JustLike;
+!^DB+Adverb+Ly:+CA	#;
+!^DB+Noun+Agt:+CH	Agt;
+^DB+Noun+Ness:+lHk	Ness;
+!^DB+Noun+Zero:0	NounZero;
+!^DB+Verb+Acquire:+lAn	Vroot;
+^DB+Verb+Become:+lAş	Vroot;
+			Vzero?;
+
+LEXICON AorPart		!! Verb+Hr
+^DB+Adj+AsIf:+CA	AdjAsIf;
+^DB+Adj+JustLike:+sH	JustLike;
+^DB+Adverb+Ly:+CA	#;
+^DB+Noun+Agt:+CH	Agt;
+^DB+Noun+Ness:+lHk	Ness;
+^DB+Noun+Zero:0		NounZero;
+!^DB+Verb+Acquire:+lAn	Vroot;
+!^DB+Verb+Become:+lAş	Vroot;
+			Vzero?;
+
+LEXICON NarrPart	!! Verb+mHş
+^DB+Adj+AsIf:+CA	AdjAsIf;
+!^DB+Adj+JustLike:+sH	JustLike;
+!^DB+Adverb+Ly:+CA	#;
+^DB+Noun+Agt:+CH	Agt;
+^DB+Noun+Ness:+lHk	Ness;
+^DB+Noun+Zero:0		NounZero;
+!^DB+Verb+Acquire:+lAn	Vroot;
+!^DB+Verb+Become:+lAş	Vroot;
+			Vzero?;		!! Do we ever need this?
+
+LEXICON PresPart	!! Verb+yAn
+^DB+Adj+AsIf:+CA	AdjAsIf;
+!^DB+Adj+JustLike:+sH	JustLike;
+^DB+Adverb+Ly:+CA	#;
+^DB+Noun+Agt:+CH	Agt;
+!^DB+Noun+Ness:+lHk	Ness;
+^DB+Noun+Zero:0		NounZero;
+!^DB+Verb+Acquire:+lAn	Vroot;
+!^DB+Verb+Become:+lAş	Vroot;
+			Vzero?;
+
+LEXICON ActOf		!! Verb+mAcA
+			Nflect;
++A3sg+Pnon+Nom:0	ActOfA3sg;
+
+LEXICON ActOfA3sg
+^DB+Adj+JustLike:+sH	JustLike;
+!^DB+Adj+Related:+sAl	Related;
+^DB+Adj+With:+lH	With;
+^DB+Adj+Without:+sHz	Without;
+!^DB+Adverb+Since:+dHr	#;
+!^DB+Noun+Agt:+CH	Agt;
+!^DB+Noun+Dim:+CHk	Dim;
+^DB+Noun+Ness:+lHk	Ness;
+!^DB+Verb+Acquire:+lAn	Vroot;
+!^DB+Verb+Become:+lAş	Vroot;
+
+LEXICON Inf1		!! Verb+mAk
+			Nflect;		!! BUG: only A3sg+Pnon is allowed
++A3sg+Pnon+Nom:0	Inf1A3sg;
+
+LEXICON Inf1A3sg
+!^DB+Adj+JustLike:+sH	JustLike;
+!^DB+Adj+Related:+sAl	Related;
+^DB+Adj+With:+lH	With;
+^DB+Adj+Without:+sHz	Without;
+!^DB+Adverb+Since:+dHr	#;
+^DB+Noun+Agt:+CH	Agt;
+!^DB+Noun+Dim:+CHk	Dim;
+!^DB+Noun+Ness:+lHk	Ness;
+!^DB+Verb+Acquire:+lAn	Vroot;
+!^DB+Verb+Become:+lAş	Vroot;
+
+
+
+LEXICON Inf2		!! Verb+mA
+			Nflect;
++A3sg+Pnon+Nom:0	Inf2A3sg;
+
+LEXICON Inf2A3sg
+!^DB+Adj+JustLike:+sH	JustLike;
+!^DB+Adj+Related:+sAl	Related;
+^DB+Adj+With:+lH	With;
+^DB+Adj+Without:+sHz	Without;
+!^DB+Adverb+Since:+dHr	#;
+^DB+Noun+Agt:+CH	Agt;
+!^DB+Noun+Dim:+CHk	Dim;
+!^DB+Noun+Ness:+lHk	Ness;		!! BUG: This should be possible?
+!^DB+Verb+Acquire:+lAn	Vroot;
+!^DB+Verb+Become:+lAş	Vroot;
+
+
+
+LEXICON Inf3		!! Verb+Hş
+			Nflect;
++A3sg+Pnon+Nom:0	Inf3A3sg;
+
+LEXICON Inf3A3sg
+!^DB+Adj+JustLike:+sH	JustLike;
+^DB+Adj+Related:+sAl	Related;
+^DB+Adj+With:+lH	With;
+^DB+Adj+Without:+sHz	Without;
+!^DB+Adverb+Since:+dHr	#;
+^DB+Noun+Agt:+CH	Agt;
+!^DB+Noun+Dim:+CHk	Dim;
+^DB+Noun+Ness:+lHk	Ness;
+!^DB+Verb+Acquire:+lAn	Vroot;
+!^DB+Verb+Become:+lAş	Vroot;
+
+
+LEXICON AdjPoss+Pnon
++Pnon:0		#;
+		AdjPoss;
+
+LEXICON AdjPoss
++P1sg:+Hm	#;
++P1pl:+HmHz	#;
++P2sg:+Hn	#;
++P2pl:+HnHz	#;	
++P3sg:+sH	#;
++P3pl:+lArH	#;
+
+LEXICON Dat?
+^DB+Noun+Zero+A3sg+Pnon+Dat	#;
+				#;
+

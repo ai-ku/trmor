@@ -1,0 +1,175 @@
+!! Derivations following Nouns and Adjectives
+
+LEXICON Nroot
+	Nderiv;
+	Nflect;
+
+LEXICON Nderiv
++A3sg+Pnon+Nom:0	A3sg;	!! we should not have to specify no-inflection before derivation
++A3pl+Pnon+Nom:+lAr	A3pl;
+
+LEXICON A3pl
+^DB+Adj+InBetween:+arası	InBetween;
+^DB+Adverb+Since:+dHr	#;	!! only with gunlerdir etc?
+
+LEXICON A3sg
+^DB+Adj+JustLike:+HmsH	JustLike;
+!^DB+Adj+Rel:+ki	Rel;	!! only bugunku, yarinki etc.
+^DB+Adj+Related:+sAl	Related;
+^DB+Adj+With:+lH	With;
+^DB+Adj+Without:+sHz	Without;
+^DB+Adverb+Since:+dHr	#;	!! only with gunlerdir etc?
+^DB+Noun+Agt:+CH	Agt;
+^DB+Noun+Dim:+CHk	Dim;
+^DB+Noun+Ness:+lHk	Ness;
+^DB+Verb+Acquire:+lAn	Vroot;
+^DB+Verb+Become:+lAş	Vroot;
+
+
+!! Derivations following Adj
+
+LEXICON Aroot
+^DB+Adj+AsIf:+CA	AdjAsIf;
+^DB+Adj+JustLike:+sH	JustLike;	!! BUG: This should be +AsH or +msH or something.
+^DB+Adverb+Ly:+CA	#;
+^DB+Noun+Agt:+CH	Agt;
+^DB+Noun+Ness:+lHk	Ness;
+^DB+Noun+Zero:0		NounZero;
+^DB+Verb+Acquire:+lAn	Vroot;
+^DB+Verb+Become:+lAş	Vroot;
+			Vzero?;
+
+
+LEXICON AdjAsIf		!! Adj+CA
+!^DB+Adj+AsIf:+CA	AdjAsIf;
+^DB+Adj+JustLike:+sH	JustLike;
+!^DB+Adverb+Ly:+CA	#;
+^DB+Noun+Agt:+CH	Agt;
+^DB+Noun+Ness:+lHk	Ness;		!! BUG: Equ does not follow nouns derived from adjectives?
+^DB+Noun+Zero:0		NounZero;
+!^DB+Verb+Acquire:+lAn	Vroot;
+!^DB+Verb+Become:+lAş	Vroot;
+			Vzero?;
+
+LEXICON InBetween	!! Noun+lAr+arası
+!^DB+Adj+AsIf:+CA	AdjAsIf;
+!^DB+Adj+JustLike:+sH	JustLike;
+!^DB+Adverb+Ly:+CA	#;
+!^DB+Noun+Agt:+CH	Agt;
+^DB+Noun+Ness:+lHk	Ness;
+^DB+Noun+Zero:0		NounZero;
+!^DB+Verb+Acquire:+lAn	Vroot;
+^DB+Verb+Become:+lAş	Vroot;
+			Vzero?;
+
+LEXICON JustLike	!! Noun|Adj+sH
+!^DB+Adj+AsIf:+CA	AdjAsIf;
+!^DB+Adj+JustLike:+sH	JustLike;
+!^DB+Adverb+Ly:+CA	#;
+!^DB+Noun+Agt:+CH	Agt;
+^DB+Noun+Ness:+lHk	Ness;
+!^DB+Noun+Zero:0		NounZero;
+!^DB+Verb+Acquire:+lAn	Vroot;
+!^DB+Verb+Become:+lAş	Vroot;
+			Vzero?;
+
+LEXICON Related		!! Noun+sAl
+!^DB+Adj+AsIf:+CA	AdjAsIf;
+!^DB+Adj+JustLike:+sH	JustLike;
+!^DB+Adverb+Ly:+CA	#;
+^DB+Noun+Agt:+CH	Agt;
+^DB+Noun+Ness:+lHk	Ness;
+^DB+Noun+Zero:0		NounZero;
+!^DB+Verb+Acquire:+lAn	Vroot;
+^DB+Verb+Become:+lAş	Vroot;
+			Vzero?;
+
+LEXICON With		!! Noun+lH
+^DB+Adj+AsIf:+CA	AdjAsIf;
+^DB+Adj+JustLike:+sH	JustLike;
+^DB+Adverb+Ly:+CA	#;
+^DB+Noun+Agt:+CH	Agt;
+^DB+Noun+Ness:+lHk	Ness;
+^DB+Noun+Zero:0		NounZero;
+!^DB+Verb+Acquire:+lAn	Vroot;
+^DB+Verb+Become:+lAş	Vroot;
+			Vzero?;
+
+LEXICON Without		!! Noun+sHz
+^DB+Adj+AsIf:+CA	AdjAsIf;
+!^DB+Adj+JustLike:+sH	JustLike;
+^DB+Adverb+Ly:+CA	#;
+^DB+Noun+Agt:+CH	Agt;
+^DB+Noun+Ness:+lHk	Ness;
+^DB+Noun+Zero:0		NounZero;
+^DB+Verb+Acquire:+lAn	Vroot;
+^DB+Verb+Become:+lAş	Vroot;
+			Vzero?;
+
+LEXICON Dim		!! Noun+CHk
+			Nflect;
++A3sg+Pnon+Nom:0	DimA3sg;
+
+LEXICON DimA3sg
+!^DB+Adj+JustLike:+sH	JustLike;
+!^DB+Adj+Related:+sAl	Related;
+^DB+Adj+With:+lH	With;
+^DB+Adj+Without:+sHz	Without;
+!^DB+Adverb+Since:+dHr	#;
+!^DB+Noun+Agt:+CH	Agt;
+!^DB+Noun+Dim:+CHk	Dim;
+^DB+Noun+Ness:+lHk	Ness;
+!^DB+Verb+Acquire:+lAn	Vroot;
+!^DB+Verb+Become:+lAş	Vroot;
+
+LEXICON Ness		!! (Noun|Adj)+lHk
+			Nflect;
++A3sg+Pnon+Nom:0	NessA3sg;
+
+LEXICON NessA3sg
+!^DB+Adj+JustLike:+sH	JustLike;
+^DB+Adj+Related:+sAl	Related;
+^DB+Adj+With:+lH	With;
+^DB+Adj+Without:+sHz	Without;
+!^DB+Adverb+Since:+dHr	#;
+!^DB+Noun+Agt:+CH	Agt;
+!^DB+Noun+Dim:+CHk	Dim;
+!^DB+Noun+Ness:+lHk	Ness;
+!^DB+Verb+Acquire:+lAn	Vroot;
+!^DB+Verb+Become:+lAş	Vroot;
+
+
+
+LEXICON NounZero
+			Nflect;
++A3sg+Pnon+Nom:0	NounZeroA3sg;
+
+LEXICON NounZeroA3sg
+^DB+Adj+JustLike:+sH	JustLike;
+!^DB+Adj+Rel:+ki		Rel;	!! Only after Postp like oteki etc.
+^DB+Adj+Related:+sAl	Related;
+^DB+Adj+With:+lH	With;
+^DB+Adj+Without:+sHz	Without;
+!^DB+Adverb+Since:+dHr	#;
+^DB+Noun+Agt:+CH	Agt;
+^DB+Noun+Dim:+CHk	Dim;
+^DB+Noun+Ness:+lHk	Ness;
+!^DB+Verb+Acquire:+lAn	Vroot;
+!^DB+Verb+Become:+lAş	Vroot;
+
+LEXICON Agt		!! (Noun|Verb|Adj)+CH
+			Nflect;
++A3sg+Pnon+Nom:0	AgtA3sg;
+
+LEXICON AgtA3sg
+^DB+Adj+JustLike:+sH	JustLike;
+!^DB+Adj+Related:+sAl	Related;
+^DB+Adj+With:+lH	With;
+^DB+Adj+Without:+sHz	Without;
+!^DB+Adverb+Since:+dHr	#;
+!^DB+Noun+Agt:+CH	Agt;
+!^DB+Noun+Dim:+CHk	Dim;
+^DB+Noun+Ness:+lHk	Ness;
+!^DB+Verb+Acquire:+lAn	Vroot;
+!^DB+Verb+Become:+lAş	Vroot;
+

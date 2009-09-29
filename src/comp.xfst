@@ -1,0 +1,8 @@
+define dflags ["+CV"|"+C0T"|"+P3"|"+PL"|"+VF"|"+AAR"|"+VD"|"+CD"|"+P1"|"+P2"|"+SU"|"+TM"|"+CAR"|"+CHR"|"+CHT"|"+C00"];
+read regex [
+     0 <- dflags,
+     "+Narr" <- "+Narr2",
+     "+Past" <- "+Past2",
+     "+Imp" <- "+Imp2",
+     "WithoutHavingDoneSo" <- "+WithoutHavingDoneSo2"
+];
