@@ -1,0 +1,177 @@
+#include "multichar.lexc"
+
+LEXICON Root
+#include "dict.lexc"
+
+#include "vflect.lexc"
+
+LEXICON +Noun
++Noun	#;
+
+LEXICON +Adj
++Adj	#;
+
+LEXICON +Noun+CV
++Noun+CV	#;
+
+LEXICON +Verb+C0T
++Verb+C0T	#;
+
+LEXICON +Noun+P3
++Noun+P3	#;
+
+LEXICON +Noun+P3+CV
++Noun+P3+CV	#;
+
+LEXICON +Adverb
++Adverb	#;
+
+LEXICON +Noun+PL
++Noun+PL	#;
+
+LEXICON +Noun+VF
++Noun+VF	#;
+
+LEXICON +Verb+AAR
++Verb+AAR	#;
+
+LEXICON +Noun+VD
++Noun+VD	#;
+
+LEXICON +Dup
++Dup	#;
+
+LEXICON +Verb+CV+AAR
++Verb+CV+AAR	#;
+
+LEXICON +Interj
++Interj	#;
+
+LEXICON +Num+Card
++Num+Card	#;
+
+LEXICON +Conj
++Conj	#;
+
+LEXICON +Num+Ord
++Num+Ord	#;
+
+LEXICON +Noun+P3+VD
++Noun+P3+VD	#;
+
+LEXICON +Noun+CD
++Noun+CD	#;
+
+LEXICON +Postp+PCDat
++Postp+PCDat	#;
+
+LEXICON +Num+Dist
++Num+Dist	#;
+
+LEXICON +Verb+AAR+CHR
++Verb+AAR+CHR	#;
+
+LEXICON +Postp+PCAbl
++Postp+PCAbl	#;
+
+LEXICON +Pron+Quant
++Pron+Quant	#;
+
+LEXICON +Noun+P3+SU
++Noun+P3+SU	#;
+
+LEXICON +Det
++Det	#;
+
+LEXICON +Postp+PCNom
++Postp+PCNom	#;
+
+LEXICON +Noun+SU
++Noun+SU	#;
+
+LEXICON +Noun+PL+P1
++Noun+PL+P1	#;
+
+LEXICON +Noun+TM
++Noun+TM	#;
+
+LEXICON +Noun+PL+P2
++Noun+PL+P2	#;
+
+LEXICON +Noun+VF+CV
++Noun+VF+CV	#;
+
+LEXICON +Noun+CV+VD
++Noun+CV+VD	#;
+
+LEXICON +Verb+AAR+C0T
++Verb+AAR+C0T	#;
+
+LEXICON +Pron+Ques
++Pron+Ques	#;
+
+LEXICON +Pron+Pers
++Pron+Pers	#;
+
+LEXICON +Noun+CV+VF
++Noun+CV+VF	#;
+
+LEXICON +Verb+AAR+CHT
++Verb+AAR+CHT	#;
+
+LEXICON +Postp+PCGen
++Postp+PCGen	#;
+
+LEXICON +Ques
++Ques	#;
+
+LEXICON +Verb+AAR+CAR
++Verb+AAR+CAR	#;
+
+LEXICON +Noun+PL+VF
++Noun+PL+VF	#;
+
+LEXICON +Noun+CV+CD
++Noun+CV+CD	#;
+
+LEXICON +Postp+PCAcc
++Postp+PCAcc	#;
+
+LEXICON +Noun+VF+CD
++Noun+VF+CD	#;
+
+LEXICON +Pron+Demons
++Pron+Demons	#;
+
+LEXICON +Noun+P3+CD
++Noun+P3+CD	#;
+
+LEXICON +Noun+VD+VF
++Noun+VD+VF	#;
+
+LEXICON +Noun+CV+VD+VF
++Noun+CV+VD+VF	#;
+
+LEXICON +Postp+PCIns
++Postp+PCIns	#;
+
+LEXICON +Verb+C00
++Verb+C00	#;
+
+LEXICON +Noun+P3+CV+VD
++Noun+P3+CV+VD	#;
+
+LEXICON +Noun+CV+VF+CD
++Noun+CV+VF+CD	#;
+
+LEXICON +Noun+PL+CV
++Noun+PL+CV	#;
+
+LEXICON +Pron+Reflex
++Pron+Reflex	#;
+
+LEXICON +Noun+CD+CV
++Noun+CD+CV	#;
+
+LEXICON +Verb+CV+AAR+C00
++Verb+CV+AAR+C00	#;
