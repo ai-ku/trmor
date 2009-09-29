@@ -228,7 +228,7 @@ define VowelHarmony [
 
 
 define VowelClosing [
-    Vowel -> 0	|| _ StemEnd ? {yor}
+    [Vowel|A|H] -> 0	|| _ StemEnd ? {yor}
 ].o.[
     e -> i	|| .#. y _ StemEnd [Y|y] ,,
     e -> i	|| .#. d _ StemEnd [Y|y] \[H|i] ,,
