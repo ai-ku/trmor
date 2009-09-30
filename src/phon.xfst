@@ -398,7 +398,7 @@ define Ninsert [
     {+lArI} -> {+lArIn},
     {+ki} -> {+kin},
     "^P3" -> {+n} ||
-    _ [{+DAn}|{+YI}|{+YA}|{+CA}|{+DA}]
+    _ [{+DAn}|{+YI}|{+YA}|{+CA}|{+DA}] [.#.|%+]
 ];
 
 define Yinsert [
