@@ -22,12 +22,12 @@ define Cons [b|c|ç|d|f|g|ğ|h|j|k|l|m|n|p|r|s|ş|t|v|y|z];
 !! Special characters in suffixes:
 !! All suffixes start with a "+".
 !! The capital A represents [ae]
-!! The capital H represents [ıiuü]
+!! The capital I represents [ıiuü]
 !! The capital D represents [dt]
 !! The capital C represents [cç]
 !! The capital Y,N,S represent optional y,n,s characters
 
-define Multi ["+CD"|"+CV"|"+VD"|"+VF"];
+define Multi ["^AR"|"^CD"|"^CV"|"^P3"|"^VD"|"^VF"|"^Y"];
 define StemEnd [Multi* %+];
 
 
@@ -187,23 +187,23 @@ define VBR [o|u];		# Back rounded
 
 
 define VowelHarmony [
-    H -> 0 // Vowel StemEnd _
+    I -> 0 // [Vowel|A|I] StemEnd _
 ].o.[
-    A -> e // VB  \Vowel* "+VF" \Vowel* _ ,,
-    H -> i // VBU \Vowel* "+VF" \Vowel* _ ,,
-    H -> ü // VBR \Vowel* "+VF" \Vowel* _
+    A -> e // VB  \Vowel* "^VF" \Vowel* _ ,,
+    I -> i // VBU \Vowel* "^VF" \Vowel* _ ,,
+    I -> ü // VBR \Vowel* "^VF" \Vowel* _
 ].o.[
-    "+VF" -> 0
+    "^VF" -> 0
 ].o.[
     A -> a // VB  \Vowel* _ ,,
     A -> e // VF  \Vowel* _ ,,
-    H -> ı // VBU \Vowel* _ ,,
-    H -> i // VFU \Vowel* _ ,,
-    H -> u // VBR \Vowel* _ ,,
-    H -> ü // VFR \Vowel* _
+    I -> ı // VBU \Vowel* _ ,,
+    I -> i // VFU \Vowel* _ ,,
+    I -> u // VBR \Vowel* _ ,,
+    I -> ü // VFR \Vowel* _
 ].o.[
     A -> e,
-    H -> i
+    I -> i
 ];
 
 
@@ -228,11 +228,11 @@ define VowelHarmony [
 
 
 define VowelClosing [
-    [Vowel|A|H] -> 0	|| _ StemEnd ? {yor}
+    [Vowel|A|I] -> 0	|| _ StemEnd ? {yor}
 ].o.[
     e -> i	|| .#. y _ StemEnd [Y|y] ,,
-    e -> i	|| .#. d _ StemEnd [Y|y] \[H|i] ,,
-    H -> i	|| .#. [d|y] StemEnd _ {yor}
+    e -> i	|| .#. d _ StemEnd [Y|y] \[I|i] ,,
+    I -> i	|| .#. [d|y] StemEnd _ {yor}
 ].o.[
     e -> 0	|| .#. [d|y] _ StemEnd {Ar}
 ];
@@ -248,13 +248,13 @@ define VowelClosing [
 # karın / karnı, oğul / oğlu; çevir- / çevril-, devir- / devril-.
 
 
-define VDflag [ Multi* "+VD" ];
-define Vsuffix [ StemEnd (Y|N|S) [Vowel|A|H] ];
+define VDflag [ Multi* "^VD" ];
+define Vsuffix [ StemEnd (Y|N|S) [Vowel|A|I] ];
 
 define VowelDrop [
     Vowel -> 0 || _ Cons VDflag Vsuffix
 ].o.[
-    "+VD" -> 0
+    "^VD" -> 0
 ];
 
 
@@ -319,17 +319,17 @@ define CUP [p|ç|t|k];		# Unvoiced plosives
 # kelimeler de vardır: but / budu, dip / dibi, gök / göğü, kap / kabı,
 # kurt / kurdu, uç / ucu, yurt / yurdu.
 
-define CVflag [ Multi* "+CV" ];
+define CVflag [ Multi* "^CV" ];
 
 define ConsVoicing [
     p -> b, ç -> c, t -> d, k -> G || _ CVflag Vsuffix
 ].o.[
-    G -> ğ  || \n _ ,,
-    G -> g  ||  n _
+    G -> g  ||  n _ .o.
+    G -> ğ
 ].o.[
-    k -> ğ  || %+ (Y|y) [A|a|e] c [A|a|e] _ %+ (Y|N|S) [Vowel|A|H]
+    k -> ğ  || %+ \%++ _ %+ (Y|N|S) [Vowel|A|I]
 ].o.[
-    "+CV" -> 0
+    "^CV" -> 0
 ];
 
 
@@ -362,7 +362,7 @@ define ConsUnvoicing [
 # ünsüz ortaya çıkar: hak, hakka; his, hissimiz; ret, reddi; zan,
 # zannımca; zem, zemmi.
 
-define CDflag [ Multi* "+CD" ];
+define CDflag [ Multi* "^CD" ];
 
 define ConsDoubling [
     b->{bb}, c->{cc}, ç->{çç}, d->{dd}, f->{ff}, g->{gg}, ğ->{ğğ},
@@ -370,7 +370,7 @@ define ConsDoubling [
     r->{rr}, s->{ss}, ş->{şş}, t->{tt}, v->{vv}, y->{yy}, z->{zz}
     || _ CDflag Vsuffix
 ].o.[
-    "+CD" -> 0
+    "^CD" -> 0
 ];
 
 ## 4.6 n > m Değişmesi
@@ -391,12 +391,57 @@ define Optionals [
 ];
 
 
+## 6. Irregular +n and +y insertion
+
+define Ninsert [
+    {+SI} -> {+SIn},
+    {+lArI} -> {+lArIn},
+    {+ki} -> {+kin},
+    "^P3" -> {+n} ||
+    _ [{+DAn}|{+YI}|{+YA}|{+CA}|{+DA}]
+];
+
+define Yinsert [
+    "^Y"      -> {+y} ||
+    _ [{+ImIz}|{+Im}|{+InIz}|{+In}|{+SI}|{+NIn}],
+    _ "^P3"
+.o. "^Y" -> 0
+.o. "^P3" -> 0
+];
+
+
+## 7. Handle irregular Aorist, Causative and Passive suffixes
+
+define AltAor [			!! can make this more rule based
+     {+AIr} -> {+Ar}	|| "^AR" _
+.o.  {+AIr} -> {+Ir}
+.o.  "^AR" -> 0
+];
+
+define AltPass [		# Deafult: +Il
+    {+Il} -> {+In} || [Vowel|l] _
+];
+
+define AltCaus [		# Default: +DIr
+    {+DIrt} -> {+t}	|| Vowel ?* Vowel (l|r) _
+.o. {+DIrt} -> {+DIr}	|| .#. \%++ _
+    # Set repeating Caus suffixes
+.o. {+DIrt} -> {+t}	// r _ ,,
+    {+DIrt} -> {+DIr}	// \r _
+];
+
+
 !! The following special characters are in the input:
-!! A, H, D, C, Y, N, S, +VF, +VD, +CV, +CD, +
+!! A, I, D, C, Y, N, S, ^VF, ^VD, ^CV, ^CD, +
 
 read regex
+Ninsert .o.
+Yinsert .o.
+AltAor .o.
+AltPass .o.
+AltCaus .o.
 VowelClosing .o.		# modifies stem ending vowel
-VowelHarmony .o.		# assigns A, H; removes +VF
+VowelHarmony .o.		# assigns A, I; removes +VF
 VowelDrop .o.			# must come after VowelHarmony, removes +VD
 ConsUnvoicing .o.		# assigns D, C
 ConsVoicing .o. 		# modifies stem ending consonant, removes +CV

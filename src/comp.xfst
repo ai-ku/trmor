@@ -1,8 +1,26 @@
-define dflags ["+CV"|"+C0T"|"+P3"|"+PL"|"+VF"|"+AAR"|"+VD"|"+CD"|"+P1"|"+P2"|"+SU"|"+TM"|"+CAR"|"+CHR"|"+CHT"|"+C00"];
+define dflags ["^AR"|"^PL"|"^P1"|"^P2"|"^P3"|"^Y"|"^TM"|"^CD"|"^CV"|"^VD"|"^VF"];
+
 read regex [
      0 <- dflags,
+     "+A1pl" <- "+A1pl2",
+     "+A1pl" <- "+A1pl3",
+     "+A1sg" <- "+A1sg2",
+     "+A2pl" <- "+A2pl2",
+     "+A2pl" <- "+A2pl3",
+     "+A2pl" <- "+A2pl4",
+     "+A2sg" <- "+A2sg2",
+     "+A2sg" <- "+A2sg3",
+     "+A2sg" <- "+A2sg4",
+     "+A3pl" <- "+A3pl3",
+     "+A3sg" <- "+A3sg3",
+     "+Agt" <- "+Agt2",
+     "+AsIf" <- "+AsIf2",
+     "+Caus" <- "+Caus1",
+     "+Caus" <- "+Caus2",
+     "+Caus" <- "+Caus3",
+     "+Caus" <- "+Caus4",
+     "+Imp" <- "+Imp2",
      "+Narr" <- "+Narr2",
      "+Past" <- "+Past2",
-     "+Imp" <- "+Imp2",
-     "WithoutHavingDoneSo" <- "+WithoutHavingDoneSo2"
+     "+WithoutHavingDoneSo" <- "+WithoutHavingDoneSo2"
 ];
