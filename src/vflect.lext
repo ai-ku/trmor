@@ -1,16 +1,82 @@
+LEXICON Vroot
+	Voice;
+
+LEXICON Voice
+	Vrecip?;
+
+LEXICON Vrecip?
+^DB+Verb+Recip:+Iş	Vcaus?;
+			Vcaus?;
+
+LEXICON Vreflex?
+^DB+Verb+Reflex:+In	Vcaus?;
+			Vrecip?;
+
+LEXICON Vcaus1			!! +Ir
+^DB+Verb+Caus1:+Ir	Vcaus?;
+			Vpass?;
+
+LEXICON Vcaus2			!! +It
+^DB+Verb+Caus2:+It	Vcaus?;
+			Vpass?;
+
+LEXICON Vcaus3			!! +Ar
+^DB+Verb+Caus3:+Ar	Vcaus?;
+			Vpass?;
+
+LEXICON Vcaus4			!! +Art
+^DB+Verb+Caus4:+Art	Vcaus?;
+			Vpass?;
+
+LEXICON Vcaus?			!! +DIr or +t
+^DB+Verb+Caus:+t	Vcaus?;
+			Vpass?;
+
+LEXICON Vpass?			!! +Il or +In
+^DB+Verb+Pass:+Il	Negation;
+			Negation;
+
+LEXICON Negation
++Pos:0			VerbAgt;
++Pos:0			Compound3;
++Neg:+mA		Compound2;
+^DB+Verb+Able+Neg:+yAmA	Compound1; !! Goksel calls this the possibility suffix
+^DB+Verb+Hastily+Neg:+YIver+mA	Vstem;	   !! Negation may follow +YIver
+
+LEXICON Compound3
+^DB+Verb+Start:+yAkoy		Vstem; !! Not present in Goksel
+^DB+Verb+Stay:+yAkal		Vstem;
+^DB+Verb+Almost:+yAyaz		Vstem;
+^DB+Verb+EverSince:+yAgel	Vstem;
+				Compound2;
+
+LEXICON Compound2
+^DB+Verb+Continue:+yAgit	Vstem;  !! Not present in Goksel
+^DB+Verb+Repeat:+yAdur		Vstem;
+^DB+Verb+Hastily:+yIver		Vstem;
+				Compound1;
+
+LEXICON Compound1
+^DB+Verb+Able:+yAbil		Vstem;
+				Vstem;
+
+LEXICON Vstem
+	Vflect;
+	Vderiv;
+
 LEXICON Vflect
-+Aor:+Hr	CNP|Person;
-+Aor:+Hr	AorAdv;
++Aor:+Ir	CNP|Person;
++Aor:+Ir	AorAdv;
 +Desr:+sA	NP|Person2;
 +Fut:+yAcAk	CNP|Person+Cop;
 +Imp:0		PersonImp;
 +Imp2:+sA	PersonImpSA;
-+Narr:+mHş	CNP|Person+Cop;
-+Narr:+mHş	NarrAdv1;
-+Neces:+mAlH	CNP|Person+Cop;
++Narr:+mIş	CNP|Person+Cop;
++Narr:+mIş	NarrAdv1;
++Neces:+mAlI	CNP|Person+Cop;
 +Opt:+yA	NP|Person1;
-+Past:+DH	CP|Person;
-+Prog1:+Hyor	CNP|Person+Cop;
++Past:+DI	CP|Person;
++Prog1:+Iyor	CNP|Person+Cop;
 +Prog2:+mAktA	CNP|Person+Cop;
 
 LEXICON Vzero?
@@ -22,9 +88,9 @@ LEXICON Vzero
 
 LEXICON AfterVzero
 +Cond:+ysA	Person2;
-+Past2:+yDH	Person2;
++Past2:+yDI	Person2;
 +Pres:0		Person1+Cop?;
-+Narr2:+ymHş	Person1+AsIf?;
++Narr2:+ymIş	Person1+AsIf?;
 		While;
 		AsIf;
 
@@ -42,7 +108,7 @@ LEXICON CP|Person
 
 LEXICON NP|Person1
 		NP+Person;
-		Person1;
+		Person1opt;
 
 LEXICON NP|Person2
 		NP+Person;
@@ -51,80 +117,88 @@ LEXICON NP|Person2
 LEXICON CNP+Person
 +A3pl:+lAr	CNP;
 +Cond:+ysA	Person2;
-+Past2:+yDH	Person2;
-+Narr2:+ymHş	Person1+Cop?;
-+Narr2:+ymHş	NarrAdv2;
++Past2:+yDI	Person2;
++Narr2:+ymIş	Person1+Cop?;
++Narr2:+ymIş	NarrAdv2;
 		While;
 
 LEXICON CNP
 +Cond:+ysA	#;
-+Narr2:+ymHş	#;
-+Past2:+yDH	#;
++Narr2:+ymIş	#;
++Past2:+yDI	#;
 		While;
 
 LEXICON NP+Person
 +A3pl:+lAr	NP;
-+Narr2:+ymHş	Person1;
-+Past2:+yDH	Person2;
++Narr2:+ymIş	Person1;
++Past2:+yDI	Person2;
 
 LEXICON NP
-+Narr2:+ymHş	#;
-+Past2:+yDH	#;
++Narr2:+ymIş	#;
++Past2:+yDI	#;
 
 LEXICON C+Person
 +Cond:+ysA	Person2;
 
-LEXICON Person1
-+A1sg:+yHm	#;
-+A2sg:+sHn	#;
+LEXICON Person1opt
++A1sg:+yIm	#;
++A2sg:+sIn	#;
 +A3sg:0		#;
-+A1pl:+yHz	#;	!! Should be +lHm following +Opt - fixed with regex
-+A2pl:+sHnHz	#;
++A1pl3:+lIm	#;	!! Should be +lIm following +Opt
++A2pl:+sInIz	#;
++A3pl:+lAr	#;
+
+LEXICON Person1
++A1sg:+yIm	#;
++A2sg:+sIn	#;
++A3sg:0		#;
++A1pl:+yIz	#;
++A2pl:+sInIz	#;
 +A3pl:+lAr	#;
 
 LEXICON Person1+Cop?
-+A1sg:+yHm	Cop?;
-+A2sg:+sHn	Cop?;
++A1sg:+yIm	Cop?;
++A2sg:+sIn	Cop?;
 +A3sg:0		Cop?;
-+A1pl:+yHz	Cop?;
-+A2pl:+sHnHz	Cop?;
++A1pl:+yIz	Cop?;
++A2pl:+sInIz	Cop?;
 +A3pl:+lAr	Cop?;
 
 LEXICON Person1+AsIf?
-+A1sg:+yHm	AsIf?;
-+A2sg:+sHn	AsIf?;
++A1sg:+yIm	AsIf?;
++A2sg:+sIn	AsIf?;
 +A3sg:0		AsIf?;
-+A1pl:+yHz	AsIf?;
-+A2pl:+sHnHz	AsIf?;
++A1pl:+yIz	AsIf?;
++A2pl:+sInIz	AsIf?;
 +A3pl:+lAr	AsIf?;
 
 LEXICON Person2
-+A1sg:+m  	#;
-+A2sg:+n  	#;
-+A3sg:0	  	#;
-+A1pl:+k  	#;
-+A2pl:+nHz	#;
++A1sg2:+m  	#;
++A2sg2:+n  	#;
++A3sg:0  	#;
++A1pl2:+k  	#;
++A2pl2:+nIz	#;
 +A3pl:+lAr	#;
 
 LEXICON Person2+CP?
-+A1sg:+m  	CP?;
-+A2sg:+n  	CP?;
++A1sg2:+m  	CP?;
++A2sg2:+n  	CP?;
 +A3sg:0		#;   !! No need for A3sg here, put at the end.
 !+A3sg:0  	C?;  !! BUG: I think this is oflazer's bug should be CP?
-+A1pl:+k  	CP?;
-+A2pl:+nHz	CP?;
++A1pl2:+k  	CP?;
++A2pl2:+nIz	CP?;
 +A3pl:+lAr	CP?;
 
 LEXICON PersonImp
-+A2sg:0		#;
-+A3sg:+sHn	#;
-+A2pl:+yHn	#;
-+A2pl:+yHnHz	#;
-+A3pl:+sHnlAr	#;
++A2sg3:0	#;
++A3sg3:+sIn	#;
++A2pl3:+yIn	#;
++A2pl3:+yInIz	#;
++A3pl3:+sInlAr	#;
 
 LEXICON PersonImpSA
-+A2sg:+nA	#;
-+A2pl:+nHzA	#;
++A2sg4:+nA	#;
++A2pl4:+nIzA	#;
 
 LEXICON NarrAdv1
 +A3sg:0		AsIf;
@@ -149,17 +223,17 @@ LEXICON AsIf?
 	AsIf;
 
 LEXICON AsIf
-^DB+Adverb+AsIf:+CAsHnA	#;
+^DB+Adverb+AsIf2:+CAsInA	#;
 
 LEXICON Cop?
 	#;
 	Cop;
 
 LEXICON Cop
-+Cop:+DHr	#;
++Cop:+DIr	#;
 
 LEXICON CP?
 +Cond:+ysA	#;
-+Past2:+yDH	#;
++Past2:+yDI	#;
 		#;
 

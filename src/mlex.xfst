@@ -62,7 +62,7 @@ define Morphemes [
     "+Fut"		-> {+YAcAk},
     "+FutPart"		-> {+YAcAk},
     "+Gen"		-> {+NIn},	!! {+nIm}
-    "+Iastily"		-> {+YIver},
+    "+Hastily"		-> {+YIver},
     "+Imp"		-> 0,
     "+Imp2"		-> {+sA},
     "+InBetween"	-> {+arası},	!! {+lArarası}?

@@ -1,58 +1,3 @@
-LEXICON Vroot
-	Voice;
-
-LEXICON Voice
-			Polarity;
-^DB+Verb+Pass:+Hl	Polarity;
-^DB+Verb+Caus:+t	Voice3;
-^DB+Verb+Recip:+Hş	Voice2;
-^DB+Verb+Reflex:+Hn	Voice2;		!! See Issue 8.
-
-LEXICON Voice3
-			Polarity;
-^DB+Verb+Pass:+Hl	Polarity;
-^DB+Verb+Caus:+t	Voice2;
-
-LEXICON Voice2
-			Polarity;
-^DB+Verb+Pass:+Hl	Polarity;
-^DB+Verb+Caus:+t	Voice1;
-
-LEXICON Voice1
-			Polarity;
-^DB+Verb+Pass:+Hl	Polarity;
-
-LEXICON Polarity
-+Pos:0			VerbAgt;
-+Pos:0			Compound3;
-+Neg:+mA		Compound2;
-^DB+Verb+Able+Neg:+yAmA	Compound1;
-
-LEXICON Compound3
-^DB+Verb+Start:+yAkoy		Vstem;
-^DB+Verb+Stay:+yAkal		Vstem;
-^DB+Verb+Almost:+yAyaz		Vstem;
-^DB+Verb+EverSince:+yAgel	Vstem;
-				Compound2;
-
-LEXICON Compound2
-^DB+Verb+Continue:+yAgit	Vstem;  !! BUG:  t-d conversion is not fixed
-^DB+Verb+Repeat:+yAdur		Vstem;
-^DB+Verb+Hastily:+yHver		HastilyNeg?;
-				Compound1;
-
-LEXICON Compound1
-^DB+Verb+Able:+yAbil		Vstem;
-				Vstem;
-
-LEXICON HastilyNeg?
-+Neg:+mA	Vstem;		!! BUG: This is Oflazer's hack, only followed by Aor
-		Vstem;	
-
-LEXICON Vstem
-	Vflect;
-	Vderiv;
-
 !! Derivations following Verb (non-verb derivations)
 
 LEXICON Vderiv
@@ -82,8 +27,8 @@ LEXICON Vderiv
 ^DB+Noun+PastPart:+DHk		Nflect;	!! BUG: Pnon may not be possible
 
 LEXICON VerbAgt
-^DB+Adj+Agt:+yHcH	AgtAdj;
-^DB+Noun+Agt:+yHcH	Agt;
+^DB+Adj+Agt2:+yHcH	AgtAdj;
+^DB+Noun+Agt2:+yHcH	Agt;
 
 LEXICON AgtAdj		!! Verb+yHcH
 !^DB+Adj+AsIf:+CA	AdjAsIf;
