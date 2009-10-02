@@ -89,7 +89,7 @@ LEXICON Vzero
 LEXICON AfterVzero
 +Cond:+ysA	Person2;
 +Past2:+yDI	Person2;
-+Pres:0		Person1+Cop?;
++Pres:0		Person1+Cop2;
 +Narr2:+ymIş	Person1+AsIf?;
 		While;
 		AsIf;
@@ -160,6 +160,14 @@ LEXICON Person1+Cop?
 +A1sg:+yIm	Cop?;
 +A2sg:+sIn	Cop?;
 +A3sg:0		Cop?;
++A1pl:+yIz	Cop?;
++A2pl:+sInIz	Cop?;
++A3pl:+lAr	Cop?;
+
+LEXICON Person1+Cop2		!! Do not allow unmarked A3sg after Pres
++A1sg:+yIm	Cop?;
++A2sg:+sIn	Cop?;
++A3sg:0		Cop;
 +A1pl:+yIz	Cop?;
 +A2pl:+sInIz	Cop?;
 +A3pl:+lAr	Cop?;
