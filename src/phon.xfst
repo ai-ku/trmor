@@ -17,8 +17,6 @@ define Cons [b|c|ç|d|f|g|ğ|h|j|k|l|m|n|p|r|s|ş|t|v|y|z];
 
 !! Special characters in the input:
 !! Stems consist of regular lowercase characters in the Alphabet.
-!! The following multichar flags may appear after the stem:
-!! +CD +CV +VD +VF
 !! Special characters in suffixes:
 !! All suffixes start with a "+".
 !! The capital A represents [ae]
@@ -27,6 +25,7 @@ define Cons [b|c|ç|d|f|g|ğ|h|j|k|l|m|n|p|r|s|ş|t|v|y|z];
 !! The capital C represents [cç]
 !! The capital Y,N,S represent optional y,n,s characters
 
+!! The following multichar flags may appear after the stem:
 define Multi ["^AR"|"^CD"|"^CV"|"^P3"|"^VD"|"^VF"|"^Y"];
 define StemEnd [Multi* %+];
 
@@ -432,7 +431,7 @@ define AltCaus [		# Default: +DIr
 
 
 !! The following special characters are in the input:
-!! A, I, D, C, Y, N, S, ^VF, ^VD, ^CV, ^CD, +
+!! A, I, D, C, Y, N, S, ^VF, ^VD, ^CV, ^CD, ^P3, ^Y, ^AR, +
 
 read regex
 Ninsert .o.
