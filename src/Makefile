@@ -1,5 +1,15 @@
 all: phon.extra deriv.extra nflect.extra vflect.extra vzero.extra
 
+model.fst: main.lexc mlex.xfst phon.xfst compat.xfst build.xfst
+	xfst -f build.xfst
+
+%.lexc: %.lext
+	include.pl $< > $@
+
+vflect.test.lexc: include.pl vflect.test.lext multichar.lexc vflect.lexc
+
+main.lexc: include.pl main.lext multichar.lexc dict.lexc nderiv.lexc vderiv.lexc vflect.lexc nflect.lexc
+
 phon.extra: phon.test phon.xfst mlex.xfst deriv.lexc nflect.xfst vflect.lexc vzero.lexc deriv.regex
 
 deriv.extra: deriv.test deriv.lexc nflect.xfst vflect.lexc vzero.lexc deriv.regex
