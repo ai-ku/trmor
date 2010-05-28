@@ -1,0 +1,116 @@
+#include "multichar.lexc"
+
+LEXICON Root
+#include "dict.lexc"
+
+#include "nderiv.lexc"
+
+#include "vderiv.lexc"
+
+#include "nflect.lexc"
+
+#include "vflect.lexc"
+
+
+LEXICON +Adj
++Adj	Aderiv?;
+
+LEXICON +Adverb
++Adverb	#;
+
+LEXICON +Conj
++Conj	#;
+
+LEXICON +Det
++Det	#;
+
+LEXICON +Dup
++Dup	#;
+
+LEXICON +Interj
++Interj	#;
+
+LEXICON +Noun
++Noun	Noun;
+
+LEXICON +Noun^P3
++Noun	NounP3;
+
+LEXICON +Noun^P1
++Noun	NounP1;
+
+LEXICON +Noun^P2
++Noun	NounP2;
+
+LEXICON +Noun^PL
++Noun	NounPL;
+
+LEXICON +Noun^KI
++Noun	NounKI;
+
+LEXICON +Num+Card
++Num+Card	#;
+
+LEXICON +Num+Dist
++Num+Dist	#;
+
+LEXICON +Num+Ord
++Num+Ord	#;
+
+LEXICON +Postp+PCAbl
++Postp+PCAbl	#;
+
+LEXICON +Postp+PCAcc
++Postp+PCAcc	#;
+
+LEXICON +Postp+PCDat
++Postp+PCDat	#;
+
+LEXICON +Postp+PCGen
++Postp+PCGen	#;
+
+LEXICON +Postp+PCIns
++Postp+PCIns	#;
+
+LEXICON +Postp+PCNom
++Postp+PCNom	#;
+
+LEXICON +Pron+Demons
++Pron+Demons	#;
+
+LEXICON +Pron+Pers
++Pron+Pers	#;
+
+LEXICON +Pron+Quant
++Pron+Quant	#;
+
+LEXICON +Pron+Ques
++Pron+Ques	#;
+
+LEXICON +Pron+Reflex
++Pron+Reflex	#;
+
+LEXICON +Ques
++Ques	#;
+
+LEXICON +Verb
++Verb	Verb;
+
+LEXICON +Verb^C1
++Verb	Vcaus1;
+
+LEXICON +Verb^C2
++Verb	Vcaus2;
+
+LEXICON +Verb^C3
++Verb	Vcaus3;
+
+LEXICON +Verb^C4
++Verb	Vcaus4;
+
+LEXICON +Verb^CX
++Verb	Vpass?;
+
+LEXICON +Verb^RF
++Verb	Vreflex?;
+
