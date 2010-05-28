@@ -18,8 +18,8 @@ mlex.xfst
 
 main.lexc
 	Morphotactics built from various components using the Makefile:
-	main.lext, multichar.lexc, dict.lexc, nderiv.lexc,
-	vderiv.lexc, vflect.lexc, nflect.lexc.  Note that only the
+	main.lext, multichar.lext, dict.lext, nderiv.lext,
+	vderiv.lext, vflect.lext, nflect.lext.  Note that only the
 	upper part of this fst is used, i.e. this is actually an fsm
 	that specifies the legal feature sequences.
 
@@ -45,7 +45,7 @@ deriv.random
 deriv.regex
 deriv.test
 dict
-dict.lexc
+dict.lext
 dict.txt
 hfst
 include.pl
@@ -66,12 +66,12 @@ mlex.down
 mlex.fst
 model.fst
 mor.tgz
-multichar.lexc
-nderiv.lexc
+multichar.lext
+nderiv.lext
 nflect.extra
 nflect.extra.known
 nflect.extra.known.bak
-nflect.lexc
+nflect.lext
 nflect.missing
 nflect.missing.known
 nflect.missing.known.bak
@@ -99,11 +99,11 @@ tfupper.fst
 unused
 up
 up2
-vderiv.lexc
+vderiv.lext
 vflect.extra
 vflect.extra.known
 vflect.extra.known.bak
-vflect.lexc
+vflect.lext
 vflect.missing
 vflect.missing.known
 vflect.missing.known.bak

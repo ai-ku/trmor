@@ -6,17 +6,17 @@ model.fst: main.lexc mlex.xfst phon.xfst compat.xfst build.xfst
 %.lexc: %.lext
 	include.pl $< > $@
 
-vflect.test.lexc: include.pl vflect.test.lext multichar.lexc vflect.lexc
+vflect.test.lexc: include.pl vflect.test.lext multichar.lext vflect.lext
 
-main.lexc: include.pl main.lext multichar.lexc dict.lexc nderiv.lexc vderiv.lexc vflect.lexc nflect.lexc
+main.lexc: include.pl main.lext multichar.lext dict.lext nderiv.lext vderiv.lext vflect.lext nflect.lext
 
-phon.extra: phon.test phon.xfst mlex.xfst deriv.lexc nflect.xfst vflect.lexc vzero.lexc deriv.regex
+phon.extra: phon.test phon.xfst mlex.xfst deriv.lexc nflect.xfst vflect.lext vzero.lexc deriv.regex
 
-deriv.extra: deriv.test deriv.lexc nflect.xfst vflect.lexc vzero.lexc deriv.regex
+deriv.extra: deriv.test deriv.lexc nflect.xfst vflect.lext vzero.lexc deriv.regex
 
 nflect.extra: nflect.test nflect.xfst vzero.lexc deriv.regex
 
-vflect.extra: vflect.test vflect.lexc
+vflect.extra: vflect.test vflect.lext
 
 vzero.extra: vzero.test vzero.lexc
 

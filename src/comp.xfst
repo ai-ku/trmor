@@ -1,4 +1,4 @@
-define dflags ["^AR"|"^PL"|"^P1"|"^P2"|"^P3"|"^Y"|"^TM"|"^CD"|"^CV"|"^VD"|"^VF"];
+define dflags ["^AR"|"^PL"|"^P1"|"^P2"|"^P3"|"^Y"|"^KI"|"^CD"|"^CV"|"^VD"|"^VF"];
 
 read regex [
      0 <- dflags,

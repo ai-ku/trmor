@@ -1,15 +1,15 @@
-#include "multichar.lexc"
+#include "multichar.lext"
 
 LEXICON Root
-#include "dict.lexc"
+#include "dict.lext"
 
-#include "nderiv.lexc"
+#include "nderiv.lext"
 
-#include "vderiv.lexc"
+#include "vderiv.lext"
 
-#include "nflect.lexc"
+#include "nflect.lext"
 
-#include "vflect.lexc"
+#include "vflect.lext"
 
 
 LEXICON +Adj
