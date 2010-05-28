@@ -100,21 +100,21 @@ LEXICON Without		!! Noun+sHz
 ^DB+Verb+Become:+lAş	Verb;
 			NVzero?;
 
-LEXICON Dim		!! Noun+CHk
-			Nroot;
-+A3sg+Pnon+Nom:0	DimA3sg;
-
-LEXICON DimA3sg
-!^DB+Adj+JustLike:+sH	JustLike;
-!^DB+Adj+Related:+sAl	Related;
-^DB+Adj+With:+lH	With;
-^DB+Adj+Without:+sHz	Without;
-!^DB+Adverb+Since:+dHr	#;
-!^DB+Noun+Agt:+CH	Agt;
-!^DB+Noun+Dim:+CHk	Dim;
-^DB+Noun+Ness:+lHk	Ness;
-!^DB+Verb+Acquire:+lAn	Verb;
-!^DB+Verb+Become:+lAş	Verb;
+! LEXICON Dim		!! Noun+CHk
+! 			Nroot;
+! +A3sg+Pnon+Nom:0	DimA3sg;
+! 
+! LEXICON DimA3sg
+! !^DB+Adj+JustLike:+sH	JustLike;
+! !^DB+Adj+Related:+sAl	Related;
+! ^DB+Adj+With:+lH	With;
+! ^DB+Adj+Without:+sHz	Without;
+! !^DB+Adverb+Since:+dHr	#;
+! !^DB+Noun+Agt:+CH	Agt;
+! !^DB+Noun+Dim:+CHk	Dim;
+! ^DB+Noun+Ness:+lHk	Ness;
+! !^DB+Verb+Acquire:+lAn	Verb;
+! !^DB+Verb+Become:+lAş	Verb;
 
 LEXICON Ness		!! (Noun|Adj)+lHk
 			Nroot;
