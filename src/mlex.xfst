@@ -137,11 +137,11 @@ define Morphemes [
     "^CD"		-> "^CD",	!! Phonetic flag for consonant doubling
     "^CV"		-> "^CV",	!! Phonetic flag for consonant voicing
     "^DB"		-> 0,		
+    "^KI"		-> 0,		!! New flag indicating time words that can take "ki"
     "^P1"		-> 0,		!! New flag for stems with possessives
     "^P2"		-> 0,		!! New flag for stems with possessives
     "^P3"		-> "^P3",	!! New flag for compound nouns
     "^PL"		-> 0,		!! New flag for plural stems
-    "^TM"		-> 0,		!! New flag indicating time words that can take "ki"
     "^VD"		-> "^VD",	!! Phonetic flag for vowel dropping
     "^VF"		-> "^VF",	!! Phonetic flag for vowel fronting
     "^Y"		-> "^Y"		!! New flag for special handling of "su", "ne"
