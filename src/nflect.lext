@@ -1,23 +1,35 @@
 !! Includes all sequences following +Noun except cyclic derivational
 !! suffixes following +Nom.
 
-LEXICON Nflect
-	Ncount;
+LEXICON Nroot
++A3sg+Pnon+Nom	Vzero?;
+		Nflect;
 
-LEXICON Ncount
-+A3sg	Nposs;
+LEXICON Nflect		!! Does not allow +A3sg+Pnon+Nom
++A3sg	Nposs1;
 +A3pl	Nposs;
 
+LEXICON Nposs1
++Pnon	Ncase-Nom;
+	Nposs-Pnon;
+
 LEXICON Nposs
++Pnon	Ncase;
+	Nposs-Pnon;
+
+LEXICON Nposs-Pnon
 +P1sg	Ncase;
 +P1pl	Ncase;
 +P2sg	Ncase;
 +P2pl	Ncase;
 +P3sg	Ncase;
 +P3pl	Ncase;
-+Pnon	Ncase;
 
 LEXICON Ncase
++Nom	Vzero?;
+	Ncase-Nom;
+
+LEXICON Ncase-Nom
 +Abl	Vzero?;
 +Acc	#;
 +Dat	Vzero?;
@@ -27,7 +39,6 @@ LEXICON Ncase
 +Ins	Vzero?;
 +Loc	Vzero?;
 +Loc	AdjRel;
-+Nom	Vzero?;
 
 
 LEXICON PronRel
@@ -42,60 +53,34 @@ LEXICON PRposs
 +Pnon	Ncase;
 
 LEXICON AdjRel
-^DB+Adj+Rel	Nzero?;
+^DB+Adj+Rel	NVzero?;
 
-LEXICON Nzero?
+LEXICON NVzero?
 	Nzero;
-	#;
+	Vzero?;
+
+LEXICON Noun
++A3sg+Pnon+Nom	Nderiv;
++A3pl+Pnon+Nom	Nderiv2;
+		Nroot;
 
 LEXICON Nzero
-^DB+Noun+Zero	AfterNzero;
+^DB+Noun+Zero	Nflect;
 
-LEXICON AfterNzero
-+A3sg	Nposs1;
-+A3pl	Nposs2;
+LEXICON NounKI
++A3sg+Pnon+Nom	AdjRel;
+		Noun;
 
-LEXICON Nposs1
-+P1sg	Ncase1;
-+P1pl	Ncase1;
-+P2sg	Ncase1;
-+P2pl	Ncase1;
-+P3sg	Ncase1;
-+P3pl	Ncase1;
-+Pnon	Ncase0;
+LEXICON NounP1
++A3pl+P1sg	Ncase;
 
-LEXICON Nposs2
-+P1sg	Ncase2;
-+P1pl	Ncase2;
-+P2sg	Ncase2;
-+P2pl	Ncase2;
-+P3sg	Ncase2;
-+P3pl	Ncase2;
-+Pnon	Ncase2;
+LEXICON NounP2
++A3pl+P2sg	Ncase;
 
-LEXICON Ncase0
-+Abl	#;
-+Acc	#;
-+Dat	#;
-+Gen	#;
-+Ins	#;
-+Loc	#;
+LEXICON NounP3
+		Noun;
 
-LEXICON Ncase1
-+Abl	#;
-+Acc	#;
-+Dat	#;
-+Gen	#;
-+Ins	#;
-+Loc	#;
-+Nom	#;
+LEXICON NounPL
++A3pl		Nposs;
 
-LEXICON Ncase2
-+Abl	#;
-+Acc	#;
-+Dat	#;
-+Equ	#;
-+Gen	#;
-+Ins	#;
-+Loc	#;
-+Nom	#;
+

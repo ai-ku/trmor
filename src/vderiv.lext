@@ -17,14 +17,14 @@ LEXICON Vderiv
 ^DB+Adverb+WithoutHavingDoneSo:+mAdAn		#;
 ^DB+Adverb+WithoutHavingDoneSo2:+mAksHzHn	#;
 ^DB+Noun+ActOf:+mAcA		ActOf;
-^DB+Noun+FeelLike:+yAsH		Nflect;	!! olasilik was the only exception
-^DB+Noun+FutPart:+yAcAk		Nflect;	!! BUG: Pnon may not be possible
+^DB+Noun+FeelLike:+yAsH		Nroot;	!! olasilik was the only exception
+^DB+Noun+FutPart:+yAcAk		Nflect;
 ^DB+Noun+Inf1:+mAk		Inf1;
 ^DB+Noun+Inf2:+mA		Inf2;
 ^DB+Noun+Inf3:+yHş		Inf3;
-^DB+Noun+NotAbleState:+yAmAzlHk	Nflect;	!! always ambig with +Verb^DB+Verb+Able+Neg^DB+Adj+AorPart^DB+Noun+Ness+A3sg+Pnon+Nom
-^DB+Noun+NotState:+mAzlHk	Nflect;	!! always ambig with +Verb+Neg^DB+Adj+AorPart^DB+Noun+Ness+A3sg+Pnon+Nom
-^DB+Noun+PastPart:+DHk		Nflect;	!! BUG: Pnon may not be possible
+^DB+Noun+NotAbleState:+yAmAzlHk	Nroot;	!! always ambig with +Verb^DB+Verb+Able+Neg^DB+Adj+AorPart^DB+Noun+Ness+A3sg+Pnon+Nom
+^DB+Noun+NotState:+mAzlHk	Nroot;	!! always ambig with +Verb+Neg^DB+Adj+AorPart^DB+Noun+Ness+A3sg+Pnon+Nom
+^DB+Noun+PastPart:+DHk		Nroot;	!! BUG: Pnon may not be possible
 
 LEXICON VerbAgt
 ^DB+Adj+Agt2:+yHcH	AgtAdj;
@@ -36,9 +36,8 @@ LEXICON AgtAdj		!! Verb+yHcH
 !^DB+Adverb+Ly:+CA	#;
 !^DB+Noun+Agt:+CH	Agt;
 ^DB+Noun+Ness:+lHk	Ness;
-!^DB+Noun+Zero:0	NounZero;
-!^DB+Verb+Acquire:+lAn	Vroot;
-^DB+Verb+Become:+lAş	Vroot;
+!^DB+Verb+Acquire:+lAn	Verb;
+^DB+Verb+Become:+lAş	Verb;
 			Vzero?;
 
 LEXICON AorPart		!! Verb+Hr
@@ -47,10 +46,9 @@ LEXICON AorPart		!! Verb+Hr
 ^DB+Adverb+Ly:+CA	#;
 ^DB+Noun+Agt:+CH	Agt;
 ^DB+Noun+Ness:+lHk	Ness;
-^DB+Noun+Zero:0		NounZero;
-!^DB+Verb+Acquire:+lAn	Vroot;
-!^DB+Verb+Become:+lAş	Vroot;
-			Vzero?;
+!^DB+Verb+Acquire:+lAn	Verb;
+!^DB+Verb+Become:+lAş	Verb;
+			NVzero?;
 
 LEXICON NarrPart	!! Verb+mHş
 ^DB+Adj+AsIf:+CA	AdjAsIf;
@@ -58,10 +56,9 @@ LEXICON NarrPart	!! Verb+mHş
 !^DB+Adverb+Ly:+CA	#;
 ^DB+Noun+Agt:+CH	Agt;
 ^DB+Noun+Ness:+lHk	Ness;
-^DB+Noun+Zero:0		NounZero;
-!^DB+Verb+Acquire:+lAn	Vroot;
-!^DB+Verb+Become:+lAş	Vroot;
-			Vzero?;		!! Do we ever need this?
+!^DB+Verb+Acquire:+lAn	Verb;
+!^DB+Verb+Become:+lAş	Verb;
+			NVzero?;		!! Do we ever need this?
 
 LEXICON PresPart	!! Verb+yAn
 ^DB+Adj+AsIf:+CA	AdjAsIf;
@@ -69,13 +66,12 @@ LEXICON PresPart	!! Verb+yAn
 ^DB+Adverb+Ly:+CA	#;
 ^DB+Noun+Agt:+CH	Agt;
 !^DB+Noun+Ness:+lHk	Ness;
-^DB+Noun+Zero:0		NounZero;
-!^DB+Verb+Acquire:+lAn	Vroot;
-!^DB+Verb+Become:+lAş	Vroot;
-			Vzero?;
+!^DB+Verb+Acquire:+lAn	Verb;
+!^DB+Verb+Become:+lAş	Verb;
+			NVzero?;
 
 LEXICON ActOf		!! Verb+mAcA
-			Nflect;
+			Nroot;
 +A3sg+Pnon+Nom:0	ActOfA3sg;
 
 LEXICON ActOfA3sg
@@ -87,11 +83,11 @@ LEXICON ActOfA3sg
 !^DB+Noun+Agt:+CH	Agt;
 !^DB+Noun+Dim:+CHk	Dim;
 ^DB+Noun+Ness:+lHk	Ness;
-!^DB+Verb+Acquire:+lAn	Vroot;
-!^DB+Verb+Become:+lAş	Vroot;
+!^DB+Verb+Acquire:+lAn	Verb;
+!^DB+Verb+Become:+lAş	Verb;
 
 LEXICON Inf1		!! Verb+mAk
-			Nflect;		!! BUG: only A3sg+Pnon is allowed
+			Nroot;		!! BUG: only A3sg+Pnon is allowed
 +A3sg+Pnon+Nom:0	Inf1A3sg;
 
 LEXICON Inf1A3sg
@@ -103,13 +99,13 @@ LEXICON Inf1A3sg
 ^DB+Noun+Agt:+CH	Agt;
 !^DB+Noun+Dim:+CHk	Dim;
 !^DB+Noun+Ness:+lHk	Ness;
-!^DB+Verb+Acquire:+lAn	Vroot;
-!^DB+Verb+Become:+lAş	Vroot;
+!^DB+Verb+Acquire:+lAn	Verb;
+!^DB+Verb+Become:+lAş	Verb;
 
 
 
 LEXICON Inf2		!! Verb+mA
-			Nflect;
+			Nroot;
 +A3sg+Pnon+Nom:0	Inf2A3sg;
 
 LEXICON Inf2A3sg
@@ -121,13 +117,13 @@ LEXICON Inf2A3sg
 ^DB+Noun+Agt:+CH	Agt;
 !^DB+Noun+Dim:+CHk	Dim;
 !^DB+Noun+Ness:+lHk	Ness;		!! BUG: This should be possible?
-!^DB+Verb+Acquire:+lAn	Vroot;
-!^DB+Verb+Become:+lAş	Vroot;
+!^DB+Verb+Acquire:+lAn	Verb;
+!^DB+Verb+Become:+lAş	Verb;
 
 
 
 LEXICON Inf3		!! Verb+Hş
-			Nflect;
+			Nroot;
 +A3sg+Pnon+Nom:0	Inf3A3sg;
 
 LEXICON Inf3A3sg
@@ -139,8 +135,8 @@ LEXICON Inf3A3sg
 ^DB+Noun+Agt:+CH	Agt;
 !^DB+Noun+Dim:+CHk	Dim;
 ^DB+Noun+Ness:+lHk	Ness;
-!^DB+Verb+Acquire:+lAn	Vroot;
-!^DB+Verb+Become:+lAş	Vroot;
+!^DB+Verb+Acquire:+lAn	Verb;
+!^DB+Verb+Become:+lAş	Verb;
 
 
 LEXICON AdjPoss+Pnon
