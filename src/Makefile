@@ -1,14 +1,16 @@
-all: phon.extra deriv.extra nflect.extra vflect.extra vzero.extra
+all: model.fst
+
+#all: phon.extra deriv.extra nflect.extra vflect.extra vzero.extra
 
 model.fst: main.lexc mlex.xfst phon.xfst compat.xfst build.xfst
 	xfst -f build.xfst
+
+main.lexc: main.lext multichar.lext dict.lext nderiv.lext vderiv.lext vflect.lext nflect.lext
 
 %.lexc: %.lext
 	include.pl $< > $@
 
 vflect.test.lexc: include.pl vflect.test.lext multichar.lext vflect.lext
-
-main.lexc: include.pl main.lext multichar.lext dict.lext nderiv.lext vderiv.lext vflect.lext nflect.lext
 
 phon.extra: phon.test phon.xfst mlex.xfst deriv.lexc nflect.xfst vflect.lext vzero.lexc deriv.regex
 
@@ -51,3 +53,4 @@ Milliyet.dict: Milliyet.rcount
 
 clean:
 	-rm *.missing *.extra
+	-rm model.fst main.lexc

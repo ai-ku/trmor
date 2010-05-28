@@ -137,10 +137,10 @@ define Morphemes [
 !    "^CD"		-> "^CD",	!! Phonetic flag for consonant doubling
 !    "^CV"		-> "^CV",	!! Phonetic flag for consonant voicing
 !    "^KI"		-> 0,		!! New flag indicating time words that can take "ki"
-!    "^P1"		-> 0,		!! New flag for stems with possessives
-!    "^P2"		-> 0,		!! New flag for stems with possessives
-!    "^P3"		-> "^P3",	!! New flag for compound nouns
-!    "^PL"		-> 0,		!! New flag for plural stems
+    "^P1"		-> 0,		!! New flag for stems with possessives
+    "^P2"		-> 0,		!! New flag for stems with possessives
+    "^P3"		-> "^P3",	!! New flag for compound nouns
+    "^PL"		-> 0,		!! New flag for plural stems
 !    "^VD"		-> "^VD",	!! Phonetic flag for vowel dropping
 !    "^VF"		-> "^VF",	!! Phonetic flag for vowel fronting
 !    "^Y"		-> "^Y",	!! New flag for special handling of "su", "ne"
@@ -154,19 +154,15 @@ define Morphemes [
     "^DB"		-> 0		!! Derivational boundary
 ];
 
-!define NoDB \"^DB"*;
+define NoDB \"^DB"*;
 
-!define AltPoss [
-!    "+P1sg" -> 0	|| "^P1" NoDB _ .o.
-!    "+P2sg" -> 0	|| "^P2" NoDB _ .o.
-!    "+P3pl" -> {+SI}	|| "+A3pl" _ , ["^PL"|"^P1"|"^P2"] NoDB _ .o.
-!    "+Pnon" -> {+SI}	|| "^P3" NoDB _ .o.
-!    "+A3pl" -> 0	|| ["^PL"|"^P1"|"^P2"] NoDB _
-!];
-
-!define mlex AltPoss;
-
-define AltPoss [ "+P3pl" -> {+SI} || "+A3pl" _ ];
+define AltPoss [
+    "+P1sg" -> 0	|| "^P1" NoDB _ .o.
+    "+P2sg" -> 0	|| "^P2" NoDB _ .o.
+    "+P3pl" -> {+SI}	|| "+A3pl" _ , ["^PL"|"^P1"|"^P2"] NoDB _ .o.
+    "+Pnon" -> {+SI}	|| "^P3" NoDB _ .o.
+    "+A3pl" -> 0	|| ["^PL"|"^P1"|"^P2"] NoDB _
+];
 
 define NegAor [			# Default: +Er
     "+Aor"	-> 0	|| "+Neg" _ ["+A1sg"|"+A1pl"] ,,
@@ -177,13 +173,9 @@ define NegAor [			# Default: +Er
     "+AorPart"	-> {+z}	|| "+Neg""^DB""+Adj" _
 ];
 
-!define mlex [mlex .o. NegAor];
-
 define AbleNeg [
     "+Able"	-> {+YA}	|| _ "+Neg"
 ];
-
-!define mlex [mlex .o. AbleNeg];
 
 echo Composing with morphemes.
 
