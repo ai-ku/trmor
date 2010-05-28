@@ -34,16 +34,16 @@ LEXICON +Noun
 +Noun	Noun;
 
 LEXICON +Noun^P3
-+Noun	NounP3;
++Noun^P3	NounP3;
 
 LEXICON +Noun^P1
-+Noun	NounP1;
++Noun^P1	NounP1;
 
 LEXICON +Noun^P2
-+Noun	NounP2;
++Noun^P2	NounP2;
 
 LEXICON +Noun^PL
-+Noun	NounPL;
++Noun^PL	NounPL;
 
 LEXICON +Noun^KI
 +Noun	NounKI;
