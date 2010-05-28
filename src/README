@@ -1,0 +1,118 @@
+Makefile
+	Specifies the build rules for every generated file.
+
+build.xfst
+	Builds the final fst model from phon.xfst, mlex.xfst,
+	main.lexc, compat.xfst.
+
+phon.xfst
+	Phonological rules.  This is the component that ties the
+	phonological forms (e.g. +YIz) to actual surface forms
+	(e.g. iz) according to vowel harmony etc.
+
+mlex.xfst
+	Morphological lexicon.  This is the component that ties the
+	features in the sequences specified by main.lexc (e.g. +A1pl)
+	to actual phonological forms (e.g. +YIz), i.e. specifies how
+	each morpheme will be realized.
+
+main.lexc
+	Morphotactics built from various components using the Makefile:
+	main.lext, multichar.lexc, dict.lexc, nderiv.lexc,
+	vderiv.lexc, vflect.lexc, nflect.lexc.  Note that only the
+	upper part of this fst is used, i.e. this is actually an fsm
+	that specifies the legal feature sequences.
+
+compat.xfst
+	Compatibility patches.  There are certain features that are
+	more easily expressed as multiple features (e.g. the four
+	different forms of +Caus).  I also use some dictionary flags
+	to express words that are already plural, that can take -ki,
+	that need consonant voicing etc.  Compat gets rid of all that
+	to make the analysis output compatible with Oflazer.
+
+bak
+ChangeLog
+deriv.extra
+deriv.extra.known
+deriv.fst
+deriv.lexc
+deriv.missing
+deriv.missing.known
+deriv.notes
+deriv.over
+deriv.random
+deriv.regex
+deriv.test
+dict
+dict.lexc
+dict.txt
+hfst
+include.pl
+java
+main.lexc
+main.lext
+Makefile
+Milliyet.clean.bz2
+Milliyet.dict
+Milliyet.fst
+Milliyet.model
+Milliyet.rcount
+Milliyet.regex
+Milliyet.tfeat
+Milliyet.words
+Milliyet.xfst
+mlex.down
+mlex.fst
+model.fst
+mor.tgz
+multichar.lexc
+nderiv.lexc
+nflect.extra
+nflect.extra.known
+nflect.extra.known.bak
+nflect.lexc
+nflect.missing
+nflect.missing.known
+nflect.missing.known.bak
+nflect.test
+nflect.test.lexc
+nflect.test.lext
+nflect.xfst
+phon.down
+phon.extra
+phon.extra.226
+phon.extra.376
+phon.extra.76
+phon.extra.779
+phon.extra.780
+phon.fst
+phon.random
+phon.test
+random.extra
+RCS
+README
+stemmer
+tfeaturesulx.fst
+tfnowords.fst
+tfupper.fst
+unused
+up
+up2
+vderiv.lexc
+vflect.extra
+vflect.extra.known
+vflect.extra.known.bak
+vflect.lexc
+vflect.missing
+vflect.missing.known
+vflect.missing.known.bak
+vflect.test
+vflect.test.lexc
+vflect.test.lexc.bak
+vflect.test.lext
+vzero.extra
+vzero.lexc
+vzero.missing
+vzero.test
+xfst2fsa
