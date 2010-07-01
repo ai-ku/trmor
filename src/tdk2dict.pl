@@ -21,9 +21,9 @@ my %POS = (
     35 => 'Adverb',		# zarf	       
     36 => 'Verb',		# (-le)	       
     37 => 'Verb',		# (-den)	       
-    38 => 'Postp',		# edat	       
+    38 => 'Postp+PCNom',	# edat	       
     39 => 'Conj',		# bağlaç	       
-    40 => 'Pron',		# zamir	       
+    40 => 'Pron+Pers',		# zamir	       
     271 => 'Verb',		# (yardımcı fiil)
     274 => 'Verb'		# (-de)
     );
@@ -64,6 +64,8 @@ close(A);
 
 sub output {
     my ($word, $pos) = @_;
+    return if $word =~ / /;	# skip multiwords
+    $word =~ s/m[ae]k$// if $pos eq 'Verb'; # get rid of mak/mek
     my $str = "$word\t+$pos;\n";
     print $str unless $seen{$str}++;
 }
