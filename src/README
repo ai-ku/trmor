@@ -136,21 +136,22 @@ III. SPECIFICATION OF THE THREE LANGUAGES
 IV. MULTICHAR SYMBOLS IN DICT.LEXT
 
 1. Phonetic flags, used in phon.xfst, attached to the word:
-^AR (356)  -- indicates +Ar rather than +Ir for aorist suffix of verbs.
+^AR (356)  -- indicates +Ar rather than +Ir for aorist suffix of verbs. this should be in mlex like ^C*!
 ^CD (39)   -- consonant doubling for nouns
 ^CV (3014) -- consonant voicing for nouns and verbs
 ^VD (209)  -- vowel drop for nouns
 ^VF (287)  -- vowel fronting for nouns
-^Y  (24)   -- +y insertion for nouns and pronouns (?*su, ne)
+^Y  (24)   -- +y insertion for nouns and pronouns (?*su, ne).  this may be an mlex matter.
 
 2. Morphological flags, used in mlex.xfst, attached to the part of speech:
-   (^P3 also used in phon.xfst)
+   (^P3 also used in phon.xfst -- they may be handled in main)
 ^P1 (8)    -- plural noun first person possessive
 ^P2 (8)    -- plural noun second person possessive
-^P3 (1719) -- compound noun that ends in possessive suffix
+^P3 (1719) -- compound noun that ends in possessive suffix -- how does oflazer do this?
 ^PL (303)  -- plural noun
 
 3. Morphological flags, used in main.lext, attached to the part of speech:
+   (The ^C* belong to mlex)
 ^C1 (18)   -- verb with +Ir causative suffix
 ^C2 (5)    -- verb with +It causative suffix
 ^C3 (2)    -- verb with +Ar causative suffix
@@ -158,3 +159,8 @@ IV. MULTICHAR SYMBOLS IN DICT.LEXT
 ^CX (6)    -- verb with no causative suffix
 ^KI (9)    -- noun that can take +ki suffix
 ^RF (13)   -- verb that can take reflexive suffix
+
+Currently mlex only handles three phenomena other than regular suffix assignment:
+1. Insertion and deletion of possessives after ^P?
+2. Negative +Aor and +AorPart suffix
+3. Negative +Able
