@@ -12,6 +12,7 @@ use strict;
 use utf8;
 
 my %seen;
+my %pos1;
 
 my %POS = (
     29 => 'Interj', 		# ünlem	       
@@ -52,24 +53,29 @@ while(<A>) {
 	next;
     }
     for my $i (5 .. 8) {	# kelimeturu1-4
-	if (defined $POS{$a[$i]}) {
-	    output($m, \@a, $i);
+	my $wpos = $POS{$a[$i]};
+	if (defined $wpos) {
+	    output($m, \@a, $wpos);
+	    $pos1{$key} = $wpos if not defined $pos1{$key};
 	} elsif ($a[$i] eq '0' or $a[$i] eq '\N') {
-	    # do nothing
+	    output($m, \@a, $pos1{$key}) if defined $pos1{$key};
 	} else {
-	    warn "Warning: $a[$i] not a recognized part of speech.\n";
+	    die "Error: $a[$i] not a recognized part of speech.\n";
 	}
     }
 }
 close(A);
 
 sub output {
-    my ($m, $a, $i) = @_;
+    my ($m, $a, $wpos) = @_;
     my $word = $m->[6];		# maddebas
-    my $wpos = $POS{$a->[$i]};
+    my $anlam = $a->[13];
 
     return if $word =~ / /;	# skip multiwords
+    return if ($word =~ /m[ae]$/ and $anlam =~ /m[ae]k (işi|durumu)/); # skip -me suffix
+
     $word =~ s/m[ae]k$// if $wpos eq 'Verb'; # get rid of mak/mek
+    
 
 #    $wpos .= '+Prop' if ($wpos eq 'Noun' and $m->[11] == 1); # ozel
     $wpos .= '^PL'   if ($wpos eq 'Noun' and $m->[10] == 1); # cogul
@@ -145,7 +151,10 @@ sub onek {
 	
 	if ($flag ne '' or
 	    $ek =~ /^y[ıi]$/ or
-	    $ek =~ /^[pçtk]\'[ıiuü]$/) {
+	    $ek =~ /^[pçtk]\'[ıiuü]$/ or
+	    ($lastvowel =~ /^[aâıouû]$/ ?
+	     $ek =~ /^$lastchar[ıu]$/ :
+	     $ek =~ /^$lastchar[iü]$/)) {
 	    # do nothing
 	} else {
 	    warn "Warning: $word-$ek not a recognized suffix (lastchar=$lastchar,lastvowel=$lastvowel,lastconspair=$lastconspair,lcp2=$lastconspair2,flag=$flag).\n";
