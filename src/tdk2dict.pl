@@ -72,7 +72,8 @@ sub output {
     my $anlam = $a->[13];
 
     return if $word =~ / /;	# skip multiwords
-    return if ($word =~ /m[ae]$/ and $anlam =~ /m[ae]k (işi|durumu)/); # skip -me suffix
+    return if ($word =~ /m[ae]$/ and $anlam =~ /m[ae]k (işi|durumu)/); # skip stems with -me suffix
+    return if ($word =~ /[ln]m[ae]k$/ and ($anlam =~ /işine konu olmak/ or $anlam =~ /işi yapılmak/)); # skip the passive stems
 
     $word =~ s/m[ae]k$// if $wpos eq 'Verb'; # get rid of mak/mek
     
