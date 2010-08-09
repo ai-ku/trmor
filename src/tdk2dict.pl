@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w -CSD
 # Generates a lexc format dictionary file from maddeler.tab and anlams.tab from tdk
-# See README for the column descriptions of these files.  The important ones are:
+# See dict/tdk-cd/README for the column descriptions of these files.  The important ones are:
 # maddeler[2,3]: WORD_ID, altsay (primary key, 83415 unique)
 # maddeler[6]: maddebas (main spelling), maddeler[16]: ARAMA (reduced spelling)
 # maddeler[9,10,11]: onek, cogul, ozel (useful info for dict)
@@ -10,6 +10,8 @@
 
 use strict;
 use utf8;
+
+sub oneof { my $x = shift; ($_ eq $x) && return 1 for @_; }
 
 my %seen;
 my %pos1;
@@ -54,10 +56,13 @@ while(<A>) {
     }
     for my $i (5 .. 8) {	# kelimeturu1-4
 	my $wpos = $POS{$a[$i]};
-	if (defined $wpos) {
+	if (defined $wpos) {	
+	    # regular part of speech
 	    output($m, \@a, $wpos);
 	    $pos1{$key} = $wpos if not defined $pos1{$key};
-	} elsif ($a[$i] eq '0' or $a[$i] eq '\N') {
+	} elsif (oneof($a[$i], '0', '\N')) {
+	    # most part of speech fields are left undefined.
+	    # in this case the last known pos is used if defined.
 	    output($m, \@a, $pos1{$key}) if defined $pos1{$key};
 	} else {
 	    die "Error: $a[$i] not a recognized part of speech.\n";
@@ -89,8 +94,6 @@ sub output {
 	print $str unless $seen{$str}++;
     }
 }
-
-sub oneof { my $x = shift; ($_ eq $x) && return 1 for @_; }
 
 sub onek {
     my ($word, $ek) = @_;

@@ -2,6 +2,21 @@ all: model.fst
 
 #all: phon.extra deriv.extra nflect.extra vflect.extra vzero.extra
 
+dict.lext: tdk2dict.pl
+	tdk2dict.pl > dict.lext 2> tdk2dict.err
+
+dtest: dict.lext
+	make model.fst
+	cd ../disamb; touch model.fst; make dtest
+
+etest: dict.lext
+	make model.fst
+	cd ../stemmer; make etest
+
+ktest: dict.lext
+	make model.fst
+	cd ../stemmer; make ktest
+
 model.fst: main.lexc mlex.xfst phon.xfst compat.xfst build.xfst
 	xfst -f build.xfst
 
