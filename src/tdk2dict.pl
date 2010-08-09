@@ -83,7 +83,7 @@ sub output {
     $word =~ s/m[ae]k$// if $wpos eq 'Verb'; # get rid of mak/mek
     
 
-#    $wpos .= '+Prop' if ($wpos eq 'Noun' and $m->[11] == 1); # ozel
+    $wpos .= '+Prop' if ($wpos eq 'Noun' and $m->[11] == 1); # ozel
     $wpos .= '^PL'   if ($wpos eq 'Noun' and $m->[10] == 1); # cogul
 
     my $ek = $m->[9];		# onek
