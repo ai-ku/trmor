@@ -177,8 +177,13 @@ define AbleNeg [
     "+Able"	-> {+YA}	|| _ "+Neg"
 ];
 
+define Apostrophe [
+    "+Prop"	-> 0	|| _ "+A3sg" "+Pnon" "+Nom" .#. .o.
+    "+Prop"	-> {'}
+];
+
 echo Composing with morphemes.
 
-define mlex [AltPoss .o. NegAor .o. AbleNeg .o. Morphemes];
+define mlex [AltPoss .o. NegAor .o. AbleNeg .o. Apostrophe .o. Morphemes];
 
 push mlex
