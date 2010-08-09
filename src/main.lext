@@ -34,7 +34,7 @@ LEXICON +Noun
 +Noun	Noun;
 
 LEXICON +Noun+Prop
-+Noun+Prop	NounProp;
++Noun+Prop	Noun;
 
 LEXICON +Noun^P3
 +Noun^P3	NounP3;
