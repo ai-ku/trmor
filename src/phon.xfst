@@ -1,3 +1,57 @@
+!!!! Turkish Phonological Rules
+
+!!! Character Groups
+
+define Alphabet29Lower	[a|b|c|ç|d|e|f|g|ğ|h|ı|i|j|k|l|m|n|o|ö|p|r|s|ş|t|u|ü|v|y|z];
+define Alphabet29Upper	[A|B|C|Ç|D|E|F|G|Ğ|H|I|İ|J|K|L|M|N|O|Ö|P|R|S|Ş|T|U|Ü|V|Y|Z];
+define Alphabet29	[Alphabet29Lower|Alphabet29Upper];
+
+define CircumflexLower	[â|î|û];
+define CircumflexUpper	[Â|Î|Û];
+define Circumflex	[CircumflexLower|CircumflexUpper];
+define Alphabet32	[Alphabet29|Circumflex];
+
+define ForeignLower	[q|w|x];
+define ForeignUpper	[Q|W|X];
+define Foreign		[ForeignLower|ForeignUpper];
+define Alphabet35	[Alphabet32|Foreign];
+
+
+!!! Input Language:
+
+!! stem
+define StemPunc		['|%-];
+define StemChar		[Alphabet32|StemPunc];
+
+!! phonetic flags
+define PhonFlag 	["^AR"|"^CD"|"^CV"|"^VD"|"^VF"|"^Y"];
+
+!! apostrophe
+define Apostrophe	['];
+
+!! the P3 flag
+define P3Flag		["^P3"];
+
+!! suffixes: each suffix starts with a "+" and capital letters indicate phonetic groups
+!! The capital A represents [ae]
+!! The capital I represents [ıiuü]
+!! The capital D represents [dt]
+!! The capital C represents [cç]
+!! The capital Y,N,S represent optional y,n,s characters
+
+define PhonGroup	[A|C|D|I|N|S|Y];
+define SuffChar		[%+|PhonGroup|Alphabet29Lower];
+
+define PhonInput	[ StemChar+ PhonFlag* (Apostrophe) (P3Flag) SuffChar* ];
+
+
+!! Output Language:
+
+define PhonOutput	[StemChar+ (Apostrophe) Alphabet29Lower*];
+
+
+!!! Phonological Rules
+
 #### Türk Dil Kurumu Yazım Kılavuzundan: (15 Eylül 2009)
 
 
@@ -6,29 +60,6 @@
 # Türk alfabesi, Latin harfleri esas alınarak 1.XI.1928 gün ve 1353
 # sayılı Türk Harflerinin Kabul ve Tatbiki Hakkında Kanun ile kabul
 # edilmiştir. Bu Kanun’a göre, Türk alfabesinde 29 harf bulunmaktadır.
-
-define Alphabet0  [a|b|c|ç|d|e|f|g|ğ|h|ı|i|j|k|l|m|n|o|ö|p|r|s|ş|t|u|ü|v|y|z];
-define Circumflex [â|î|û];
-define Foreign [q|w|x];
-define Alphabet [Alphabet|Circumflex|Foreign];
-define Vowel [a|e|ı|i|o|ö|u|ü];
-define Cons [b|c|ç|d|f|g|ğ|h|j|k|l|m|n|p|r|s|ş|t|v|y|z];
-
-
-!! Special characters in the input:
-!! Stems consist of regular lowercase characters in the Alphabet.
-!! Special characters in suffixes:
-!! All suffixes start with a "+".
-!! The capital A represents [ae]
-!! The capital I represents [ıiuü]
-!! The capital D represents [dt]
-!! The capital C represents [cç]
-!! The capital Y,N,S represent optional y,n,s characters
-
-!! The following multichar flags may appear after the stem:
-define Multi ["^AR"|"^CD"|"^CV"|"^P3"|"^VD"|"^VF"|"^Y"];
-define StemEnd [Multi* %+];
-
 
 ### 2. Düzeltme İşareti
 
@@ -76,6 +107,9 @@ define StemEnd [Multi* %+];
 
 ### 3. Ünlüler
 
+define VowelLower	[a|e|ı|i|o|ö|u|ü|CircumflexLower];
+define VowelUpper	[A|E|I|İ|O|Ö|U|Ü|CircumflexUpper];
+define Vowel		[VowelLower|VowelUpper];
 
 ## 3.1 Ünlülerin Nitelikleri
 
@@ -99,12 +133,12 @@ define StemEnd [Multi* %+];
 #    1.        Geniş ünlüler: a, e, o, ö.
 #    2.        Dar ünlüler: ı, i, u, ü.
 
-define VB  [a|ı|o|u];		# Back
-define VF  [e|i|ö|ü];		# Front
-define VFU [e|i];		# Front unrounded
-define VFR [ö|ü];		# Front rounded
-define VBU [a|ı];		# Back unrounded
-define VBR [o|u];		# Back rounded
+define VFU [e|i|î|E|İ|Î];	# Front unrounded
+define VFR [ö|ü|Ö|Ü];		# Front rounded
+define VBU [a|â|ı|A|Â|I];	# Back unrounded
+define VBR [o|u|û|O|U|Û];	# Back rounded
+define VF  [VFU|VFR];		# Front
+define VB  [VBU|VBR];		# Back
 
 
 ## 3.2 Büyük Ünlü Uyumu
@@ -185,25 +219,52 @@ define VBR [o|u];		# Back rounded
 # ü › ü, e (ütü, ürkek)  
 
 
-define VowelHarmony [
-    I -> 0 // [Vowel|A|I] StemEnd _
-].o.[
-    A -> e // VB  \Vowel* "^VF" \Vowel* _ ,,
-    I -> i // VBU \Vowel* "^VF" \Vowel* _ ,,
-    I -> ü // VBR \Vowel* "^VF" \Vowel* _
-].o.[
-    "^VF" -> 0
-].o.[
-    A -> a // VB  \Vowel* _ ,,
-    A -> e // VF  \Vowel* _ ,,
-    I -> ı // VBU \Vowel* _ ,,
-    I -> i // VFU \Vowel* _ ,,
-    I -> u // VBR \Vowel* _ ,,
-    I -> ü // VFR \Vowel* _
-].o.[
-    A -> e,
-    I -> i
+define StemEnd [PhonFlag* (Apostrophe) (P3Flag) %+];
+
+define VowelDropI [ I -> 0 // Vowel StemEnd _ ];
+
+define NoVowel [ \Vowel* ];
+define VFflag [ NoVowel "^VF" StemEnd NoVowel ];
+
+define VowelFront [
+    A -> e // VB  VFflag _ ,,
+    I -> i // VBU VFflag _ ,,
+    I -> ü // VBR VFflag _
+].o.[ "^VF" -> 0 ];
+
+define NoVowelEnd [ NoVowel StemEnd NoVowel ];
+
+define VowelMatchStem [
+    A -> a // VB  NoVowelEnd _ ,,
+    A -> e // VF  NoVowelEnd _ ,,
+    I -> ı // VBU NoVowelEnd _ ,,
+    I -> i // VFU NoVowelEnd _ ,,
+    I -> u // VBR NoVowelEnd _ ,,
+    I -> ü // VFR NoVowelEnd _ 
 ];
+
+define AfterStem [ StemEnd ?* ];
+
+define VowelMatchSuff [
+    A -> a // AfterStem VB  NoVowel _ ,,
+    A -> e // AfterStem VF  NoVowel _ ,,
+    I -> ı // AfterStem VBU NoVowel _ ,,
+    I -> i // AfterStem VFU NoVowel _ ,,
+    I -> u // AfterStem VBR NoVowel _ ,,
+    I -> ü // AfterStem VFR NoVowel _
+];
+
+define VowelMatch [
+    A -> a // [ StemEnd ?* VB  | VB  NoVowel StemEnd ] NoVowel _ ,,
+    A -> e // [ StemEnd ?* VF  | VF  NoVowel StemEnd ] NoVowel _ ,,
+    I -> ı // [ StemEnd ?* VBU | VBU NoVowel StemEnd ] NoVowel _ ,,
+    I -> i // [ StemEnd ?* VFU | VFU NoVowel StemEnd ] NoVowel _ ,,
+    I -> u // [ StemEnd ?* VBR | VBR NoVowel StemEnd ] NoVowel _ ,,
+    I -> ü // [ StemEnd ?* VFR | VFR NoVowel StemEnd ] NoVowel _ 
+];
+
+# define VowelHarmony [ VowelDropI .o. VowelFront .o. VowelMatchStem .o. VowelMatchSuff ];
+define VowelHarmony [ VowelDropI .o. VowelFront .o. VowelMatch ];
 
 
 ## 3.4 Ünlü Daralması (a - ı, e – i)
@@ -225,7 +286,6 @@ define VowelHarmony [
 # diyelim, diye; yiyen, yiyerek, yiyecek, yiyelim, yiye, yiyince,
 # yiyip. Ancak deyince, deyip sözlerindeki e yazılışta korunur.
 
-
 define VowelClosing [
     [Vowel|A|I] -> 0	|| _ StemEnd ? {yor}
 ].o.[
@@ -246,18 +306,23 @@ define VowelClosing [
 # burun / burnu, geniz / genzi, göğüs / göğsün, gönül / gönlünüz,
 # karın / karnı, oğul / oğlu; çevir- / çevril-, devir- / devril-.
 
+!! Word end and suffix starting with vowel (no apostrophe)
+define Vsuffix [ PhonFlag* (P3Flag) %+ (Y|N|S) Vowel ];	
 
-define VDflag [ Multi* "^VD" ];
-define Vsuffix [ StemEnd (Y|N|S) [Vowel|A|I] ];
+define VDflag [ PhonFlag* "^VD" ];
 
 define VowelDrop [
-    Vowel -> 0 || _ Cons VDflag Vsuffix
+    Vowel -> 0 || _ NoVowel VDflag Vsuffix
 ].o.[
     "^VD" -> 0
 ];
 
 
 ### 4. Ünsüzler
+
+define ConsLower	[b|c|ç|d|f|g|ğ|h|j|k|l|m|n|p|r|s|ş|t|v|y|z|q|w|x];
+define ConsUpper	[B|C|Ç|D|F|G|Ğ|H|J|K|L|M|N|P|R|S|Ş|T|V|Y|Z|Q|W|X];
+define Cons		[ConsLower|ConsUpper];
 
 ## 4.1 Ünsüzlerin Nitelikleri
 
@@ -318,7 +383,9 @@ define CUP [p|ç|t|k];		# Unvoiced plosives
 # kelimeler de vardır: but / budu, dip / dibi, gök / göğü, kap / kabı,
 # kurt / kurdu, uç / ucu, yurt / yurdu.
 
-define CVflag [ Multi* "^CV" ];
+define CVflag [ PhonFlag* "^CV" ];
+
+!! Bug: this assumes lowercase stem:
 
 define ConsVoicing [
     p -> b, ç -> c, t -> d, k -> G || _ CVflag Vsuffix
@@ -341,7 +408,7 @@ define ConsVoicing [
 define ConsUnvoicing [
 	D -> t, C -> ç //  CU StemEnd (Y|S|N) _
 ].o.[
-	D -> d, C -> c
+	D -> d, C -> c // StemEnd ?* _
 ];
 
 
@@ -361,7 +428,9 @@ define ConsUnvoicing [
 # ünsüz ortaya çıkar: hak, hakka; his, hissimiz; ret, reddi; zan,
 # zannımca; zem, zemmi.
 
-define CDflag [ Multi* "^CD" ];
+define CDflag [ PhonFlag* "^CD" ];
+
+!! Bug: this assumes lowercase stem
 
 define ConsDoubling [
     b->{bb}, c->{cc}, ç->{çç}, d->{dd}, f->{ff}, g->{gg}, ğ->{ğğ},
@@ -386,7 +455,7 @@ define ConsDoubling [
 define Optionals [
     Y -> y, N -> n, S -> s  || Vowel StemEnd _
 ].o.[
-    [Y|N|S] -> 0
+    [Y|N|S] -> 0 || StemEnd _
 ];
 
 
@@ -429,9 +498,6 @@ define AltCaus [		# Default: +DIr
     {+DIrt} -> {+DIr}	// \r _
 ];
 
-
-!! The following special characters are in the input:
-!! A, I, D, C, Y, N, S, ^VF, ^VD, ^CV, ^CD, ^P3, ^Y, ^AR, +
 
 read regex
 Ninsert .o.
