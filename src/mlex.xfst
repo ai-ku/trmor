@@ -40,7 +40,7 @@ define Morphemes [
     "+Become"		-> {+lAş},
     "+ByDoingSo"	-> {+YArAk},
     "+Card"		-> 0,
-    "+Caus"		-> {+DIrt},	!! {+DHr}, {+Ar}, {+Ir}, {+It}, {+t}
+    "+Caus"		-> {+DIrt},	!! {+DIr}, {+Ar}, {+Ir}, {+It}, {+t}
     "+Caus1"		-> {+Ir},
     "+Caus2"		-> {+It},
     "+Caus3"		-> {+Ar},
@@ -177,13 +177,11 @@ define AbleNeg [
     "+Able"	-> {+YA}	|| _ "+Neg"
 ];
 
-define Apostrophe [
+define AddApostrophe [
     "+Prop"	-> 0	|| _ "+A3sg" "+Pnon" "+Nom" .#. .o.
     "+Prop"	-> {'}
 ];
 
 echo Composing with morphemes.
 
-define mlex [AltPoss .o. NegAor .o. AbleNeg .o. Apostrophe .o. Morphemes];
-
-push mlex
+read regex [AltPoss .o. NegAor .o. AbleNeg .o. AddApostrophe .o. Morphemes];

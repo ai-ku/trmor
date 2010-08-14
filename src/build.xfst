@@ -2,12 +2,12 @@ clear
 system make main.lexc
 read lexc main.lexc
 upper net
-define feat
+define main
 source mlex.xfst
 define mlex
 source phon.xfst
 define phon
 source compat.xfst
 define compat
-read regex [ compat .o. feat .o. mlex .o. phon ];
+read regex [ compat .o. main .o. mlex .o. phon ];
 save model.fst

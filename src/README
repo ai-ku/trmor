@@ -27,11 +27,12 @@ compat.xfst
 	to make the analysis output compatible with Oflazer.
 
 main.lexc
-	Morphotactics built from various components using the Makefile:
-	main.lext, multichar.lext, dict.lext, nderiv.lext,
+	Morphotactics built from various components using the
+	Makefile: main.lext, multichar.lext, dict.lext, nderiv.lext,
 	vderiv.lext, vflect.lext, nflect.lext.  Note that only the
-	upper part of this fst is used, i.e. this is actually an fsm
-	that specifies the legal feature sequences.  Currently only
+	upper part of this fst is used, please ignore the lower part
+	by using "upper net" i.e. this is actually an fsm that
+	specifies the legal feature sequences.  Currently only
 	noun/verb inflections and derivations are implemented.
 
 
@@ -114,23 +115,33 @@ III. SPECIFICATION OF THE THREE LANGUAGES
 2. Language transformed by mlex.xfst consists of:
 
 !! stem
-["a"|"b"|"c"|"d"|"e"|"f"|"g"|"h"|"i"|"j"|"k"|"l"|"m"|"n"|"o"|"p"|"q"|"r"|"s"|"t"|"u"|"v"|"w"|"x"|"y"|"z"|"ç"|"ö"|"ü"|"ğ"|"ı"|"ş"|"-"]+
+[a|b|c|ç|d|e|f|g|ğ|h|ı|i|j|k|l|m|n|o|ö|p|r|s|ş|t|u|ü|v|y|z
+|A|B|C|Ç|D|E|F|G|Ğ|H|I|İ|J|K|L|M|N|O|Ö|P|R|S|Ş|T|U|Ü|V|Y|Z
+|â|î|û|Â|Î|Û
+|'|%-]+
 
 !! phonetic flags
 ["^AR"|"^CD"|"^CV"|"^VD"|"^VF"|"^Y"]*	
+
+!! optional apostrophe
+
+(')
 
 !! the P3 flag
 ["^P3"]*
 
 !! suffixes: each suffix starts with a "+" and capital letters indicate phonetic groups
-["+"|"A"|"C"|"D"|"I"|"N"|"S"|"Y"|"a"|"b"|"c"|"d"|"e"|"f"|"g"|"h"|"i"|"j"|"k"|"l"|"m"|"n"|"o"|"p"|"q"|"r"|"s"|"t"|"u"|"v"|"w"|"x"|"y"|"z"|"ç"|"ö"|"ü"|"ğ"|"ı"|"ş"]*
+[a|b|c|ç|d|e|f|g|ğ|h|ı|i|j|k|l|m|n|o|ö|p|r|s|ş|t|u|ü|v|y|z
+|%+|A|C|D|I|N|S|Y]*
 
 
 3. Language transformed by phon.xfst consists of
 
 !! surface form
-["a"|"b"|"c"|"d"|"e"|"f"|"g"|"h"|"i"|"j"|"k"|"l"|"m"|"n"|"o"|"p"|"q"|"r"|"s"|"t"|"u"|"v"|"w"|"x"|"y"|"z"|"ç"|"ö"|"ü"|"ğ"|"ı"|"ş"|"-"]+
-
+[a|b|c|ç|d|e|f|g|ğ|h|ı|i|j|k|l|m|n|o|ö|p|r|s|ş|t|u|ü|v|y|z
+|A|B|C|Ç|D|E|F|G|Ğ|H|I|İ|J|K|L|M|N|O|Ö|P|R|S|Ş|T|U|Ü|V|Y|Z
+|â|î|û|Â|Î|Û
+|'|%-]+
 
 
 IV. MULTICHAR SYMBOLS IN DICT.LEXT

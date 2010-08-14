@@ -7,6 +7,20 @@
 # anlams[4,5,6,7,8]: kelimeturu0,1,2,3,4 (0 gives count, 1-4 actual types)
 # anlams[14]: fiil (boolean)
 
+# Special characters in TDK stems:
+# Stems may consist of all uppercase and lowercase characters plus:
+# [ ]: multiwords contain spaces: su muhallebisi
+# [()]: alternatives contain parens: daim etmek (veya eylemek)
+# [,]: some multiwords have commas: anca beraber, kanca beraber
+# [...]: some multiwords have ellipses: hem ... hem ...
+# [!]: some entries have exclamation mark: yürü!, ye kürküm ye!
+# [?]: some entries have question mark: zorun ne? vay sen misin?
+# [-]: some multiwords have hyphens: e-mail, Kitab-ı Mukaddes
+# ["]: some phrases have quotes: gelini ata bindirmişler "ya nasip" demiş
+# [']: some entries have apostrophe: Kur'an, a'dan z'ye (kadar)
+# [;]: some phrases have semicolons: söz var, iş bitirir; söz var, baş yitirir
+# [/]: slash shows alternatives: mı / mi, mu / mü; ...-ında / ...-inde değil
+# [:]: one phrase has a colon: aza sormuşlar: "nereye?" "çoğun yanına" demiş
 
 use strict;
 use utf8;
