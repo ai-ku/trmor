@@ -79,19 +79,19 @@ LEXICON +Postp+PCNom
 +Postp+PCNom	#;
 
 LEXICON +Pron+Demons
-+Pron+Demons	#;
++Pron+Demons	Nroot;
 
 LEXICON +Pron+Pers
-+Pron+Pers	#;
++Pron+Pers	Nroot;
 
 LEXICON +Pron+Quant
-+Pron+Quant	#;
++Pron+Quant	Nroot;
 
 LEXICON +Pron+Ques
-+Pron+Ques	#;
++Pron+Ques	Nroot;
 
 LEXICON +Pron+Reflex
-+Pron+Reflex	#;
++Pron+Reflex	Nroot;
 
 LEXICON +Ques
 +Ques	#;
