@@ -3,22 +3,22 @@
 
 define Morphemes [
     "+A1pl"		-> [ %+ =Y =I z ],	!! [ %+ k ], [ %+ l =I m ], [ %+ =I z ]?
-    "+A1pl2" 		-> [ %+ k ],	!! after past
+    "+A1pl2" 		-> [ %+ k ],		!! after past
     "+A1pl3" 		-> [ %+ l =I m ],	!! after opt
     "+A1sg"		-> [ %+ =Y =I m ],	!! [ %+ m ], [ %+ =I m ]?
-    "+A1sg2" 		-> [ %+ m ],	!! after past
+    "+A1sg2" 		-> [ %+ m ],		!! after past
     "+A2pl"		-> [ %+ s =I n =I z ],	!! [ %+ =Y =I n ], [ %+ =Y =I n =I z ], [ %+ n =I z ], [ %+ n =I z =A ], [ %+ =I n =I z ]
     "+A2pl2" 		-> [ %+ n =I z ],	!! after past
     "+A2pl3" 		-> [ %+ =Y =I n =I z ],	!! after imp
     "+A2pl3" 		-> [ %+ =Y =I n ],	!! after imp
     "+A2pl4" 		-> [ %+ n =I z =A ],	!! after imp2
     "+A2sg"		-> [ %+ s =I n ],	!! 0, [ %+ n ], [ %+ n =A ], [ %+ =I n ]?
-    "+A2sg2" 		-> [ %+ n ],	!! after past
-    "+A2sg3" 		-> 0,		!! after imp
-    "+A2sg4" 		-> [ %+ n =A ],	!! after imp2
+    "+A2sg2" 		-> [ %+ n ],		!! after past
+    "+A2sg3" 		-> 0,			!! after imp
+    "+A2sg4" 		-> [ %+ n =A ],		!! after imp2
     "+A3pl"		-> [ %+ l =A r ],	!! [ %+ s =I n l =A r ], {nlAr}
     "+A3pl3" 		-> [ %+ s =I n l =A r ],	!! after imp
-    "+A3sg"		-> 0,		!! [ %+ s =I n ]
+    "+A3sg"		-> 0,			!! [ %+ s =I n ]
     "+A3sg3" 		-> [ %+ s =I n ],	!! after imp
     "+Abl"		-> [ %+ =D =A n ],	!! [ %+ n d =A n ]
     "+Able"		-> [ %+ =Y =A b i l ],	!! 0 if Neg
@@ -78,7 +78,7 @@ define Morphemes [
     "+Narr2"		-> [ %+ =Y m =I ş ],
     "+NarrPart"		-> [ %+ m =I ş ],
     "+Neces"		-> [ %+ m =A l =I ],
-    "+Neg"		-> [ %+ m =A ],	!! [ %+ =Y =A m =A ]
+    "+Neg"		-> [ %+ m =A ],		!! [ %+ =Y =A m =A ]
     "+Ness"		-> [ %+ l =I k ],
     "+Nom"		-> 0,
     "+NotAbleState"	-> [ %+ =Y =A m =A z l =I k ],
@@ -99,7 +99,7 @@ define Morphemes [
     "+PCGen"		-> 0,
     "+PCIns"		-> 0,
     "+PCNom"		-> 0,
-    "+Pass"		-> [ %+ =I l ],	!! [ %+ =I n ], [ %+ =I n =I l ]
+    "+Pass"		-> [ %+ =I l ],		!! [ %+ =I n ], [ %+ =I n =I l ]
     "+Past"		-> [ %+ =D =I ],
     "+Past2"		-> [ %+ =Y =D =I ],	!! [ %+ =D =I ],
     "+PastPart"		-> [ %+ =D =I k ],

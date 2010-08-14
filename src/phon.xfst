@@ -32,6 +32,9 @@ define Apostrophe	['];
 !! the P3 flag
 define P3Flag		["^P3"];
 
+!! End of stem
+define StemEnd		[PhonFlag* (Apostrophe) (P3Flag) %+];
+
 !! suffixes: each suffix starts with a "+" and symbols that consist of an equal sign and capital letter indicate phonetic groups
 !! =A represents [ae]
 !! =I represents [ıiuü]
@@ -51,6 +54,7 @@ define PhonOutput	[StemChar+ (Apostrophe) Alphabet29Lower*];
 
 
 !!! Phonological Rules
+
 
 #### Türk Dil Kurumu Yazım Kılavuzundan: (15 Eylül 2009)
 
@@ -110,6 +114,7 @@ define PhonOutput	[StemChar+ (Apostrophe) Alphabet29Lower*];
 define VowelLower	[a|e|ı|i|o|ö|u|ü|CircumflexLower];
 define VowelUpper	[A|E|I|İ|O|Ö|U|Ü|CircumflexUpper];
 define Vowel		[VowelLower|VowelUpper];
+define NoVowel		[ \Vowel* ];
 
 ## 3.1 Ünlülerin Nitelikleri
 
@@ -173,10 +178,29 @@ define VB  [VBU|VBR];		# Back
 # bakımından son hecenin ünlüsüne uyar: adalet-li, anne-si,
 # kardeş-lik, meslektaş-ımız, şişman-lık.
 
+define VowelHarmony [
+    =A -> a // VB  NoVowel _ ,,
+    =A -> e // VF  NoVowel _ ,,
+    =I -> ı // VBU NoVowel _ ,,
+    =I -> i // VFU NoVowel _ ,,
+    =I -> u // VBR NoVowel _ ,,
+    =I -> ü // VFR NoVowel _ 
+];
+
 # Son ünlüleri kalın sıradan olmasına karşın incelik özelliği gösteren
 # bazı alıntı kelimeler ince ünlülü ekler alır: alkol / alkolü,
 # hakikat / hakikati, helak / helakimiz, kabul / kabulü, kontrol /
 # kontrolü, protokol / protokolü, saat / saate, sadakat / sadakatten.
+
+!! We mark these exceptions in the lexicon with the ^VF flag:
+
+define VFflag [ NoVowel "^VF" StemEnd NoVowel ];
+
+define VowelFront [
+    =A -> e // VB  VFflag _ ,,
+    =I -> i // VBU VFflag _ ,,
+    =I -> ü // VBR VFflag _
+].o.[ "^VF" -> 0 ];
 
 
 ## 3.3 Küçük Ünlü Uyumu
@@ -219,54 +243,6 @@ define VB  [VBU|VBR];		# Back
 # ü › ü, e (ütü, ürkek)  
 
 
-define StemEnd [PhonFlag* (Apostrophe) (P3Flag) %+];
-
-define VowelDropI [ =I -> 0 // Vowel StemEnd _ ];
-
-define NoVowel [ \Vowel* ];
-define VFflag [ NoVowel "^VF" StemEnd NoVowel ];
-
-define VowelFront [
-    =A -> e // VB  VFflag _ ,,
-    =I -> i // VBU VFflag _ ,,
-    =I -> ü // VBR VFflag _
-].o.[ "^VF" -> 0 ];
-
-define NoVowelEnd [ NoVowel StemEnd NoVowel ];
-
-define VowelMatchStem [
-    =A -> a // VB  NoVowelEnd _ ,,
-    =A -> e // VF  NoVowelEnd _ ,,
-    =I -> ı // VBU NoVowelEnd _ ,,
-    =I -> i // VFU NoVowelEnd _ ,,
-    =I -> u // VBR NoVowelEnd _ ,,
-    =I -> ü // VFR NoVowelEnd _ 
-];
-
-define AfterStem [ StemEnd ?* ];
-
-define VowelMatchSuff [
-    =A -> a // AfterStem VB  NoVowel _ ,,
-    =A -> e // AfterStem VF  NoVowel _ ,,
-    =I -> ı // AfterStem VBU NoVowel _ ,,
-    =I -> i // AfterStem VFU NoVowel _ ,,
-    =I -> u // AfterStem VBR NoVowel _ ,,
-    =I -> ü // AfterStem VFR NoVowel _
-];
-
-define VowelMatch [
-    =A -> a // [ StemEnd ?* VB  | VB  NoVowel StemEnd ] NoVowel _ ,,
-    =A -> e // [ StemEnd ?* VF  | VF  NoVowel StemEnd ] NoVowel _ ,,
-    =I -> ı // [ StemEnd ?* VBU | VBU NoVowel StemEnd ] NoVowel _ ,,
-    =I -> i // [ StemEnd ?* VFU | VFU NoVowel StemEnd ] NoVowel _ ,,
-    =I -> u // [ StemEnd ?* VBR | VBR NoVowel StemEnd ] NoVowel _ ,,
-    =I -> ü // [ StemEnd ?* VFR | VFR NoVowel StemEnd ] NoVowel _ 
-];
-
-# define VowelHarmony [ VowelDropI .o. VowelFront .o. VowelMatchStem .o. VowelMatchSuff ];
-define VowelHarmony [ VowelDropI .o. VowelFront .o. VowelMatch ];
-
-
 ## 3.4 Ünlü Daralması (a - ı, e – i)
 
 # Türkçede a, e ünlüsü ile biten fiillerin şimdiki zaman çekiminde,
@@ -306,16 +282,23 @@ define VowelClosing [
 # burun / burnu, geniz / genzi, göğüs / göğsün, gönül / gönlünüz,
 # karın / karnı, oğul / oğlu; çevir- / çevril-, devir- / devril-.
 
-!! Word end and suffix starting with vowel (no apostrophe)
-define Vsuffix [ PhonFlag* (P3Flag) %+ (=Y|=N|=S) Vowel ];	
 
+!! We mark the vowel dropping words in the dictionary using the ^VD flag
 define VDflag [ PhonFlag* "^VD" ];
+
+!! Word end and suffix starting with vowel (no apostrophe)
+define Vsuffix [ PhonFlag* (P3Flag) %+ (=Y|=N|=S) Vowel ];
 
 define VowelDrop [
     Vowel -> 0 || _ NoVowel VDflag Vsuffix
 ].o.[
     "^VD" -> 0
 ];
+
+
+!! Many suffixes that start with an optional =I drop it after a vowel
+
+define VowelDropSuff [ =I -> 0 // Vowel StemEnd _ ];
 
 
 ### 4. Ünsüzler
@@ -383,19 +366,23 @@ define CUP [p|ç|t|k];		# Unvoiced plosives
 # kelimeler de vardır: but / budu, dip / dibi, gök / göğü, kap / kabı,
 # kurt / kurdu, uç / ucu, yurt / yurdu.
 
+!! We represent stems that voice their final consonants in the dictionary using the ^CV flag
+
 define CVflag [ PhonFlag* "^CV" ];
 
-!! Bug: this assumes lowercase stem:
-
 define ConsVoicing [
-    p -> b, ç -> c, t -> d, k -> =G || _ CVflag Vsuffix
+    k -> g, K -> G ||  [n|N] _ CVflag Vsuffix
 ].o.[
-    =G -> g  ||  n _ .o.
-    =G -> ğ
-].o.[
-    k -> ğ  || %+ \%++ _ %+ (=Y|=N|=S) [Vowel|=A|=I]
+    p -> b, ç -> c, t -> d, k -> ğ,
+    P -> B, Ç -> C, T -> D, K -> Ğ  || _ CVflag Vsuffix
 ].o.[
     "^CV" -> 0
+];
+
+!! Consonant voicing also applies to suffixes that end in k
+
+define ConsVoicingSuff [
+    k -> ğ  || %+ \%++ _ %+ (=Y|=N|=S) [Vowel|=A|=I]
 ];
 
 
@@ -428,14 +415,18 @@ define ConsUnvoicing [
 # ünsüz ortaya çıkar: hak, hakka; his, hissimiz; ret, reddi; zan,
 # zannımca; zem, zemmi.
 
-define CDflag [ PhonFlag* "^CD" ];
 
-!! Warning: this assumes lowercase stem
+!! We mark these consonant doubling exceptions using the ^CD flag in the lexicon
+
+define CDflag [ PhonFlag* "^CD" ];
 
 define ConsDoubling [
     b->{bb}, c->{cc}, ç->{çç}, d->{dd}, f->{ff}, g->{gg}, ğ->{ğğ},
     h->{hh}, j->{jj}, k->{kk}, l->{ll}, m->{mm}, n->{nn}, p->{pp},
-    r->{rr}, s->{ss}, ş->{şş}, t->{tt}, v->{vv}, y->{yy}, z->{zz}
+    r->{rr}, s->{ss}, ş->{şş}, t->{tt}, v->{vv}, y->{yy}, z->{zz},
+    B->{BB}, C->{CC}, Ç->{ÇÇ}, D->{DD}, F->{FF}, G->{GG}, Ğ->{ĞĞ},
+    H->{HH}, J->{JJ}, K->{KK}, L->{LL}, M->{MM}, N->{NN}, P->{PP},
+    R->{RR}, S->{SS}, Ş->{ŞŞ}, T->{TT}, V->{VV}, Y->{YY}, Z->{ZZ}
     || _ CDflag Vsuffix
 ].o.[
     "^CD" -> 0
@@ -450,6 +441,8 @@ define ConsDoubling [
 # tambur (< tanbur).
 
 
+!! The rest does not seem to be covered by TDK, so we make it up until we find a better reference:
+
 ## 5. Kaynaştırma harfleri:
 
 define Optionals [
@@ -458,6 +451,8 @@ define Optionals [
     [=Y|=N|=S] -> 0 || StemEnd _
 ];
 
+
+!! Stuff below is increasingly unclean.  May redesign.
 
 ## 6. Irregular +n and +y insertion
 
@@ -487,7 +482,7 @@ define AltAor [			!! can make this more rule based
 ];
 
 define AltPass [		# Deafult: +Il
-    [ %+ =I l ] -> [ %+ =I n ] || [Vowel|l] _
+    [ %+ =I l ] -> [ %+ =I n ] || [Vowel|l|L] _
 ];
 
 define AltCaus [		# Default: +DIr
@@ -506,10 +501,13 @@ AltAor .o.
 AltPass .o.
 AltCaus .o.
 VowelClosing .o.		# modifies stem ending vowel
-VowelHarmony .o.		# assigns =A, =I; removes +VF
-VowelDrop .o.			# must come after VowelHarmony, removes +VD
+VowelDropSuff .o.		# drops suffix initial =I after vowel
+VowelFront .o.			# handles vowel harmony exceptions; removes ^VF
+VowelHarmony .o.		# assigns =A, =I
+VowelDrop .o.			# must come after VowelHarmony, removes ^VD
 ConsUnvoicing .o.		# assigns =D, =C
-ConsVoicing .o. 		# modifies stem ending consonant, removes +CV
-ConsDoubling .o.		# must come after ConsVoicing, removes +CD
+ConsVoicing .o. 		# modifies stem ending consonant, removes ^CV
+ConsVoicingSuff .o.		# modifies suffix ending k
+ConsDoubling .o.		# must come after ConsVoicing, removes ^CD
 Optionals .o.			# assigns =Y, =N, =S
 [ %+ -> 0 ];
