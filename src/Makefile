@@ -1,9 +1,36 @@
 all: model.fst
 
-#all: phon.extra deriv.extra nflect.extra vflect.extra vzero.extra
+model.fst: compat.fst main.fst mlex.fst phon.fst normalize.fst
+	xfst \
+	-e "load compat.fst" \
+	-e "load main.fst" -e rotate -e compose \
+	-e "load mlex.fst" -e rotate -e compose \
+	-e "load phon.fst" -e rotate -e compose \
+	-e "load normalize.fst" -e rotate -e compose \
+	-e "save $@" -stop
+
+compat.fst: compat.xfst
+mlex.fst: mlex.xfst
+phon.fst: phon.xfst
+normalize.fst: normalize.xfst
+
+main.fst: main.lexc
+	xfst -e "read lexc $^" -e "upper net" -e "save $@" -stop
+
+main.lexc: main.lext multichar.lext dict.lext nderiv.lext vderiv.lext vflect.lext nflect.lext
 
 dict.lext: tdk2dict.pl
 	tdk2dict.pl > dict.lext 2> tdk2dict.err
+
+%.fst: %.xfst
+	xfst -e "source $^" -e "save $@" -stop
+
+%.fst: %.lexc
+	xfst -e "read lexc $^" -e "save $@" -stop
+
+%.lexc: %.lext
+	include.pl $< > $@
+
 
 dtest: dict.lext
 	make model.fst
@@ -16,14 +43,6 @@ etest: dict.lext
 ktest: dict.lext
 	make model.fst
 	cd ../stemmer; make ktest
-
-model.fst: main.lexc mlex.xfst phon.xfst compat.xfst build.xfst
-	xfst -f build.xfst
-
-main.lexc: main.lext multichar.lext dict.lext nderiv.lext vderiv.lext vflect.lext nflect.lext
-
-%.lexc: %.lext
-	include.pl $< > $@
 
 vflect.test.lexc: include.pl vflect.test.lext multichar.lext vflect.lext
 
