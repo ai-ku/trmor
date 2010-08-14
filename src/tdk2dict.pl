@@ -4,6 +4,7 @@
 # maddeler[2,3]: WORD_ID, altsay (primary key, 83415 unique)
 # maddeler[6]: maddebas (main spelling), maddeler[16]: ARAMA (reduced spelling)
 # maddeler[9,10,11]: onek, cogul, ozel (useful info for dict)
+# maddeler[15]: birlekel (multiwords)
 # anlams[4,5,6,7,8]: kelimeturu0,1,2,3,4 (0 gives count, 1-4 actual types)
 # anlams[14]: fiil (boolean)
 
@@ -82,18 +83,28 @@ while(<A>) {
 	    die "Error: $a[$i] not a recognized part of speech.\n";
 	}
     }
+    output($m, \@a, 'Noun') if not defined $pos1{$key};
 }
 close(A);
 
 sub output {
     my ($m, $a, $wpos) = @_;
     my $word = $m->[6];		# maddebas
+    my $birlekel = $m->[15];
     my $anlam = $a->[13];
 
-    return if $word =~ / /;	# skip multiwords
-    return if ($word =~ /m[ae]$/ and $anlam =~ /m[ae]k (işi|durumu)/); # skip stems with -me suffix
-    return if ($word =~ /[ln]m[ae]k$/ and $anlam =~ /m[ae]k? (işi|durumu)/); # skip the passive stems
-
+    if ($word =~ / /) {	# skip multiwords
+	return;
+    }
+    if ($word =~ /m[ae]$/ and $anlam =~ /m[ae]k (işi|durumu)/) { # skip stems with -me suffix
+	return if $birlekel eq '\N'; # keep ödeme, açıklama etc.
+    }
+    if ($word =~ /[ln]m[ae]k$/ and $anlam =~ /m[ae]k? (işi|durumu)/) { # skip the passive stems
+	return;
+    }
+    if ($word =~ s/!$//) {	# remove final bang
+	$wpos = 'Interj' if $wpos eq 'Noun';
+    }
     $word =~ s/m[ae]k$// if $wpos eq 'Verb'; # get rid of mak/mek
     
 
