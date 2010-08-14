@@ -32,14 +32,14 @@ define Apostrophe	['];
 !! the P3 flag
 define P3Flag		["^P3"];
 
-!! suffixes: each suffix starts with a "+" and capital letters indicate phonetic groups
-!! The capital A represents [ae]
-!! The capital I represents [ıiuü]
-!! The capital D represents [dt]
-!! The capital C represents [cç]
-!! The capital Y,N,S represent optional y,n,s characters
+!! suffixes: each suffix starts with a "+" and symbols that consist of an equal sign and capital letter indicate phonetic groups
+!! =A represents [ae]
+!! =I represents [ıiuü]
+!! =D represents [dt]
+!! =C represents [cç]
+!! =Y, =N, =S represent optional y,n,s characters
 
-define PhonGroup	[A|C|D|I|N|S|Y];
+define PhonGroup	[=A|=C|=D|=I|=N|=S|=Y];
 define SuffChar		[%+|PhonGroup|Alphabet29Lower];
 
 define PhonInput	[ StemChar+ PhonFlag* (Apostrophe) (P3Flag) SuffChar* ];
@@ -221,46 +221,46 @@ define VB  [VBU|VBR];		# Back
 
 define StemEnd [PhonFlag* (Apostrophe) (P3Flag) %+];
 
-define VowelDropI [ I -> 0 // Vowel StemEnd _ ];
+define VowelDropI [ =I -> 0 // Vowel StemEnd _ ];
 
 define NoVowel [ \Vowel* ];
 define VFflag [ NoVowel "^VF" StemEnd NoVowel ];
 
 define VowelFront [
-    A -> e // VB  VFflag _ ,,
-    I -> i // VBU VFflag _ ,,
-    I -> ü // VBR VFflag _
+    =A -> e // VB  VFflag _ ,,
+    =I -> i // VBU VFflag _ ,,
+    =I -> ü // VBR VFflag _
 ].o.[ "^VF" -> 0 ];
 
 define NoVowelEnd [ NoVowel StemEnd NoVowel ];
 
 define VowelMatchStem [
-    A -> a // VB  NoVowelEnd _ ,,
-    A -> e // VF  NoVowelEnd _ ,,
-    I -> ı // VBU NoVowelEnd _ ,,
-    I -> i // VFU NoVowelEnd _ ,,
-    I -> u // VBR NoVowelEnd _ ,,
-    I -> ü // VFR NoVowelEnd _ 
+    =A -> a // VB  NoVowelEnd _ ,,
+    =A -> e // VF  NoVowelEnd _ ,,
+    =I -> ı // VBU NoVowelEnd _ ,,
+    =I -> i // VFU NoVowelEnd _ ,,
+    =I -> u // VBR NoVowelEnd _ ,,
+    =I -> ü // VFR NoVowelEnd _ 
 ];
 
 define AfterStem [ StemEnd ?* ];
 
 define VowelMatchSuff [
-    A -> a // AfterStem VB  NoVowel _ ,,
-    A -> e // AfterStem VF  NoVowel _ ,,
-    I -> ı // AfterStem VBU NoVowel _ ,,
-    I -> i // AfterStem VFU NoVowel _ ,,
-    I -> u // AfterStem VBR NoVowel _ ,,
-    I -> ü // AfterStem VFR NoVowel _
+    =A -> a // AfterStem VB  NoVowel _ ,,
+    =A -> e // AfterStem VF  NoVowel _ ,,
+    =I -> ı // AfterStem VBU NoVowel _ ,,
+    =I -> i // AfterStem VFU NoVowel _ ,,
+    =I -> u // AfterStem VBR NoVowel _ ,,
+    =I -> ü // AfterStem VFR NoVowel _
 ];
 
 define VowelMatch [
-    A -> a // [ StemEnd ?* VB  | VB  NoVowel StemEnd ] NoVowel _ ,,
-    A -> e // [ StemEnd ?* VF  | VF  NoVowel StemEnd ] NoVowel _ ,,
-    I -> ı // [ StemEnd ?* VBU | VBU NoVowel StemEnd ] NoVowel _ ,,
-    I -> i // [ StemEnd ?* VFU | VFU NoVowel StemEnd ] NoVowel _ ,,
-    I -> u // [ StemEnd ?* VBR | VBR NoVowel StemEnd ] NoVowel _ ,,
-    I -> ü // [ StemEnd ?* VFR | VFR NoVowel StemEnd ] NoVowel _ 
+    =A -> a // [ StemEnd ?* VB  | VB  NoVowel StemEnd ] NoVowel _ ,,
+    =A -> e // [ StemEnd ?* VF  | VF  NoVowel StemEnd ] NoVowel _ ,,
+    =I -> ı // [ StemEnd ?* VBU | VBU NoVowel StemEnd ] NoVowel _ ,,
+    =I -> i // [ StemEnd ?* VFU | VFU NoVowel StemEnd ] NoVowel _ ,,
+    =I -> u // [ StemEnd ?* VBR | VBR NoVowel StemEnd ] NoVowel _ ,,
+    =I -> ü // [ StemEnd ?* VFR | VFR NoVowel StemEnd ] NoVowel _ 
 ];
 
 # define VowelHarmony [ VowelDropI .o. VowelFront .o. VowelMatchStem .o. VowelMatchSuff ];
@@ -287,13 +287,13 @@ define VowelHarmony [ VowelDropI .o. VowelFront .o. VowelMatch ];
 # yiyip. Ancak deyince, deyip sözlerindeki e yazılışta korunur.
 
 define VowelClosing [
-    [Vowel|A|I] -> 0	|| _ StemEnd ? {yor}
+    Vowel -> 0	|| _ StemEnd ? y o r
 ].o.[
-    e -> i	|| .#. y _ StemEnd [Y|y] ,,
-    e -> i	|| .#. d _ StemEnd [Y|y] \[I|i] ,,
-    I -> i	|| .#. [d|y] StemEnd _ {yor}
+    e -> i	|| .#. y _ StemEnd [=Y|y] ,,
+    e -> i	|| .#. d _ StemEnd [=Y|y] \[=I|i] ,,
+    =I -> i	|| .#. [d|y] StemEnd _ y o r
 ].o.[
-    e -> 0	|| .#. [d|y] _ StemEnd {Ar}
+    e -> 0	|| .#. [d|y] _ StemEnd =A r
 ];
 
 
@@ -307,7 +307,7 @@ define VowelClosing [
 # karın / karnı, oğul / oğlu; çevir- / çevril-, devir- / devril-.
 
 !! Word end and suffix starting with vowel (no apostrophe)
-define Vsuffix [ PhonFlag* (P3Flag) %+ (Y|N|S) Vowel ];	
+define Vsuffix [ PhonFlag* (P3Flag) %+ (=Y|=N|=S) Vowel ];	
 
 define VDflag [ PhonFlag* "^VD" ];
 
@@ -388,12 +388,12 @@ define CVflag [ PhonFlag* "^CV" ];
 !! Bug: this assumes lowercase stem:
 
 define ConsVoicing [
-    p -> b, ç -> c, t -> d, k -> G || _ CVflag Vsuffix
+    p -> b, ç -> c, t -> d, k -> =G || _ CVflag Vsuffix
 ].o.[
-    G -> g  ||  n _ .o.
-    G -> ğ
+    =G -> g  ||  n _ .o.
+    =G -> ğ
 ].o.[
-    k -> ğ  || %+ \%++ _ %+ (Y|N|S) [Vowel|A|I]
+    k -> ğ  || %+ \%++ _ %+ (=Y|=N|=S) [Vowel|=A|=I]
 ].o.[
     "^CV" -> 0
 ];
@@ -406,9 +406,9 @@ define ConsVoicing [
 # düş-kün, geç-tim, ipek-çi, seç-kin, seç-ti, süt-çü.
 
 define ConsUnvoicing [
-	D -> t, C -> ç //  CU StemEnd (Y|S|N) _
+	=D -> t, =C -> ç // CU StemEnd (=Y|=S|=N) _
 ].o.[
-	D -> d, C -> c // StemEnd ?* _
+	=D -> d, =C -> c // StemEnd ?* _
 ];
 
 
@@ -430,7 +430,7 @@ define ConsUnvoicing [
 
 define CDflag [ PhonFlag* "^CD" ];
 
-!! Bug: this assumes lowercase stem
+!! Warning: this assumes lowercase stem
 
 define ConsDoubling [
     b->{bb}, c->{cc}, ç->{çç}, d->{dd}, f->{ff}, g->{gg}, ğ->{ğğ},
@@ -453,25 +453,25 @@ define ConsDoubling [
 ## 5. Kaynaştırma harfleri:
 
 define Optionals [
-    Y -> y, N -> n, S -> s  || Vowel StemEnd _
+    =Y -> y, =N -> n, =S -> s  || Vowel StemEnd _
 ].o.[
-    [Y|N|S] -> 0 || StemEnd _
+    [=Y|=N|=S] -> 0 || StemEnd _
 ];
 
 
 ## 6. Irregular +n and +y insertion
 
 define Ninsert [
-    {+SI} -> {+SIn},
-    {+lArI} -> {+lArIn},
-    {+ki} -> {+kin},
-    "^P3" -> {+n} ||
-    _ [{+DAn}|{+YI}|{+YA}|{+CA}|{+DA}] [.#.|%+]
+    [ %+ =S =I ] -> [ %+ =S =I n ],
+    [ %+ l =A r =I ] -> [ %+ l =A r =I n ],
+    [ %+ k i ] -> [ %+ k i n ],
+    "^P3" -> [ %+ n ] ||
+    _ [[ %+ =D =A n ]|[ %+ =Y =I ]|[ %+ =Y =A ]|[ %+ =C =A ]|[ %+ =D =A ]] [.#.|%+]
 ];
 
 define Yinsert [
-    "^Y"      -> {+y} ||
-    _ [{+ImIz}|{+Im}|{+InIz}|{+In}|{+SI}|{+NIn}],
+    "^Y"      -> [ %+ y ] ||
+    _ [[ %+ =I m =I z ]|[ %+ =I m ]|[ %+ =I n =I z ]|[ %+ =I n ]|[ %+ =S =I ]|[ %+ =N =I n ]],
     _ "^P3"
 .o. "^Y" -> 0
 .o. "^P3" -> 0
@@ -481,21 +481,21 @@ define Yinsert [
 ## 7. Handle irregular Aorist, Causative and Passive suffixes
 
 define AltAor [			!! can make this more rule based
-     {+AIr} -> {+Ar}	|| "^AR" _
-.o.  {+AIr} -> {+Ir}
+     [ %+ =A =I r ] -> [ %+ =A r ]	|| "^AR" _
+.o.  [ %+ =A =I r ] -> [ %+ =I r ]
 .o.  "^AR" -> 0
 ];
 
 define AltPass [		# Deafult: +Il
-    {+Il} -> {+In} || [Vowel|l] _
+    [ %+ =I l ] -> [ %+ =I n ] || [Vowel|l] _
 ];
 
 define AltCaus [		# Default: +DIr
-    {+DIrt} -> {+t}	|| Vowel ?* Vowel (l|r) _
-.o. {+DIrt} -> {+DIr}	|| .#. \%++ _
+    [ %+ =D =I r t ] -> [ %+ t ]	|| Vowel ?* Vowel (l|r) _
+.o. [ %+ =D =I r t ] -> [ %+ =D =I r ]	|| .#. \%++ _
     # Set repeating Caus suffixes
-.o. {+DIrt} -> {+t}	// r _ ,,
-    {+DIrt} -> {+DIr}	// \r _
+.o. [ %+ =D =I r t ] -> [ %+ t ]	// r _ ,,
+    [ %+ =D =I r t ] -> [ %+ =D =I r ]	// \r _
 ];
 
 
@@ -506,10 +506,10 @@ AltAor .o.
 AltPass .o.
 AltCaus .o.
 VowelClosing .o.		# modifies stem ending vowel
-VowelHarmony .o.		# assigns A, I; removes +VF
+VowelHarmony .o.		# assigns =A, =I; removes +VF
 VowelDrop .o.			# must come after VowelHarmony, removes +VD
-ConsUnvoicing .o.		# assigns D, C
+ConsUnvoicing .o.		# assigns =D, =C
 ConsVoicing .o. 		# modifies stem ending consonant, removes +CV
 ConsDoubling .o.		# must come after ConsVoicing, removes +CD
-Optionals .o.			# assigns Y, N, S
+Optionals .o.			# assigns =Y, =N, =S
 [ %+ -> 0 ];

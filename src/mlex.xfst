@@ -1,137 +1,137 @@
 !! Ambiguous suffixes: 
-!! {+In}, {+Ir}, {+mA}, {+mIş}, {+sA}, {+YAcAk}, {+nA}, {+sIn}, {+z}, {+Ar}, {+CA}, {+DIr}, {+sI}
+!! [ %+ =I n ], [ %+ =I r ], [ %+ m =A ], [ %+ m =I ş ], [ %+ s =A ], [ %+ =Y =A c =A k ], [ %+ n =A ], [ %+ s =I n ], [ %+ z ], [ %+ =A r ], [ %+ =C =A ], [ %+ =D =I r ], [ %+ s =I ]
 
 define Morphemes [
-    "+A1pl"		-> {+YIz},	!! {+k}, {+lIm}, {+Iz}?
-    "+A1pl2" 		-> {+k},	!! after past
-    "+A1pl3" 		-> {+lIm},	!! after opt
-    "+A1sg"		-> {+YIm},	!! {+m}, {+Im}?
-    "+A1sg2" 		-> {+m},	!! after past
-    "+A2pl"		-> {+sInIz},	!! {+YIn}, {+YInIz}, {+nIz}, {+nIzA}, {+InIz}
-    "+A2pl2" 		-> {+nIz},	!! after past
-    "+A2pl3" 		-> {+YInIz},	!! after imp
-    "+A2pl3" 		-> {+YIn},	!! after imp
-    "+A2pl4" 		-> {+nIzA},	!! after imp2
-    "+A2sg"		-> {+sIn},	!! 0, {+n}, {+nA}, {+In}?
-    "+A2sg2" 		-> {+n},	!! after past
+    "+A1pl"		-> [ %+ =Y =I z ],	!! [ %+ k ], [ %+ l =I m ], [ %+ =I z ]?
+    "+A1pl2" 		-> [ %+ k ],	!! after past
+    "+A1pl3" 		-> [ %+ l =I m ],	!! after opt
+    "+A1sg"		-> [ %+ =Y =I m ],	!! [ %+ m ], [ %+ =I m ]?
+    "+A1sg2" 		-> [ %+ m ],	!! after past
+    "+A2pl"		-> [ %+ s =I n =I z ],	!! [ %+ =Y =I n ], [ %+ =Y =I n =I z ], [ %+ n =I z ], [ %+ n =I z =A ], [ %+ =I n =I z ]
+    "+A2pl2" 		-> [ %+ n =I z ],	!! after past
+    "+A2pl3" 		-> [ %+ =Y =I n =I z ],	!! after imp
+    "+A2pl3" 		-> [ %+ =Y =I n ],	!! after imp
+    "+A2pl4" 		-> [ %+ n =I z =A ],	!! after imp2
+    "+A2sg"		-> [ %+ s =I n ],	!! 0, [ %+ n ], [ %+ n =A ], [ %+ =I n ]?
+    "+A2sg2" 		-> [ %+ n ],	!! after past
     "+A2sg3" 		-> 0,		!! after imp
-    "+A2sg4" 		-> {+nA},	!! after imp2
-    "+A3pl"		-> {+lAr},	!! {+sInlAr}, {nlAr}
-    "+A3pl3" 		-> {+sInlAr},	!! after imp
-    "+A3sg"		-> 0,		!! {+sIn}
-    "+A3sg3" 		-> {+sIn},	!! after imp
-    "+Abl"		-> {+DAn},	!! {+ndAn}
-    "+Able"		-> {+YAbil},	!! 0 if Neg
-    "+Acc"		-> {+YI},	!! {+nI}
-    "+Acquire"		-> {+lAn},
-    "+ActOf"		-> {+mAcA},
-    "+Adamantly"	-> {+YAsIyA},
+    "+A2sg4" 		-> [ %+ n =A ],	!! after imp2
+    "+A3pl"		-> [ %+ l =A r ],	!! [ %+ s =I n l =A r ], {nlAr}
+    "+A3pl3" 		-> [ %+ s =I n l =A r ],	!! after imp
+    "+A3sg"		-> 0,		!! [ %+ s =I n ]
+    "+A3sg3" 		-> [ %+ s =I n ],	!! after imp
+    "+Abl"		-> [ %+ =D =A n ],	!! [ %+ n d =A n ]
+    "+Able"		-> [ %+ =Y =A b i l ],	!! 0 if Neg
+    "+Acc"		-> [ %+ =Y =I ],	!! [ %+ n =I ]
+    "+Acquire"		-> [ %+ l =A n ],
+    "+ActOf"		-> [ %+ m =A c =A ],
+    "+Adamantly"	-> [ %+ =Y =A s =I y =A ],
     "+Adj"		-> 0,
     "+Adverb"		-> 0,
-    "+AfterDoingSo"	-> {+YIp},
-    "+Agt"		-> {+CI},	!! {+YIcI}
-    "+Agt2"		-> {+YIcI},	!! "+Verb" NoDB "^DB" NoDB _
-    "+Almost"		-> {+YAyaz},
-    "+Aor"		-> {+AIr},	!! 0, {+z}, {+Ar}, {+r}
-    "+AorPart"		-> {+AIr},	!! 0, {+z}, {+Ar}, {+r}
-    "+AsIf"		-> {+CA},	!! {+CAsInA}
-    "+AsIf2"		-> {+CAsInA},	!! "+Adverb" _ 
-    "+AsLongAs"		-> {+DIkçA},
-    "+Become"		-> {+lAş},
-    "+ByDoingSo"	-> {+YArAk},
+    "+AfterDoingSo"	-> [ %+ =Y =I p ],
+    "+Agt"		-> [ %+ =C =I ],	!! [ %+ =Y =I c =I ]
+    "+Agt2"		-> [ %+ =Y =I c =I ],	!! "+Verb" NoDB "^DB" NoDB _
+    "+Almost"		-> [ %+ =Y =A y a z ],
+    "+Aor"		-> [ %+ =A =I r ],	!! 0, [ %+ z ], [ %+ =A r ], [ %+ r ]
+    "+AorPart"		-> [ %+ =A =I r ],	!! 0, [ %+ z ], [ %+ =A r ], [ %+ r ]
+    "+AsIf"		-> [ %+ =C =A ],	!! [ %+ =C =A s =I n =A ]
+    "+AsIf2"		-> [ %+ =C =A s =I n =A ],	!! "+Adverb" _ 
+    "+AsLongAs"		-> [ %+ =D =I k ç =A ],
+    "+Become"		-> [ %+ l =A ş ],
+    "+ByDoingSo"	-> [ %+ =Y =A r =A k ],
     "+Card"		-> 0,
-    "+Caus"		-> {+DIrt},	!! {+DIr}, {+Ar}, {+Ir}, {+It}, {+t}
-    "+Caus1"		-> {+Ir},
-    "+Caus2"		-> {+It},
-    "+Caus3"		-> {+Ar},
-    "+Caus4"		-> {+Art},
-    "+Cond"		-> {+YsA},	!! {+sA}
+    "+Caus"		-> [ %+ =D =I r t ],	!! [ %+ =D =I r ], [ %+ =A r ], [ %+ =I r ], [ %+ =I t ], [ %+ t ]
+    "+Caus1"		-> [ %+ =I r ],
+    "+Caus2"		-> [ %+ =I t ],
+    "+Caus3"		-> [ %+ =A r ],
+    "+Caus4"		-> [ %+ =A r t ],
+    "+Cond"		-> [ %+ =Y s =A ],	!! [ %+ s =A ]
     "+Conj"		-> 0,
-    "+Continue"		-> {+YAgit},
-    "+Cop"		-> {+DIr},
-    "+Dat"		-> {+YA},	!! {+nA}
+    "+Continue"		-> [ %+ =Y =A g i t ],
+    "+Cop"		-> [ %+ =D =I r ],
+    "+Dat"		-> [ %+ =Y =A ],	!! [ %+ n =A ]
     "+Demons"		-> 0,
-    "+Desr"		-> {+sA},
+    "+Desr"		-> [ %+ s =A ],
     "+Det"		-> 0,
-    "+Dim"		-> {+CIk},	!! {+cIm}?
+    "+Dim"		-> [ %+ =C =I k ],	!! [ %+ c =I m ]?
     "+Dist"		-> 0,
     "+Dup"		-> 0,
-    "+Equ"		-> {+CA},	!! {+ncA}
-    "+EverSince"	-> {+YAgel},
-    "+FeelLike"		-> {+YAsI},
-    "+Fut"		-> {+YAcAk},
-    "+FutPart"		-> {+YAcAk},
-    "+Gen"		-> {+NIn},	!! {+nIm}
-    "+Hastily"		-> {+YIver},
+    "+Equ"		-> [ %+ =C =A ],	!! [ %+ n c =A ]
+    "+EverSince"	-> [ %+ =Y =A g e l ],
+    "+FeelLike"		-> [ %+ =Y =A s =I ],
+    "+Fut"		-> [ %+ =Y =A c =A k ],
+    "+FutPart"		-> [ %+ =Y =A c =A k ],
+    "+Gen"		-> [ %+ =N =I n ],	!! [ %+ n =I m ]
+    "+Hastily"		-> [ %+ =Y =I v e r ],
     "+Imp"		-> 0,
-    "+Imp2"		-> {+sA},
-    "+InBetween"	-> {+arası},	!! {+lArarası}?
-    "+Inf1"		-> {+mAk},
-    "+Inf2"		-> {+mA},
-    "+Inf3"		-> {+YIş},
-    "+Ins"		-> {+YlA},
+    "+Imp2"		-> [ %+ s =A ],
+    "+InBetween"	-> [ %+ a r a s ı ],	!! [ %+ l =A r a r a s ı ]?
+    "+Inf1"		-> [ %+ m =A k ],
+    "+Inf2"		-> [ %+ m =A ],
+    "+Inf3"		-> [ %+ =Y =I ş ],
+    "+Ins"		-> [ %+ =Y l =A ],
     "+Interj"		-> 0,
-    "+JustLike"		-> {+ImsI},	!! {+sI}?
-    "+Loc"		-> {+DA},	!! {+ndA},
-    "+Ly"		-> {+CA},
-    "+Narr"		-> {+mIş},
-    "+Narr2"		-> {+YmIş},
-    "+NarrPart"		-> {+mIş},
-    "+Neces"		-> {+mAlI},
-    "+Neg"		-> {+mA},	!! {+YAmA}
-    "+Ness"		-> {+lIk},
+    "+JustLike"		-> [ %+ =I m s =I ],	!! [ %+ s =I ]?
+    "+Loc"		-> [ %+ =D =A ],	!! [ %+ n d =A ],
+    "+Ly"		-> [ %+ =C =A ],
+    "+Narr"		-> [ %+ m =I ş ],
+    "+Narr2"		-> [ %+ =Y m =I ş ],
+    "+NarrPart"		-> [ %+ m =I ş ],
+    "+Neces"		-> [ %+ m =A l =I ],
+    "+Neg"		-> [ %+ m =A ],	!! [ %+ =Y =A m =A ]
+    "+Ness"		-> [ %+ l =I k ],
     "+Nom"		-> 0,
-    "+NotAbleState"	-> {+YAmAzlIk},
-    "+NotState"		-> {+mAzlIk},
+    "+NotAbleState"	-> [ %+ =Y =A m =A z l =I k ],
+    "+NotState"		-> [ %+ m =A z l =I k ],
     "+Noun"		-> 0,
     "+Num"		-> 0,
-    "+Opt"		-> {+YA},
+    "+Opt"		-> [ %+ =Y =A ],
     "+Ord"		-> 0,
-    "+P1pl"		-> {+ImIz},
-    "+P1sg"		-> {+Im},
-    "+P2pl"		-> {+InIz},
-    "+P2sg"		-> {+In},
-    "+P3pl"		-> {+lArI},	!! {+SI}
-    "+P3sg"		-> {+SI},	!! {+YI}?
+    "+P1pl"		-> [ %+ =I m =I z ],
+    "+P1sg"		-> [ %+ =I m ],
+    "+P2pl"		-> [ %+ =I n =I z ],
+    "+P2sg"		-> [ %+ =I n ],
+    "+P3pl"		-> [ %+ l =A r =I ],	!! [ %+ =S =I ]
+    "+P3sg"		-> [ %+ =S =I ],	!! [ %+ =Y =I ]?
     "+PCAbl"		-> 0,
     "+PCAcc"		-> 0,
     "+PCDat"		-> 0,
     "+PCGen"		-> 0,
     "+PCIns"		-> 0,
     "+PCNom"		-> 0,
-    "+Pass"		-> {+Il},	!! {+In}, {+InIl}
-    "+Past"		-> {+DI},
-    "+Past2"		-> {+YDI},	!! {+DI},
-    "+PastPart"		-> {+DIk},
+    "+Pass"		-> [ %+ =I l ],	!! [ %+ =I n ], [ %+ =I n =I l ]
+    "+Past"		-> [ %+ =D =I ],
+    "+Past2"		-> [ %+ =Y =D =I ],	!! [ %+ =D =I ],
+    "+PastPart"		-> [ %+ =D =I k ],
     "+Pers"		-> 0,
     "+Pnon"		-> 0,
     "+Pos"		-> 0,
     "+Postp"		-> 0,
     "+Pres"		-> 0,
-    "+PresPart"		-> {+YAn},
-    "+Prog1"		-> {+Iyor},
-    "+Prog2"		-> {+mAktA},
+    "+PresPart"		-> [ %+ =Y =A n ],
+    "+Prog1"		-> [ %+ =I y o r ],
+    "+Prog2"		-> [ %+ m =A k t =A ],
     "+Pron"		-> 0,
     "+Prop"		-> 0,
     "+Quant"		-> 0,
     "+Ques"		-> 0,
-    "+Recip"		-> {+Iş},
-    "+Reflex"		-> {+In},
-    "+Rel"		-> {+ki},
-    "+Related"		-> {+sAl},	!! {+k}
-    "+Repeat"		-> {+YAdur},
-    "+Since"		-> {+DIr},
-    "+SinceDoingSo"	-> {+YAlI},
-    "+Start"		-> {+YAkoy},
-    "+Stay"		-> {+YAkal},
+    "+Recip"		-> [ %+ =I ş ],
+    "+Reflex"		-> [ %+ =I n ],
+    "+Rel"		-> [ %+ k i ],
+    "+Related"		-> [ %+ s =A l ],	!! [ %+ k ]
+    "+Repeat"		-> [ %+ =Y =A d u r ],
+    "+Since"		-> [ %+ =D =I r ],
+    "+SinceDoingSo"	-> [ %+ =Y =A l =I ],
+    "+Start"		-> [ %+ =Y =A k o y ],
+    "+Stay"		-> [ %+ =Y =A k a l ],
     "+Verb"		-> 0,
-    "+When"		-> {+YIncA},
-    "+While"		-> {+Yken},
-    "+With"		-> {+lI},
-    "+Without"		-> {+sIz},	!! {+nsIz}
-    "+WithoutBeingAbleToHaveDoneSo"	-> {+YAmAdAn},
-    "+WithoutHavingDoneSo"		-> {+mAdAn},
-    "+WithoutHavingDoneSo2"		-> {+mAksIzIn},
+    "+When"		-> [ %+ =Y =I n c =A ],
+    "+While"		-> [ %+ =Y k e n ],
+    "+With"		-> [ %+ l =I ],
+    "+Without"		-> [ %+ s =I z ],	!! [ %+ n s =I z ]
+    "+WithoutBeingAbleToHaveDoneSo"	-> [ %+ =Y =A m =A d =A n ],
+    "+WithoutHavingDoneSo"		-> [ %+ m =A d =A n ],
+    "+WithoutHavingDoneSo2"		-> [ %+ m =A k s =I z =I n ],
     "+Zero"		-> 0,
 !    "^AR"		-> "^AR",	!! New flag for aorist suffix type
 !    "^CD"		-> "^CD",	!! Phonetic flag for consonant doubling
@@ -150,7 +150,7 @@ define Morphemes [
 !    "^C4"		-> 0,		!! New flag for causative suffix type
 !    "^CX"		-> 0,		!! New flag for causative suffix type
 !    "^RF"		-> 0,		!! New flag for reflexives
-!   "+FitFor"		-> {+lIk},	!! disappeared in latest version
+!   "+FitFor"		-> [ %+ l =I k ],	!! disappeared in latest version
     "^DB"		-> 0		!! Derivational boundary
 ];
 
@@ -159,27 +159,27 @@ define NoDB \"^DB"*;
 define AltPoss [
     "+P1sg" -> 0	|| "^P1" NoDB _ .o.
     "+P2sg" -> 0	|| "^P2" NoDB _ .o.
-    "+P3pl" -> {+SI}	|| "+A3pl" _ , ["^PL"|"^P1"|"^P2"] NoDB _ .o.
-    "+Pnon" -> {+SI}	|| "^P3" NoDB _ .o.
+    "+P3pl" -> [ %+ =S =I ]	|| "+A3pl" _ , ["^PL"|"^P1"|"^P2"] NoDB _ .o.
+    "+Pnon" -> [ %+ =S =I ]	|| "^P3" NoDB _ .o.
     "+A3pl" -> 0	|| ["^PL"|"^P1"|"^P2"] NoDB _
 ];
 
 define NegAor [			# Default: +Er
     "+Aor"	-> 0	|| "+Neg" _ ["+A1sg"|"+A1pl"] ,,
-    "+A1sg" -> {+m},
-    "+A1pl" -> {+YIz}	|| "+Neg""+Aor" _
+    "+A1sg" -> [ %+ m ],
+    "+A1pl" -> [ %+ =Y =I z ]	|| "+Neg""+Aor" _
 ].o.[
-    "+Aor"	-> {+z}	|| "+Neg" _ .o.
-    "+AorPart"	-> {+z}	|| "+Neg""^DB""+Adj" _
+    "+Aor"	-> [ %+ z ]	|| "+Neg" _ .o.
+    "+AorPart"	-> [ %+ z ]	|| "+Neg""^DB""+Adj" _
 ];
 
 define AbleNeg [
-    "+Able"	-> {+YA}	|| _ "+Neg"
+    "+Able"	-> [ %+ =Y =A ]	|| _ "+Neg"
 ];
 
 define AddApostrophe [
     "+Prop"	-> 0	|| _ "+A3sg" "+Pnon" "+Nom" .#. .o.
-    "+Prop"	-> {'}
+    "+Prop"	-> %'
 ];
 
 echo Composing with morphemes.
