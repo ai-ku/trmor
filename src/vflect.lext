@@ -12,28 +12,28 @@ LEXICON Vreflex?
 ^DB+Verb+Reflex	Vcaus?;	!! +In
 		Vrecip?;
 
-LEXICON Vcaus1			!! +Ir
+LEXICON Vcaus1
 ^DB+Verb+Caus1	Vcaus?;	!! +Ir
 		Vpass?;
 
-LEXICON Vcaus2			!! +It
+LEXICON Vcaus2
 ^DB+Verb+Caus2	Vcaus?;	!! +It
 		Vpass?;
 
-LEXICON Vcaus3			!! +Ar
+LEXICON Vcaus3
 ^DB+Verb+Caus3	Vcaus?;	!! +Ar
 		Vpass?;
 
-LEXICON Vcaus4			!! +Art
+LEXICON Vcaus4
 ^DB+Verb+Caus4	Vcaus?;	!! +Art
 		Vpass?;
 
-LEXICON Vcaus?			!! +DIr or +t
-^DB+Verb+Caus	Vcaus?;	!! +t
+LEXICON Vcaus?
+^DB+Verb+Caus	Vcaus?;	!! +DIr or +t
 		Vpass?;
 
-LEXICON Vpass?			!! +Il or +In
-^DB+Verb+Pass	Negation;	!! +Il
+LEXICON Vpass?
+^DB+Verb+Pass	Negation;	!! +Il or +In
 		Negation;
 
 LEXICON Negation
