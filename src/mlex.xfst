@@ -179,7 +179,8 @@ define AbleNeg [
 
 define AddApostrophe [
     "+Prop"	-> 0	|| _ "+A3sg" "+Pnon" "+Nom" .#. .o.
-    "+Prop"	-> %'
+    "+Prop"	(->) %'	!! make apos optional to handle misspellings
+    !! We have to make this optional here in order to take advantage of phon later: Göcek -> Göceği not Göceki
 ];
 
 !! Certain suffixes to be ignored after +Pron:
