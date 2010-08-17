@@ -171,6 +171,7 @@ LEXICON Person1+Cop2		!! Do not allow unmarked A3sg after Pres
 +A1pl:+yIz	Cop?;
 +A2pl:+sInIz	Cop?;
 +A3pl:+lAr	Cop?;
++Cop+A3pl:+DIr+lAr	#;
 
 LEXICON Person1+AsIf?
 +A1sg:+yIm	AsIf?;
