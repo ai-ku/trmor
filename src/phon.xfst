@@ -494,12 +494,15 @@ define AltCaus [		# Default: +DIr
 ];
 
 
-read regex
+define Irregular [
 Ninsert .o.
 Yinsert .o.
 AltAor .o.
 AltPass .o.
-AltCaus .o.
+AltCaus
+];
+
+define Phonetics [
 VowelClosing .o.		# modifies stem ending vowel
 VowelDropSuff .o.		# drops suffix initial =I after vowel
 VowelFront .o.			# handles vowel harmony exceptions; removes ^VF
@@ -509,5 +512,11 @@ ConsUnvoicing .o.		# assigns =D, =C
 ConsVoicing .o. 		# modifies stem ending consonant, removes ^CV
 ConsVoicingSuff .o.		# modifies suffix ending k
 ConsDoubling .o.		# must come after ConsVoicing, removes ^CD
-Optionals .o.			# assigns =Y, =N, =S
-[ %+ -> 0 ];
+Optionals			# assigns =Y, =N, =S
+];
+
+read regex
+Irregular .o.
+Phonetics .o.
+[ %_ -> " " ] .o.		# convert multiword underscores to spaces
+[ %+ -> 0 ];  			# get rid of inter-suffix markers
