@@ -182,6 +182,14 @@ define AddApostrophe [
     "+Prop"	-> %'
 ];
 
+!! Certain suffixes to be ignored after +Pron:
+
+define AfterPron [
+    "+Reflex" -> 0 ||  "+Pron" _ ,,
+    ["+A1sg"|"+A1pl"|"+A2sg"|"+A2pl"|"+A3sg"|"+A3pl"] -> 0 || "+Pron" "+Pers" _ ,,
+    {ben} -> {ban}, {sen} -> {san} || .#. _ "+Pron" "+Pers" ? ? "+Dat"
+];
+
 echo Composing with morphemes.
 
-read regex [AltPoss .o. NegAor .o. AbleNeg .o. AddApostrophe .o. Morphemes];
+read regex [AfterPron .o. AltPoss .o. NegAor .o. AbleNeg .o. AddApostrophe .o. Morphemes];
