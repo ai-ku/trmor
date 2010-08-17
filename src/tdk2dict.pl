@@ -295,7 +295,6 @@ bugün	+Noun^KI;
 çok	+Det;
 çok	+Postp+PCAbl;
 çök^AR	+Verb^C4;
-çünki	+Conj;
 çünkü	+Conj;
 da	+Conj;
 dahi	+Adj;
