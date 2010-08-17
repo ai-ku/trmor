@@ -5,226 +5,226 @@ LEXICON Voice
 	Vrecip?;
 
 LEXICON Vrecip?
-^DB+Verb+Recip:+Iş	Vcaus?;
-			Vcaus?;
+^DB+Verb+Recip	Vcaus?;	!! +Iş
+		Vcaus?;
 
 LEXICON Vreflex?
-^DB+Verb+Reflex:+In	Vcaus?;
-			Vrecip?;
+^DB+Verb+Reflex	Vcaus?;	!! +In
+		Vrecip?;
 
 LEXICON Vcaus1			!! +Ir
-^DB+Verb+Caus1:+Ir	Vcaus?;
-			Vpass?;
+^DB+Verb+Caus1	Vcaus?;	!! +Ir
+		Vpass?;
 
 LEXICON Vcaus2			!! +It
-^DB+Verb+Caus2:+It	Vcaus?;
-			Vpass?;
+^DB+Verb+Caus2	Vcaus?;	!! +It
+		Vpass?;
 
 LEXICON Vcaus3			!! +Ar
-^DB+Verb+Caus3:+Ar	Vcaus?;
-			Vpass?;
+^DB+Verb+Caus3	Vcaus?;	!! +Ar
+		Vpass?;
 
 LEXICON Vcaus4			!! +Art
-^DB+Verb+Caus4:+Art	Vcaus?;
-			Vpass?;
+^DB+Verb+Caus4	Vcaus?;	!! +Art
+		Vpass?;
 
 LEXICON Vcaus?			!! +DIr or +t
-^DB+Verb+Caus:+t	Vcaus?;
-			Vpass?;
+^DB+Verb+Caus	Vcaus?;	!! +t
+		Vpass?;
 
 LEXICON Vpass?			!! +Il or +In
-^DB+Verb+Pass:+Il	Negation;
-			Negation;
+^DB+Verb+Pass	Negation;	!! +Il
+		Negation;
 
 LEXICON Negation
-+Pos:0			VerbAgt;
-+Pos:0			Compound3;
-+Neg:+mA		Compound2;
-^DB+Verb+Able+Neg:+yAmA	Compound1; !! Goksel calls this the possibility suffix
-^DB+Verb+Hastily+Neg:+YIver+mA	Vstem;	   !! Negation may follow +YIver
++Pos			VerbAgt;
++Pos			Compound3;
++Neg			Compound2;	!! +mA
+^DB+Verb+Able+Neg	Compound1; 	!! Goksel calls this the possibility suffix	!! +yAmA
+^DB+Verb+Hastily+Neg	Vstem;	   	!! Negation may follow +YIver	!! +YIver+mA
 
 LEXICON Compound3
-^DB+Verb+Start:+yAkoy		Vstem; !! Not present in Goksel
-^DB+Verb+Stay:+yAkal		Vstem;
-^DB+Verb+Almost:+yAyaz		Vstem;
-^DB+Verb+EverSince:+yAgel	Vstem;
-				Compound2;
+^DB+Verb+Start		Vstem; !! Not present in Goksel	!! +yAkoy
+^DB+Verb+Stay		Vstem;	!! +yAkal
+^DB+Verb+Almost		Vstem;	!! +yAyaz
+^DB+Verb+EverSince	Vstem;	!! +yAgel
+			Compound2;
 
 LEXICON Compound2
-^DB+Verb+Continue:+yAgit	Vstem;  !! Not present in Goksel
-^DB+Verb+Repeat:+yAdur		Vstem;
-^DB+Verb+Hastily:+yIver		Vstem;
-				Compound1;
+^DB+Verb+Continue	Vstem;  !! Not present in Goksel	!! +yAgit
+^DB+Verb+Repeat		Vstem;	!! +yAdur
+^DB+Verb+Hastily	Vstem;	!! +yIver
+			Compound1;
 
 LEXICON Compound1
-^DB+Verb+Able:+yAbil		Vstem;
-				Vstem;
+^DB+Verb+Able		Vstem;	!! +yAbil
+			Vstem;
 
 LEXICON Vstem
 	Vflect;
 	Vderiv;
 
 LEXICON Vflect
-+Aor:+Ir	CNP|Person;
-+Aor:+Ir	AorAdv;
-+Desr:+sA	NP|Person2;
-+Fut:+yAcAk	CNP|Person+Cop;
-+Imp:0		PersonImp;
-+Imp2:+sA	PersonImpSA;
-+Narr:+mIş	CNP|Person+Cop;
-+Narr:+mIş	NarrAdv1;
-+Neces:+mAlI	CNP|Person+Cop;
-+Opt:+yA	NP|Person1;
-+Past:+DI	CP|Person;
-+Prog1:+Iyor	CNP|Person+Cop;
-+Prog2:+mAktA	CNP|Person+Cop;
++Aor	CNP|Person;	!! +Ir
++Aor	AorAdv;		!! +Ir
++Desr	NP|Person2;	!! +sA
++Fut	CNP|Person+Cop;	!! +yAcAk
++Imp	PersonImp;	!! 0
++Imp2	PersonImpSA;	!! +sA
++Narr	CNP|Person+Cop;	!! +mIş
++Narr	NarrAdv1;	!! +mIş
++Neces	CNP|Person+Cop;	!! +mAlI
++Opt	NP|Person1;	!! +yA
++Past	CP|Person;	!! +DI
++Prog1	CNP|Person+Cop;	!! +Iyor
++Prog2	CNP|Person+Cop;	!! +mAktA
 
 LEXICON Vzero?
 	Vzero;
 	#;
 
 LEXICON Vzero
-^DB+Verb+Zero:0	AfterVzero;
+^DB+Verb+Zero	AfterVzero;
 
 LEXICON AfterVzero
-+Cond:+ysA	Person2;
-+Past2:+yDI	Person2;
-+Pres:0		Person1+Cop2;
-+Narr2:+ymIş	Person1+AsIf?;
-		While;
-		AsIf;
++Cond	Person2;	!! +ysA
++Past2	Person2;	!! +yDI
++Pres	Person1+Cop2;	!! 0
++Narr2	Person1+AsIf?;	!! +ymIş
+	While;
+	AsIf;
 
 LEXICON CNP|Person+Cop
-		CNP+Person;
-		Person1+Cop?;
+	CNP+Person;
+	Person1+Cop?;
 
 LEXICON CNP|Person
-		CNP+Person;
-		Person1;
+	CNP+Person;
+	Person1;
 
 LEXICON CP|Person
-		C+Person;
-		Person2+CP?;
+	C+Person;
+	Person2+CP?;
 
 LEXICON NP|Person1
-		NP+Person;
-		Person1opt;
+	NP+Person;
+	Person1opt;
 
 LEXICON NP|Person2
-		NP+Person;
-		Person2;
+	NP+Person;
+	Person2;
 
 LEXICON CNP+Person
-+A3pl:+lAr	CNP;
-+Cond:+ysA	Person2;
-+Past2:+yDI	Person2;
-+Narr2:+ymIş	Person1+Cop?;
-+Narr2:+ymIş	NarrAdv2;
-		While;
++A3pl	CNP;		!! +lAr
++Cond	Person2;	!! +ysA
++Past2	Person2;	!! +yDI
++Narr2	Person1+Cop?;	!! +ymIş
++Narr2	NarrAdv2;	!! +ymIş
+	While;
 
 LEXICON CNP
-+Cond:+ysA	#;
-+Narr2:+ymIş	#;
-+Past2:+yDI	#;
-		While;
++Cond	#;	!! +ysA
++Narr2	#;	!! +ymIş
++Past2	#;	!! +yDI
+	While;
 
 LEXICON NP+Person
-+A3pl:+lAr	NP;
-+Narr2:+ymIş	Person1;
-+Past2:+yDI	Person2;
++A3pl	NP;		!! +lAr
++Narr2	Person1;	!! +ymIş
++Past2	Person2;	!! +yDI
 
 LEXICON NP
-+Narr2:+ymIş	#;
-+Past2:+yDI	#;
++Narr2	#;	!! +ymIş
++Past2	#;	!! +yDI
 
 LEXICON C+Person
-+Cond:+ysA	Person2;
++Cond	Person2;	!! +ysA
 
 LEXICON Person1opt
-+A1sg:+yIm	#;
-+A2sg:+sIn	#;
-+A3sg:0		#;
-+A1pl3:+lIm	#;	!! Should be +lIm following +Opt
-+A2pl:+sInIz	#;
-+A3pl:+lAr	#;
++A1sg	#;	!! +yIm
++A2sg	#;	!! +sIn
++A3sg	#;	!! 0
++A1pl3	#;	!! Should be +lIm following +Opt	!! +lIm
++A2pl	#;	!! +sInIz
++A3pl	#;	!! +lAr
 
 LEXICON Person1
-+A1sg:+yIm	#;
-+A2sg:+sIn	#;
-+A3sg:0		#;
-+A1pl:+yIz	#;
-+A2pl:+sInIz	#;
-+A3pl:+lAr	#;
++A1sg	#;	!! +yIm
++A2sg	#;	!! +sIn
++A3sg	#;	!! 0
++A1pl	#;	!! +yIz
++A2pl	#;	!! +sInIz
++A3pl	#;	!! +lAr
 
 LEXICON Person1+Cop?
-+A1sg:+yIm	Cop?;
-+A2sg:+sIn	Cop?;
-+A3sg:0		Cop?;
-+A1pl:+yIz	Cop?;
-+A2pl:+sInIz	Cop?;
-+A3pl:+lAr	Cop?;
++A1sg	Cop?;	!! +yIm
++A2sg	Cop?;	!! +sIn
++A3sg	Cop?;	!! 0
++A1pl	Cop?;	!! +yIz
++A2pl	Cop?;	!! +sInIz
++A3pl	Cop?;	!! +lAr
 
 LEXICON Person1+Cop2		!! Do not allow unmarked A3sg after Pres
-+A1sg:+yIm	Cop?;
-+A2sg:+sIn	Cop?;
-+A3sg:0		Cop;
-+A1pl:+yIz	Cop?;
-+A2pl:+sInIz	Cop?;
-+A3pl:+lAr	Cop?;
-+Cop+A3pl:+DIr+lAr	#;
++A1sg	Cop?;	!! +yIm
++A2sg	Cop?;	!! +sIn
++A3sg	Cop;	!! 0
++A1pl	Cop?;	!! +yIz
++A2pl	Cop?;	!! +sInIz
++A3pl	Cop?;	!! +lAr
++Cop+A3pl  #;	!! +DIr+lAr
 
 LEXICON Person1+AsIf?
-+A1sg:+yIm	AsIf?;
-+A2sg:+sIn	AsIf?;
-+A3sg:0		AsIf?;
-+A1pl:+yIz	AsIf?;
-+A2pl:+sInIz	AsIf?;
-+A3pl:+lAr	AsIf?;
++A1sg	AsIf?;	!! +yIm
++A2sg	AsIf?;	!! +sIn
++A3sg	AsIf?;	!! 0
++A1pl	AsIf?;	!! +yIz
++A2pl	AsIf?;	!! +sInIz
++A3pl	AsIf?;	!! +lAr
 
 LEXICON Person2
-+A1sg2:+m  	#;
-+A2sg2:+n  	#;
-+A3sg:0  	#;
-+A1pl2:+k  	#;
-+A2pl2:+nIz	#;
-+A3pl:+lAr	#;
++A1sg2 	#;	!! +m
++A2sg2 	#;	!! +n
++A3sg 	#;	!! 0
++A1pl2 	#;	!! +k
++A2pl2	#;	!! +nIz
++A3pl	#;	!! +lAr
 
 LEXICON Person2+CP?
-+A1sg2:+m  	CP?;
-+A2sg2:+n  	CP?;
-+A3sg:0		#;   !! No need for A3sg here, put at the end.
-!+A3sg:0  	C?;  !! BUG: I think this is oflazer's bug should be CP?
-+A1pl2:+k  	CP?;
-+A2pl2:+nIz	CP?;
-+A3pl:+lAr	CP?;
++A1sg2 	CP?;	!! +m
++A2sg2 	CP?;	!! +n
++A3sg	#;	!! No need for A3sg here, put at the end.
+!+A3sg  C?;	!! BUG I think this is oflazer's bug should be CP?
++A1pl2  CP?;	!! +k
++A2pl2	CP?;	!! +nIz
++A3pl	CP?;	!! +lAr
 
 LEXICON PersonImp
-+A2sg3:0	#;
-+A3sg3:+sIn	#;
-+A2pl3:+yIn	#;
-+A2pl3:+yInIz	#;
-+A3pl3:+sInlAr	#;
++A2sg3	#;	!! 0
++A3sg3	#;	!! +sIn
++A2pl3	#;	!! +yIn
++A2pl3	#;	!! +yInIz
++A3pl3	#;	!! +sInlAr
 
 LEXICON PersonImpSA
-+A2sg4:+nA	#;
-+A2pl4:+nIzA	#;
++A2sg4	#;	!! +nA
++A2pl4	#;	!! +nIzA
 
 LEXICON NarrAdv1
-+A3sg:0		AsIf;
-+A3pl:+lAr	AsIf;
++A3sg	AsIf;	!! 0
++A3pl	AsIf;	!! +lAr
 
 LEXICON NarrAdv2
-+A3sg:0		AsIf;
-+A3pl:+lAr	While;
++A3sg	AsIf;	!! 0
++A3pl	While;	!! +lAr
 
 LEXICON AorAdv
-+A3sg:0		AsIf;
++A3sg	AsIf;	!! 0
 
 LEXICON While
-^DB+Adverb+While:+yken	AdjRel?;
+^DB+Adverb+While	AdjRel?;	!! +yken
 
 LEXICON AdjRel?
-^DB+Adj+Rel:+ki	#;
+^DB+Adj+Rel	#;	!! +ki
 		#;
 
 LEXICON AsIf?
@@ -232,17 +232,16 @@ LEXICON AsIf?
 	AsIf;
 
 LEXICON AsIf
-^DB+Adverb+AsIf2:+CAsInA	#;
+^DB+Adverb+AsIf2	#;	!! +CAsInA
 
 LEXICON Cop?
 	#;
 	Cop;
 
 LEXICON Cop
-+Cop:+DIr	#;
++Cop	#;	!! +DIr
 
 LEXICON CP?
-+Cond:+ysA	#;
-+Past2:+yDI	#;
-		#;
-
++Cond	#;	!! +ysA
++Past2	#;	!! +yDI
+	#;
