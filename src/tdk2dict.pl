@@ -30,6 +30,7 @@ sub oneof { my $x = shift; ($_ eq $x) && return 1 for @_; }
 
 my %seen;
 my %pos1;
+my %exc;
 
 my %POS = (
     29 => 'Interj', 		# ünlem	       
@@ -41,12 +42,19 @@ my %POS = (
     35 => 'Adverb',		# zarf	       
     36 => 'Verb',		# (-le)	       
     37 => 'Verb',		# (-den)	       
-    38 => 'Postp+PCNom',	# edat	       
+    38 => 'Postp',		# edat	       
     39 => 'Conj',		# bağlaç	       
-    40 => 'Pron+Pers',		# zamir	       
+    40 => 'Pron',		# zamir	       
     271 => 'Verb',		# (yardımcı fiil)
     274 => 'Verb'		# (-de)
     );
+
+while(<DATA>) {			# list exceptions at the end of this file
+    next if /^\#/;		# allow comments
+    print if /\t\S/;		# copy to output if second field
+    my ($word) = /^([^^\t]+)/;	# word may have phonetic flags starting with ^
+    $exc{$word}++;		# create exception list to ignore tdk
+}
 
 my %maddeler;
 open(M, "maddeler.tab") or die $!;
@@ -93,6 +101,9 @@ sub output {
     my $birlekel = $m->[15];
     my $anlam = $a->[13];
 
+    if (defined $exc{$word}) {	# skip exceptions listed at the end
+	return;
+    }
     if ($word =~ / /) {	# skip multiwords
 	return;
     }
@@ -192,3 +203,319 @@ sub onek {
     
     return $flag;
 }
+
+
+__DATA__
+ait	+Postp+PCDat;
+ak	+Adj;
+ak	+Noun;
+ak^AR	+Verb^C2;
+akşam	+Noun^KI;
+ama	+Adj;
+ama	+Conj;
+ama	+Noun;
+amma	+Adverb;
+amma	+Conj;
+ancak	+Adverb;
+ancak	+Conj;
+art^AR	+Verb^C1;
+art^CV	+Adj;
+art^CV	+Noun;
+aş	+Noun;
+aşağı	+Adj;
+aşağı	+Noun;
+aşağı	+Postp+PCAbl;
+aş^AR	+Verb^C1;
+aşkın	+Adj;
+aşkın	+Postp+PCAcc;
+atfen	+Postp+PCDat;
+az	+Adj;
+az	+Adverb;
+az	+Postp+PCAbl;
+az^AR	+Verb;
+başka	+Adj;
+başka	+Postp+PCAbl;
+bat	+Noun;
+bat^AR	+Verb^C1;
+bazı	+Det;
+bazı	+Pron+Quant;
+ben	+Noun;
+ben	+Pron+Pers+A1sg;
+beraber	+Adj;
+beraber	+Adverb;
+beraber	+Postp+PCIns;
+beri	+Adverb;
+beri	+Noun;
+beri	+Postp+PCAbl;
+binaen	+Postp+PCDat;
+bir	+Adj;
+bir	+Adverb;
+bir	+Det;
+birbiri	+Pron+Quant;
+birçoğu	+Pron+Quant;
+birçok	+Det;
+biri	+Pron+Quant;
+birkaç	+Det;
+birkaçı	+Pron+Quant;
+birlikte	+Adverb;
+birlikte	+Postp+PCIns;
+birtakım	+Adj;
+birtakım	+Det;
+birtakım	+Pron+Quant;
+bit	+Noun;
+bit^AR	+Verb^C1;
+biz	+Noun;
+biz	+Pron+Pers+A1pl;
+boya	+Noun;
+boya	+Verb^RF;
+boyunca	+Postp+PCNom;
+bu	+Det;
+bu	+Pron+Demons;
+bugün	+Adverb;
+bugün	+Noun^KI;
+çarp^AR	+Verb^C2;
+çık^AR	+Verb^C3;
+çoğu	+Det;
+çoğu	+Pron+Quant;
+çok	+Adj;
+çok	+Adverb;
+çok	+Det;
+çok	+Postp+PCAbl;
+çök^AR	+Verb^C4;
+çünki	+Conj;
+çünkü	+Conj;
+da	+Conj;
+dahi	+Adj;
+dahi	+Conj;
+dahi	+Noun;
+dair	+Postp+PCDat;
+de	+Conj;
+de^AR	+Verb;
+değil	+Conj;
+değil	+Noun;	!! This should have its own class
+değin	+Postp+PCDat;
+değin	+Verb;
+dek	+Noun;
+dek	+Postp+PCDat;
+dışarı	+Adj;
+dışarı	+Noun;
+dışarı	+Postp+PCAbl;
+diye	+Postp+PCNom;
+doğ^AR	+Verb^C1;
+doğru	+Adj;
+doğru	+Noun;
+doğru	+Postp+PCDat;
+dolayı	+Noun;
+dolayı	+Postp+PCAbl;
+doy^AR	+Verb^C1;
+duy	+Noun;
+duy^AR	+Verb^C1;
+dün	+Adverb;
+dün	+Noun^KI;
+düş	+Noun;
+düş^AR	+Verb^C1;
+eğer	+Conj;
+eğer	+Noun;
+em	+Noun;
+em^AR	+Verb^CX;		!! causative form is emzir
+eşya	+Noun;	!! has ^PL in TDK
+evvel	+Noun;
+evvel	+Postp+PCAbl;
+fakat	+Conj;
+fazla	+Adj;
+fazla	+Adverb;
+fazla	+Postp+PCAbl;
+gayrı	+Adj;
+gayrı	+Adverb;
+gayrı	+Postp+PCAbl;
+gece	+Adverb;
+gece	+Noun^KI;
+geç	+Adj;
+geç	+Adverb;
+geç^AR	+Verb^C1;
+geçe	+Postp+PCNom;
+gel	+Verb^CX;		!! causative form is getir
+gerek	+Conj;
+gerek	+Verb;
+gerek^CV	+Noun;
+gerekse	+Conj;
+gerekse	+Verb;
+gibi	+Postp+PCGen;
+gibi	+Postp+PCNom;
+gir^AR	+Verb^CX;		!! causative = sok
+git^CV^AR	+Verb^CX;	!! causative = götür
+giy^AR	+Verb^RF;
+gizle	+Verb^RF;
+göre	+Postp+PCDat;
+gündüz	+Adverb;
+gündüz	+Noun^KI;
+ha	+Conj;
+ha	+Interj;
+halbuki	+Conj;
+hangi	+Adj;
+hangi	+Pron+Ques;
+hatta	+Adverb;
+hatta	+Conj;
+hazırla	+Verb^RF;
+hem	+Adverb;
+hem	+Conj;
+hep	+Adverb;
+hep	+Pron+Quant;
+hepsi	+Pron+Quant;
+her	+Det;
+herbiri	+Pron+Quant;
+herkes	+Pron+Quant;
+hiçbir	+Det;
+hiçbiri	+Pron+Quant;
+hitaben	+Postp+PCDat;
+hürmeten	+Noun;
+hürmeten	+Postp+PCDat;
+iç	+Adj;
+iç	+Noun;
+iç^AR	+Verb^C1;
+için	+Postp+PCGen;
+için	+Postp+PCNom;
+ila	+Conj;
+ilaveten	+Postp+PCDat;
+ile	+Conj;
+ile	+Postp+PCNom;
+ilişkin	+Postp+PCDat;
+ise	+Postp+PCNom;	!! This should have its own class
+ister	+Conj;
+ister	+Noun;
+istinaden	+Postp+PCDat;
+iştiraken	+Postp+PCDat;
+ithafen	+Postp+PCDat;
+itibaren	+Postp+PCAbl;
+izafeten	+Postp+PCDat;
+kaç	+Adj;
+kaç	+Adj;
+kaç	+Pron+Ques;
+kaç	+Pron+Ques;
+kaç^AR	+Verb^C1;
+kaç^AR	+Verb^C1;
+kadar	+Noun;
+kadar	+Postp+PCDat;
+kadar	+Postp+PCGen;
+kadar	+Postp+PCNom;
+kah	+Conj;
+kah	+Noun;
+kala	+Noun;
+kala	+Postp+PCNom;
+kalk^AR	+Verb^CX;		!! causative = kaldır
+karşı	+Adj;
+karşı	+Adverb;
+karşı	+Noun;
+karşı	+Postp+PCDat;
+karşın	+Postp+PCDat;
+kaşı	+Verb^RF;
+kendi	+Pron+Reflex;
+kıyasen	+Postp+PCDat;
+ki	+Conj;
+kim	+Pron+Ques;
+kimi	+Det;
+kimi	+Pron+Quant;
+kimse	+Noun;
+kimse	+Pron+Quant;
+kop^AR	+Verb^C3;
+kork^AR	+Verb^C2;
+kurula	+Verb^RF;
+lakin	+Conj;
+mahsuben	+Postp+PCDat;
+mamafih	+Conj;
+meğer	+Adverb;
+meğer	+Conj;
+meğerse	+Adverb;
+meğerse	+Conj;
+mı	+Ques;
+mi	+Noun;
+mi	+Ques;
+mu	+Ques;
+mukabil	+Adj;
+mukabil	+Postp+PCDat;
+mü	+Ques;
+müteakiben	+Postp+PCAcc;
+nazaran	+Postp+PCDat;
+ne	+Adverb;
+ne	+Conj;
+nere	+Pron+Ques;
+ne^Y	+Adj;
+ne^Y	+Pron+Ques;
+o	+Det;
+o	+Noun;
+o	+Pron+Demons;
+o	+Pron+Pers+A3sg;
+onlar	+Pron+Pers+A3pl;
+oysa	+Adverb;
+oysa	+Conj;
+öbür	+Adj;
+öbür	+Pron+Quant;
+öğren	+Verb^CX;		!! causative = öğret
+önce	+Adverb;
+önce	+Noun;
+önce	+Postp+PCAbl;
+örneğin	+Conj;
+ört^AR	+Verb^RF;
+öte	+Noun;
+öte	+Postp+PCAbl;
+ötürü	+Postp+PCAbl;
+piş^AR	+Verb^C1;
+rağmen	+Postp+PCDat;
+sabah	+Adverb;
+sabah	+Noun^KI;
+sar^AR	+Verb^RF;
+sark^AR	+Verb^C2;
+sen	+Pron+Pers+A2sg;
+siz	+Pron+Pers+A2pl;
+sonra	+Adverb;
+sonra	+Adverb;
+sonra	+Noun^KI;
+sonra	+Noun^KI;
+sonra	+Postp+PCAbl;
+sonra	+Postp+PCAbl;
+süsle	+Verb^RF;
+şayet	+Conj;
+şimdi	+Adverb;
+şimdi	+Noun^KI;
+şiş	+Adj;
+şiş	+Noun;
+şiş^AR	+Verb^C1;
+şu	+Det;
+şu	+Pron+Demons;
+takdirde	+Postp+PCNom;
+takiben	+Postp+PCAcc;
+tara	+Verb^RF;
+taş	+Adj;
+taş	+Noun;
+taş^AR	+Verb^C1;
+temizle	+Verb^RF;
+tüm	+Det;
+tümü	+Pron+Quant;
+uç^AR	+Verb^C1;
+uç^CV	+Adj;
+uç^CV	+Noun;
+uyarınca	+Postp+PCNom;
+ürk^AR	+Verb^C2;
+üzere	+Postp+PCNom;
+vazgeç^AR	+Verb^C1;
+ve	+Conj;
+veya	+Conj;
+veyahut	+Conj;
+ya	+Conj;
+ya	+Interj;
+yahut	+Conj;
+yana	+Postp+PCAbl;
+yanısıra	+Postp+PCGen;
+yani	+Conj;
+yarın	+Adverb;
+yarın	+Noun^KI;
+yat	+Noun;
+yat^AR	+Verb^C1;
+yıka	+Verb^RF;
+yit^AR	+Verb^C1;
+yönelik	+Postp+PCDat;
+yukarı	+Adj;
+yukarı	+Noun;
+yukarı	+Postp+PCAbl;
+yuvarla	+Verb^RF;
+zira	+Conj;
