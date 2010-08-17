@@ -114,8 +114,11 @@ sub output {
     if (defined $exc{$word}) {	# skip exceptions listed at the end
 	return;
     }
-    if ($word =~ / /) {	# skip multiwords
-	return;
+    if ($word =~ / /) {	# keep multiwords up to two words
+	my @toks = split(' ', $word);
+	return if @toks > 2;
+	$word =~ s/ /_/g;
+	$wpos = 'Verb' if $word =~ /m[ae]k$/;
     }
     if ($word =~ /m[ae]$/ and $anlam =~ /m[ae]k (işi|durumu)/) { # skip stems with -me suffix
 	return if $birlekel eq '\N'; # keep ödeme, açıklama etc.
