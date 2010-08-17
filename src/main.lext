@@ -16,7 +16,7 @@ LEXICON +Adj
 +Adj	Aderiv?;
 
 LEXICON +Adverb
-+Adverb	#;
++Adverb	AdjRel?;
 
 LEXICON +Conj
 +Conj	#;
@@ -24,8 +24,10 @@ LEXICON +Conj
 LEXICON +Det
 +Det	#;
 
-LEXICON +Dup
-+Dup	#;
+!! Do not have Dup for now.
+
+!! LEXICON +Dup
+!! +Dup	#;
 
 LEXICON +Interj
 +Interj	#;
@@ -51,38 +53,61 @@ LEXICON +Noun^PL
 LEXICON +Noun^KI
 +Noun	NounKI;
 
-LEXICON +Num+Card
-+Num+Card	#;
+!! Got rid of +Num for now
+!!
+!! LEXICON +Num+Card
+!! +Num+Card	#;
+!! 
+!! LEXICON +Num+Dist
+!! +Num+Dist	#;
+!! 
+!! LEXICON +Num+Ord
+!! +Num+Ord	#;
 
-LEXICON +Num+Dist
-+Num+Dist	#;
-
-LEXICON +Num+Ord
-+Num+Ord	#;
+LEXICON +Postp	!! From TDK, to be classified
++Postp		NVzero?;
 
 LEXICON +Postp+PCAbl
-+Postp+PCAbl	#;
++Postp+PCAbl	NVzero?;
 
 LEXICON +Postp+PCAcc
-+Postp+PCAcc	#;
++Postp+PCAcc	NVzero?;
 
 LEXICON +Postp+PCDat
-+Postp+PCDat	#;
++Postp+PCDat	NVzero?;
 
 LEXICON +Postp+PCGen
-+Postp+PCGen	#;
++Postp+PCGen	NVzero?;
 
 LEXICON +Postp+PCIns
-+Postp+PCIns	#;
++Postp+PCIns	NVzero?;
 
 LEXICON +Postp+PCNom
-+Postp+PCNom	#;
++Postp+PCNom	NVzero?;
+
+LEXICON +Pron	!! From TDK, to be classified
++Pron		Nroot;
 
 LEXICON +Pron+Demons
 +Pron+Demons	Nroot;
 
-LEXICON +Pron+Pers
-+Pron+Pers	Nroot;
+LEXICON +Pron+Pers+A1sg
++Pron+Pers+A1sg+Pnon	Ncase;
+
+LEXICON +Pron+Pers+A1pl
++Pron+Pers+A1pl+Pnon	Ncase;
+
+LEXICON +Pron+Pers+A2sg
++Pron+Pers+A2sg+Pnon	Ncase;
+
+LEXICON +Pron+Pers+A2pl
++Pron+Pers+A2pl+Pnon	Ncase;
+
+LEXICON +Pron+Pers+A3sg
++Pron+Pers+A3sg+Pnon	Ncase;
+
+LEXICON +Pron+Pers+A3pl
++Pron+Pers+A3pl+Pnon	Ncase;
 
 LEXICON +Pron+Quant
 +Pron+Quant	Nroot;
@@ -94,7 +119,7 @@ LEXICON +Pron+Reflex
 +Pron+Reflex	Nroot;
 
 LEXICON +Ques
-+Ques	#;
++Ques	AfterVzero;
 
 LEXICON +Verb
 +Verb	Verb;
