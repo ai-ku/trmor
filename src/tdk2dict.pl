@@ -1,4 +1,4 @@
-#!/usr/bin/perl -w -CSD
+#!/usr/bin/perl -w
 # Generates a lexc format dictionary file from maddeler.tab and anlams.tab from tdk
 # See dict/tdk-cd/README for the column descriptions of these files.  The important ones are:
 # maddeler[2,3]: WORD_ID, altsay (primary key, 83415 unique)
@@ -94,6 +94,16 @@ while(<A>) {
     output($m, \@a, 'Noun') if not defined $pos1{$key};
 }
 close(A);
+
+open(K, "ykkisa.tab") or die $!;
+while(<K>) {
+    my ($num, $abbr) = split;
+    my $str = "$abbr\t+Noun";
+    $str .= "+Prop" if $abbr =~ /^\p{UppercaseLetter}/;
+    $str .= ";\n";
+    print $str unless $seen{$str}++;
+}
+close(K);
 
 sub output {
     my ($m, $a, $wpos) = @_;
