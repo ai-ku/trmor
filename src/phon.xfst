@@ -481,8 +481,8 @@ define AltAor [			!! can make this more rule based
 .o.  "^AR" -> 0
 ];
 
-define AltPass [		# Deafult: +Il
-    [ %+ =I l ] -> [ %+ =I n ] || [Vowel|l|L] _
+define AltPass [		# Deafult: +Il turns into +In or +InIl
+    [ %+ =I l ] -> [ %+ =I n (=I l) ] || [Vowel|l|L] _
 ];
 
 define AltCaus [		# Default: +DIr

@@ -33,7 +33,7 @@ LEXICON Vcaus?
 		Vpass?;
 
 LEXICON Vpass?
-^DB+Verb+Pass	Negation;	!! +Il or +In
+^DB+Verb+Pass	Negation;	!! +Il or +In or +InIl
 		Negation;
 
 LEXICON Negation

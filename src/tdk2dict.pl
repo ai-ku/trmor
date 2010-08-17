@@ -485,6 +485,7 @@ sonra	+Noun^KI;
 sonra	+Noun^KI;
 sonra	+Postp+PCAbl;
 sonra	+Postp+PCAbl;
+suretiyle	+Adverb;
 süsle	+Verb^RF;
 şayet	+Conj;
 şimdi	+Adverb;
