@@ -1,23 +1,25 @@
 all: model.fst
 
-model.fst: compat.fst main.fst mlex.fst phon.fst normalize.fst
+model.fst: compat.fst main.fst mlex.fst phon.fst yanlis.fst normalize.fst
 	xfst \
 	-e "load compat.fst" \
 	-e "load main.fst" -e rotate -e compose \
 	-e "load mlex.fst" -e rotate -e compose \
 	-e "load phon.fst" -e rotate -e compose \
+	-e "load yanlis.fst" -e rotate -e compose \
 	-e "load normalize.fst" -e rotate -e compose \
 	-e "save $@" -stop
 
 compat.fst: compat.xfst
 mlex.fst: mlex.xfst
 phon.fst: phon.xfst
+yanlis.fst: yanlis.xfst
 normalize.fst: normalize.xfst
 
 main.fst: main.lexc
 	xfst -e "read lexc $^" -e "upper net" -e "save $@" -stop
 
-main.lexc: main.lext multichar.lext dict.lext nderiv.lext vderiv.lext vflect.lext nflect.lext
+main.lexc: main.lext multichar.lext dict.lext nderiv.lext vderiv.lext vflect.lext nflect.lext ulkeler.lext
 
 dict.lext: tdk2dict.pl
 	tdk2dict.pl > dict.lext 2> tdk2dict.err
