@@ -52,7 +52,7 @@ my %POS = (
 while(<DATA>) {			# list exceptions at the end of this file
     next if /^\#/;		# allow comments
     print if /\t\S/;		# copy to output if second field
-    my ($word) = /^([^^\t]+)/;	# word may have phonetic flags starting with ^
+    my ($word) = /^([^^\t\n]+)/; # word may have phonetic flags starting with ^
     $exc{$word}++;		# create exception list to ignore tdk
 }
 
@@ -111,9 +111,6 @@ sub output {
     my $birlekel = $m->[15];
     my $anlam = $a->[13];
 
-    if (defined $exc{$word}) {	# skip exceptions listed at the end
-	return;
-    }
     if ($word =~ / /) {	# keep multiwords up to two words
 	my @toks = split(' ', $word);
 	return if @toks > 2;
@@ -130,7 +127,9 @@ sub output {
 	$wpos = 'Interj' if $wpos eq 'Noun';
     }
     $word =~ s/m[ae]k$// if $wpos eq 'Verb'; # get rid of mak/mek
-    
+    if (defined $exc{$word}) {	# skip exceptions listed at the end
+	return;
+    }
 
     $wpos .= '+Prop' if ($wpos eq 'Noun' and $m->[11] == 1); # ozel
     $wpos .= '^PL'   if ($wpos eq 'Noun' and $m->[10] == 1); # cogul
@@ -264,6 +263,7 @@ binaen	+Postp+PCDat;
 bir	+Adj;
 bir	+Adverb;
 bir	+Det;
+bir_bir
 birbiri	+Pron+Quant;
 birçoğu	+Pron+Quant;
 birçok	+Det;
