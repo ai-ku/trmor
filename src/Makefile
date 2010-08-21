@@ -1,20 +1,54 @@
-all: model.fst
+all: model.foma
 
-model.fst: compat.fst main.fst mlex.fst phon.fst yanlis.fst normalize.fst
+# Compiling with foma and hfst:
+
+model.hfst: model.att
+	hfst-txt2fst -e'@0@' -i $^ -o $@.s
+	hfst-invert -i $@.s -o $@.r
+	hfst-lookup-optimize -i $@.r -o $@
+
+model.att: comp.att main.att yanl.att mlex.att phon.att norm.att
+	foma \
+	-e "ratt comp.att" \
+	-e "ratt main.att" -e rotate -e compose \
+	-e "ratt yanl.att" -e rotate -e compose \
+	-e "ratt mlex.att" -e rotate -e compose \
+	-e "ratt phon.att" -e rotate -e compose \
+	-e "ratt norm.att" -e rotate -e compose \
+	-e "watt > $@" -e quit
+
+comp.att: comp.xfst
+main.att: main.lexc
+yanl.att: yanl.xfst
+mlex.att: mlex.xfst
+phon.att: phon.xfst
+norm.att: norm.xfst
+
+%.att: %.lexc
+	foma -e "read lexc $^" -e "watt > $@" -e quit
+
+%.att: %.xfst
+	foma -e "source $^" -e "watt > $@" -e quit
+
+
+
+# Compiling with Xerox tools:
+
+model.fst: comp.fst main.fst yanl.fst mlex.fst phon.fst norm.fst
 	xfst \
-	-e "load compat.fst" \
+	-e "load comp.fst" \
 	-e "load main.fst" -e rotate -e compose \
+	-e "load yanl.fst" -e rotate -e compose \
 	-e "load mlex.fst" -e rotate -e compose \
 	-e "load phon.fst" -e rotate -e compose \
-	-e "load yanlis.fst" -e rotate -e compose \
-	-e "load normalize.fst" -e rotate -e compose \
+	-e "load norm.fst" -e rotate -e compose \
 	-e "save $@" -stop
 
-compat.fst: compat.xfst
+comp.fst: comp.xfst
 mlex.fst: mlex.xfst
 phon.fst: phon.xfst
-yanlis.fst: yanlis.xfst
-normalize.fst: normalize.xfst
+yanl.fst: yanl.xfst
+norm.fst: norm.xfst
 
 main.fst: main.lexc
 	xfst -e "read lexc $^" -e "upper net" -e "save $@" -stop
