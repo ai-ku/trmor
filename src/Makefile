@@ -75,12 +75,20 @@ dtest: dict.lext
 	make model.fst
 	cd ../disamb; touch model.fst; make dtest
 
-etest: dict.lext
+etest0: dict.lext
 	make model.fst
+	cd ../stemmer; make etest0
+
+ktest0: dict.lext
+	make model.fst
+	cd ../stemmer; make ktest0
+
+etest: dict.lext
+	make model.hfst
 	cd ../stemmer; make etest
 
 ktest: dict.lext
-	make model.fst
+	make model.hfst
 	cd ../stemmer; make ktest
 
 vflect.test.lexc: include.pl vflect.test.lext multichar.lext vflect.lext
