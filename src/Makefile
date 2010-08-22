@@ -1,34 +1,37 @@
-all: model.foma
+all: model.hfst model.fst
 
 # Compiling with foma and hfst:
 
-model.hfst: model.att
+model.foma: comp.foma main.foma yanl.foma mlex.foma phon.foma norm.foma
+	foma \
+	-e "load comp.foma" \
+	-e "load main.foma" -e rotate -e compose \
+	-e "load yanl.foma" -e rotate -e compose \
+	-e "load mlex.foma" -e rotate -e compose \
+	-e "load phon.foma" -e rotate -e compose \
+	-e "load norm.foma" -e rotate -e compose \
+	-e "ss > $@" -e quit
+
+comp.foma: comp.xfst
+main.foma: main.lexc
+yanl.foma: yanl.xfst
+mlex.foma: mlex.xfst
+phon.foma: phon.xfst
+norm.foma: norm.xfst
+
+%.hfst: %.att
 	hfst-txt2fst -e'@0@' -i $^ -o $@.s
 	hfst-invert -i $@.s -o $@.r
 	hfst-lookup-optimize -i $@.r -o $@
 
-model.att: comp.att main.att yanl.att mlex.att phon.att norm.att
-	foma \
-	-e "ratt comp.att" \
-	-e "ratt main.att" -e rotate -e compose \
-	-e "ratt yanl.att" -e rotate -e compose \
-	-e "ratt mlex.att" -e rotate -e compose \
-	-e "ratt phon.att" -e rotate -e compose \
-	-e "ratt norm.att" -e rotate -e compose \
-	-e "watt > $@" -e quit
+%.att: %.foma
+	foma -e "load $^" -e "watt > $@" -e quit
 
-comp.att: comp.xfst
-main.att: main.lexc
-yanl.att: yanl.xfst
-mlex.att: mlex.xfst
-phon.att: phon.xfst
-norm.att: norm.xfst
+%.foma: %.lexc
+	foma -e "read lexc $^" -e "ss > $@" -e quit
 
-%.att: %.lexc
-	foma -e "read lexc $^" -e "watt > $@" -e quit
-
-%.att: %.xfst
-	foma -e "source $^" -e "watt > $@" -e quit
+%.foma: %.xfst
+	foma -e "source $^" -e "ss > $@" -e quit
 
 
 
@@ -123,4 +126,6 @@ Milliyet.dict: Milliyet.rcount
 
 clean:
 	-rm *.missing *.extra
-	-rm model.fst main.lexc
+	-rm dict.lext main.lexc tdk2dict.err
+	-rm comp.fst main.fst model.fst mlex.fst norm.fst phon.fst yanl.fst 
+	-rm *.att *.foma *.hfst *.hfst.s *.hfst.r
