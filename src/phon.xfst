@@ -33,7 +33,7 @@ define Apostrophe	['];
 define P3Flag		["^P3"];
 
 !! End of stem
-define StemEnd		[PhonFlag* (Apostrophe) (P3Flag) %+];
+define FlagsPlus		[PhonFlag* (Apostrophe) (P3Flag) %+];
 
 !! suffixes: each suffix starts with a "+" and symbols that consist of an equal sign and capital letter indicate phonetic groups
 !! =A represents [ae]
@@ -114,7 +114,8 @@ define PhonOutput	[StemChar+ (Apostrophe) Alphabet29Lower*];
 define VowelLower	[a|e|ı|i|o|ö|u|ü|CircumflexLower];
 define VowelUpper	[A|E|I|İ|O|Ö|U|Ü|CircumflexUpper];
 define Vowel		[VowelLower|VowelUpper];
-define NoVowel		[ \Vowel* ];
+define VowelGroup	[Vowel|=A|=I];
+define NoVowel		[ \VowelGroup* ];
 
 ## 3.1 Ünlülerin Nitelikleri
 
@@ -194,7 +195,7 @@ define VowelHarmony [
 
 !! We mark these exceptions in the lexicon with the ^VF flag:
 
-define VFflag [ NoVowel "^VF" StemEnd NoVowel ];
+define VFflag [ NoVowel "^VF" FlagsPlus NoVowel ];
 
 define VowelFront [
     =A -> e // VB  VFflag _ ,,
@@ -263,13 +264,13 @@ define VowelFront [
 # yiyip. Ancak deyince, deyip sözlerindeki e yazılışta korunur.
 
 define VowelClosing [
-    Vowel -> 0	|| _ StemEnd ? y o r
+    VowelGroup -> 0	|| _ FlagsPlus ? y o r
 ].o.[
-    e -> i	|| .#. y _ StemEnd [=Y|y] ,,
-    e -> i	|| .#. d _ StemEnd [=Y|y] \[=I|i] ,,
-    =I -> i	|| .#. [d|y] StemEnd _ y o r
+    e -> i	|| .#. y _ FlagsPlus [=Y|y] ,,
+    e -> i	|| .#. d _ FlagsPlus [=Y|y] \[=I|i] ,,
+    =I -> i	|| .#. [d|y] FlagsPlus _ y o r
 ].o.[
-    e -> 0	|| .#. [d|y] _ StemEnd =A r
+    e -> 0	|| .#. [d|y] _ FlagsPlus =A r
 ];
 
 
@@ -298,7 +299,7 @@ define VowelDrop [
 
 !! Many suffixes that start with an optional =I drop it after a vowel
 
-define VowelDropSuff [ =I -> 0 // Vowel StemEnd _ ];
+define VowelDropSuff [ =I -> 0 // Vowel FlagsPlus _ ];
 
 
 ### 4. Ünsüzler
@@ -393,9 +394,9 @@ define ConsVoicingSuff [
 # düş-kün, geç-tim, ipek-çi, seç-kin, seç-ti, süt-çü.
 
 define ConsUnvoicing [
-	=D -> t, =C -> ç // CU StemEnd (=Y|=S|=N) _
+	=D -> t, =C -> ç // CU FlagsPlus (=Y|=S|=N) _
 ].o.[
-	=D -> d, =C -> c // StemEnd ?* _
+	=D -> d, =C -> c // FlagsPlus ?* _
 ];
 
 
@@ -446,9 +447,9 @@ define ConsDoubling [
 ## 5. Kaynaştırma harfleri:
 
 define Optionals [
-    =Y -> y, =N -> n, =S -> s  || Vowel StemEnd _
+    =Y -> y, =N -> n, =S -> s  || Vowel FlagsPlus _
 ].o.[
-    [=Y|=N|=S] -> 0 || StemEnd _
+    [=Y|=N|=S] -> 0 || FlagsPlus _
 ];
 
 
