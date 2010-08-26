@@ -1,4 +1,4 @@
-#$Id: Makefile,v 1.14 2010/08/26 03:27:56 dyuret Exp dyuret $
+#$Id: Makefile,v 1.15 2010/08/26 03:37:14 dyuret Exp dyuret $
 
 XFST_SRC = comp.xfst yanl.xfst mlex.xfst phon.xfst norm.xfst
 LEXC_SRC = main.lext multichar.lext nderiv.lext vderiv.lext vflect.lext nflect.lext ulkeler.lext include.pl
@@ -6,11 +6,19 @@ DICT_SRC = maddeler.tab anlams.tab ykkisa.tab tdk2dict.pl
 
 all: model.foma model.hfst model.fst
 
-turkmor-1.15.tgz: ${XFST_SRC} ${LEXC_SRC} ${DICT_SRC} Makefile README
+# Packaging
+turkmor-1.16.tgz: ${XFST_SRC} ${LEXC_SRC} ${DICT_SRC} Makefile README
 	tar -cvzHf $@ $^
 
-# Compiling with foma and hfst:
+# Building dictionary
+dict.lext: ${DICT_SRC}
+	tdk2dict.pl > dict.lext 2> tdk2dict.err
 
+# Building morphotactics
+main.lexc: dict.lext ${LEXC_SRC}
+	include.pl main.lext > main.lexc
+
+# Compiling with foma:
 model.foma: comp.foma main.foma yanl.foma mlex.foma phon.foma norm.foma
 	foma \
 	-e "load comp.foma" \
@@ -28,24 +36,14 @@ mlex.foma: mlex.xfst
 phon.foma: phon.xfst
 norm.foma: norm.xfst
 
-%.hfst: %.att
-	hfst-txt2fst -e'@0@' -i $^ -o $@.s
-	hfst-invert -i $@.s -o $@.r
-	hfst-lookup-optimize -i $@.r -o $@
-
-%.att: %.foma
-	foma -e "load $^" -e "watt > $@" -e quit
+%.foma: %.xfst
+	foma -e "source $^" -e "ss > $@" -e quit
 
 %.foma: %.lexc
 	foma -e "read lexc $^" -e "ss > $@" -e quit
 
-%.foma: %.xfst
-	foma -e "source $^" -e "ss > $@" -e quit
-
-
 
 # Compiling with Xerox tools:
-
 model.fst: comp.fst main.fst yanl.fst mlex.fst phon.fst norm.fst
 	xfst \
 	-e "load comp.fst" \
@@ -57,18 +55,11 @@ model.fst: comp.fst main.fst yanl.fst mlex.fst phon.fst norm.fst
 	-e "save $@" -stop
 
 comp.fst: comp.xfst
+main.fst: main.lexc
+yanl.fst: yanl.xfst
 mlex.fst: mlex.xfst
 phon.fst: phon.xfst
-yanl.fst: yanl.xfst
 norm.fst: norm.xfst
-
-main.fst: main.lexc
-	xfst -e "read lexc $^" -e "upper net" -e "save $@" -stop
-
-main.lexc: main.lext multichar.lext dict.lext nderiv.lext vderiv.lext vflect.lext nflect.lext ulkeler.lext
-
-dict.lext: tdk2dict.pl
-	tdk2dict.pl > dict.lext 2> tdk2dict.err
 
 %.fst: %.xfst
 	xfst -e "source $^" -e "save $@" -stop
@@ -76,10 +67,18 @@ dict.lext: tdk2dict.pl
 %.fst: %.lexc
 	xfst -e "read lexc $^" -e "save $@" -stop
 
-%.lexc: %.lext
-	include.pl $< > $@
+
+# Compiling for hfst:
+%.att: %.foma
+	foma -e "load $^" -e "watt > $@" -e quit
+
+%.hfst: %.att
+	hfst-txt2fst -e'@0@' -i $^ -o $@.s
+	hfst-invert -i $@.s -o $@.r
+	hfst-lookup-optimize -i $@.r -o $@
 
 
+# Regression testing
 dtest: dict.lext
 	make model.fst
 	cd ../disamb; touch model.fst; make dtest

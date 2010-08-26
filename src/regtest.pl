@@ -8,7 +8,7 @@ print  q{cut -f1 prepdata.out | lookup -q model.fst | singleline.pl > regtest.da
 system q{cut -f1 prepdata.out | lookup -q model.fst | singleline.pl > regtest.dat};
 
 my %dict;
-open(FP, 'prepdata.out') or die $!;
+open(FP, 'regtest.in') or die $!;
 while(<FP>) {
     my ($w, $p) = split;
     $dict{$w}{$p}++;
