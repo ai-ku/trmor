@@ -1,4 +1,4 @@
-#$Id: Makefile,v 1.15 2010/08/26 03:37:14 dyuret Exp dyuret $
+#$Id: Makefile,v 1.16 2010/08/26 03:49:13 dyuret Exp dyuret $
 
 XFST_SRC = comp.xfst yanl.xfst mlex.xfst phon.xfst norm.xfst
 LEXC_SRC = main.lext multichar.lext nderiv.lext vderiv.lext vflect.lext nflect.lext ulkeler.lext include.pl
@@ -7,7 +7,7 @@ DICT_SRC = maddeler.tab anlams.tab ykkisa.tab tdk2dict.pl
 all: model.foma model.hfst model.fst
 
 # Packaging
-turkmor-1.16.tgz: ${XFST_SRC} ${LEXC_SRC} ${DICT_SRC} Makefile README
+yuretmor-1.17.tgz: ${XFST_SRC} ${LEXC_SRC} ${DICT_SRC} Makefile README
 	tar -cvzHf $@ $^
 
 # Building dictionary
