@@ -1,8 +1,8 @@
-#$Id$
+#$Id: Makefile,v 1.13 2010/08/26 03:27:11 dyuret Exp dyuret $
 
-all: model.hfst model.fst
+all: model.foma model.hfst model.fst
 
-turkmor-1.13.tgz: comp.xfst yanl.xfst mlex.xfst phon.xfst norm.xfst main.lext multichar.lext nderiv.lext vderiv.lext vflect.lext nflect.lext ulkeler.lext maddeler.tab anlams.tab ykkisa.tab tdk2dict.pl include.pl Makefile
+turkmor-1.14.tgz: comp.xfst yanl.xfst mlex.xfst phon.xfst norm.xfst main.lext multichar.lext nderiv.lext vderiv.lext vflect.lext nflect.lext ulkeler.lext maddeler.tab anlams.tab ykkisa.tab tdk2dict.pl include.pl Makefile
 	tar -cvzHf $@ $^
 
 # Compiling with foma and hfst:

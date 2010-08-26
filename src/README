@@ -224,3 +224,18 @@ V. TODO LIST
 - Check for commas and other punct in dict multiwords
 - Finish elda test set
 - Write paper: unsup vs sup, with vs without context
+
+Idiosyncratic Phenomena:
+- !! ["+Noun""^KI"|"+Verb""^C1"|"+Verb""^C2"|"+Verb""^C3"|"+Verb""^C4"|"+Verb""^CX"|"+Verb""^RF"]
+- ["^AR"|"^CD"|"^CV"|"^VD"|"^VF"|"^Y"]*	
+- "+Noun""^P1"|"+Noun""^P2"|"+Noun""^P3"|"+Noun""^PL"
+- diyor, yiyor
+- sana, bana
+- +A3pl+P3pl
+- NegAor: yapar, yapmaz
+- AbleNeg: yapamaz
+- Pronoun exceptions
+- N insertion
+- Y insertion
+- AltPass
+- AltCaus
