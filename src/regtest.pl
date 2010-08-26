@@ -1,19 +1,18 @@
 #!/usr/bin/perl -w
-# Regression test for analyzer
+# Regression test for analyzer.
+# Reads words with required analyses from stdin.
 
 use strict;
 use Data::Dumper;
 
-print  q{cut -f1 prepdata.out | lookup -q model.fst | singleline.pl > regtest.dat}."\n";
-system q{cut -f1 prepdata.out | lookup -q model.fst | singleline.pl > regtest.dat};
-
+open(LU, '| lookup -q model.fst | singleline.pl > regtest.dat') or die $!;
 my %dict;
-open(FP, 'regtest.in') or die $!;
-while(<FP>) {
+while(<>) {
     my ($w, $p) = split;
     $dict{$w}{$p}++;
+    print LU "$w\n";
 }
-close(FP);
+close(LU);
 
 open(BAD, '>regtest.bad') or die $!;
 open(NON, '>regtest.non') or die $!;
