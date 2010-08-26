@@ -1,8 +1,12 @@
-#$Id: Makefile,v 1.13 2010/08/26 03:27:11 dyuret Exp dyuret $
+#$Id: Makefile,v 1.14 2010/08/26 03:27:56 dyuret Exp dyuret $
+
+XFST_SRC = comp.xfst yanl.xfst mlex.xfst phon.xfst norm.xfst
+LEXC_SRC = main.lext multichar.lext nderiv.lext vderiv.lext vflect.lext nflect.lext ulkeler.lext include.pl
+DICT_SRC = maddeler.tab anlams.tab ykkisa.tab tdk2dict.pl
 
 all: model.foma model.hfst model.fst
 
-turkmor-1.14.tgz: comp.xfst yanl.xfst mlex.xfst phon.xfst norm.xfst main.lext multichar.lext nderiv.lext vderiv.lext vflect.lext nflect.lext ulkeler.lext maddeler.tab anlams.tab ykkisa.tab tdk2dict.pl include.pl Makefile
+turkmor-1.15.tgz: ${XFST_SRC} ${LEXC_SRC} ${DICT_SRC} Makefile README
 	tar -cvzHf $@ $^
 
 # Compiling with foma and hfst:
