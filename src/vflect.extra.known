@@ -1,9 +1,0 @@
-[]
-
-# yapmazlarken, yapmazcasına etc. missing from oflazer even though
-# yaparlarken, yaparcasına is ok.
-| "+Verb""+Neg""+Aor""+A3sg""^DB""+Adverb""+AsIf"
-| "+Verb""+Neg""+Aor""+A3pl""^DB""+Adverb""+While"
-| "+Verb""+Neg""+Aor""+A3pl""^DB""+Adverb""+While""^DB""+Adj""+Rel"
-
-;

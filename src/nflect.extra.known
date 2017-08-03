@@ -1,9 +1,0 @@
-[]
-
-# This is only seen after pronouns and proper nouns but does not seem
-# to be allowed after nouns in tfeaturesulx.fst:
-# kimlerdir	kim	+Pron+Ques+A3pl+Pnon+Nom^DB+Verb+Zero+Pres+A3sg+Cop
-# DGM'lerdir	Dgm	+Noun+Prop+A3pl+Pnon+Nom^DB+Verb+Zero+Pres+A3sg+Cop
-| "+Noun""+A3pl""+Pnon""+Nom""^DB""+Verb""+Zero""+Pres""+A3sg""+Cop"
-
-;

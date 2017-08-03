@@ -1,4 +1,4 @@
-#$Id: Makefile,v 1.16 2010/08/26 03:49:13 dyuret Exp dyuret $
+#$Id: Makefile,v 1.17 2010/08/26 03:50:10 dyuret Exp $
 
 XFST_SRC = comp.xfst yanl.xfst mlex.xfst phon.xfst norm.xfst
 LEXC_SRC = main.lext multichar.lext nderiv.lext vderiv.lext vflect.lext nflect.lext ulkeler.lext include.pl
