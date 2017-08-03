@@ -1,0 +1,13 @@
+*~
+*.missing
+*.extra
+*.fst
+*.att
+*.foma
+*.hfst
+*.hfst.s
+*.hfst.r
+dict.lext
+main.lexc
+tdk2dict.err
+foo*
